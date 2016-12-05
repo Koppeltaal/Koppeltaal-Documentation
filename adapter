@@ -1,0 +1,39 @@
+Adapters
+
+- Overview high level 
+    - why an adapter?
+    - how to use the adapter?
+        - process and messages
+         (SSO, CreateOrUpdateCarePlan, ..)
+        - Types of adapter
+          (Java, PHP, Python, ...)
+ 
+- API
+    - General API support
+      - GET 
+        - get from mailbox
+        - search 
+      - PUT
+      - POST
+ 
+    - FHIR
+      - support for FHIR messages
+    - Koppletaal Extensions
+      - support for extensions
+    
+    
+- Implementation details
+   - How to include and use the library
+   - How to test the library
+   - How to extend the library
+   - how to build the library
+   - how to debug 
+   
+   
+ 
+    
+    
+    
+
+
+

@@ -74,3 +74,34 @@ There are four entities in the ontology:
 def helloworld():
     print("hello world")
 `​``
+
+# Interface description
+
+At the most basic level, applications communicate with the Koppeltaal Server using a REST interface. The interaction between applications and the Koppeltaal Server is described in the diagram below.
+
+![](image01.png)
+
+The interface consists of the following operations:
+
+## Retrieving the conformance statement
+
+The conformance statement of the Koppeltaal Server is retrieved through a GET request to \[Koppeltaal Server\]/FHIR/Koppeltaal/metadata.
+
+General information about the FHIR conformance statement can be found at [the FHIR website](https://www.hl7.org/fhir/conformance.html).
+
+The conformance statement of the Koppeltaal Server contains information required for the OAuth2 implementation for the single sign on. See [this page](http://docs.smarthealthit.org/authorization/conformance-statement/) for more information. This list of endpoints has been extended with a Launch Endpoint. This is the complete overview of used extensions that Koppeltaal uses for OAuth2:
+
+| Extension URI                                                         | Description                                                |
+|-----------------------------------------------------------------------|------------------------------------------------------------|
+| <http://fhir.vitalhealthsoftware.com/Profile/Conformance#Launch>      | Identifies the OAuth2 "launch" endpoint for the server.    |
+| <http://fhir-registry.smarthealthit.org/Profile/oauth-uris#authorize> | Identifies the OAuth2 "authorize" endpoint for the server. |
+| <http://fhir-registry.smarthealthit.org/Profile/oauth-uris#token>     | Identifies the OAuth2 "token" endpoint for the server.     |
+
+In addition, the Koppeltaal Server defines 4 extensions that control validation of requests and replies:
+
+| Extension URI                                                                            | Type    | Description                                                             |
+|------------------------------------------------------------------------------------------|---------|-------------------------------------------------------------------------|
+| <http://fhir.vitalhealthsoftware.com/Profile/Conformance#ValidateRequestsAgainstSchema>  | Boolean | If true, tells the server to validate requests against the XML Schema   |
+| <http://fhir.vitalhealthsoftware.com/Profile/Conformance#ValidateRepliesAgainstSchema>   | Boolean | If true, tells the server to validate replies against the XML Schema    |
+| <http://fhir.vitalhealthsoftware.com/Profile/Conformance#ValidateRequestsAgainstProfile> | Boolean | If true, tells the server to validate requests against the FHIR Profile |
+| <http://fhir.vitalhealthsoftware.com/Profile/Conformance#ValidateRepliesAgainstProfile>  | Boolean | If true, tells the server to validate replies against the FHIR Profile  |

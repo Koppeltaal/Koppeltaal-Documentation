@@ -1,33 +1,86 @@
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
+# which you are expected to set up once and rarely edit after that. If you
+# find yourself editing this file very often, consider using Jekyll's data
+# files feature for the data you need to update frequently.
 #
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# For technical reasons, this file is *NOT* reloaded automatically when you
+# use 'bundle exec jekyll serve'. If you change this file, please restart the
+# server process.
 
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so
+# on. You can create any custom variable you would like, and they will be
+# accessible in the templates via {{ site.myvariable }}.
+
 title: Koppeltaal Documentation
+url: "https://koppeltaal.github.io"
+baseurl: "/documentation"
+
+description: Koppeltaal documentation effort.
+author:
+  name: Koppeltaal Documentation Contributors
+  email: documentation@koppeltaal.nl
+  twitter:
+social:
+  name: Koppeltaal Documentation
+  links:
+    - https://github.com/Koppeltaal
+
 email: documentation@koppeltaal.nl
-description: >
-  Koppeltaal documentation effort.
-baseurl: "/documentation" # the subpath of your site, e.g. /blog
-url: "https://koppeltaal.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: Koppeltaal
-source: _source
-destination: docs
+google_analytics_key:
+show_full_navigation: true
 
 # Build settings
+source: _source
+destination: docs
 markdown: kramdown
-theme: minima
+highlighter: rouge
+permalink: pretty
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
 gems:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
 exclude:
   - Gemfile
   - Gemfile.lock
+  - LICENCE
+  - README.md
+
+collections:
+  docs:
+    title: Documentation
+    permalink: /:path/
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
+  -
+    scope:
+      path: ""
+      type: "docs"
+    values:
+      seo:
+        type: Article
+      _comments:
+        category: Group navigation links with this field
+        order: Used to sort links in the navigation
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      _comments:
+        type: Marks the impact of this release

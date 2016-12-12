@@ -35,7 +35,6 @@ google_analytics_key:
 show_full_navigation: true
 
 # Build settings
-source: _source
 destination: docs
 markdown: kramdown
 highlighter: rouge

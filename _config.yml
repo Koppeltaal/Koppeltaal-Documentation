@@ -35,7 +35,7 @@ google_analytics_key:
 show_full_navigation: true
 
 # Build settings
-destination: docs
+destination: build
 markdown: kramdown
 highlighter: rouge
 permalink: pretty

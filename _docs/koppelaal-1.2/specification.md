@@ -80,15 +80,16 @@ There are four entities in the ontology:
 ```
 
 ```json
-   {
-   	"access_token": "f3d421f4-d036-468a-b9aa-de9c777ede95",
-   	"token_type": "Bearer",
-   	"expires_in": 900,
-   	"refresh_token": "e54a2533-df44-4e32-bc4d-820c05b2aed0",
-   	"scope": "patient/*.*",
-   	"patient": "https://ggz.example.com/Patient/72308",
-   	"resource": "https://ggz.example.com/RelatedPerson/452"
-   }```
+ {
+ 	"access_token": "f3d421f4-d036-468a-b9aa-de9c777ede95",
+ 	"token_type": "Bearer",
+ 	"expires_in": 900,
+ 	"refresh_token": "e54a2533-df44-4e32-bc4d-820c05b2aed0",
+ 	"scope": "patient/*.*",
+ 	"patient": "https://ggz.example.com/Patient/72308",
+ 	"resource": "https://ggz.example.com/RelatedPerson/452"
+ }
+```
 
 ```python
 def helloworld():

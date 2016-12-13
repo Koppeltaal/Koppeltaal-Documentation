@@ -63,17 +63,51 @@ There are four entities in the ontology:
 -   MessageType
     -   Each message has a type. An application will not receive messages of a type they have not registered for.
 
-
-`​``html
+```html
 <html>
-<a href="#">Hello world</a>
+  <body>
+    <a href="#">Hello world</a>
+  </body>
 </html>
-`​``
+```
 
-`​``python
+```xml
+<html>
+  <body>
+    <a href="#">Hello world</a>
+  </body>
+</html>
+```
+
+```json
+{"foo": "bar",
+ "baz": "qux"};
+```
+
+```python
 def helloworld():
     print("hello world")
-`​``
+```
+
+```
+def helloworld():
+    print("hello world")
+```
+
+```csharp
+int i = 1;
+switch (i) {
+  case 1:
+    Console.WriteLine("One");
+    break;
+  case 2:
+    Console.WriteLine("Two"); Console.WriteLine("Two");
+    break;
+  default:
+    Console.WriteLine("Other");
+    break;
+}
+```
 
 # Interface description
 

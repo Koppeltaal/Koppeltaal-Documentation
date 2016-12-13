@@ -1,5 +1,8 @@
 # Koppeltaal Documention Repository
 
+_This repository is very much work in progress and might not even be the
+definite solution._
+
 This repository collects and publishes the technical documentation for the
 Koppeltaal message format, resource definitions, extensions and Koppeltaal Server features and interactions.
 

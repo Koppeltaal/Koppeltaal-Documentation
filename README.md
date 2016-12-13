@@ -5,7 +5,7 @@ Koppeltaal message format, resource definitions, extensions and Koppeltaal Serve
 
 This documentation is published from the master branch to https://koppeltaal.github.io/documentation/
 
-The documentation infrastructure is based on [Jekyll](https://jekyllrb.com/). Is uses the CloudCannon [Edition](https://github.com/CloudCannon/edition-jekyll-template} theme and templates.
+The documentation infrastructure is based on [Jekyll](https://jekyllrb.com/). Is uses the CloudCannon [Edition](https://github.com/CloudCannon/edition-jekyll-template) theme and templates.
 
 You can find more information about the infrastructure and tools here:
 

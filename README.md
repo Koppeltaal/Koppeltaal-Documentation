@@ -12,7 +12,7 @@ The documentation infrastructure is based on [Jekyll](https://jekyllrb.com/). Is
 
 In order to locally build and "serve" the documentation, you need to set up Jekyll.
 
-The "sources" of the documentation reside in the `_docs` subdirectory. They can me written in Markdown (`.md` file extension) or in plain HTML (`.html` file extension). When changes are committed and then pushed to the master branch of the documentation repository, GitHub Pages will build the build the pages. Build error will be emailed to the most recent committer.
+The "sources" of the documentation reside in the `_docs` subdirectory. They can be written in Markdown (`.md` file extension) or in plain HTML (`.html` file extension). When changes are committed and then pushed to the master branch of the documentation repository, GitHub Pages will build the build the pages. Build error will be emailed to the most recent committer.
 
 You can find more information about the infrastructure and tools here:
 

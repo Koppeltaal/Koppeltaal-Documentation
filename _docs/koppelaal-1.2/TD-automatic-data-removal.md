@@ -21,6 +21,12 @@ Author: Bart MehlkopDatum: 02-12-2016Versie: 0.1
     <td>Bart Mehlkop</td>
     <td>First Draft</td>
   </tr>
+  <tr>
+    <td>1.0</td>
+    <td>07-12-2016</td>
+    <td>Bart Mehlkop</td>
+    <td>Finalized TD</td>
+  </tr>
 </table>
 
 # Table of content

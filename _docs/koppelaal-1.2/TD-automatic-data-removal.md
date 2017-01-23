@@ -27,6 +27,12 @@ Author: Bart MehlkopDatum: 02-12-2016Versie: 0.1
     <td>Bart Mehlkop</td>
     <td>Finalized TD</td>
   </tr>
+  <tr>
+    <td>1.1</td>
+    <td>23-01-2017</td>
+    <td>Bart Mehlkop</td>
+    <td>Maximum message timeout set to 56 days after community review</td>
+  </tr>
 </table>
 
 # Table of content
@@ -49,17 +55,17 @@ The ‘IntegrationMessageLogs’ table is already being cleaned automatically, w
 
 # Requirements
 
-The main reference point of the automatic cleanup is that messages should not be allowed to exist on the Koppeltaal Server for more than 31 days and that preferably messages are cleaned up as soon as all recipients have successfully retrieved the message.
+The main reference point of the automatic cleanup is that messages should not be allowed to exist on the Koppeltaal Server for more than 56 days and that preferably messages are cleaned up as soon as all recipients have successfully retrieved the message.
 
 Unfortunately, due to technical reasons one specific application requires CreateOrUpdateCarePlan messages to remain on the Koppeltaal Server indefinitely. 
 
 This leads to the following requirements:
 
-* By default, all messages are cleaned up as soon as all recipients have successfully retrieved the message or 31 days after they have been sent, whichever comes first.
+* By default, all messages are cleaned up as soon as all recipients have successfully retrieved the message or 56 days after they have been sent, whichever comes first.
 
 A Koppeltaal administrator can configure exceptions to this rule:
 
-* A Koppeltaal administrator can specify a default maximum message age per message type per domain. This maximum age cannot be greater than 31 days.
+* A Koppeltaal administrator can specify a default maximum message age per message type per domain. This maximum age cannot be greater than 56 days.
 
 * A Koppeltaal administrator can specify per domain whether or not a specific message type is cleaned up as soon as all recipients have successfully retrieved the message.
 
@@ -74,7 +80,7 @@ It is important that messages to not simply disappear from the Koppeltaal Server
 To support future changes to the legal requirements the global maximum message age is configured as a setting in the application config.xml:
 
 ```xml
-<setting name="global-maximum-message-age" value="31" />
+<setting name="global-maximum-message-age" value="56" />
 ```
 
 The data structure relevant to the requirements listed in the previous section is summarized in the diagram below.

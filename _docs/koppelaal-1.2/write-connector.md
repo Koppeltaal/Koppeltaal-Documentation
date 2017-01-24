@@ -15,93 +15,135 @@ Since the connector will be used by other parties and will also be handed over t
 A git repository can be created at the [Koppeltaal organization on GitHub]. Sources of connectors in other programming languages can be viewed there as well.
 
 ## Where to start
-- Find out which FHIR resources need to be communicated about. Application dependent.
-- Is there a FHIR model library in my programming language?
+- Find out which FHIR resources need to be communicated about.
+- Find out if there is a FHIR model library for my programming language.
+- Determine which version of Koppeltaal should be supported.
+
+### Supported FHIR resources
+This depends on the needs of the application(s) that will use the connector. It is possible to support a subset of `Message` types, to which an application subscribes in the [administration console] on the Koppeltaal server.
+
+### FHIR libraries
+HL7 provides so called _Reference Implementations_ for some programming languages. These are basic libraries that contain FHIR resource models and validation schemas, for more convenient implementation of a connector: [DSTU1] / [current version].
+
+### Koppeltaal versions
+The first release of the connector should support the current version of Koppeltaal. Subsequent releases of the connector should still support older implementations of Koppeltaal.
 
 ## Connector responsibilities
-A Koppeltaal connector is a library to be used by an application written in a particular programming language. It communicates directly with the Koppeltaal Server REST interface, while exposing a simple API to the application, exchanging custom objects. Koppeltaal specific complexity should be handled by the connector - e.g., composing a message that conforms to Koppeltaal ontology.
+A Koppeltaal connector is a library to be used by an application written in a particular programming language. It communicates directly with the Koppeltaal Server REST interface, while exposing a simple API (e.g., a [Facade]) to the application, exchanging custom objects. Koppeltaal specific complexity should be handled by the connector - e.g., composing a message that conforms to Koppeltaal ontology.
 
 _Note_: The Koppeltaal server supports both JSON and XML.
 
 ![figure 1]
-![placeholder]
-**Figure 1**. _Each application communicates with the Koppeltaal server through a connector to encapsulate most of the complexity._
+**Figure 1**. _Each application communicates with the Koppeltaal server through a connector that encapsulates most of the complexity._
 
 Obviously, the functionalities a connector should provide depends on the applications that use it. However, we think there is a set of basic functionalities that a connector in general should support.
+
 - Retrieve the `Conformance Statement`
 - Send/retrieve `Messages` to/from a domain
--- Create a Message bundle with FHIR Resources (send)
--- Extract FHIR Resources from the Message bundle (receive)
--- Update the _ProcessingStatus_ of a Message
+    - Create a Message bundle with FHIR Resources (send)
+    - Extract FHIR Resources from the Message bundle (receive)
+    - Update the _ProcessingStatus_ of a Message
 - Retrieve and update `Activity Definitions`
+- Launch a user to a specific application
 
 Additionally, a connector could also support the following functionality:
-- Create a RESTful endpoint and configure a webhook on KT server
-- Using the `Storage Service` as data persistence utitliy
+
+- Implement support for _NewMessage_ push notifications, using [SignalR]
+- Using the `Storage Service` as data persistence utility
 
 The connector will achieve most of this functionality by sending/retrieving Messages according to Koppeltaal specifications.
 
 ### Basic features
 
 #### The Conformance Statement
-A `Conformance Statement` is a set of capabilities of a FHIR Server. The conformance statement of the Koppeltaal Server contains information required for the OAuth2 implementation for the single sign on. Besides the capabilities, it contains a number of important endpoints that are needed for certain actions. It can be requested via _<Koppeltaal server url>/FHIR/Koppeltaal/metadata_ (e.g. http://edgekoppeltaal.vhscloud.nl/FHIR/Koppeltaal/metadata).
-The connector must extract these endpoints from the Conformance statement and use them for other actions. For instance, to request authorization for the launch of a game, the authorization endpoint must be read from the statement.
+A `Conformance Statement` is a set of capabilities of a FHIR Server. The conformance statement of the Koppeltaal Server contains information required for the OAuth2 implementation of the single sign on. Besides the capabilities, it contains a number of important endpoints that are needed for certain actions. This statement can be requested via _${koppeltaal.server.url}/FHIR/Koppeltaal/metadata_ (e.g. http://edgekoppeltaal.vhscloud.nl/FHIR/Koppeltaal/metadata).
+The connector must extract these endpoints from the conformance statement and use them for other actions. For instance, to request authorization for the launch of a game, the authorization endpoint must be read from the statement.
 
 #### Koppeltaal Messages
 Communication with the Koppeltaal server consists largely of exchanging `Messages`. A Koppeltaal message consists of a bundle of `FHIR Resources`. More information on the [FHIR resources] used in Koppeltaal.
 The first resource in the bundle is the `MessageHeader`, which should always be present. The header contains important information about the content of the message, like the [message event types]. This information can be used to convert the resources in the bundle to a format that can be further processed by an application - e.g. an object holding all the important values to an application.
-The relevant values of the Resource should be copied to simple objects that can be handled by the application. It is possible that HL7 provides a library that provides FHIR models and validation schema's: [DSTU1] / [current version].
+
+Please keep in mind that the connector should be able to exchange `Messages` using `Basic Authentication` as well as an `OAuth2 Bearer Token`. Using a `Bearer Token` implicitly only requests information for the user bound to the `Bearer Token`. Requesting patient-specific `Messages` with `Basic Authentication` requires a `patient` parameter.
 
 _Note_: When building an outgoing message, mind that the MessageHeader should be the first Resource of the bundle, then add further resources.
 
 #### Setting Message ProcessingStatus
-It is important that the `ProcessingStatus` is changed when [handling messages]. That way the Koppeltaal server knows a message has been handled. Make sure to mark unprocessable messages as `Failed`, also providing an exception description.
+It is important that the `ProcessingStatus` is changed when [handling messages]. That way the Koppeltaal server knows a message has been handled. Make sure the connector can mark a message as `Failed`, also providing an exception description.
 
 #### Activity Definitions
 `ActivityDefinitions` are treated somewhat different than the rest of the FHIR resources. They are of resource type `Other` and the content is as such not defined in the FHIR spec. In Koppeltaal, they should be created or updated without the use of Message resource bundles. A simple http POST request containing the [ActivityDefinition] in the request body suffices to create an ActivityDefinition.
 
+#### Launching Users To An Application
+Koppeltaal provides a [Web Launch Sequence]. This allows users to login to an application and launch a `Resource`. The launch allows users to work on a `CarePlan(Sub)Activity`. 
+
 ### Additional features
 
-#### New Message webhook vs New Message polling
-The solution to polling the Koppeltaal server for new Messages is using a webhook, that must be configured in the _admin console of the application_ that uses the connector. The connector should expose a RESTful endpoint for the configurable webhook.
-When a new Koppeltaal message is queued, the Koppeltaal server makes an HTTP request to the URI configured for the webhook. This should then trigger the [GetNextNewAndClaim] action in the connector to fetch the new message(s). We would recommend to implement this, since it only requires the exposition of a single rest endpoint to trigger the otherwise scheduled poll.
+#### NewMessage subscription
+
+For applications that require real-time updates from Koppeltaal, it is advised **not** to use long-polling. Koppeltaal supports push notifications to applications when a new Messages is available. In Koppeltaal v1.2.1 there are two options to use the push mechanism. Both options are preferred over polling to reduce server load on both sides:
+
+- Implement [SignalR] with subscription mechanism for the connector
+- Configure a REST webhook for an application exposing a REST endpoint
+
+##### SignalR
+When available, use a SignalR library to aid in creating a _HubConnection_ to the Koppeltaal server and subscribe to the NewMessage event.
+The connector then triggers the internal [GetNextNewAndClaim] action to fetch the new message(s).
+
+##### REST webhook
+The application should expose a RESTful endpoint for the configurable webhook, configured in the _admin console of the application_. The Koppeltaal server makes an HTTP request to the URI configured for the webhook.
+The application then triggers the [GetNextNewAndClaim] action in the connector to fetch the new message(s).
 
 #### Storage Service
-Not yet implemented in a connector: [Storage service]
+TBD: Feature not yet implemented in a Koppeltaal connector: [Storage service]
 
 ## Quality assessment
-[From the QA sheet](https://docs.google.com/spreadsheets/d/16I2M2feLDzqS9XANEizifueqacaHUiE2i721AXkWacY/edit?ts=5863cc45#gid=1641241298):
-- Code clarity and readability (how clear is the code)
-- "Code availability and review procedure (internal Review process / GIT integration)"
-- Code management (Unit Test availability)
-- Technical documentation (README): look at other connectors
--- In project root, to make it visible on GitHub
--- How to use the connector? (examples)
--- Technical details / caveats
+The connector code will be assessed by Koppeltaal on a number of matters, such as:
 
-## Development process
-- Development process, unit / integration tests. 		Al doende. ‘praktisch’
-- Release management (versioning / compatibility) Development process - kern functionele dekking
+- Code clarity and readability
+- Unit Test availability
+- Technical documentation
+
+### Code clarity and readability
+Basically self explanatory. Remind yourself while developing, that the connector code is open source and transferred to the community at some point.
 
 ### Integration testing
-There is a domain specifically for connectors to execute their integration tests with the Koppeltaal server. Some inspiration for tests:
+There is a domain specifically for connectors to execute their integration tests with the Koppeltaal server (called _TestConnector_). Some useful tests:
+
 - Create `ActivityDefinition`
 - Create `Patient`
 - Create `CarePlan` for `Patient` with `CarePlanActivity` based on `ActivityDefinition`
 - Launch `CarePlan(Sub)Activity` from `CarePlan` as `Patient`/`CareGiver`
-- Send `ActivityStatus` update on `CarePlan(Sub)Activity`
+- Update `ActivityStatus` on `CarePlan(Sub)Activity`
+
+### Technical documentation
+This documentation should be written in a `README.md` file, placed in the root of the project. This should contain the used technologies to develop of the connector, including relevant technical details and caveats, if any. How to use the connector in an application and which features are supported. Readme examples are available in the connector repositories on the [Koppeltaal organization on GitHub].
+
+## Development process
+
+- Use a git repository on [Koppeltaal organization on GitHub]
+- Release management
+    - Which features to support (roadmap)
+    - Design / develop
+    - Plan release (feature / bug fix)
+- Tests
+- Release
 
 ## Setup a testing environment
 
 ### Domain configuration for testing purposes
 Configuring a domain to test the connector.
+
 - TestConnector domain
 - Configure connector (as appliciation) in the admin area
 - webhook configuration for 'push'
 
 ## Delivery aftercare
+
 - Answer support questions (?), fix bugs (?)
--- What does Koppeltaal expect
+    - What does Koppeltaal expect
+
+## Still have questions?
+The Koppeltaal team is available for questions on [Slack chat].
 
 
 [comment]: # (Below a list of keys and hyperlinks used in this document)
@@ -113,12 +155,23 @@ Configuring a domain to test the connector.
 [storage service]: https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2#Storing_data_in_the_storage_service
 [GetNextNewAndClaim]: https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2#Retrieving_messages
 [ActivityDefinition]: https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2#Retrieving_and_updating_activity_definitions
+[Web Launch Sequence]: https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2#Web_Launch_Sequence
 [ProcessingStatus]: https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2#Updating_the_ProcessingStatus_for_a_Message
 [DSTU1]: http://www.hl7.org/FHIR/DSTU1/downloads.html
 [current version]: http://www.hl7.org/FHIR/downloads.html
 [handling messages]: https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2#Updating_the_ProcessingStatus_for_a_Message
+[administration console]: https://edgekoppeltaal.vhscloud.nl/portal/login.aspx
+[Facade]: https://en.wikipedia.org/wiki/Facade_pattern
+[Slack]: https://koppeltaal-dev.slack.com/messages/questions-remarks/details/
+[SignalR]: https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2.1#Receiving_a_notification_when_a_new_message_becomes_available
 
 [comment]: # (Below a list of keys and images used in this document)
 
-[figure 1]: /images/write_connector__figure1.png "The application exchanges with Koppeltaal through a connector."
-[placeholder]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "placeholder"
+[figure 1]: /documentation/images/write_connector__figure1.png "The application exchanges with Koppeltaal through a connector."
+
+---
+
+# Questions for KT
+
+- Branching policy (Pull requests)? Sergej: "Nog niet concreet over geweest" -> bespreken in community meeting
+- Hoe dient de connector om te gaan met versioning. Wanneer major/minor releases etc.

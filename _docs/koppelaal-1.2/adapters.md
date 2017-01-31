@@ -3,7 +3,6 @@
  Adapters
 ----
 
-The following API calls are available:
 | API call     | Description | Documentation   |
 | :------- | ----: | :---: |
 |   Get next message and claim | Retrieves the first unread message and marks it as claimed.|  5    |

@@ -1,20 +1,43 @@
+---
+title: Adapter specifications
+category: Adapters specifications
+order: 2
+---
 
-----
- Adapters
-----
+
+
+
+# Adapters
+
+
+
+
+[[TOC]]
+
+Adapters are main building blocks of the Koppeltaal architecture. As the main protocol is FHIR/Koppeltaal the adapters induces an abstraction layer that helps quick development. Each adapter is build for a specific programming language (C#, Python, PHP, Java, Android, iOS, JS) and moves the Koppeltaal FHIR REST API into specific implementation language. 
+
+Questions and answers: 
+
+1. What can an Adapter offer as added value?  implementing the REST API Calls and Koppeltaal specific protocol into a dedicated programming language library.
+2. What do I need to do to get an adapter for my need? A subscription to Koppeltaal and access to Koppeltaal GIT. 
+3 What is maturity level of the adapters? Adapters are community projects so the level of maturity depends on their usage. An adapter that is largely used has more functionality then an adapter that is less used. A maturity matrix is provided here. 
+
+The following message types are available as part of the Adapter implementation. 
+
 
 | API call     | Description | Documentation   |
 | :------- | ----: | :---: |
-|   Get next message and claim | Retrieves the first unread message and marks it as claimed.|  5    |
-|   Search for message id    | Gets the message with the given id, regardless of its status.   |  12   |
-|  Updating the Processing Status for a Message     | Updates the status of the given message.  |  234  |
-|   Retrieve activity definitions    | An activity definition describes an activity that is made available by a Device   |  234  |
-|    Storage Service AP   | POST PUT GET & DELETE for item management    |  234  |
+|   Get next message and claim | Retrieves the first unread message and marks it as claimed.|     |
+|   Search for message id    | Gets the message with the given id, regardless of its status.   |     |
+|  Updating the Processing Status for a Message     | Updates the status of the given message.  |    |
+|   Retrieve activity definitions    | An activity definition describes an activity that is made available by a Device   |    |
+|    Storage Service AP   | POST PUT GET & DELETE for item management    |    |
 
 
----
-The following API calls are available:
------
+
+# Main API calls
+
+
 | API call     | Description | Documentation   |
 | :------- | ----: | :---: |
 |   CreateOrUpdateUserMessage | This message represents a text message sent from one user to another.|  -    |
@@ -32,9 +55,8 @@ The following API calls are available:
 
 
 
+# Functionality
 
-Functionality
-----
 
 | Functional item    | Description | Documentation   |
 | :------- | ----: | :---: |
@@ -42,8 +64,8 @@ Functionality
 |   Server metadata | The conformance statement gives general information about the Koppeltaal Server.|  -    |
 
 
-Support for Mobility
----
+# Support for Mobility
+
 
 | Functional item    | Description | Documentation   |
 | :------- | ----: | :---: |
@@ -51,37 +73,37 @@ Support for Mobility
 |   Refresh Token | Security improvement for mobile integration. |  -    |
 
 
-Support  for Storage
----
+# Support  for Storage
+
 
 | Functional item    | Description | Documentation   |
 | :------- | ----: | :---: |
 |   Storage Service API| To support applications that do not have their own backend structure the Koppeltaal Server provides an API to store and retrieve data. |  -    |
 
 
-Coverage
----
+# Coverage/Mautrity Matrix
 
 
-| Functional item    | Coverage | Documentation   |
+
+| Functional item    | Coverage | C#   |
 | :------- | ----: | :---: |
-|   Launch Sequence |  -    |   -   |
-|   Activation Code |  -    |   -   |
-|   Activation Code |  -    |   -   |
-|   Create or Update Care Plan |  -    |   -   |
-|   UpdateCarePlanActivityStatus |  -    |   -   |
-|   CreateOrUpdateCarePlanActivityResult |  -    |   -   |
-|   Activity Definition |  -    |   -   |
-|   User Message |  -    |   -   |
-|   Create or Update Patient |  -    |   -   |
-|   Create or Update Practitioner |  -    |   -   |
-|   Create or Update RelatedPerson |  -    |   -   |
-|   Storage API |  -    |   -   |
+|   Launch Sequence |  -    |   YES   |
+|   Activation Code |  -    |   NA  |
+|   Conformance Statement|  -    |   YES  |
+|   Create or Update Care Plan |  -    |   YES   |
+|   UpdateCarePlanActivityStatus |  -    |   YES   |
+|   CreateOrUpdateCarePlanActivityResult |  -    |   YES   |
+|   Activity Definition |  -    |   YES   |
+|   User Message |  -    |   YES   |
+|   Create or Update Patient |  -    |   YES   |
+|   Create or Update Practitioner |  -    |   YES   |
+|   Create or Update RelatedPerson |  -    |   YES   |
+|   Storage API |  -    |   YES |
 
 
 
-Development (ReadMe File Template)
----
+# Development (ReadMe File Template)
+
 
 
  * Language support
@@ -109,8 +131,8 @@ Development (ReadMe File Template)
 	> * SRC - > lib's etc
 	
 
-Usage:
----
+# Usage requirements
+
 
  -   Build: how to build … 
 
@@ -135,7 +157,7 @@ Usage:
 
 
  -   Test: how to extend the libary 
-> **Tip:** **Extesnion** details including :
+> **Tip:** **Extension** details including :
 >  -  FHIR Library inclusion
 >  - Extended Atom reosurces
 

@@ -81,24 +81,24 @@ The following message types are available as part of the Adapter implementation.
 |   Storage Service API| To support applications that do not have their own backend structure the Koppeltaal Server provides an API to store and retrieve data. |  -    |
 
 
-# Coverage/Mautrity Matrix
+# Coverage/Maturity Matrix
 
 
 
-| Functional item    | Coverage | C#   |
-| :------- | ----: | :---: |
-|   Launch Sequence |  -    |   YES   |
-|   Activation Code |  -    |   NA  |
-|   Conformance Statement|  -    |   YES  |
-|   Create or Update Care Plan |  -    |   YES   |
-|   UpdateCarePlanActivityStatus |  -    |   YES   |
-|   CreateOrUpdateCarePlanActivityResult |  -    |   YES   |
-|   Activity Definition |  -    |   YES   |
-|   User Message |  -    |   YES   |
-|   Create or Update Patient |  -    |   YES   |
-|   Create or Update Practitioner |  -    |   YES   |
-|   Create or Update RelatedPerson |  -    |   YES   |
-|   Storage API |  -    |   YES |
+| Functional item    | Coverage | C#   | Java   | Android (Java)   |
+| :------- | ----: | :---: | :---: | :---: |
+|   Launch Sequence |  -    |   YES   |   YES   |   YES   |
+|   Activation Code |  -    |   NA  |   NA   |   YES   |
+|   Conformance Statement|  -    |   YES  |   YES  |   YES  |
+|   Create or Update Care Plan |  -    |   YES   |   YES  |   YES  |
+|   UpdateCarePlanActivityStatus |  -    |   YES   |   YES  |   YES  |
+|   CreateOrUpdateCarePlanActivityResult |  -    |   YES   |   YES  |   YES  |
+|   Activity Definition |  -    |   YES   |   YES  |   YES  |
+|   User Message |  -    |   YES   |   YES  |   YES  |
+|   Create or Update Patient |  -    |   YES   |   YES  |   YES  |
+|   Create or Update Practitioner |  -    |   YES   |   YES  |   YES  |
+|   Create or Update RelatedPerson |  -    |   YES   |   YES  |   YES  |
+|   Storage API |  -    |   YES |   NO  |   NO  |
 
 
 

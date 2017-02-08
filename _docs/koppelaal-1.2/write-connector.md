@@ -78,23 +78,23 @@ Koppeltaal provides a [Web Launch Sequence]. This allows users to login to an ap
 
 ### Additional features
 
-#### NewMessage subscription
+#### Storage Service
+TBD: Feature not yet implemented in a Koppeltaal connector: [Storage service]
 
-For applications that require real-time updates from Koppeltaal, it is advised **not** to use long-polling. Koppeltaal supports push notifications to applications when a new Messages is available. In Koppeltaal v1.2.1 there are two options to use the push mechanism. Both options are preferred over polling to reduce server load on both sides:
+#### Push Notifications: (since 1.2.1)
+
+For applications that require real-time updates from Koppeltaal, it is advised **not** to use long-polling. Koppeltaal supports push notifications to applications when a new Messages is available. Since Koppeltaal v1.2.1 there are two options to use the push mechanism. Both options are preferred over polling to reduce server load on both sides:
 
 - Implement [SignalR] with subscription mechanism for the connector
 - Configure a REST webhook for an application exposing a REST endpoint
 
-##### SignalR
-When available, use a SignalR library to aid in creating a _HubConnection_ to the Koppeltaal server and subscribe to the NewMessage event.
+##### SignalR (connector feature)
+When available, use a SignalR library to aid in creating a _HubConnection_ to the Koppeltaal server and subscribe to the `NewMessage` event.
 The connector then triggers the internal [GetNextNewAndClaim] action to fetch the new message(s).
 
-##### REST webhook
+##### REST webhook (application feature)
 The application should expose a RESTful endpoint for the configurable webhook, configured in the _admin console of the application_. The Koppeltaal server makes an HTTP request to the URI configured for the webhook.
 The application then triggers the [GetNextNewAndClaim] action in the connector to fetch the new message(s).
-
-#### Storage Service
-TBD: Feature not yet implemented in a Koppeltaal connector: [Storage service]
 
 ## Quality assessment
 The connector code will be assessed by Koppeltaal on a number of matters, such as:
@@ -120,22 +120,24 @@ This documentation should be written in a `README.md` file, placed in the root o
 
 ## Development process
 
+TBD for Connector projects, but a general outline could be:
+
 - Use a git repository on [Koppeltaal organization on GitHub]
 - Release management
     - Which features to support (roadmap)
     - Design / develop
     - Plan release (feature / bug fix)
 - Tests
-- Release
+- Release (major / minor)
 
 ## Setup a testing environment
 
 ### Domain configuration for testing purposes
 Configuring a domain to test the connector.
 
-- TestConnector domain
+- _TestConnector_ domain is available on the edge server
 - Configure connector (as appliciation) in the admin area
-- webhook configuration for 'push'
+    - Configure SSO url
 
 ## Delivery aftercare
 
@@ -168,10 +170,3 @@ The Koppeltaal team is available for questions on [Slack chat].
 [comment]: # (Below a list of keys and images used in this document)
 
 [figure 1]: /documentation/images/write_connector__figure1.png "The application exchanges with Koppeltaal through a connector."
-
----
-
-# Questions for KT
-
-- Branching policy (Pull requests)? Sergej: "Nog niet concreet over geweest" -> bespreken in community meeting
-- Hoe dient de connector om te gaan met versioning. Wanneer major/minor releases etc.

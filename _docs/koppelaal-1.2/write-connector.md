@@ -18,6 +18,7 @@ A git repository can be created at the [Koppeltaal organization on GitHub]. Sour
 - Find out which FHIR resources need to be communicated about.
 - Find out if there is a FHIR model library for my programming language.
 - Determine which version of Koppeltaal should be supported.
+- Study the sample requests to the Koppeltaal server
 
 ### Supported FHIR resources
 This depends on the needs of the application(s) that will use the connector. It is possible to support a subset of `Message` types, to which an application subscribes in the [administration console] on the Koppeltaal server.
@@ -27,6 +28,9 @@ HL7 provides so called _Reference Implementations_ for some programming language
 
 ### Koppeltaal versions
 The first release of the connector should support the current version of Koppeltaal. Subsequent releases of the connector should still support older implementations of Koppeltaal.
+
+### Sample requests
+Koppeltaal provides a [SoapUI project] on GitHub that contains sample requests for implementers gain more knowlegde about the exact structure of a message. The [description of the SoapUI project] contains more in-depth information about how to make use of it. It is recommended to use these examples, when debugging your own requests.
 
 ## Connector responsibilities
 A Koppeltaal connector is a library to be used by an application written in a particular programming language. It communicates directly with the Koppeltaal Server REST interface, while exposing a simple API (e.g., a [Facade]) to the application, exchanging custom objects. Koppeltaal specific complexity should be handled by the connector - e.g., composing a message that conforms to Koppeltaal ontology.
@@ -79,7 +83,7 @@ Koppeltaal provides a [Web Launch Sequence]. This allows users to login to an ap
 ### Additional features
 
 #### Storage Service
-TBD: Feature not yet implemented in a Koppeltaal connector: [Storage service]
+More information following. [Storage service]
 
 #### Push Notifications: (since 1.2.1)
 
@@ -120,7 +124,7 @@ This documentation should be written in a `README.md` file, placed in the root o
 
 ## Development process
 
-TBD for Connector projects, but a general outline could be:
+Exact details TBD for connector projects, but a general outline would be:
 
 - Use a git repository on [Koppeltaal organization on GitHub]
 - Release management
@@ -136,8 +140,9 @@ TBD for Connector projects, but a general outline could be:
 Configuring a domain to test the connector.
 
 - _TestConnector_ domain is available on the edge server
-- Configure connector (as appliciation) in the admin area
-    - Configure SSO url
+- Register the connector (as an application) to this domain through [Koppeltaal support]
+- Configure connector in the admin area
+    - Configure SSO url for launch purposes
 
 ## Delivery aftercare
 
@@ -164,8 +169,11 @@ The Koppeltaal team is available for questions on [Slack chat].
 [handling messages]: https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2#Updating_the_ProcessingStatus_for_a_Message
 [administration console]: https://edgekoppeltaal.vhscloud.nl/portal/login.aspx
 [Facade]: https://en.wikipedia.org/wiki/Facade_pattern
-[Slack]: https://koppeltaal-dev.slack.com/messages/questions-remarks/details/
+[Slack chat]: https://koppeltaal-dev.slack.com/messages/questions-remarks/details/
 [SignalR]: https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2.1#Receiving_a_notification_when_a_new_message_becomes_available
+[SoapUI project]: https://github.com/Koppeltaal/Koppeltaal-Server/tree/master/tests/Connectors
+[description of the SoapUI project]: https://www.koppeltaal.nl/wiki/Registration_to_Test_Environment#Connecting_to_the_Koppeltaal_test_server_using_SOAP_UI
+[Koppeltaal support]: https://www.koppeltaal.nl/support
 
 [comment]: # (Below a list of keys and images used in this document)
 

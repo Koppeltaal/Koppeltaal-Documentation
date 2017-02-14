@@ -105,7 +105,7 @@ We’ve structured the documentation to be iteratively detailed, such that readi
 
 
 
-# Who is involved in a Koppeltaal project - nvt
+# Who is involved in a Koppeltaal project
 
 Various parties are involved in Koppeltaal in general.
 
@@ -241,7 +241,7 @@ Each message must specify what version is the latest known to the sending applic
 
 ## Domains
 
-# How will it work? - nvt
+# How will it work?
 
 * Development
 

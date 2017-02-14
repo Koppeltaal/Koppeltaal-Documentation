@@ -11,7 +11,7 @@ Koppeltaal has two functions. On one level, Koppeltaal defines entities in healt
 
 On the other level, Koppeltaal defines an infrastructure for exchanging messages between the various connected applications. The Koppeltaal Server routes the message to the subscribed application queues. The subscribed applications can take the messages for their own use.
 
-## ![image alt text](image_1.png)
+## ![image alt text](what_is_koppeltaal.png)
 
 ## API based
 
@@ -57,7 +57,7 @@ The Koppeltaal Server is the central connection point for all connecting parties
 
 ### Domain
 
-### A domain is the context in which Koppeltaal messages are exchanged. For every domain there is one (healthcare) organization that is owner of the patient data that is exchanged in that domain. The domain is usually named after that organization. Messages are only send within one domain for security reasons. The only exception to this are information messages (currently only 'CreateOrUpdateActivityDefinition', which is only sent by the server itself). The domain is mainly added to the domain model for security reasons.
+A domain is the context in which Koppeltaal messages are exchanged. For every domain there is one (healthcare) organization that is owner of the patient data that is exchanged in that domain. The domain is usually named after that organization. Messages are only send within one domain for security reasons. The only exception to this are information messages (currently only 'CreateOrUpdateActivityDefinition', which is only sent by the server itself). The domain is mainly added to the domain model for security reasons.
 
 ### Application
 
@@ -112,5 +112,3 @@ Note that this means that an application can not rely on receiving any intermedi
 Each message received by the Koppeltaal is given a version. Any other applications that sends the same type of message for a resource must subscribe to that type of message in order to keep the internally stored resource up to date.
 
 Each message must specify what version is the latest known to the sending application. Koppeltaal will check this version against the latest version that is has received and reject a message if the versions do not match. This is known as a concurrent modification error.
-
-## Domains

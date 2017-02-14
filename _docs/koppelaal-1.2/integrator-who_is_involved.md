@@ -7,7 +7,7 @@ order: 2
 
 Various parties are involved in Koppeltaal in general.
 
-![image alt text](image_0.png)
+![Who is involved in a Koppeltaal project](who_is_involved.png)
 
 * Stichting Koppeltaal - governance (Board), operational and financial management
 

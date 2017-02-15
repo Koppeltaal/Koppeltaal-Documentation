@@ -3,7 +3,6 @@ title: What is Koppeltaal
 category: Integrator
 order: 3
 ---
-# What is Koppeltaal
 
 The Koppeltaal Server is a system that works like a mailbox. All the registered applications (e-interventions and portals) can drop messages in the mailbox.
 
@@ -29,9 +28,9 @@ There are connectors available that can be used by clients to transform Koppelta
 
 ## SSO via OAuth
 
-Koppeltaal contains an SSO mechanism that makes it unnecessary for applications to implement specific logic for each intervention it needs to work with. Applications therefore do not have to maintain specific configuration for each application that they access via SSO. The SSO mechanism is based on the accepted standard of OAuth 2.0.
+Koppeltaal contains an SSO mechanism that makes it unnecessary for applications to implement specific logic for each intervention it needs to work with. Applications therefore do not have to maintain specific configuration for each application that they access via SSO.
 
-Koppeltaal Single Sign-On is based on the OAuth2 standard, and implemented as recommended by the SMART-on-FHIR initiative (see [http://docs.smartplatforms.org/](http://docs.smartplatforms.org/))
+Koppeltaal Single Sign-On is based on the OAuth2 standard and implemented as recommended by the SMART-on-FHIR initiative (see [http://docs.smartplatforms.org/](http://docs.smartplatforms.org/))
 
 In the context of OAuth2 two types of clients are defined:
 
@@ -53,15 +52,15 @@ Within the context of Koppeltaal the terms 'Application', 'Koppeltaal Server' (o
 
 ### Koppeltaal Server
 
-The Koppeltaal Server is the central connection point for all connecting parties. There is a number of different Koppeltaal Servers; currently each one is intended for use during a specific part of an application's development cycle (see Environments).
+The Koppeltaal Server is the central connection point for all connecting parties. There are a number of different Koppeltaal Servers; currently each one is intended for use during a specific part of an application's development cycle (see Environments).
 
 ### Domain
 
-A domain is the context in which Koppeltaal messages are exchanged. For every domain there is one (healthcare) organization that is owner of the patient data that is exchanged in that domain. The domain is usually named after that organization. Messages are only send within one domain for security reasons. The only exception to this are information messages (currently only 'CreateOrUpdateActivityDefinition', which is only sent by the server itself). The domain is mainly added to the domain model for security reasons.
+A domain is the context in which Koppeltaal messages are exchanged. For every domain there is one (healthcare) organization that is owner of the patient data that is exchanged in that domain. The domain is usually named after that organization. Messages are only sent within one domain for security reasons. The only exception to this are information messages (currently only 'CreateOrUpdateActivityDefinition', which is only sent by the server itself). The domain is mainly added to the domain model for security reasons.
 
 ### Application
 
-An application is an intervention, portal or other E-Health software that will connect with other applications through a Koppeltaal Server. EMHP, KickAss and the Koppeltaal Demo Portal are examples of applications. Each application is part of one or more domains. When an application is added to a domain the resulting combination of application and domain is known as an application instance. A set of credentials is always linked to an application instance, meaning that one set of credentials can only be used to send messages in one domain.
+An application is an intervention, portal or other eHealth software that will connect with other applications through a Koppeltaal Server. EMHP, KickAss and the Koppeltaal Demo Portal are examples of applications. Each application is part of one or more domains. When an application is added to a domain the resulting combination of application and domain is known as an application instance. A set of credentials is always linked to an application instance, meaning that one set of credentials can only be used to send messages in one domain.
 
 ### Message
 
@@ -83,6 +82,8 @@ Each message has a type. An application will only receive messages of a type the
 
 ## Principles of message brokers
 
+...
+
 ## Subscribe to message types
 
 Each application instance can subscribe to a certain message type. Based on the subscription of an application instance, the Koppeltaal server will put a message in the application instance’s message queue.
@@ -91,7 +92,7 @@ Each application instance can subscribe to a certain message type. Based on the 
 
 ### Claim message
 
-An application should claim a message in his queue prior to processing. When claimed, no other processes should handle this message. Since every application has its own message queue based on the message type subscription, this should protect the application from processing a message multiple times.
+An application should claim a message in its queue prior to processing. When claimed, no other processes should handle this message. Since every application has its own message queue based on the message type subscription, this should protect the application from processing a message multiple times.
 
 After a message has been successfully processed, the application must update its processing status to "Success". In case of a transient failure, the message should be put back to the processing status “New”, allowing it to be reprocessed later. In case of a permanent failure (e.g. message content was incorrect), the processing status should be updated to “Failed”, and an exception description must be passed.
 
@@ -109,6 +110,6 @@ Koppeltaal will override any unprocessed older versions of messages that are sti
 
 Note that this means that an application can not rely on receiving any intermediate messages. For example, it is not guaranteed that a client portal receives status updates of an activity for each change from ‘available’ to ‘in progress’ to ‘finished’. If the activity is started and finished before the client portal retrieves its messages, any status message will list the activity status as ‘finished’ instead of ‘in progress’.
 
-Each message received by the Koppeltaal is given a version. Any other applications that sends the same type of message for a resource must subscribe to that type of message in order to keep the internally stored resource up to date.
+Each message received by the Koppeltaal is given a version. Any other applications that send the same type of message for a resource must subscribe to that type of message in order to keep the internally stored resource up to date.
 
 Each message must specify what version is the latest known to the sending application. Koppeltaal will check this version against the latest version that is has received and reject a message if the versions do not match. This is known as a concurrent modification error.

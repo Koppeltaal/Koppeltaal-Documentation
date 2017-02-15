@@ -3,7 +3,6 @@ title: Who is involved in a Koppeltaal project
 category: Integrator
 order: 2
 ---
-# Who is involved in a Koppeltaal project
 
 Various parties are involved in Koppeltaal in general.
 
@@ -17,7 +16,7 @@ Various parties are involved in Koppeltaal in general.
 
 The direct participants for a Koppeltaal project are more specific.
 
-Project using Koppeltaal do not revolve around Koppeltaal, the project achieve a goal set by the shared customer.
+Projects using Koppeltaal do not revolve around Koppeltaal, the projects achieve a goal set by the shared customer.
 
 * The customer (healthcare organisation) requests an outcome and accepts the result of the Koppeltaal project
 

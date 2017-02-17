@@ -45,9 +45,9 @@ The following message types are available as part of the Adapter implementation.
 |   UpdateCarePlanActivityStatus | This message is sent when the status of an activity changes. Note that this message does not include the result of the activity.|  -    |
 |   CreateOrUpdateCarePlanActivityResult | This message is sent when a result for a CarePlanActivity becomes available or is changed. |  -    |
 |   CreateOrUpdatePatient | This message is sent when a result for a new or updated Patient. |  -    |
-|   CreateOrUpdatePractitioner | This message is sent when a result for a new or updated Practitioner. |  -    |
-|   CreateOrUpdateRelatedPerson | This message is sent when a result for a new or updated Activity Definition. |  -    |
-|   CreateOrUpdateActivityDefinition | This message is sent when a result for a new or updated Practitioner. |  -    |
+|   CreateOrUpdatePractitioner | This message is sent for a new or updated Practitioner. |  -    |
+|   CreateOrUpdateRelatedPerson | This message is sent for a new or updated Activity Definition. |  -    |
+|   CreateOrUpdateActivityDefinition | This message is sent for a new or updated Practitioner. |  -    |
 |   POST [Koppeltaal Server]/FHIR/Koppeltaal/Binary | Stores a new item. The body of the request must contain a Binary resource. |  -    |
 |   PUT [Koppeltaal Server]/FHIR/Koppeltaal/Binary/[id] | Updates an existing entry. |  -    |
 |   GET [Koppeltaal Server]/FHIR/Koppeltaal/Binary/{[id]}?patient=[patient-id]{&search-arguments} | Gets any stored items that match the given id or the search arguments. |  -    |

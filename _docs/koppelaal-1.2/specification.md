@@ -6,7 +6,7 @@ order: 1
 
 # Introduction
 
-This technical design has been written to describe the technical scope of Koppeltaal 1.2.
+This Technical Design has been written to describe the technical scope of Koppeltaal 1.2.
 
 The concept of the Koppeltaal Server is created to support the interaction between portals and e-interventions via a standard protocol.
 

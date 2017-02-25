@@ -51,7 +51,8 @@ Delivery Team handles the release process, via Support, and verifies the process
 
 ![Delivery flow](Delivery.png)
 
-Handover process to Release Team[edit]
+## Handover process to Release Team
+
   - Update from GIT - follow the Deployment document
   - Deployment&Configuratiom
  Deployment Guide Koppeltaal  Deployment_Guide_Koppeltaal_XXX

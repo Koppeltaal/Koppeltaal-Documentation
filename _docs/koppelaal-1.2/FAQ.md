@@ -1,3 +1,4 @@
+
 ---
 title: Frequently Asked Questions
 category: Help
@@ -9,3 +10,23 @@ Q: How long does the Koppeltaal Server keep the messages that are sent through i
 A: The default behaviour of is for any messages to be removed after all recipients have retrieved the message from their queues or after 31 days, whichever comes first.
 Depending on specific application settings, specific message types may be stored indefinitely. This is only the case for messages of type CreateOrUpdateCarePlan in domains that use the KickASS game.
 It is also possible to configure the server a shorter maximum retainment period for specific message types a domain.
+
+
+Q: What are the Organizational roles recognised in Koppeltaal
+
+A: 
+Visitor
+Interested party/person
+Customer
+Consumer
+Governor
+Network promotor
+Contract manager
+Service provider
+Infrastructure operator
+Technology developer
+Organization developer
+Supplier
+
+These roles may distinguish specific subroles to improve the precision of the performance and collaboration of koppeltaal activities.
+

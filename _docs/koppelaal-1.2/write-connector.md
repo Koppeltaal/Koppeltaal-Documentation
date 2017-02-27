@@ -4,10 +4,10 @@ category: How-to
 order: 2
 ---
 
-# How-to: Koppeltaal connector
+# How to write a Koppeltaal connector
 
 ## About this guide
-This guide will not go into Koppeltaal terminology, but rather assumes this knowledge is available to the reader. Whether it is from memory or the [Technical Design Document]. This document is not technical, but rather a descriptive / explanatory guide to assist the implementer towards a usable connector. Mainly by answering questions in advance, that we think developers will bump into.
+This guide assumes the reader knows Koppeltaal terminology. One source for that kind of knowledge is the [Technical Design Document]. This document is explicitly not technical, but rather a descriptive/explanatory guide on how to write a connector. This guide tries do that by answering questions developers will likely have.
 
 ## Connector repository and source code
 Since the connector will be used by other parties and will also be handed over to the Koppeltaal Community at some point, it’s important that the source code is clear and readable for other developers that want to debug or add features in the (near) future.

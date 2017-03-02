@@ -1,10 +1,12 @@
 ---
 title: Koppeltaal Automatic Data Removal
 category: Technical Designs
-order: 1
+order: 3
 ---
 
-Author: Bart MehlkopDatum: 02-12-2016Versie: 0.1
+Author: Bart Mehlkop
+Datum: 02-12-2016
+Versie: 0.1
 
 # Version management
 

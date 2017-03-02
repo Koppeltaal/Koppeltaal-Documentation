@@ -1,7 +1,7 @@
 ---
 title: Subscription Model
 category: Technical Designs
-order: 1
+order: 3
 ---
 
 Author: Bart Mehlkop

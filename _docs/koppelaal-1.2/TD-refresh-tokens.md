@@ -1,7 +1,7 @@
 ---
-title: Refresh Token 
+title: Mobile Launch Sequence
 category: Technical Designs
-order: 1
+order: 3
 ---
 
 Author: Bart Mehlkop
@@ -17,12 +17,6 @@ Versie: 0.1
     <td>Auteur</td>
     <td>Aanpassingen</td>
   </tr>
-  <tr>
-    <td>0.1</td>
-    <td>02-12-2016</td>
-    <td>Bart Mehlkop</td>
-    <td>First Draft</td>
-  </tr>
 
 </table>
 
@@ -30,27 +24,100 @@ Versie: 0.1
 
 [[TOC]]
 
-# Versioning[edit]
-In Koppeltaal, all messages indicate an update to or creation of a resource. Since multiple applications may have an internal copy of a resource, applications must be aware of which version of the resource they are updating. Otherwise they risk overwriting changes made by another application. In order to guard against this type of error Koppeltaal uses a versioning system.
+# Mobile Launch Sequence
+The Koppeltaal Mobile Launch sequence has a lot of similarities with the Web Launch sequence described above, but has some subtle differences:
 
-Koppeltaal will override any unprocessed older versions of messages that are still in a queue when a new version is received. This is done to reduce the number of messages an application has to parse.
+The initial call is made to the MobileLaunch endpoint, and is used to retrieve a Mobile Activation Code.
+This call must also be made with the credentials of the calling application.
 
-Note that this means that an application can not rely on receiving any intermediate messages. For example, it is not guaranteed that a client portal receives status updates of an activity for each change from ‘available’ to ‘in progress’ to ‘finished’. If the activity is started and finished before the client portal retrieves its messages, any UpdateCarePlanActivityStatus messages (as well as any triggered CreateOrUpdateCarePlan messages) will list the activity status as ‘finished’ instead of ‘in progress’.
+https://ggz.koppeltaal.nl/OAuth2/Koppeltaal/MobileLaunch?client_id=RANJKA&patient=https%3A%2F%2Fggzeindhoven.minddistrict.com%2FPatient%2F72308&user=https%3A%2F%2Fggzeindhoven.minddistrict.com%2FRelatedPerson%2F452&resource=RANJKA
+For a detailed description of the URL and is parameters, see the description of the Web Launch Sequence above.
 
+The response will be an activation code and the expiry time of the activation code in days:
 
-Sending a message[edit]
-Each message received by the Koppeltaal is given a version. Any other applications that sends the same type of message for a resource must subscribe to that type of message in order to keep the internally stored resource up to date.
+{"activation_code":"593740","expires_in":7}
+This activation code must be provided to the person that wants to use the mobile game app.
 
-Each message must specify what version is the latest known to the sending application. The Koppeltaal will check this version against the latest version that is has received and reject a message if the versions do not match. This is known as a concurrent modification error.
+When the Mobile App starts, it will prompt the user for an activation code
+The Mobile App must have a hard-coded or configurable FHIR Base URL for the Koppeltaal Server, since it cannot be passed in the initial launch call.
+The app should retrieve the Authorize and Token endpoints from the Koppeltaal Server by retrieving the Conformance from the Koppeltaal Server, as described above.
+The Mobile app will call the Authorize endpoint with the Mobile Activation Code as Launch Code:
+https://ggz.koppeltaal.nl/FHIR/Authorize?
+response_type=code&
+client_id=RANJKA&
+redirect_uri=http%3A%2F%2Ftest.kickass.ranjgames.com%2Fbuilds%2Frev-1005%2Findex-game.html%2FAfter-Auth&
+scope=patient%2F*.read%20launch%3A593740&
+state=98wrghuwuogerg97
+The Koppeltaal server will return an authorization_code as a JSON response:
 
+{"authorization_code":"0db34c09-201b-41da-af41-deee89302f4b"}
+Finally, the Mobile App will retrieve a token from the Koppeltaal Server in exactly the same way as it is done in the Web Launch Sequence. The returned Access Token can subsequently be used to receive message from and submit messages to the Koppeltaal Server.
+A mobile launch code can only be used once.
 
-Obtaining the current version number[edit]
-An application must provide the version of the resource that the update was based on when sending a message. There are two ways to obtain this number, each for a different situation.
+# Use of Refresh Tokens
+If configured in the Koppeltaal server for a specific ClientId, the Koppeltaal Server will also return a refresh_token in the reply to the token request:
+```xml
 
-When sending a message, the Koppeltaal Server will return the generated version number as part of the reply. The application may store the returned version number to re-use later.
+{
+"access_token": "f3d421f4-d036-468a-b9aa-de9c777ede95",
+"token_type": "Bearer",
+"expires_in": 900,
+"refresh_token": "e54a2533-df44-4e32-bc4d-820c05b2aed0",
+"scope": "patient/*.*",
+"patient": "https://ggzeindhoven.minddistrict.com/Patient/72308",
+"resource": "https://ggzeindhoven.minddistrict.com/RelatedPerson/452"
+}
+```
+The expiry time specified in the attribute expires_in will usually be 15 minutes or shorter, indicating that the access_token will expire sooner, and will need to be refreshed after it has expired. The client will be informed about an expired access_token through the code "expired" in the OperationOutcome:
 
-If there are multiple applications that may send messages with the same focal resource, each will have to subscribe to the message type in order to receive updates (and their version numbers) from the other applications.
+xml:
+```xml
+<OperationOutcome xmlns="http://hl7.org/fhir">
+<issue>
+<type>
+<system value="http://hl7.org/fhir/issue-type" />
+<code value="expired" />
+</type>
+<details value="Authentication failed: Bearer token 98510180-8d78-4987-9e27-c958c449f383 has expired at 2016/02/10 22:54:51" />
+</issue>
+</OperationOutcome>
+```
+json:
+```json
+{
+"resourceType": "OperationOutcome",
+"issue": [{
+"type": {
+"system": "http://hl7.org/fhir/issue-type",
+"code": "expired"
+},
+"details": "Authentication failed: Bearer token 98510180-8d78-4987-9e27-c958c449f383 has expired at 2016/02/10 22:54:51"
+}]
+}
+```
+After receiving this reply, the client must get a new access_token and refresh_token from the Token-endpoint as retrieved in the Conformance, using the refresh_token that was previously received:
 
-When a resource is updated for the first time the sending application should specify no version number. When a resource is first created the sending application does not yet know a version. In that case the sending application should not specify the version number and the Koppeltaal will generate the first version. If another version is already known the Koppeltaal will reject the message in the same way as if an out-of-date version was given.
+POST https://localhost/Petrel244/OAuth2/VHProvisioning/Token
+Authorization: Basic UU1OYXRpdmVBcHA6V2hvQHJlVTEyMz8=
+Content-Type: application/x-www-form-urlencoded
 
+grant_type=refresh_token&refresh_token=e54a2533-df44-4e32-bc4d-820c05b2aed0
+The Koppeltaal Server will reply with a token response with the same fields as the original token response, containing a new Access_token as well as a new refresh_token:
+```json
+{
+"access_token": "41aeeebe-14d3-46e9-a994-54e9b5028140",
+"token_type": "Bearer",
+"expires_in": 900,
+"refresh_token": "c9141239-aec5-4e0a-af51-7c307d559184"
+}
+```
+# Possible error codes:
 
+| Status code	| Issue code	| Description
+| 400	| invalid_request	 | The request is missing a required parameter, includes an unsupported parameter value (other than grant type), repeats a parameter, includes multiple credentials, utilizes more than one mechanism for authenticating the client, or is otherwise malformed.
+| 400 or 401	| invalid_client	| Client authentication failed (e.g., unknown client, no client authentication included, or unsupported authentication method). The authorization server MAY return an HTTP 401 (Unauthorized) status code to indicatewhich HTTP authentication schemes are supported. If the client attempted to authenticate via the "Authorization" request header field, the authorization server MUST respond with an HTTP 401 (Unauthorized) status code and include the "WWW-Authenticate" response header field matching the authentication scheme used by the client.
+| 400 or 401	| invalid_grant	| The provided authorization grant (e.g., authorization code, resource owner credentials) or refresh token is invalid, expired, revoked, does not match the redirection URI used in the authorization request, or was issued to another client.
+| 401 | 	unauthorized_client |	The authenticated client is not authorized to use this authorization grant type.
+| 401	| unsupported_grant_type |	The authorization grant type is not supported by the authorization server.
+| 400	| invalid_scope	 | The requested scope is invalid, unknown, malformed, or exceeds the scope granted by the resource owner.
+| 400	| unsupported_token_type	| The authorization server does not support the revocation of the presented token type. That is, the client tried to revoke an access token on a server not supporting this feature.

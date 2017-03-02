@@ -29,3 +29,5 @@ Supplier
 
 These roles may distinguish specific subroles to improve the precision of the performance and collaboration of koppeltaal activities.
 
+
+

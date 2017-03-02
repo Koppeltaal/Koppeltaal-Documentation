@@ -1,6 +1,6 @@
 ---
-title: Koppeltaal 1.2
-category: Specification
+title: Koppeltaal Design
+category: Technical Designs
 order: 1
 ---
 

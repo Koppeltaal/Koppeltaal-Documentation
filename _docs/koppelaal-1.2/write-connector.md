@@ -9,43 +9,45 @@ order: 1
 ## About this guide
 This guide assumes the reader knows Koppeltaal terminology. One source for that kind of knowledge is the [Technical Design Document]. This document is explicitly not technical, but rather a descriptive/explanatory guide on how to write a connector. This guide tries do that by answering questions developers will likely have.
 
-## When to write a connector?
-Every application that communicates with the Koppeltaal server will need a layer that performs communication between applications over the Koppeltaal server. A Koppeltaal connector will provide that layer to be reused by other applications in the form of a library (figure 1).
+## What is a Koppeltaal connector?
+Every application that communicates with the Koppeltaal server will need code to do this. A Koppeltaal "connector" provides reusable code in the form of a library that provides this functionality (figure 1). These connectors are open source and hosted on Github.com.
 
 ![figure 1]
 **Figure 1**. _Every application communicates with the Koppeltaal server through a connector that encapsulates most of the complexity._
 
-If your application needs functionality in an existing connector that has not been implemented, feel free to contribute to the connector project and create a pull request at the repository at the [Koppeltaal organization on GitHub]. When no connector exists with an API in the programming language of the application you want to connect, you can write one yourself. 
+### Existing connectors, adding functionality, creating a new connector
+You may be able to use an existing connector in the language of your choice that functionally covers all needs you have. If your application needs functionality in an existing connector that has not been implemented, feel free to contribute to the connector project and create a pull request at the repository at the [Koppeltaal organization on GitHub]. When no connector exists in the programming language that you need, you can write one yourself. 
 
-## Connector repository and source code
-Since the connector will be used by other parties and will also be handed over to the Koppeltaal Community at some point, it’s important that the source code is clear and readable for other developers that want to debug or add features in the (near) future.
+Because these connectors are open source it is important that the source code is clear and readable for other developers that may need to debug or want to add features.
 
-A git repository can be created at the [Koppeltaal organization on GitHub]. Sources of connectors in other programming languages can be viewed there as well.
+Existing connectors can be found at the [Koppeltaal organization on GitHub]. If you want to contribute a connector a new repository can be created there as well.
 
-## Where to start
-- Find out which FHIR resources need to be communicated about.
-- Find out if there is a FHIR model library for my programming language.
-- Determine which version of Koppeltaal should be supported.
+In this document we'll describe the process for starting a connector from scratch. When extending an existing connector some steps can (obviously) be skipped.
+
+## Before you begin
+- Which FHIR resources need to be supported?
+- Is there a FHIR model library for programming language X?
+- Determine which version of Koppeltaal to support
 - Study the sample requests to the Koppeltaal server
 
-### Supported FHIR resources
-This depends on the needs of the application(s) that will use the connector. It is possible to support a subset of `Message` types, to which an application subscribes through the administration console on the Koppeltaal [Edge] / [Next] / [Stable] server.
+### Which FHIR resources to support
+The needs of the application(s) that use the connector will determine which FHIR resources the connector needs to support. It is not necessary for a connector to be able to handle all `Message` types. In the administration console on the Koppeltaal server an application can be subscribed to specific message types.
 
-### FHIR libraries
-HL7 provides so called _Reference Implementations_ for some programming languages. These are basic libraries that contain FHIR resource models and validation schemas, for more convenient implementation of a connector: [DSTU1] / [current version].
+### FHIR model libraries
+HL7.org provides so called _Reference Implementations_ for a small number of programming languages. These are basic libraries that contain FHIR resource models and validation schemas that can be used in writing a connector: [DSTU1] / [current version].
 
-### Koppeltaal versions
-The first release of the connector should support the current version of Koppeltaal. Subsequent releases of the connector should still support older implementations of Koppeltaal.
+### Which Koppeltaal versions to support
+The first release of the connector should support the current version of Koppeltaal. Subsequent releases of the connector should still support older implementations of Koppeltaal. The current version is the [latest release of the Koppeltaal server].
+
+Example: the current version of Koppeltaal is 1.2.1. When we write a new connector it should support that version of Koppeltaal. Any subsequent releases of this new connector should support 1.2.1 and up.
 
 ### Sample requests
-Koppeltaal provides a [SoapUI project] on GitHub that contains sample requests for implementers gain more knowlegde about the exact structure of a message. The [description of the SoapUI project] contains more in-depth information about how to make use of it. It is recommended to use these examples, when debugging your own requests.
+You can find examples of messages in this [SoapUI project]. The [description of the SoapUI project] contains more in-depth information about how to use this project. We recommend using these examples to debug your own requests.
 
 ## Connector responsibilities
-A Koppeltaal connector is a library to be used by an application written in a particular programming language. It communicates directly with the Koppeltaal Server REST interface, while exposing a simple API (e.g., a [Facade]) to the application, exchanging custom objects. Koppeltaal specific complexity should be handled by the connector - e.g., composing a message that conforms to Koppeltaal ontology.
+A Koppeltaal connector communicates directly with the Koppeltaal Server REST interface (using JSON or XML), while exposing a simple API (e.g., a [Facade]) to the application. Koppeltaal specific complexity should be handled by the connector - e.g., composing a message that conforms to Koppeltaal ontology.
 
-_Note_: The Koppeltaal server supports both JSON and XML.
-
-Obviously, the functionalities a connector should provide depends on the applications that use it. However, we think there is a set of basic functionalities that a connector in general should support.
+Which functionalities a connector should provide depends on the applications that use it. However, we think there is a set of basic functionalities that each connector should support.
 
 - Retrieve the `Conformance Statement`
 - Send/retrieve `Messages` to/from a domain
@@ -53,36 +55,40 @@ Obviously, the functionalities a connector should provide depends on the applica
     - Extract FHIR Resources from the Message bundle (receive)
     - Update the _ProcessingStatus_ of a Message
 - Retrieve and update `Activity Definitions`
-- Launch a user to a specific application
+- "Launch" a user to a specific application
 
-Additionally, a connector could also support the following functionality:
+A connector can also support the following functionality:
 
 - Implement support for _NewMessage_ push notifications, using [SignalR]
 - Using the `Storage Service` as data persistence utility
 
-The connector will achieve most of this functionality by sending/retrieving Messages according to Koppeltaal specifications.
+The connector will have most of this functionality simply by sending/retrieving Messages according to Koppeltaal specifications.
 
 ### Basic features
 
 #### The Conformance Statement
-A `Conformance Statement` is a set of capabilities of a FHIR Server. The conformance statement of the Koppeltaal Server contains information required for the OAuth2 implementation of the single sign on. Besides the capabilities, it contains a number of important endpoints that are needed for certain actions. This statement can be requested via _${koppeltaal.server.url}/FHIR/Koppeltaal/metadata_ (e.g. http://edgekoppeltaal.vhscloud.nl/FHIR/Koppeltaal/metadata).
+A `Conformance Statement` is the set of capabilities of a FHIR Server. The conformance statement of the Koppeltaal Server contains information required for the OAuth2 implementation of [the single sign on]. The conformance statement also contains a number of important endpoints that are needed for certain actions. This statement can be requested via _${koppeltaal.server.url}/FHIR/Koppeltaal/metadata_ (e.g. http://edgekoppeltaal.vhscloud.nl/FHIR/Koppeltaal/metadata).
 The connector must extract these endpoints from the conformance statement and use them for other actions. For instance, to request authorization for the launch of a game, the authorization endpoint must be read from the statement.
 
 #### Koppeltaal Messages
-Communication with the Koppeltaal server consists largely of exchanging `Messages`. A Koppeltaal message consists of a bundle of `FHIR Resources`. More information on the [FHIR resources] used in Koppeltaal.
-The first resource in the bundle is the `MessageHeader`, which should always be present. The header contains important information about the content of the message, like the [message event types]. This information can be used to convert the resources in the bundle to a format that can be further processed by an application - e.g. an object holding all the important values to an application.
+Communication with the Koppeltaal server consists largely of exchanging `Messages`. A single Koppeltaal message consists of a "bundle" of `FHIR Resources`. More information on the [FHIR resources] used in Koppeltaal.
 
-Please keep in mind that the connector should be able to exchange `Messages` using `Basic Authentication` as well as an `OAuth2 Bearer Token`. Using a `Bearer Token` implicitly only requests information for the user bound to the `Bearer Token`. Requesting patient-specific `Messages` with `Basic Authentication` requires a `patient` parameter.
+The first resource in the bundle is the `MessageHeader`, which should always be present. The header contains important information about the content of the message like the [message event types]. A connector can use this information to convert the resources in the bundle so an application can use them - e.g. an object that holds the values that are relevant to an application.
 
-_Note_: When building an outgoing message, mind that the MessageHeader should be the first Resource of the bundle, then add further resources.
+_Note_: When building an outgoing message make sure that the MessageHeader is the first Resource of the bundle.
+
+##### Message authentication
+A connector should be able to exchange `Messages` using `Basic Authentication` as well as an `OAuth2 Bearer Token`. Using a `Bearer Token` implicitly only requests information for the user bound to the `Bearer Token`. Requesting patient-specific `Messages` with `Basic Authentication` requires a `patient` parameter.
 
 #### Message ProcessingStatus
-It is important that the `ProcessingStatus` is changed when [handling messages]. That way the Koppeltaal server knows a message has been handled. Make sure the connector can mark a message as `Failed`, also providing an exception description.
+When [handling messages] it is important that the `ProcessingStatus` of a message is changed. That way the Koppeltaal server knows a message has been handled. A connector should also be able to mark a message as `Failed` and provide an exception description to go along with this state.
 
-#### Activity Definitions
-`ActivityDefinitions` are treated somewhat different than the rest of the FHIR resources. They are of resource type `Other` and the content is as such not defined in the FHIR spec. In Koppeltaal, they should be created or updated without the use of Message resource bundles. A simple http POST request containing the [ActivityDefinition] in the request body suffices to create an ActivityDefinition.
+#### ActivityDefinitions
+`ActivityDefinitions` are treated somewhat different than the rest of the FHIR resources. They are of resource type `Other` and the content is as such not defined in the FHIR spec. In Koppeltaal, they should be created or updated without the use of Message resource bundles. To create an ActivityDefinition send a simple HTTP POST request containing the [ActivityDefinition] in the request body.
 
-#### Launching Users To An Application
+Updating ActivityDefinitions ??
+
+#### "Launching" Users To An Application
 Koppeltaal provides a [Web Launch Sequence]. This allows users to login to an application and launch a `Resource`. The launch allows users to work on a `CarePlan(Sub)Activity`. 
 
 ### Additional features
@@ -176,8 +182,9 @@ The Koppeltaal team is available for questions on [Slack chat].
 [Web Launch Sequence]:                https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2#Web_Launch_Sequence
 [handling messages]:                  https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2#Updating_the_ProcessingStatus_for_a_Message
 [SignalR]:                            https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2.1#Receiving_a_notification_when_a_new_message_becomes_available
-[DSTU1]:                              http://www.hl7.org/FHIR/DSTU1/downloads.html
-[current version]:                    http://www.hl7.org/FHIR/downloads.html
+[DSTU1]:                              http://www.hl7.org/FHIR/DSTU1/downloads.html#refimpl
+[current version]:                    http://www.hl7.org/FHIR/downloads.html#refimpl
+[latest release of the Koppeltaal server]: https://github.com/Koppeltaal/Koppeltaal-Server/releases
 
 [comment]: # (Below a list of keys and images used in this document)
 

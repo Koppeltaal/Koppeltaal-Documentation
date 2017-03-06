@@ -1,13 +1,21 @@
 ---
 title: Write a Koppeltaal Connector
 category: How-to
-order: 2
+order: 1
 ---
 
 # How to write a Koppeltaal connector
 
 ## About this guide
 This guide assumes the reader knows Koppeltaal terminology. One source for that kind of knowledge is the [Technical Design Document]. This document is explicitly not technical, but rather a descriptive/explanatory guide on how to write a connector. This guide tries do that by answering questions developers will likely have.
+
+## When to write a connector?
+Every application that communicates with the Koppeltaal server will need a layer that performs communication between applications over the Koppeltaal server. A Koppeltaal connector will provide that layer to be reused by other applications in the form of a library (figure 1).
+
+![figure 1]
+**Figure 1**. _Every application communicates with the Koppeltaal server through a connector that encapsulates most of the complexity._
+
+If your application needs functionality in an existing connector that has not been implemented, feel free to contribute to the connector project and create a pull request at the repository at the [Koppeltaal organization on GitHub]. When no connector exists with an API in the programming language of the application you want to connect, you can write one yourself. 
 
 ## Connector repository and source code
 Since the connector will be used by other parties and will also be handed over to the Koppeltaal Community at some point, it’s important that the source code is clear and readable for other developers that want to debug or add features in the (near) future.
@@ -21,7 +29,7 @@ A git repository can be created at the [Koppeltaal organization on GitHub]. Sour
 - Study the sample requests to the Koppeltaal server
 
 ### Supported FHIR resources
-This depends on the needs of the application(s) that will use the connector. It is possible to support a subset of `Message` types, to which an application subscribes in the [administration console] on the Koppeltaal server.
+This depends on the needs of the application(s) that will use the connector. It is possible to support a subset of `Message` types, to which an application subscribes through the administration console on the Koppeltaal [Edge] / [Next] / [Stable] server.
 
 ### FHIR libraries
 HL7 provides so called _Reference Implementations_ for some programming languages. These are basic libraries that contain FHIR resource models and validation schemas, for more convenient implementation of a connector: [DSTU1] / [current version].
@@ -36,9 +44,6 @@ Koppeltaal provides a [SoapUI project] on GitHub that contains sample requests f
 A Koppeltaal connector is a library to be used by an application written in a particular programming language. It communicates directly with the Koppeltaal Server REST interface, while exposing a simple API (e.g., a [Facade]) to the application, exchanging custom objects. Koppeltaal specific complexity should be handled by the connector - e.g., composing a message that conforms to Koppeltaal ontology.
 
 _Note_: The Koppeltaal server supports both JSON and XML.
-
-![figure 1]
-**Figure 1**. _Each application communicates with the Koppeltaal server through a connector that encapsulates most of the complexity._
 
 Obviously, the functionalities a connector should provide depends on the applications that use it. However, we think there is a set of basic functionalities that a connector in general should support.
 
@@ -71,7 +76,7 @@ Please keep in mind that the connector should be able to exchange `Messages` usi
 
 _Note_: When building an outgoing message, mind that the MessageHeader should be the first Resource of the bundle, then add further resources.
 
-#### Setting Message ProcessingStatus
+#### Message ProcessingStatus
 It is important that the `ProcessingStatus` is changed when [handling messages]. That way the Koppeltaal server knows a message has been handled. Make sure the connector can mark a message as `Failed`, also providing an exception description.
 
 #### Activity Definitions
@@ -134,10 +139,8 @@ Exact details TBD for connector projects, but a general outline would be:
 - Tests
 - Release (major / minor)
 
-## Setup a testing environment
-
 ### Domain configuration for testing purposes
-Configuring a domain to test the connector.
+Configuring a domain to test the connector integration with the Koppeltaal server.
 
 - _TestConnector_ domain is available on the edge server
 - Register the connector (as an application) to this domain through [Koppeltaal support]
@@ -155,26 +158,27 @@ The Koppeltaal team is available for questions on [Slack chat].
 
 [comment]: # (Below a list of keys and hyperlinks used in this document)
 
-[Technical Design Document]: https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2
-[Koppeltaal organization on GitHub]: https://github.com/Koppeltaal
-[FHIR resources]: https://koppeltaal.github.io/documentation/koppelaal-1.2/specification/#message-content-ontology
-[Message event types]: https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2#Messages
-[storage service]: https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2#Storing_data_in_the_storage_service
-[GetNextNewAndClaim]: https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2#Retrieving_messages
-[ActivityDefinition]: https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2#Retrieving_and_updating_activity_definitions
-[Web Launch Sequence]: https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2#Web_Launch_Sequence
-[ProcessingStatus]: https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2#Updating_the_ProcessingStatus_for_a_Message
-[DSTU1]: http://www.hl7.org/FHIR/DSTU1/downloads.html
-[current version]: http://www.hl7.org/FHIR/downloads.html
-[handling messages]: https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2#Updating_the_ProcessingStatus_for_a_Message
-[administration console]: https://edgekoppeltaal.vhscloud.nl/portal/login.aspx
-[Facade]: https://en.wikipedia.org/wiki/Facade_pattern
-[Slack chat]: https://koppeltaal-dev.slack.com/messages/questions-remarks/details/
-[SignalR]: https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2.1#Receiving_a_notification_when_a_new_message_becomes_available
-[SoapUI project]: https://github.com/Koppeltaal/Koppeltaal-Server/tree/master/tests/Connectors
-[description of the SoapUI project]: https://www.koppeltaal.nl/wiki/Registration_to_Test_Environment#Connecting_to_the_Koppeltaal_test_server_using_SOAP_UI
-[Koppeltaal support]: https://www.koppeltaal.nl/support
+[Facade]:                             https://en.wikipedia.org/wiki/Facade_pattern
+[Edge]:                               https://edgekoppeltaal.vhscloud.nl/portal/login.aspx
+[Next]:                               https://nextkoppeltaal.vhscloud.nl/portal/login.aspx
+[Stable]:                             https://stablekoppeltaal.vhscloud.nl/portal/login.aspx
+[Koppeltaal organization on GitHub]:  https://github.com/Koppeltaal
+[SoapUI project]:                     https://github.com/Koppeltaal/Koppeltaal-Server/tree/master/tests/Connectors
+[Slack chat]:                         https://koppeltaal-dev.slack.com/messages/questions-remarks/details/
+[FHIR resources]:                     https://koppeltaal.github.io/documentation/koppelaal-1.2/specification/#message-content-ontology
+[Koppeltaal support]:                 https://www.koppeltaal.nl/support
+[description of the SoapUI project]:  https://www.koppeltaal.nl/wiki/Registration_to_Test_Environment#Connecting_to_the_Koppeltaal_test_server_using_SOAP_UI
+[Technical Design Document]:          https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2
+[Message event types]:                https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2#Messages
+[storage service]:                    https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2#Storing_data_in_the_storage_service
+[GetNextNewAndClaim]:                 https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2#Retrieving_messages
+[ActivityDefinition]:                 https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2#Retrieving_and_updating_activity_definitions
+[Web Launch Sequence]:                https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2#Web_Launch_Sequence
+[handling messages]:                  https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2#Updating_the_ProcessingStatus_for_a_Message
+[SignalR]:                            https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2.1#Receiving_a_notification_when_a_new_message_becomes_available
+[DSTU1]:                              http://www.hl7.org/FHIR/DSTU1/downloads.html
+[current version]:                    http://www.hl7.org/FHIR/downloads.html
 
 [comment]: # (Below a list of keys and images used in this document)
 
-[figure 1]: /documentation/images/write_connector__figure1.png "The application exchanges with Koppeltaal through a connector."
+[figure 1]: write_connector__figure1.png "The application exchanges with Koppeltaal through a connector."

@@ -88,8 +88,8 @@ When [handling messages] it is important that the `ProcessingStatus` of a messag
 
 Updating ActivityDefinitions ??
 
-#### "Launching" Users To An Application
-Koppeltaal provides a [Web Launch Sequence]. This allows users to login to an application and launch a `Resource`. The launch allows users to work on a `CarePlan(Sub)Activity`. 
+#### "Launching" Users To An Application 
+Koppeltaal provides a [Web Launch Sequence]. Functionally this is like a single sign on which also navigates to a specific location in the target system. The Web Launch Sequence allows users to login to an application and launch a `Resource`. The launch allows users to work on a `CarePlan(Sub)Activity`.
 
 ### Additional features
 
@@ -98,7 +98,7 @@ More information following. [Storage service]
 
 #### Push Notifications: (since 1.2.1)
 
-For applications that require real-time updates from Koppeltaal, it is advised **not** to use long-polling. Koppeltaal supports push notifications to applications when a new Messages is available. Since Koppeltaal v1.2.1 there are two options to use the push mechanism. Both options are preferred over polling to reduce server load on both sides:
+For applications that require real-time updates from Koppeltaal, it is advised **not** to use long-polling. Koppeltaal supports pushing notifications to applications when a new Message is available. Since Koppeltaal v1.2.1 there are two ways of using the push mechanism. Both options are preferred over polling to reduce server load on both sides:
 
 - Implement [SignalR] with subscription mechanism for the connector
 - Configure a REST webhook for an application exposing a REST endpoint
@@ -108,18 +108,26 @@ When available, use a SignalR library to aid in creating a _HubConnection_ to th
 The connector then triggers the internal [GetNextNewAndClaim] action to fetch the new message(s).
 
 ##### REST webhook (application feature)
-The application should expose a RESTful endpoint for the configurable webhook, configured in the _admin console of the application_. The Koppeltaal server makes an HTTP request to the URI configured for the webhook.
+The application that connects to the Koppeltaal domain exposes a RESTful endpoint, a webhook. The URL for this webhook can be configured in the _admin console of the application_. The Koppeltaal server makes an HTTP request to the URI configured for the webhook.
 The application then triggers the [GetNextNewAndClaim] action in the connector to fetch the new message(s).
 
-## Quality assessment
-The connector code will be assessed by Koppeltaal on a number of matters, such as:
+!! Let's add a screenshot of where to configure that. Or a Click > Click > Click path on how to get there.
+
+## Connector quality assessment
+When you create a Koppeltaal connector it is not automatically accepted as an official connector, it will be vetted by Koppeltaal first.
+The code will be assessed by Koppeltaal on a number of matters, such as:
 
 - Code clarity and readability
 - Unit Test availability
 - Technical documentation
 
+?? Who or what do we mean with "Koppeltaal" up here? Stichting Koppeltaal? Who specifically then? Do people first create their own repo and then they move their code the KT organisation on GitHub?
+
 ### Code clarity and readability
-Basically self explanatory. Remind yourself while developing, that the connector code is open source and transferred to the community at some point.
+Make sure the code is consistent, clear and readable.
+Remind yourself while developing, that the connector code is open source and will be transferred to the community at some point.
+
+?? What's the process for this?
 
 ### Integration testing
 There is a domain specifically for connectors to execute their integration tests with the Koppeltaal server (called _TestConnector_). Some useful tests:
@@ -131,7 +139,7 @@ There is a domain specifically for connectors to execute their integration tests
 - Update `ActivityStatus` on `CarePlan(Sub)Activity`
 
 ### Technical documentation
-This documentation should be written in a `README.md` file, placed in the root of the project. This should contain the used technologies to develop of the connector, including relevant technical details and caveats, if any. How to use the connector in an application and which features are supported. Readme examples are available in the connector repositories on the [Koppeltaal organization on GitHub].
+The documentation for a connector should be written in a `README.md` file, placed in the root of the project. This should contain the technologies used to develop the connector, including relevant technical details and caveats, if any. It should also document how to use the connector in an application and which features are supported. Readme examples are available in the connector repositories on the [Koppeltaal organization on GitHub].
 
 ## Development process
 

@@ -4,9 +4,15 @@ category: How-to
 order: 4
 ---
 
+Q: What can I use Koppletaal for?
+
+A: Please follow functional example. There is more information available inside the documentation package... [Functional example](https://koppeltaal.github.io/documentation/templates/Koppeltaal%20FuncFlow.pdf)
+
+
+
 Q: How can one start work with Koppeltaal?
 
-A: Please follow the "How to start" documentation [https://www.koppeltaal.nl/homepage/how-to-start] (working with Koppeltaal)
+A: Please follow the "How to start" documentation [working with Koppeltaal](https://www.koppeltaal.nl/homepage/how-to-start)
 
 ----------
 

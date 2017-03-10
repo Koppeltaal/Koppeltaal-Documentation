@@ -15,8 +15,12 @@ Every application that communicates with the Koppeltaal server will need code to
 ![figure 1]
 **Figure 1**. _Every application communicates with the Koppeltaal server through a connector that encapsulates most of the complexity._
 
+<<<<<<< HEAD:_docs/koppelaal-1.2/write-connector.md
 ### Existing connectors, adding functionality, creating a new connector
 You may be able to use an existing connector in the language of your choice that functionally covers all needs you have. If your application needs functionality in an existing connector that has not been implemented, feel free to contribute to the connector project and create a pull request at the repository at the [Koppeltaal organization on GitHub]. When no connector exists in the programming language that you need, you can write one yourself. 
+=======
+If your application needs functionality in an existing connector that has not been implemented, feel free to contribute to the connector project and create a pull request at the repository at the [Koppeltaal organization on GitHub]. When no connector exists with an API in the programming language of the application you want to connect, you can write one yourself.
+>>>>>>> develop:_docs/koppeltaal-1.2/write-connector.md
 
 Because these connectors are open source it is important that the source code is clear and readable for other developers that may need to debug or want to add features.
 
@@ -90,6 +94,7 @@ Updating ActivityDefinitions ??
 
 #### "Launching" Users To An Application 
 Koppeltaal provides a [Web Launch Sequence]. Functionally this is like a single sign on which also navigates to a specific location in the target system. The Web Launch Sequence allows users to login to an application and launch a `Resource`. The launch allows users to work on a `CarePlan(Sub)Activity`.
+
 
 ### Additional features
 
@@ -179,7 +184,7 @@ The Koppeltaal team is available for questions on [Slack chat].
 [Koppeltaal organization on GitHub]:  https://github.com/Koppeltaal
 [SoapUI project]:                     https://github.com/Koppeltaal/Koppeltaal-Server/tree/master/tests/Connectors
 [Slack chat]:                         https://koppeltaal-dev.slack.com/messages/questions-remarks/details/
-[FHIR resources]:                     https://koppeltaal.github.io/documentation/koppelaal-1.2/specification/#message-content-ontology
+[FHIR resources]:                     https://koppeltaal.github.io/documentation/koppeltaal-1.2/specification/#message-content-ontology
 [Koppeltaal support]:                 https://www.koppeltaal.nl/support
 [description of the SoapUI project]:  https://www.koppeltaal.nl/wiki/Registration_to_Test_Environment#Connecting_to_the_Koppeltaal_test_server_using_SOAP_UI
 [Technical Design Document]:          https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2

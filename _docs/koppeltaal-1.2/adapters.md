@@ -1,15 +1,10 @@
 ---
 title: Adapter specifications
-category: Adapters specifications
-order: 2
+category: User Guides
+order: 1
 ---
 
-
-
-
 # Adapters
-
-
 
 
 [[TOC]]

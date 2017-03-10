@@ -1,7 +1,7 @@
 ---
 title: Environments
-category: Help
-order: 1
+category: How-to
+order: 4
 ---
 Koppeltaal Server InternalThese environments are part of the Koppeltaal Server development process. They are not accessible for third parties.
 

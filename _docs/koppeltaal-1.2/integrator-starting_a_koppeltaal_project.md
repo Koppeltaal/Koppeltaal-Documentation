@@ -1,7 +1,7 @@
 ---
 title: Starting a Koppeltaal project
 category: Integrator
-order: 5
+order: 1
 ---
 # Starting a Koppeltaal project
 

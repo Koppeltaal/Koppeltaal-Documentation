@@ -1,7 +1,7 @@
 ---
 title: How will it work?
 category: Integrator
-order: 4
+order: 1
 ---
 # How will it work?
 *Alternative title: 'Koppeltaal Server environments for integration development'*

@@ -1,7 +1,7 @@
 ---
 title: Write a Koppeltaal Connector
 category: How-to
-order: 1
+order: 4
 ---
 
 # How to write a Koppeltaal connector

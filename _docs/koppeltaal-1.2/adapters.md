@@ -1,7 +1,7 @@
 ---
 title: Adapter specifications
 category: User Guides
-order: 1
+order: 2
 ---
 
 # Adapters

@@ -1,7 +1,7 @@
 ---
 title: User Guide - Release Flow
 category: User Guides
-order: 1
+order: 2
 ---
 
 ## Project test & release flow

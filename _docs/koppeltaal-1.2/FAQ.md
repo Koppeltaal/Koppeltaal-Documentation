@@ -1,7 +1,7 @@
 ---
 title: Frequently Asked Questions
-category: Help
-order: 1
+category: How-to
+order: 4
 ---
 
 Q: How can one start work with Koppeltaal?

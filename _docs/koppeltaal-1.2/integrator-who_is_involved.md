@@ -1,7 +1,7 @@
 ---
 title: Who is involved in a Koppeltaal project
 category: Integrator
-order: 2
+order: 1
 ---
 
 Various parties are involved in Koppeltaal in general.

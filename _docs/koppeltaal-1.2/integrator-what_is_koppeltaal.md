@@ -1,7 +1,7 @@
 ---
 title: What is Koppeltaal
 category: Integrator
-order: 3
+order: 1
 ---
 
 The Koppeltaal Server is a system that works like a mailbox. All the registered applications (e-interventions and portals) can drop messages in the mailbox.

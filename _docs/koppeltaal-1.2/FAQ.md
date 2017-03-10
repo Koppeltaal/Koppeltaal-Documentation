@@ -4,6 +4,12 @@ category: Help
 order: 1
 ---
 
+Q: How can one start work with Koppeltaal?
+
+A: Please follow the "How to start" documentation [https://www.koppeltaal.nl/homepage/how-to-start] (working with Koppeltaal)
+
+----------
+
 Q: How long does the Koppeltaal Server keep the messages that are sent through it?
 
 A: The default behaviour of is for any messages to be removed after all recipients have retrieved the message from their queues or after 31 days, whichever comes first.
@@ -56,4 +62,5 @@ Koppeltaal offers a suite of tools to help testing a domain interaction:
 -  Test Portal: A basic Test Portal (to simmulate Care plans and launches) can be integrated in a domain upon a request to support
 
 -  Adapter test cases: each adapter offers a suite of test cases. Please see Koppletaal GIT for more details. 
+
 ----------

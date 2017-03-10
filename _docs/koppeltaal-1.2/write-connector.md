@@ -15,12 +15,8 @@ Every application that communicates with the Koppeltaal server will need code to
 ![figure 1]
 **Figure 1**. _Every application communicates with the Koppeltaal server through a connector that encapsulates most of the complexity._
 
-<<<<<<< HEAD:_docs/koppelaal-1.2/write-connector.md
 ### Existing connectors, adding functionality, creating a new connector
 You may be able to use an existing connector in the language of your choice that functionally covers all needs you have. If your application needs functionality in an existing connector that has not been implemented, feel free to contribute to the connector project and create a pull request at the repository at the [Koppeltaal organization on GitHub]. When no connector exists in the programming language that you need, you can write one yourself. 
-=======
-If your application needs functionality in an existing connector that has not been implemented, feel free to contribute to the connector project and create a pull request at the repository at the [Koppeltaal organization on GitHub]. When no connector exists with an API in the programming language of the application you want to connect, you can write one yourself.
->>>>>>> develop:_docs/koppeltaal-1.2/write-connector.md
 
 Because these connectors are open source it is important that the source code is clear and readable for other developers that may need to debug or want to add features.
 

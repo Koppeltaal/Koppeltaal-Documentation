@@ -15,7 +15,7 @@ Every application that communicates with the Koppeltaal server will need a layer
 ![figure 1]
 **Figure 1**. _Every application communicates with the Koppeltaal server through a connector that encapsulates most of the complexity._
 
-If your application needs functionality in an existing connector that has not been implemented, feel free to contribute to the connector project and create a pull request at the repository at the [Koppeltaal organization on GitHub]. When no connector exists with an API in the programming language of the application you want to connect, you can write one yourself. 
+If your application needs functionality in an existing connector that has not been implemented, feel free to contribute to the connector project and create a pull request at the repository at the [Koppeltaal organization on GitHub]. When no connector exists with an API in the programming language of the application you want to connect, you can write one yourself.
 
 ## Connector repository and source code
 Since the connector will be used by other parties and will also be handed over to the Koppeltaal Community at some point, it’s important that the source code is clear and readable for other developers that want to debug or add features in the (near) future.
@@ -83,7 +83,7 @@ It is important that the `ProcessingStatus` is changed when [handling messages].
 `ActivityDefinitions` are treated somewhat different than the rest of the FHIR resources. They are of resource type `Other` and the content is as such not defined in the FHIR spec. In Koppeltaal, they should be created or updated without the use of Message resource bundles. A simple http POST request containing the [ActivityDefinition] in the request body suffices to create an ActivityDefinition.
 
 #### Launching Users To An Application
-Koppeltaal provides a [Web Launch Sequence]. This allows users to login to an application and launch a `Resource`. The launch allows users to work on a `CarePlan(Sub)Activity`. 
+Koppeltaal provides a [Web Launch Sequence]. This allows users to login to an application and launch a `Resource`. The launch allows users to work on a `CarePlan(Sub)Activity`.
 
 ### Additional features
 
@@ -165,7 +165,7 @@ The Koppeltaal team is available for questions on [Slack chat].
 [Koppeltaal organization on GitHub]:  https://github.com/Koppeltaal
 [SoapUI project]:                     https://github.com/Koppeltaal/Koppeltaal-Server/tree/master/tests/Connectors
 [Slack chat]:                         https://koppeltaal-dev.slack.com/messages/questions-remarks/details/
-[FHIR resources]:                     https://koppeltaal.github.io/documentation/koppelaal-1.2/specification/#message-content-ontology
+[FHIR resources]:                     https://koppeltaal.github.io/documentation/koppeltaal-1.2/specification/#message-content-ontology
 [Koppeltaal support]:                 https://www.koppeltaal.nl/support
 [description of the SoapUI project]:  https://www.koppeltaal.nl/wiki/Registration_to_Test_Environment#Connecting_to_the_Koppeltaal_test_server_using_SOAP_UI
 [Technical Design Document]:          https://www.koppeltaal.nl/wiki/Technical_Design_Document_Koppeltaal_1.2

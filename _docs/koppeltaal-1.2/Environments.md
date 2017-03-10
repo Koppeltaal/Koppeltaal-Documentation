@@ -62,7 +62,7 @@ A typical distribution of versions may look like this:
 NOTE: these are not the actual, current versions.
 
 Environment	Version	Description
-Koppeltaal Server Test	1.1 (revision 401)	The Koppelaal Server development team is developing version 1.1
+Koppeltaal Server Test	1.1 (revision 401)	The Koppeltaal Server development team is developing version 1.1
 Koppeltaal Server Edge	1.1 (revision 400)	Revision 401 did not pass the regression tests and so Edge was not updated.
 Koppeltaal Server Acceptance	1.0.1 (revision 350)	Version 1.0.1 has passed acceptance tests and moved on to the third party acceptance stage.
 Koppeltaal Server Next	1.0.1 (revision 350)	Version 1.0.1 is undergoing tests and is expected to be released soon.

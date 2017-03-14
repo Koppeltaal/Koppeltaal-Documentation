@@ -12,7 +12,7 @@ This guide assumes the reader knows Koppeltaal terminology. One source for that 
 ## What is a Koppeltaal connector?
 Every application that communicates with the Koppeltaal server will need code to do this. A Koppeltaal "connector" provides reusable code in the form of a library that provides this functionality (figure 1). These connectors are open source and hosted on Github.com.
 
-![figure 1]
+![figure1.png]
 **Figure 1**. _Every application communicates with the Koppeltaal server through a connector that encapsulates most of the complexity._
 
 ### Existing connectors, adding functionality, creating a new connector

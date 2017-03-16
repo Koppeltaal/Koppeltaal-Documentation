@@ -31,7 +31,7 @@ In this document we'll describe the process for starting a connector from scratc
 - Study the sample requests to the Koppeltaal server
 
 ### Which FHIR resources to support
-The needs of the application(s) that use the connector will determine which FHIR resources the connector needs to support. It is not necessary for a connector to be able to handle all `Message` types. In the administration console on the Koppeltaal server an application can be subscribed to specific message types.
+The needs of the application(s) that use the connector will determine which FHIR resources the connector needs to support. It is not necessary for a connector to be able to handle all `Message` types. In the Koppeltaal server user interface, an application can be subscribed to specific message types.
 
 ### FHIR model libraries
 HL7.org provides so called _Reference Implementations_ for a small number of programming languages. These are basic libraries that contain FHIR resource models and validation schemas that can be used in writing a connector: [DSTU1] / [current version].
@@ -109,10 +109,8 @@ When available, use a SignalR library to aid in creating a _HubConnection_ to th
 The connector then triggers the internal [GetNextNewAndClaim] action to fetch the new message(s).
 
 ##### REST webhook (application feature)
-The application that connects to the Koppeltaal domain exposes a RESTful endpoint, a webhook. The URL for this webhook can be configured in the _admin console of the application_. The Koppeltaal server makes an HTTP request to the URI configured for the webhook.
+The application that connects to the Koppeltaal domain exposes a RESTful endpoint, a webhook. The URL for this webhook can be configured in the _Koppeltaal server UI_ on application instance level. As application administrator go to "Mijn applicatie" > "Applicatieinstanties" > double click the Fullname of the application instance > "Wijzigen" > set subscription status to "Actief" > fill out the Subscription details. The Koppeltaal server makes an HTTP request to the URI configured for the webhook.
 The application then triggers the [GetNextNewAndClaim] action in the connector to fetch the new message(s).
-
-!! Let's add a screenshot of where to configure that. Or a Click > Click > Click path on how to get there.
 
 ## Connector quality assessment
 When you create a Koppeltaal connector it is not automatically accepted as an official connector, it will be vetted by Koppeltaal first.

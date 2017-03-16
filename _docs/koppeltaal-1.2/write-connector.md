@@ -16,7 +16,7 @@ Every application that communicates with the Koppeltaal server will need code to
 **Figure 1**. _Every application communicates with the Koppeltaal server through a connector that encapsulates most of the complexity._
 
 ### Existing connectors, adding functionality, creating a new connector
-You may be able to use an existing connector in the language of your choice that functionally covers all needs you have. If your application needs functionality in an existing connector that has not been implemented, feel free to contribute to the connector project and create a pull request at the repository at the [Koppeltaal organization on GitHub]. When no connector exists in the programming language that you need, you can write one yourself. 
+You may be able to use an existing connector in the language of your choice that functionally covers all needs you have. If your application needs functionality in an existing connector that has not been implemented, feel free to contribute to the connector project and create a pull request at the repository at the [Koppeltaal organization on GitHub] (you need to request access to view these repositories). When no connector exists in the programming language that you need, you can write one yourself. 
 
 Because these connectors are open source it is important that the source code is clear and readable for other developers that may need to debug or want to add features.
 
@@ -54,7 +54,7 @@ Which functionalities a connector should provide depends on the applications tha
     - Create a Message bundle with FHIR Resources (send)
     - Extract FHIR Resources from the Message bundle (receive)
     - Update the _ProcessingStatus_ of a Message
-- Retrieve and update `Activity Definitions`
+- Retrieve and update `ActivityDefinitions`
 - "Launch" a user to a specific application
 
 A connector can also support the following functionality:

@@ -84,9 +84,8 @@ A connector should be able to exchange `Messages` using `Basic Authentication` a
 When [handling messages] it is important that the `ProcessingStatus` of a message is changed. That way the Koppeltaal server knows a message has been handled. A connector should also be able to mark a message as `Failed` and provide an exception description to go along with this state.
 
 #### ActivityDefinitions
-`ActivityDefinitions` are treated somewhat different than the rest of the FHIR resources. They are of resource type `Other` and the content is as such not defined in the FHIR spec. In Koppeltaal, they should be created or updated without the use of Message resource bundles. To create an ActivityDefinition send a simple HTTP POST request containing the [ActivityDefinition] in the request body.
+`ActivityDefinitions` are treated somewhat different than the rest of the FHIR resources. They are of resource type `Other` and the content is as such not defined in the FHIR spec. In Koppeltaal, they should be created or updated without the use of Message resource bundles. To create an ActivityDefinition send a simple HTTP POST request containing the [ActivityDefinition] in the request body. To update an ActivityDefinition send a HTTP PUT request to the same URI. It is not possible to remove ActivityDefinitions, it is possible to deactivate them.
 
-Updating ActivityDefinitions ??
 
 #### "Launching" Users To An Application 
 Koppeltaal provides a [Web Launch Sequence]. Functionally this is like a single sign on which also navigates to a specific location in the target system. The Web Launch Sequence allows users to login to an application and launch a `Resource`. The launch allows users to work on a `CarePlan(Sub)Activity`.
@@ -99,7 +98,7 @@ More information following. [Storage service]
 
 #### Push Notifications: (since 1.2.1)
 
-For applications that require real-time updates from Koppeltaal, it is advised **not** to use long-polling. Koppeltaal supports pushing notifications to applications when a new Message is available. Since Koppeltaal v1.2.1 there are two ways of using the push mechanism. Both options are preferred over polling to reduce server load on both sides:
+For applications that require real-time updates from Koppeltaal, it is advised **not** to use long-polling. The Koppeltaal server supports pushing notifications to applications when a new Message is available. Since Koppeltaal v1.2.1 there are two ways of using the push mechanism. Both options are preferred over polling to reduce server load on both sides:
 
 - Implement [SignalR] with subscription mechanism for the connector
 - Configure a REST webhook for an application exposing a REST endpoint
@@ -113,20 +112,15 @@ The application that connects to the Koppeltaal domain exposes a RESTful endpoin
 The application then triggers the [GetNextNewAndClaim] action in the connector to fetch the new message(s).
 
 ## Connector quality assessment
-When you create a Koppeltaal connector it is not automatically accepted as an official connector, it will be vetted by Koppeltaal first.
-The code will be assessed by Koppeltaal on a number of matters, such as:
+When you create a Koppeltaal connector it is not automatically accepted as an official connector, it will be vetted by Stichting Koppeltaal first. The code will be assessed on a number of matters, such as:
 
 - Code clarity and readability
 - Unit Test availability
 - Technical documentation
 
-?? Who or what do we mean with "Koppeltaal" up here? Stichting Koppeltaal? Who specifically then? Do people first create their own repo and then they move their code the KT organisation on GitHub?
-
 ### Code clarity and readability
 Make sure the code is consistent, clear and readable.
 Remind yourself while developing, that the connector code is open source and will be transferred to the community at some point.
-
-?? What's the process for this?
 
 ### Integration testing
 There is a domain specifically for connectors to execute their integration tests with the Koppeltaal server (called _TestConnector_). Some useful tests:

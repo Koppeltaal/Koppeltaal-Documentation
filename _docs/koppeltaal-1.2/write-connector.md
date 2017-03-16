@@ -12,11 +12,11 @@ This guide assumes the reader knows Koppeltaal terminology. One source for that 
 ## What is a Koppeltaal connector?
 Every application that communicates with the Koppeltaal server will need code to do this. A Koppeltaal "connector" provides reusable code in the form of a library that provides this functionality (figure 1). These connectors are open source and hosted on Github.com.
 
-![figure 1]
+![figure1.png]
 **Figure 1**. _Every application communicates with the Koppeltaal server through a connector that encapsulates most of the complexity._
 
 ### Existing connectors, adding functionality, creating a new connector
-You may be able to use an existing connector in the language of your choice that functionally covers all needs you have. If your application needs functionality in an existing connector that has not been implemented, feel free to contribute to the connector project and create a pull request at the repository at the [Koppeltaal organization on GitHub]. When no connector exists in the programming language that you need, you can write one yourself. 
+You may be able to use an existing connector in the language of your choice that functionally covers all needs you have. If your application needs functionality in an existing connector that has not been implemented, feel free to contribute to the connector project and create a pull request at the repository at the [Koppeltaal organization on GitHub] (you need to request access to view these repositories). When no connector exists in the programming language that you need, you can write one yourself. 
 
 Because these connectors are open source it is important that the source code is clear and readable for other developers that may need to debug or want to add features.
 
@@ -31,7 +31,7 @@ In this document we'll describe the process for starting a connector from scratc
 - Study the sample requests to the Koppeltaal server
 
 ### Which FHIR resources to support
-The needs of the application(s) that use the connector will determine which FHIR resources the connector needs to support. It is not necessary for a connector to be able to handle all `Message` types. In the administration console on the Koppeltaal server an application can be subscribed to specific message types.
+The needs of the application(s) that use the connector will determine which FHIR resources the connector needs to support. It is not necessary for a connector to be able to handle all `Message` types. In the Koppeltaal server user interface, an application can be subscribed to specific message types.
 
 ### FHIR model libraries
 HL7.org provides so called _Reference Implementations_ for a small number of programming languages. These are basic libraries that contain FHIR resource models and validation schemas that can be used in writing a connector: [DSTU1] / [current version].
@@ -54,7 +54,7 @@ Which functionalities a connector should provide depends on the applications tha
     - Create a Message bundle with FHIR Resources (send)
     - Extract FHIR Resources from the Message bundle (receive)
     - Update the _ProcessingStatus_ of a Message
-- Retrieve and update `Activity Definitions`
+- Retrieve and update `ActivityDefinitions`
 - "Launch" a user to a specific application
 
 A connector can also support the following functionality:
@@ -84,9 +84,8 @@ A connector should be able to exchange `Messages` using `Basic Authentication` a
 When [handling messages] it is important that the `ProcessingStatus` of a message is changed. That way the Koppeltaal server knows a message has been handled. A connector should also be able to mark a message as `Failed` and provide an exception description to go along with this state.
 
 #### ActivityDefinitions
-`ActivityDefinitions` are treated somewhat different than the rest of the FHIR resources. They are of resource type `Other` and the content is as such not defined in the FHIR spec. In Koppeltaal, they should be created or updated without the use of Message resource bundles. To create an ActivityDefinition send a simple HTTP POST request containing the [ActivityDefinition] in the request body.
+`ActivityDefinitions` are treated somewhat different than the rest of the FHIR resources. They are of resource type `Other` and the content is as such not defined in the FHIR spec. In Koppeltaal, they should be created or updated without the use of Message resource bundles. To create an ActivityDefinition send a simple HTTP POST request containing the [ActivityDefinition] in the request body. To update an ActivityDefinition send a HTTP PUT request to the same URI. It is not possible to remove ActivityDefinitions, it is possible to deactivate them.
 
-Updating ActivityDefinitions ??
 
 #### "Launching" Users To An Application 
 Koppeltaal provides a [Web Launch Sequence]. Functionally this is like a single sign on which also navigates to a specific location in the target system. The Web Launch Sequence allows users to login to an application and launch a `Resource`. The launch allows users to work on a `CarePlan(Sub)Activity`.
@@ -99,7 +98,7 @@ More information following. [Storage service]
 
 #### Push Notifications: (since 1.2.1)
 
-For applications that require real-time updates from Koppeltaal, it is advised **not** to use long-polling. Koppeltaal supports pushing notifications to applications when a new Message is available. Since Koppeltaal v1.2.1 there are two ways of using the push mechanism. Both options are preferred over polling to reduce server load on both sides:
+For applications that require real-time updates from Koppeltaal, it is advised **not** to use long-polling. The Koppeltaal server supports pushing notifications to applications when a new Message is available. Since Koppeltaal v1.2.1 there are two ways of using the push mechanism. Both options are preferred over polling to reduce server load on both sides:
 
 - Implement [SignalR] with subscription mechanism for the connector
 - Configure a REST webhook for an application exposing a REST endpoint
@@ -109,26 +108,19 @@ When available, use a SignalR library to aid in creating a _HubConnection_ to th
 The connector then triggers the internal [GetNextNewAndClaim] action to fetch the new message(s).
 
 ##### REST webhook (application feature)
-The application that connects to the Koppeltaal domain exposes a RESTful endpoint, a webhook. The URL for this webhook can be configured in the _admin console of the application_. The Koppeltaal server makes an HTTP request to the URI configured for the webhook.
+The application that connects to the Koppeltaal domain exposes a RESTful endpoint, a webhook. The URL for this webhook can be configured in the _Koppeltaal server UI_ on application instance level. As application administrator go to "Mijn applicatie" > "Applicatieinstanties" > double click the Fullname of the application instance > "Wijzigen" > set subscription status to "Actief" > fill out the Subscription details. The Koppeltaal server makes an HTTP request to the URI configured for the webhook.
 The application then triggers the [GetNextNewAndClaim] action in the connector to fetch the new message(s).
 
-!! Let's add a screenshot of where to configure that. Or a Click > Click > Click path on how to get there.
-
 ## Connector quality assessment
-When you create a Koppeltaal connector it is not automatically accepted as an official connector, it will be vetted by Koppeltaal first.
-The code will be assessed by Koppeltaal on a number of matters, such as:
+When you create a Koppeltaal connector it is not automatically accepted as an official connector, it will be vetted by Stichting Koppeltaal first. The code will be assessed on a number of matters, such as:
 
 - Code clarity and readability
 - Unit Test availability
 - Technical documentation
 
-?? Who or what do we mean with "Koppeltaal" up here? Stichting Koppeltaal? Who specifically then? Do people first create their own repo and then they move their code the KT organisation on GitHub?
-
 ### Code clarity and readability
 Make sure the code is consistent, clear and readable.
 Remind yourself while developing, that the connector code is open source and will be transferred to the community at some point.
-
-?? What's the process for this?
 
 ### Integration testing
 There is a domain specifically for connectors to execute their integration tests with the Koppeltaal server (called _TestConnector_). Some useful tests:

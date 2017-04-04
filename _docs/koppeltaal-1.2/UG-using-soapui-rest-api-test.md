@@ -8,9 +8,15 @@ order: 2
 
 
 ### Create a SOAP UI project (SOAP UI version 5.0)
+
+Download the open available tool to simulate REST api calls =>  SOAPUI (version 5.0 at this moment)
+
+ - http://soapui.org
+
+
 The last version of the Koppeltaal SOAP UI project :
 
-https://github.com/Koppeltaal/Koppeltaal-Server/tree/master/tests/SoapUI 
+ - https://github.com/Koppeltaal/Koppeltaal-Server/tree/master/tests/SoapUI 
 
 
 ### Define a request to get and claim the next message available in the queue

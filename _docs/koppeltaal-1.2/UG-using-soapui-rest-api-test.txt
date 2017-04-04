@@ -7,25 +7,29 @@ order: 2
 ## Connecting to the Koppeltaal test server using SOAP UI
 
 
-1. Create a SOAP UI project (SOAP UI version 5.0)
+### Create a SOAP UI project (SOAP UI version 5.0)
 The last version of the Koppeltaal SOAP UI project :
 
 https://github.com/Koppeltaal/Koppeltaal-Server/tree/master/tests/SoapUI 
-2. Define a request to get and claim the next message available in the queue
+
+
+### Define a request to get and claim the next message available in the queue
 
 ![image alt text](SOAP_UI_CONFIG1.png)
 
 
-3.Test
+### Test
 
 
 Once the claim is done a COMMIT action needs to be sent to the Koppeltaal server. The two phases COMMIT takes into acount the resilience of the system at any time (no loss of messages but duplicates possible). At the END of the process flow the COMMIT should send: Failed or Success status.
 
 Message CLAIMED - with id 39
 
+```html
  <feed xmlns="http://www.w3.org/2005/Atom">
   .....
  </feed>
+```
 
 This can be done through a PUT to the RESOURCE: MessageHeader/{MessageHeaderID}. (SOAP NEW RESOURCE!)
 
@@ -40,7 +44,7 @@ Content to be send back - changing the sate to 'SUCCESS'
 Example: GetNextAndClaim with messages in the queue:
 
 
-```xml
+```html
 <?xml version="1.0" encoding="utf-8"?> <feed xmlns="http://www.w3.org/2005/Atom">
 
  <id>urn:uuid:d3b90820-73f4-4b44-a27b-d99c1eb2ec77</id>
@@ -117,8 +121,9 @@ Example: GetNextAndClaim with messages in the queue:
 </feed>
 ```
 
-4. Id management
-```xml
+### Id management
+
+```html
  <feed> Envelope id must be unique ID  for each new request
   e.g. <id>urn:uuid:5147c410-533f-4e4d-bf38-886ff386cec3</id>
  <Entry> Message id must be unique ID  for each new request
@@ -130,7 +135,7 @@ Example: GetNextAndClaim with messages in the queue:
    e.g. <identifier>urn:uuid:8fcced7a-0dea-4a32-9ed5-080ded9abaac</identifier>
 ```
 
-5. Define a request to create a new CarePlan
+### Define a request to create a new CarePlan
 
 ![image alt text](SimpleCarePlan.png)
 
@@ -138,7 +143,7 @@ Follow the TD to identify the required attributes to be included in the call. Th
   A new CarePlan has no history (in the <reference> TAG there is no Version provided but the CarePlan ID must be UNIQUE identifiable
   (Message ID's and Date are specific unique generated)
 
-```xml
+```html
 <?xml version="1.0" ?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
@@ -303,11 +308,11 @@ Follow the TD to identify the required attributes to be included in the call. Th
 </feed>
 ```
 
-6. Create a Care Plan With Activity
+### Create a Care Plan With Activity
 
 This XML message will be used to add an activity to a careplan:
 
-```xml
+```html
    <id>urn:uuid:63843702-d78a-41ae-b58a-505b398d5169</id>
    <category label="MindDistrict Kickass"
        scheme="http://hl7.org/fhir/tag/security" term="http://ggz.koppeltaal.nl/fhir/Koppeltaal/Domain#MindDistrict Kickass"/>
@@ -469,7 +474,7 @@ This XML message will be used to add an activity to a careplan:
 ```
 
 7. Response Contains the UNIQIE VERSION ID
-```xml
+```html
   <id>urn:uuid:07fb24ab-f598-488e-a637-ebbe12636012</id>
   <category term="http://ggz.koppeltaal.nl/fhir/Koppeltaal/Domain#MindDistrict Kickass" label="MindDistrict Kickass" scheme="http://hl7.org/fhir/tag/security"/>
   <category term="http://hl7.org/fhir/tag/message" scheme="http://hl7.org/fhir/tag"/>
@@ -502,13 +507,13 @@ This XML message will be used to add an activity to a careplan:
   </entry>
 ```
 
-8. 'The new CarePlan Activity will need to have the Version updated - CreateOrUpdateCarePlanActivityResult
+### The new CarePlan Activity will need to have the Version updated - CreateOrUpdateCarePlanActivityResult
 
   The Response contains the CarePlan Version ID that must be provided for further updates referencing the same CarePlan 
    <reference value="http://local.emhp/CarePlan/4289/_history/2015-06-18T11:56:11:338.7674"/>
 
 
-```xml
+```html
 <MessageHeader xmlns="http://www.w3.org/2005/Atom">
 
            <extension xmlns="http://hl7.org/fhir"
@@ -542,4 +547,6 @@ This XML message will be used to add an activity to a careplan:
            
         </MessageHeader>
 ```
-9.The Answer for the CreateOrUpdateCarePlanActivityResult status contains the 200 code 200 OK Server: Microsoft-IIS/8.0 Set-Cookie: ASP.NET_SessionId=c1hnzdl5gfuzwxquuj2eoxrn; path=/; HttpOnly
+
+### Response 
+The Answer for the CreateOrUpdateCarePlanActivityResult status contains the 200 code 200 OK Server: Microsoft-IIS/8.0 Set-Cookie: ASP.NET_SessionId=c1hnzdl5gfuzwxquuj2eoxrn; path=/; HttpOnly

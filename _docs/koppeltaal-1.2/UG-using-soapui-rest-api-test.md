@@ -473,7 +473,8 @@ This XML message will be used to add an activity to a careplan:
    </entry>
 ```
 
-7. Response Contains the UNIQIE VERSION ID
+### Response Contains the UNIQIE VERSION ID
+
 ```html
   <id>urn:uuid:07fb24ab-f598-488e-a637-ebbe12636012</id>
   <category term="http://ggz.koppeltaal.nl/fhir/Koppeltaal/Domain#MindDistrict Kickass" label="MindDistrict Kickass" scheme="http://hl7.org/fhir/tag/security"/>
@@ -507,7 +508,9 @@ This XML message will be used to add an activity to a careplan:
   </entry>
 ```
 
-### The new CarePlan Activity will need to have the Version updated - CreateOrUpdateCarePlanActivityResult
+###  CarePlan Activity
+
+The new CarePlan Activity will need to have the Version updated -CreateOrUpdateCarePlanActivityResult
 
   The Response contains the CarePlan Version ID that must be provided for further updates referencing the same CarePlan 
    <reference value="http://local.emhp/CarePlan/4289/_history/2015-06-18T11:56:11:338.7674"/>
@@ -549,4 +552,5 @@ This XML message will be used to add an activity to a careplan:
 ```
 
 ### Response 
+
 The Answer for the CreateOrUpdateCarePlanActivityResult status contains the 200 code 200 OK Server: Microsoft-IIS/8.0 Set-Cookie: ASP.NET_SessionId=c1hnzdl5gfuzwxquuj2eoxrn; path=/; HttpOnly

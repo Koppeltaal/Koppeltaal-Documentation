@@ -103,7 +103,7 @@ In order to link an existing application to a domain on a Koppeltaal Server, fir
 
 After logging in you will be presented with the list of applications. Alternatively, select 'Applications' in the left-hand menu.
 
-![Application administrator registration portal](ApplicationAdmin-ApplicationDetail.png)
+![Application administrator registration portal](ApplicationAdmin-Applications.png)
 
 Find the application you wish to create a connection for in the list, then double-click the record to open its details. 
 

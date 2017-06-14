@@ -56,6 +56,17 @@ The domain model of the administration portal obviously mirrors the domain model
 <tr><td>SubscriptionsPerApplication</td><td>The subscribed message types per application.</td></tr>
 </table>
 
+# Responsibilities
+
+Each type of role has a specific responsibility.
+
+| Role | Responsibilities |
+| --- | --- |
+| System administrator | Manages system-wide configuration, such as the Conformance Statement. Additionally, accepts request for administrator accounts, new applications and domains. |
+| Application administrator | Manages one or more applications, such as configuring Single Sign-on settings and Activity Definitions. |
+| Domain administrator | Manages one or more domains, such as accepting connection requests from applications. |
+
+
 # API
 The Koppeltaal Server exposes a REST API, accepting and sending JSON data. The API is based on the object described in the domain model above.
 The endpoint of the API is: 

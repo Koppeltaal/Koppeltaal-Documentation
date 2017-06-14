@@ -10,21 +10,9 @@ Versie: 0.1
 
 # Version management
 
-<table>
-  <tr>
-    <td>Versie</td>
-    <td>Datum</td>
-    <td>Auteur</td>
-    <td>Aanpassingen</td>
-  </tr>
-  <tr>
-    <td>0.1</td>
-    <td>22-11-2016</td>
-    <td>Bart Mehlkop</td>
-    <td>First Draft</td>
-  </tr>
-
-</table>
+Versie | Datum | Auteur | Aanpassingen
+-------|-------|--------|-------------
+0.1 | 22-11-2016| Bart Mehlkop | First Draft
 
 # Table of content
 
@@ -44,7 +32,7 @@ There are a number of requirement the administration API must fulfill:
 	* Timestamp
 	* Domain
 	* Status
-* The API must be versioned, so that the central administration portal can communicate with the  different versions of the Koppeltaal Server
+* The API must be versioned, so that the central administration portal can communicate with the different versions of the Koppeltaal Server
 
 # Domain model
 The domain model of the administration portal obviously mirrors the domain model of the Koppeltaal Server.
@@ -208,6 +196,26 @@ Some types disallow updating of specific fields after the resource has been crea
 4: Update the record with GrantStatus set to ‘Revoked’ instead.
 
 5: Insert a DomainRequest to request a new domain instead.
+
+# Flow
+
+Below is a diagram visualizing the different process for which the Support API is intended. The dotted connections indicate parts of the process that can be performed using the descriped REST operation.
+
+Requesting a new application administrator account:
+
+![Process Flow: Request new application administrator account](Process flow - New Application Admin.png)
+
+Registering a new application:
+
+![Process Flow: Register new application](Process flow - New Application.png)
+
+Requesting a new domain:
+
+![Process Flow: Request new domain](Process flow - New Application.png)
+
+Requesting a connection to a domain for an application:
+
+![Process Flow: Request new application connection](Process flow - New Application Connection.png)
 
 
 # Data format

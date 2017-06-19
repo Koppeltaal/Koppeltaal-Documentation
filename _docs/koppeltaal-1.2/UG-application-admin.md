@@ -93,7 +93,7 @@ In this window, please fill out the following fields:
 * Email address domain administrator: the email addres of the person that will be managing this domain
 * Name of domain administrator: the name of the person that will be managing this domain
 
-After filling in the fields, press the save button in the  top left toolbar. Your request will be saved and appear in your list of requested domains. A Koppeltaal system administrator will be notified and review your request. If there are any questions regarding your request you will be contacted, otherwise the request will be accepted. When the request is accepted you will be notified via email and the domain will appear under 'My domains'. The requesting application will automatically be linked to the new domain.
+After filling in the fields, press the save button on the top left, in the toolbar. Your request will be saved and appear in your list of requested domains. A Koppeltaal system administrator will be notified and review your request. If there are any questions regarding your request you will be contacted, otherwise the request will be accepted. When the request is accepted you will be notified via email and the domain will appear under 'My domains'. The requesting application will automatically be linked to the new domain.
 
 <a name="DomainConnection"></a>
 

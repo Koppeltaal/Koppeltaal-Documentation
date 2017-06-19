@@ -34,7 +34,7 @@ You will be asked to enter your name, an email address and the desired user name
 
 ![Application administrator registration portal](Portal-ApplicationAdministratorRegistrationPortal.png)
 
-It is important to not that a user name that must be personal. The user name 'p.dekorte@company.nl' is fine. The user name 'support@company.nl' is not. This is because any actions taken by a user can be logged and must be tracable to a specific person.
+It is important to note that a user name that must be personal. The user name 'p.dekorte@company.nl' is fine. The user name 'support@company.nl' is not. This is because any actions taken by a user can be logged and must be tracable to a specific person.
 
 After you have sent your request a Koppeltaal system administrator will review it. If there are any further questions you will be contacted via either the listed email address or other means of communication, if known. 
 
@@ -58,7 +58,7 @@ In this window, please fill out the following fields:
 
 * Name: the name of the new application
 * Identifier: a unique shorthand for this application
-* Application roles: the roles this application can act in
+* Application roles: the roles that this application can act as
 * Name contact person: the name of the person to be contacted for any technical or functional questions related to this application
 * Contact emailaddress: the email address at which the contact person can be reached
 * SSOUrl: the URL to be used when the applicatiokn is launched via the Koppeltaal single sign-on launch sequence. (TBD: link to details of the SSO launch sequence)
@@ -93,7 +93,7 @@ In this window, please fill out the following fields:
 * Email address domain administrator: the email addres of the person that will be managing this domain
 * Name of domain administrator: the name of the person that will be managing this domain
 
-After filling in the fields, press the save button on the top left, in the toolbar. Your request will be saved and appear in your list of requested domains. A Koppeltaal system administrator will be notified and review your request. If there are any questions regarding your request you will be contacted, otherwise the request will be accepted. When the request is accepted you will be notified via email and the domain will appear under 'My domains'. The requesting application will automatically be linked to the new domain.
+After filling in the fields, press the save button in the  top left toolbar. Your request will be saved and appear in your list of requested domains. A Koppeltaal system administrator will be notified and review your request. If there are any questions regarding your request you will be contacted, otherwise the request will be accepted. When the request is accepted you will be notified via email and the domain will appear under 'My domains'. The requesting application will automatically be linked to the new domain.
 
 <a name="DomainConnection"></a>
 

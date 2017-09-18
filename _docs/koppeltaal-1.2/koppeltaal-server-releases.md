@@ -12,12 +12,13 @@ Released: TBA
 
 ## 1.3.1
 
-Released: TBA
+Released: 21/09/2017
 
 - Bugfix: ticket 'Niet mogelijk om URL voor SSO binnen domein toe te voegen' (PBBV-SWIX-MAUD)
 - Bugfix: ticket 'Bug in connectie-aanvraag: form fields greyed out' (IXGN-OQRC-WHUR)
 - Bugfix: ticket 'Aanvragen van domein op prd.koppeltaal.nl werkt niet' (DZXF-KEGS-MPAI)
 	+ Application admin can now change the default application instance user name, for example to correct an auto-generated name that is too long.
+- Bugfix: ticket 'Bug “ontvangen aanvragen” openen' (CUUL-ULKR-LBUO)
 
 ## 1.3.0
 

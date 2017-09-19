@@ -63,3 +63,30 @@ Delivery Team handles the release process, via Support, and verifies the process
   - Preparation Regression Test
   - Execution Regression Test
   - Go live acceptance and procedure
+  
+## Release planning
+
+When the Koppeltaal core team decides to release a new version, the planning is determined as follows.
+
+|Action|Duration|Performed by|
+| --- | --- | --- |
+| Decision to release | - | KT Core Team |
+| Make release notes | - | Development Team |
+| Regression test is run | - | Development Team |
+| Perfomance test is run | - | Development Team |
+| Planning is shared with the community | - | Support |
+| Start ACC tests by community | 2 weeks | Community |
+| Rework on issues from ACC tests | 1 week | Development Team |
+| Live update preparation | 1 week | Support/hosting teams |
+
+Taken together, this means that after the decision to release, the following milestones occur:
+
+
+| Item | Date |
+| --- | --- |
+| Start ACC tests | as soon as practical (rework starts as soon as issues are reported) |
+| End ACC tests | 2 weeks after start |
+| End rework | 3 weeks after start |
+| Live update | 4 weeks after start |
+
+

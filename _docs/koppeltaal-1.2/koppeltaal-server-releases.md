@@ -10,6 +10,16 @@ Released: TBA
 
 - Feature: STU3
 
+## 1.3.2
+
+Released: TBA
+
+- Bugfix: Application Admin can only edit their own details
+- Bugfix: Changing login is no longer possible
+- Bugfix: Issue '500 server error when updating an activity definition' (NQVO-ZOKN-SQGD)
+- Bugfix: Issue 'veel foutmeldingen bij aanmaken domein' (QCWC-AIOF-RRBA).
+- Bugfix: Attachments are now disabled.
+
 ## 1.3.1
 
 Released: 21/09/2017

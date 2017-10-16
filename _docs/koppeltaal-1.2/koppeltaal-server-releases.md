@@ -19,6 +19,8 @@ Released: TBA
 - Bugfix: Issue '500 server error when updating an activity definition' (NQVO-ZOKN-SQGD)
 - Bugfix: Issue 'veel foutmeldingen bij aanmaken domein' (QCWC-AIOF-RRBA).
 - Bugfix: Attachments are now disabled.
+- Bugfix: Issue 'PRD Url werkt niet' (KXPR-DWQX-EUXN)
+- Bugfix: Issue 'foutmeldingen' (BCHK-MFRY-EALQ)
 
 ## 1.3.1
 

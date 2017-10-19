@@ -170,7 +170,7 @@ DEPENDENCIES
   minima (~> 2.0)
 
 RUBY VERSION
-   ruby 2.2.5p319
+   ruby 2.0.0p648
 
 BUNDLED WITH
-   1.13.7
+   1.15.4

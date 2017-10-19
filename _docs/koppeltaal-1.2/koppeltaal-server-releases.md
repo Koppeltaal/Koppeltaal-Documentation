@@ -21,6 +21,7 @@ Released: TBA
 - Bugfix: Attachments are now disabled.
 - Bugfix: Issue 'PRD Url werkt niet' (KXPR-DWQX-EUXN)
 - Bugfix: Issue 'foutmeldingen' (BCHK-MFRY-EALQ)
+- Bugfix: Issue 'Missing source attribute in message header for CreateOrUpdateActivityDefinition events' (WMUK-EUDC-NKGB)
 
 ## 1.3.1
 

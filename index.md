@@ -2,7 +2,7 @@
 title: Welcome to Koppeltaal
 ---
 
-_This is just a placeholder welcome text._
+
 
 Koppeltaal is een ICT-taal, gebaseerd op de internationale HL7/FHIR standaard, die het mogelijk maakt om e-health programma’s onderling uit te laten wisselen. Met Koppeltaal kunnen ggz organisaties voortaan alle beschikbare e-health applicaties gebruiken. Koppeltaal is ontwikkeld in nauwe samenwerking met de ICT-programmeurs van gerenommeerde e-health leveranciers in Nederland.
 

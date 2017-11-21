@@ -22,6 +22,7 @@ Released: TBA
 - Bugfix: Issue 'PRD Url werkt niet' (KXPR-DWQX-EUXN)
 - Bugfix: Issue 'foutmeldingen' (BCHK-MFRY-EALQ)
 - Bugfix: Issue 'Missing source attribute in message header for CreateOrUpdateActivityDefinition events' (WMUK-EUDC-NKGB)
+- Bugfix: Issue 'Monitoring file rapport fails on RequestStatistic' (FOWT-KXKM-TNUZ)
 - Bugfix: Issue '500 error is the log files' (PHUS-WUUG-KUML)
 
 ## 1.3.1

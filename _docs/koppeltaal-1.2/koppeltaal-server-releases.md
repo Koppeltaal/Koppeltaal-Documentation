@@ -24,6 +24,7 @@ Released: TBA
 - Bugfix: Issue 'Missing source attribute in message header for CreateOrUpdateActivityDefinition events' (WMUK-EUDC-NKGB)
 - Bugfix: Issue 'Monitoring file rapport fails on RequestStatistic' (FOWT-KXKM-TNUZ)
 - Bugfix: Issue '500 error is the log files' (PHUS-WUUG-KUML)
+- Bugfix: Issue 'Wrong height in message types details view' (ADIW-TTMP-JWTQ)
 
 ## 1.3.1
 

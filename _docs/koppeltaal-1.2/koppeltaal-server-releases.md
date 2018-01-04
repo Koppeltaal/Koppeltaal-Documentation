@@ -12,7 +12,7 @@ Released: TBA
 
 ## 1.3.2
 
-Released: TBA
+Released: 03/01/2017
 
 - Bugfix: Application Admin can only edit their own details
 - Bugfix: Changing login is no longer possible
@@ -21,6 +21,11 @@ Released: TBA
 - Bugfix: Attachments are now disabled.
 - Bugfix: Issue 'PRD Url werkt niet' (KXPR-DWQX-EUXN)
 - Bugfix: Issue 'foutmeldingen' (BCHK-MFRY-EALQ)
+- Bugfix: Issue 'Missing source attribute in message header for CreateOrUpdateActivityDefinition events' (WMUK-EUDC-NKGB)
+- Bugfix: Issue 'Monitoring file rapport fails on RequestStatistic' (FOWT-KXKM-TNUZ)
+- Bugfix: Issue '500 error is the log files' (PHUS-WUUG-KUML)
+- Bugfix: Issue 'Wrong height in message types details view' (ADIW-TTMP-JWTQ)
+- Pivotal​ ​story:​ ​As Koppeltaal​ ​Product Owner​ ​I​ ​want​ ​to​ ​restrict each​ ​field​ ​on​ ​the allowed​ ​characters​ ​for that​ ​field​ ​so​ ​that​ ​it​ ​is​ ​not possible​ ​to​ ​influence​ ​the application​ ​behaviour with​ ​special​ ​characters (#152146659)
 
 ## 1.3.1
 

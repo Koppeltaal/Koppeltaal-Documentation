@@ -74,8 +74,10 @@ When the Koppeltaal core team decides to release a new version, the planning is 
 | Make release notes | - | Development Team |
 | Regression test is run | - | Development Team |
 | Perfomance test is run | - | Development Team |
-| Planning is shared with the community | - | Support |
+| Concept planning is shared with the community | - | Support |
+| Migration to Edge/Test environment | - | Development Team |
 | Start ACC tests by community | 2 weeks | Community |
+| Final planning is shared with the community | - | Support |
 | Rework on issues from ACC tests | 1 week | Development Team |
 | Live update preparation | 1 week | Support/hosting teams |
 

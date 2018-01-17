@@ -80,20 +80,20 @@ The following message types are available as part of the Adapter implementation.
 
 
 
-| Functional item    | Coverage | C#   | Java   | Android (Java)   |
-| :------- | ----: | :---: | :---: | :---: |
-|   Launch Sequence |  -    |   YES   |   YES   |   YES   |
-|   Activation Code |  -    |   NA  |   NA   |   YES   |
-|   Conformance Statement|  -    |   YES  |   YES  |   YES  |
-|   Create or Update Care Plan |  -    |   YES   |   YES  |   YES  |
-|   UpdateCarePlanActivityStatus |  -    |   YES   |   YES  |   YES  |
-|   CreateOrUpdateCarePlanActivityResult |  -    |   YES   |   YES  |   YES  |
-|   Activity Definition |  -    |   YES   |   YES  |   YES  |
-|   User Message |  -    |   YES   |   YES  |   YES  |
-|   Create or Update Patient |  -    |   YES   |   YES  |   YES  |
-|   Create or Update Practitioner |  -    |   YES   |   YES  |   YES  |
-|   Create or Update RelatedPerson |  -    |   YES   |   YES  |   YES  |
-|   Storage API |  -    |   YES |   NO  |   NO  |
+| Functional item                      | C#    | Java  | Android (Java) | Python 2.7/3.6 |
+| :----------------------------------: | :---: | :---: | :------------: | :------------: |
+| Launch Sequence                      | YES   | YES   | YES            | YES            |
+| Activation Code                      | NA    | NA    | YES            | NA             |
+| Conformance Statement                | YES   | YES   | YES            | YES            |
+| Create or Update Care Plan           | YES   | YES   | YES            | YES            |
+| UpdateCarePlanActivityStatus         | YES   | YES   | YES            | YES            |
+| CreateOrUpdateCarePlanActivityResult | YES   | YES   | YES            | YES            |
+| Activity Definition                  | YES   | YES   | YES            | YES            |
+| User Message                         | YES   | YES   | YES            | NO             |
+| Create or Update Patient             | YES   | YES   | YES            | YES            |
+| Create or Update Practitioner        | YES   | YES   | YES            | YES            |
+| Create or Update RelatedPerson       | YES   | YES   | YES            | NO             |
+| Storage API                          | YES   | NO    | NO             | NO             |
 
 
 

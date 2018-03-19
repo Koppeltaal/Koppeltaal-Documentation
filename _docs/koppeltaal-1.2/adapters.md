@@ -87,9 +87,9 @@ The following message types are available as part of the Adapter implementation.
 | Conformance Statement                | YES   | YES   | YES            | YES            |
 | Create or Update Care Plan           | YES   | YES   | YES            | YES            |
 | UpdateCarePlanActivityStatus         | YES   | YES   | YES            | YES            |
-| CreateOrUpdateCarePlanActivityResult | YES   | YES   | YES            | YES            |
+| CreateOrUpdateCarePlanActivityResult | YES   | NO    | NO             | YES            |
 | Activity Definition                  | YES   | YES   | YES            | YES            |
-| User Message                         | YES   | YES   | YES            | NO             |
+| User Message                         | YES   | NO    | NO             | NO             |
 | Create or Update Patient             | YES   | YES   | YES            | YES            |
 | Create or Update Practitioner        | YES   | YES   | YES            | YES            |
 | Create or Update RelatedPerson       | YES   | YES   | YES            | NO             |

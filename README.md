@@ -253,7 +253,7 @@ Other is ingevoerd om te kunnen omgaan met resource concepten die nog niet zijn 
 | CarePlanActivityResult | Beschrijft de uitkomsten of berekende scores van een behandelplan activiteit |
 | CareTeam | Beschrijft welke personen toegang hebben tot een behandelplan of activiteit |
 
-Figuur 5. Other extensies
+Other extensies
 
 De **Application** resource is een representatie van een portaal, interventie of een ander soort aangeboden dienst door Koppeltaal. Een applicatie kan een list van activiteiten aanbieden. In de context van Koppeltaal is een Application resource een profiel van een **Device** resource.
 

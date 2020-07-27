@@ -466,7 +466,7 @@ Aan elke resource \(gegevensbron\) wordt een unieke FHIR-basis URL toegewezen, w
 >
 > **POST** [https://vzvz.nl/fhir/Koppeltaal/**Other**/ActivityDefinition:6720](https://vzvz.nl/fhir/Koppeltaal/Other/ActivityDefinition:6720)
 
-Figuur 10. URL opbouw
+URL opbouw
 
 URL’s moeten voldoen aan RFC3986 sectie 6 appendix A.
 

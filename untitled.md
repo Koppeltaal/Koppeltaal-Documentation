@@ -1,6 +1,6 @@
 # Informatiesystemen architectuur
 
-![Logo\_vZVZ\_servicecentrum.JPG](.gitbook/assets/0%20%281%29.jpeg)
+![Logo\_vZVZ\_servicecentrum.JPG](.gitbook/assets/0%20%282%29.jpeg)
 
 
 
@@ -16,7 +16,7 @@ Dit architectuurdocument is bedoeld voor VZVZ om vragen te kunnen beantwoorden o
 
 De architectuurbeschrijving is onder te verdelen in drie secties, namelijk de ‘Bedrijfsarchitectuur’, de ‘Informatiesystemen architectuur’ en de ‘Technologie architectuur’.
 
-![Koppeltaal architectuur](.gitbook/assets/1%20%281%29.jpeg)
+![Koppeltaal architectuur](.gitbook/assets/1%20%282%29.jpeg)
 
 ### Eenheid van taal
 
@@ -266,7 +266,7 @@ Koppeltaal heeft een set berichten gedefinieerd waarmee de Koppeltaal use-cases 
 
 Omdat Koppeltaal gebruik maakt van FHIR DSTU1 zijn er bepaalde \(Koppeltaal\) resource concepten die niet gedefinieerd zijn voor FHIR of die buiten het interessegebied van HL7 liggen. Hiervoor gebruiken we de _Other_ resource, zodat we ook met specifieke Koppeltaal resources kunnen omgaan.
 
-![Koppeltaal FHIR Resource DSTU1](.gitbook/assets/5%20%281%29.jpeg)
+![Koppeltaal FHIR Resource DSTU1](.gitbook/assets/5%20%282%29.jpeg)
 
 ### MessageHeader
 

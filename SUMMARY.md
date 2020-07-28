@@ -1,6 +1,6 @@
 # Table of contents
 
 * [Technologie architectuur](README.md)
-* [Informatiesystemen architectuur](untitled.md)
-* [Bedrijfsarchitectuur](untitled-1.md)
+* [Informatiesystemen architectuur](informatiesystemen-architectuur.md)
+* [Bedrijfsarchitectuur](bedrijfsarchitectuur.md)
 

@@ -1,7 +1,5 @@
 # Kaders en uitgangspunten
 
-
-
 ### Normatief
 
 De onderstaande documenten zijn normatief en leidend voor dit document.

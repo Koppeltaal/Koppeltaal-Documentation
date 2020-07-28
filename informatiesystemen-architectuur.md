@@ -1,105 +1,6 @@
 # Informatiesystemen architectuur
 
-![Logo\_vZVZ\_servicecentrum.JPG](.gitbook/assets/0%20%282%29.jpeg)
-
-
-
-## Doel en aanleiding
-
-### Doel en scope
-
-Dit document beschrijft de informatiesystemen architectuur van Koppeltaal GGZ versie . Dit document is opgesteld onder verantwoording van VZVZ. De scope is een beschrijving van de architectuur op ‘Enterprise Architectuur’ niveau, waarbij het TOGAF-raamwerk, en de Architectuur Development Methode \(ADM\) zoveel mogelijk gebruikt worden als taal voor vastlegging van de architectuur.
-
-### Leeswijzer
-
-Dit architectuurdocument is bedoeld voor VZVZ om vragen te kunnen beantwoorden over huidige mogelijkheden en beperkingen van de Koppeltaal infrastructuur en dient als basis voor eventuele uitbreiding van functionaliteiten. Het document bevat eveneens \(verwijzingen naar\) standaarden die door GGZ-instellingen en ICT-leveranciers voor die instellingen voor behandelprocessen en de daarbij behorende gegevensuitwisseling.
-
-De architectuurbeschrijving is onder te verdelen in drie secties, namelijk de ‘Bedrijfsarchitectuur’, de ‘Informatiesystemen architectuur’ en de ‘Technologie architectuur’.
-
-![Koppeltaal architectuur](.gitbook/assets/1%20%282%29.jpeg)
-
-### Eenheid van taal
-
-De architectuur van Koppeltaal GGZ heeft zich over de afgelopen vier jaar ontwikkeld op basis van de visie op architectuur die aan de start van het project in 2014 ontwikkeld is. Gedurende die vier jaar is er veel gebeurd en zijn er steeds meer GGZ-aanbieders aangesloten binnen de complexe en multidisciplinaire ‘sector’ die de GGZ is. Gedurende dezelfde periode heeft de informatie-uitwisseling in de zorg een grote ontwikkeling doorgemaakt. Voorbeeld zijn het programma MedMij, de nieuwe GGZ, Positieve gezondheid, het informatieberaad, en de wereldwijde adoptie van FHIR. De invloed van deze ontwikkelingen, en veranderingen hebben geleid tot een diversiteit van gebruik van begrippen binnen Koppeltaal.
-
-### Kaders en uitganspunten
-
-#### Normatief
-
-De onderstaande documenten zijn normatief en leidend voor dit document.
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Referentie</th>
-      <th style="text-align:left">Document</th>
-      <th style="text-align:left">Versie</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">[HL7v3]</td>
-      <td style="text-align:left">
-        <p>HL7 Version 3 Standard</p>
-        <p>www.hl7.org</p>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">[HTTP]</td>
-      <td style="text-align:left">
-        <p>RFC 2616 Hypertext Transfer Protocol -- HTTP/1.1</p>
-        <p>http://www.ietf.org</p>
-      </td>
-      <td style="text-align:left">RFC2616</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">[HL7 FHIR]</td>
-      <td style="text-align:left">
-        <p>HL7 FHIR DSTU1</p>
-        <p><a href="http://hl7.org/fhir/DSTU1/index.html">http://hl7.org/fhir/DSTU1/index.html</a>
-        </p>
-      </td>
-      <td style="text-align:left">
-        <p>DSTU1</p>
-        <p>0.0.82</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">[OAuth2]</td>
-      <td style="text-align:left">
-        <p>RFC6749 OAuth 2.0 Framework, RFC6750 Bearer Tokens</p>
-        <p><a href="https://oauth.net/2/">https://oauth.net/2/</a>
-        </p>
-      </td>
-      <td style="text-align:left">
-        <p>RFC6749</p>
-        <p>RFC6750</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-#### Informatief
-
-De onderstaande documenten zijn ter ondersteuning bij specifieke onderwerpen in dit document.
-
-| Referentie | Document | Versie |
-| :--- | :--- | :--- |
-| \[NEN7510\] | NEN 7510 ‘Medische informatica - Informatiebeveiliging in de zorg’ is een Nederlandse norm die maatregelen beschrijft die zorginstellingen moeten nemen om op adequate wijze met patiëntgegevens om te gaan. |  |
-| \[NEN7512\] | NEN 7512 gaat over de maatregelen die partijen moeten nemen bij uitwisseling van patiëntgegevens. |  |
-
 ## Koppeltaal
-
-### Geestelijke zorgverlening, blended care en behandelplan
-
-Koppeltaal integreert informatiestromen uit eHealth-modules, ROM en EPD in de werkomgeving van de behandelaar en cliënt. Zo heeft de behandelaar direct een volledig en actueel beeld van hun cliënt in één omgeving. Daarnaast is het mogelijk voor behandelaren om hun cliënten toegang te geven tot specifieke eHealth-modules en interventies van uiteenlopende leveranciers.
-
-Interoperabiliteit tussen de informatiesystemen is hier één van de belangrijke aspecten in de context van **blended care in de GGZ**. Bij blended care in de GGZ worden reguliere face-to-face gesprekken gecombineerd met **online interventies** zoals bijvoorbeeld chat, beeldbellen en **online behandelmodules**. Hierdoor kan een cliënt tijd- en plaats-onafhankelijk zorg gebruiken via een tablet of smartphone[\[1\]]().
-
-Een **behandelplan** beschrijft de gehele behandeling waar een blended care behandeling onderdeel van kan zijn. In dat plan worden verschillende **activiteiten** benoemd, veelal in een bepaalde volgorde. Deze activiteiten kunnen zijn, het samenstellen van het zorgteam, het bepalen van de doelen van een behandeling, het maken van een afspraak, het uitvoeren van een \(online\) interventie, het bespreken of bekijken van **voortgang**, **status**, **resultaten**, en het **evalueren** van de vooruitgang van de conditie van de Cliënt ten opzichte van de behandeldoelen. Voor zover deze activiteiten door een informatie systeem worden ondersteund, is gegevensuitwisseling via Koppeltaal mogelijk.
-
-Bij een blended care behandeling zijn tenminste een **cliënt** en een **behandelaar** betrokken. En steeds vaker ook **derden**, zoals vrienden, familie, lotgenoten, en ervaringsdeskundigen.
 
 ### Domein en Applicatie
 
@@ -108,8 +9,6 @@ In de doelstelling van stichting Koppeltaal is middels het woord ‘interne’ e
 De gegevensuitwisseling vindt plaats tussen applicaties. In Koppeltaal staat het begrip **applicatie** voor alle vormen van eHealth platformen en informatiesystemen \(zoals portalen, interventie- en bronsystemen\) die voor de zorgaanbieder relevant zijn om gegevens tussen uit te wisselen, in de context van blended care behandelingen.
 
 ![Koppeltaal applicaties](.gitbook/assets/2%20%281%29.jpeg)
-
-
 
 De volgende type applicaties onderscheiden we waarmee zorgaanbieders hun informatiesystemen naadloos op elkaar willen aansluiten binnen Koppeltaal.
 

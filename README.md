@@ -2,8 +2,6 @@
 
 ![Logo\_vZVZ\_servicecentrum.JPG](.gitbook/assets/0.jpeg)
 
-
-
 ## Doel en aanleiding
 
 ### Doel en scope

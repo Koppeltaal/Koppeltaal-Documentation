@@ -43,19 +43,19 @@ De onderstaande documenten zijn ter ondersteuning bij specifieke onderwerpen in 
 
 Koppeltaal integreert informatiestromen uit eHealth-modules, ROM en EPD in de werkomgeving van de behandelaar en cliënt. Zo heeft de behandelaar direct een volledig en actueel beeld van hun cliënt in één omgeving. Daarnaast is het mogelijk voor behandelaren om hun cliënten toegang te geven tot specifieke eHealth-modules en interventies van uiteenlopende leveranciers.
 
-Interoperabiliteit tussen de informatiesystemen is hier één van de belangrijke aspecten in de context van **blended care in de GGZ**. Bij blended care in de GGZ worden reguliere face-to-face gesprekken gecombineerd met **online interventies** zoals bijvoorbeeld chat, beeldbellen en **online behandelmodules**. Hierdoor kan een cliënt tijd- en plaats-onafhankelijk zorg gebruiken via een tablet of smartphone[\[1\]]().
+Interoperabiliteit tussen de informatiesystemen is hier één van de belangrijke aspecten in de context van **blended care in de GGZ**. Bij blended care in de GGZ worden reguliere face-to-face gesprekken gecombineerd met **online interventies** zoals bijvoorbeeld chat, beeldbellen en **online behandelmodules**. Hierdoor kan een cliënt tijd- en plaats-onafhankelijk zorg gebruiken via een tablet of smartphone.
 
 Een **behandelplan** beschrijft de gehele behandeling waar een blended care behandeling onderdeel van kan zijn. In dat plan worden verschillende **activiteiten** benoemd, veelal in een bepaalde volgorde. Deze activiteiten kunnen zijn, het samenstellen van het zorgteam, het bepalen van de doelen van een behandeling, het maken van een afspraak, het uitvoeren van een \(online\) interventie, het bespreken of bekijken van **voortgang**, **status**, **resultaten**, en het **evalueren** van de vooruitgang van de conditie van de Cliënt ten opzichte van de behandeldoelen. Voor zover deze activiteiten door een informatiesysteem worden ondersteund, is gegevensuitwisseling via Koppeltaal mogelijk.
 
 Bij een blended care behandeling zijn tenminste een **cliënt** en een **behandelaar** betrokken. En steeds vaker ook **derden**, zoals vrienden, familie, lotgenoten, en ervaringsdeskundigen.
 
-### Positie van Koppeltaal in het GGZ-referentiedomeinen model[\[2\]]()
+### Positie van Koppeltaal in het GGZ-referentiedomeinen model
 
 ![Koppeltaal en het GGZ-referentiedomein model](.gitbook/assets/2%20%282%29.jpeg)
 
 In het door GGZ Nederland en Nictiz opgestelde GGZ Domein referentiemodel speelt Koppeltaal een mogelijke rol in de met een groene cirkel aangeduide sub domeinen.
 
-Koppeltaal helpt om behandeling te ondersteunen. Specifiek eHealth in blended care processen[\[3\]](). Verder ondersteunt Koppeltaal de aanmeldingsprocessen via het synchroniseren van patiëntgegevens over verschillende applicaties. Daarnaast kan Koppeltaal \[in de toekomst\] een rol spelen in de resourceplanning, omdat er rond een behandelplan met Koppeltaal relaties gelegd kunnen worden tussen cliënt, behandelaar, en derden \(zoals familie, vrienden, ervaringsdeskundigen, etc.\).
+Koppeltaal helpt om behandeling te ondersteunen. Specifiek eHealth in blended care processen. Verder ondersteunt Koppeltaal de aanmeldingsprocessen via het synchroniseren van patiëntgegevens over verschillende applicaties. Daarnaast kan Koppeltaal \[in de toekomst\] een rol spelen in de resourceplanning, omdat er rond een behandelplan met Koppeltaal relaties gelegd kunnen worden tussen cliënt, behandelaar, en derden \(zoals familie, vrienden, ervaringsdeskundigen, etc.\).
 
 Ten slotte kan Koppeltaal \[in de toekomst\] een rol spelen in de verantwoording en de innovatie. Via Koppeltaal kan informatie voor besturing verkregen worden over de inzet van eHealth in blended care processen geïntegreerd over verschillende applicaties heen. Daarnaast kan met Koppeltaal, de adoptie van eHealth onder cliënten en behandelaren versneld worden via de door Koppeltaal veroorloofde keuzevrijheid, flexibiliteit, en gebruikersgemak.
 
@@ -1023,7 +1023,7 @@ De use-cases benoemen niet alleen de actoren, maar noemen ook “bedrijfsobjecte
 
 Om Koppeltaal als integratie standaard van informatiesystemen ter beschikking te stellen voor instellingen voor Geestelijke Gezondheidszorg, zijn er beheerprocessen nodig tussen zorgaanbieders, leveranciers en stichting Koppeltaal.
 
-We onderscheiden de volgende functionele beheer lagen \(zie Figuur 5. Beheerprocessen\).
+We onderscheiden de volgende functionele beheer lagen \(zie Beheerprocessen\).
 
 We hebben **Koppeltaalregie** die de kwaliteit en levering van uitbestede diensten door aanbieders coördineert.
 
@@ -1093,4 +1093,3 @@ De mate waarin Koppeltaal effectief en efficiënt gewijzigd kan worden door aang
 * beheerders \(identiteit\)
 * toegangslog beheer \(systemen\)
 
-1. 

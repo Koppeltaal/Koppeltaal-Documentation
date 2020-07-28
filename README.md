@@ -1,4 +1,4 @@
-# Technologie architectuur Koppeltaal 1.3.x
+# Technologie architectuur
 
 ![Logo\_vZVZ\_servicecentrum.JPG](.gitbook/assets/0.jpeg)
 

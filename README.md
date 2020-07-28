@@ -1,4 +1,4 @@
-# Koppeltaal 1.3.x
+# Koppeltaal 1.3.x architectuur
 
 ![Logo\_vZVZ\_servicecentrum.JPG](.gitbook/assets/0.jpeg)
 

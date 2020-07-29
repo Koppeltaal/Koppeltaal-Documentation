@@ -308,7 +308,7 @@ Specialistische zorg scenario – Use-cases
 
 Koppeltaal biedt de volgende rollen en use-cases aan om de scenario’s, zoals hierboven beschreven, mogelijk te maken.
 
-![Use-cases](.gitbook/assets/3%20%282%29.jpeg)
+![Use-cases](.gitbook/assets/usecaseskt.jpg)
 
 ### Rollen
 
@@ -1009,7 +1009,7 @@ De Leverancier Support rol worden door de verschillende ICT- en adapter leveranc
 
 ![Beheerprocessen](.gitbook/assets/5%20%281%29.jpeg)
 
-## Koppeltaal kwaliteitseisen \(ISO-norm 250101\)
+## Koppeltaal kwaliteitseisen \(ISO-norm 25010\)
 
 Niet-functionele \(software\) requirements zijn kwaliteitseisen waaraan een systeem moet voldoen. De ISO-norm 25010 beschrijft de [kwaliteitskenmerken](https://nl.wikipedia.org/wiki/Kwaliteit_%28hoedanigheid%29) van [software](https://nl.wikipedia.org/wiki/Software). Het model voor productkwaliteit onderscheidt acht hoofdcategorieën.
 

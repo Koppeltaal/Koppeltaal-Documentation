@@ -632,7 +632,7 @@ https://ggz.koppeltaal.nl/OAuth2/Koppeltaal/MobileLaunch?
 
 Mobiele Launch Activate code opvragen
 
-Het antwoord is een Activatie Code en een Expiration tijd in dagen
+Het antwoord is een activatie code en houdbaarheidsduur in dagen
 
 ```text
 {
@@ -641,18 +641,21 @@ Het antwoord is een Activatie Code en een Expiration tijd in dagen
 }
 ```
 
-Een Activation Code en houdbaarheid
+Deze activatie code zal vervolgens aan de gebruiker doorgegeven moeten worden, die gebruik wil maken van de mobiele app en deze code kan slechts één keer gebruikt worden.
 
-Deze activatie code zal vervolgens naar de gebruiker doorgegeven moeten worden.
+Wanneer de mobiele opgestart wordt, wordt de gebruiker gevraagd om de activeringscode \(activation\_code\) in te voeren. De mobiele app moet een hard gecodeerde of configureerbare FHIR-basis URL hebben van Koppeltaal waarheen hij vervolgens een autorisatie verzoek kan heen sturen. De FHIR-basis URL komt initieel niet mee, bij het opstarten van de mobiele app.
 
-Echter het is niet binnen de scope van dit technisch architectuur document om deze interactie te beschrijven.
+Vervolgens moet de mobiele app, de authorize- en token endpoints via het 'Conformance Statement' bij Koppeltaal ophalen, zoals bij de 'SMART Autorisatie voor webapplicaties' is beschreven.
 
-* Bij de eerste opstart van de Mobile App: is deze code aangevraagd?
-* De Mobile App \(OAuth2 Client\) geeft een gecodeerde configuratie met de FHIR Base URL voor de Koppeltaal Server \(verschil met de Web Launch\)
-* De app zal de Authorize- en Token endpoints moeten ophalen van Koppeltaal Server \(OAuth2 Server\) via de Conformance statement \(zoals bij de Web Launch\).
-* De Mobile app zal de Authorize endpoint roepen met de Mobile Activation Code als Launch Code
+Koppeltaal retourneert op een autorisatie verzoek een JSON antwoord:
 
-Notitie: Een Mobile App kan maar één keer gebruik maken van de authorization\_code.
+```text
+{
+   "authorisation_code": "0db34c09-201b-41da-af41-deee89302f4b"
+}
+```
+
+Met deze authorisation\_code kan men weer vervolgens een toegangstoken opvragen, zoals ook beschreven is in de 'SMART Autorisatie voor webapplicaties'. 
 
 ### Gebruik van de Refresh token
 

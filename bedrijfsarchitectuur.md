@@ -47,262 +47,33 @@ Via het privacy beleid van de GGZ-deelnemer, en de keten van verwerkersovereenko
 
 Koppeltaal biedt via de standaard: flexibiliteit, keuzevrijheid en gebruiksgemak in blended care processen. Om te illustreren hoe de standaard dat doet beschrijven we hieronder twee voorbeeld scenario’s van verschillende blended care behandelingen. Een in de eerstelijns zorg en een in de gespecialiseerde GGZ zorg. De stappen in de scenario’s staan in de linker kolom beschreven, en in de rechterkolom staan Koppeltaal use cases die gebruikt worden in de ondersteuning van de betreffende stap in het proces.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left"><b>Scenario</b>
-      </th>
-      <th style="text-align:left"><b>Scenario per stap</b>
-      </th>
-      <th style="text-align:left"><b>Use case</b>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">1</td>
-      <td style="text-align:left">Een cli&#xEB;nt meldt zich bij de huisarts met chronische spanning en
-        hoofdpijn. De huisarts constateert dat er veel angst speelt bij deze cli&#xEB;nt
-        en vraagt de praktijkondersteuner GGZ (POH) de cli&#xEB;nt te begeleiden.
-        De POH opent de pagina van deze cli&#xEB;nt en kijkt in de lijst met beschikbare
-        applicaties welke angstmodule de cli&#xEB;nt het best kan volgen. Ze ziet
-        een geschikte module angst en spanning.</td>
-      <td style="text-align:left">
-        <ul>
-          <li>Beheerder heeft applicaties met daarbij behorende (sub)activiteiten in
-            het Koppeltaal domein geregistreerd en daarmee zijn ze beschikbaar gesteld</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">2</td>
-      <td style="text-align:left">Ze wijst deze module toe aan de cli&#xEB;nt.</td>
-      <td style="text-align:left">
-        <ul>
-          <li>Behandelplan starten
-            <ol>
-              <li>(Sub)activiteiten als onderdeel van het behandelplan selecteren.</li>
-              <li>Participant (Pati&#xEB;nt) opvoeren in het behandelplan.</li>
-            </ol>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">3</td>
-      <td style="text-align:left">De cli&#xEB;nt ontvangt in de mail een uitnodiging voor toegang tot het
-        cli&#xEB;ntportaal van de huisarts en logt in via een link.</td>
-      <td style="text-align:left">
-        <ul>
-          <li>Ontvangen inlogverzoek</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">4</td>
-      <td style="text-align:left">In het cli&#xEB;ntportaal staat de module angst en spanning als een &#x2018;blok&#x2019;
-        klaar zoals besproken. De cli&#xEB;nt klikt op het blok en de module wordt
-        geopend. De cli&#xEB;nt gaat aan de slag. De cli&#xEB;nt werkt een half
-        uur aan de module en sluit deze na afronding af en gaat slapen.</td>
-      <td
-      style="text-align:left">
-        <ul>
-          <li>(Sub)activiteit lanceren
-            <ol>
-              <li>Single Sign-On realiseren tussen interventie en de te lanceren (sub)activiteit.</li>
-            </ol>
-          </li>
-        </ul>
-        </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">5</td>
-      <td style="text-align:left">De POH komt in de ochtend op kantoor en opent het cli&#xEB;nt dossier
-        via het behandelaarsplatform. Ze ziet dat de cli&#xEB;nt de module heeft
-        geopend, heeft afgerond en vervolgens heeft afgesloten.</td>
-      <td style="text-align:left">
-        <ul>
-          <li>(Sub)activiteit monitoren.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">6</td>
-      <td style="text-align:left">Ze klikt door naar de pagina van de cli&#xEB;nt en kan daar direct de
-        scores van de app en de reflectie van de cli&#xEB;nt daarop lezen.</td>
-      <td
-      style="text-align:left">
-        <ul>
-          <li>(Sub)activiteit evalueren.</li>
-        </ul>
-        </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">7</td>
-      <td style="text-align:left">Ze twijfelt of ze de reflectie van de cli&#xEB;nt op de afsluitende opdracht
-        van de module goed begrijpt. Ze klikt door op het resultaat, daarmee wordt
-        de module geopend en kan ze zien wat de cli&#xEB;nt precies gedaan heeft
-        in de opdracht. Nu is ze goed voorbereid voor het gesprek van vanmiddag.</td>
-      <td
-      style="text-align:left">
-        <ul>
-          <li>(Sub)activiteit evalueren door (sub)activiteit te lanceren.</li>
-        </ul>
-        </td>
-    </tr>
-  </tbody>
-</table>
+| **Scenario** | **Scenario per stap** | **Use case** |
+| :--- | :--- | :--- |
+| 1 | Een cliënt meldt zich bij de huisarts met chronische spanning en hoofdpijn. De huisarts constateert dat er veel angst speelt bij deze cliënt en vraagt de praktijkondersteuner GGZ \(POH\) de cliënt te begeleiden. De POH opent de pagina van deze cliënt en kijkt in de lijst met beschikbare applicaties welke angstmodule de cliënt het best kan volgen. Ze ziet een geschikte module angst en spanning. | Beheerder heeft applicaties met daarbij behorende \(sub\)activiteiten in het Koppeltaal domein geregistreerd en daarmee zijn ze beschikbaar gesteld |
+| 2 | Ze wijst deze module toe aan de cliënt. | Behandelplan starten en \(Sub\)activiteiten als onderdeel van het behandelplan selecteren en Participant \(Patiënt\) opvoeren in het behandelplan. |
+| 3 | De cliënt ontvangt in de mail een uitnodiging voor toegang tot het cliëntportaal van de huisarts en logt in via een link. | Ontvangen inlogverzoek |
+| 4 | In het cliëntportaal staat de module angst en spanning als een ‘blok’ klaar zoals besproken. De cliënt klikt op het blok en de module wordt geopend. De cliënt gaat aan de slag. De cliënt werkt een half uur aan de module en sluit deze na afronding af en gaat slapen. | \(Sub\)activiteit lanceren en Single Sign-On realiseren tussen interventie en de te lanceren \(sub\)activiteit. |
+| 5 | De POH komt in de ochtend op kantoor en opent het cliënt dossier via het behandelaarsplatform. Ze ziet dat de cliënt de module heeft geopend, heeft afgerond en vervolgens heeft afgesloten. | \(Sub\)activiteit monitoren. |
+| 6 | Ze klikt door naar de pagina van de cliënt en kan daar direct de scores van de app en de reflectie van de cliënt daarop lezen. | \(Sub\)activiteit evalueren. |
+| 7 | Ze twijfelt of ze de reflectie van de cliënt op de afsluitende opdracht van de module goed begrijpt. Ze klikt door op het resultaat, daarmee wordt de module geopend en kan ze zien wat de cliënt precies gedaan heeft in de opdracht. Nu is ze goed voorbereid voor het gesprek van vanmiddag. | \(Sub\)activiteit evalueren door \(sub\)activiteit te lanceren. |
 
 Tabel 1. Eerstelijns zorg scenario – Use-cases
 
 In de specialistische GGZ zou Koppeltaal bijvoorbeeld in het volgende scenario ingezet kunnen worden:
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left"><b>Scenario</b>
-      </th>
-      <th style="text-align:left"><b>Scenario per stap</b>
-      </th>
-      <th style="text-align:left"><b>Use case</b>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">8</td>
-      <td style="text-align:left">Een cli&#xEB;nt is in gesprek met de psychiater. Er is complexe problematiek
-        aan de orde, maar de problematiek is niet ernstig. Er kan behandeld worden
-        met blended care. De psychiater kiest een passende ROM-vragenlijst om beter
-        beeld te krijgen van de startsituatie van de behandeling.</td>
-      <td style="text-align:left">
-        <ul>
-          <li>Selecteer passende ROM-vragenlijst (sub activiteit) aan cli&#xEB;nt.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">9</td>
-      <td style="text-align:left">De cli&#xEB;nt ontvangt via de e-mail een uitnodiging om in te loggen</td>
-      <td
-      style="text-align:left">
-        <ul>
-          <li>Ontvangen inlogverzoek.</li>
-        </ul>
-        </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">10</td>
-      <td style="text-align:left">De cli&#xEB;nt logt in en ziet een knop om de vragenlijst te starten.
-        De cli&#xEB;nt klikt en de vragenlijst wordt geopend. De cli&#xEB;nt vult
-        de lijst in, maar stopt halverwege. Te moeilijk.</td>
-      <td style="text-align:left">
-        <ul>
-          <li>Opstarten en (gedeeltelijk) invullen ROM vragenlijst (sub activiteit)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">11</td>
-      <td style="text-align:left">De behandelaar krijgt melding dat cli&#xEB;nt geen voortgang toont in
-        behandeling</td>
-      <td style="text-align:left">
-        <ul>
-          <li>(Sub)activiteit monitoren.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">12</td>
-      <td style="text-align:left">De cli&#xEB;nt geeft aan dat hij de vragenlijst moeilijk vindt en dat
-        hij daarop afhaakt. Dat is onderdeel van het probleem waarom de cli&#xEB;nt
-        in de eerste plaats kwam. In overleg besluiten behandelaar en cli&#xEB;nt
-        een familielid bij te schakelen om te helpen. Het familielid kan dat op
-        zijn eigen systeem zien wat de cli&#xEB;nt heeft ingevuld en daarop toelichting
-        geven voor de behandelaar. De cli&#xEB;nt nodigt via het eHealthplatform
-        zijn vrouw uit om mee te helpen.</td>
-      <td style="text-align:left">
-        <ul>
-          <li>Participant (Derde) opvoeren in het behandelplan.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">13</td>
-      <td style="text-align:left">De behandelaar krijgt een signaal dat er een relatie is toegevoegd aan
-        de pagina van de cli&#xEB;nt.</td>
-      <td style="text-align:left">- Ontvangen signaal dat relatie is toegevoegd</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">14</td>
-      <td style="text-align:left">Met behulp van zijn vrouw lukt het de client om de vragenlijst af te ronden.
-        De behandelaar krijgt signaal van de afronding en bekijkt de resultaten
-        ter voorbereiding op het volgende gesprek.</td>
-      <td style="text-align:left">
-        <ul>
-          <li>(Sub)activiteit evalueren</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">15</td>
-      <td style="text-align:left">In gesprek besluiten cli&#xEB;nt en behandelaar voor maatwerk op het gebied
-        van eHealth en monitoring. De cli&#xEB;nt gaat een app gebruiken om zelf
-        doelen te stellen, te monitoren en met zijn familie en vrienden passende
-        content voor zelfzorg te verzamelen. De behandelaar kent de betreffende
-        app toe aan de cli&#xEB;nt.</td>
-      <td style="text-align:left">
-        <ul>
-          <li>Behandelplan starten
-            <ol>
-              <li>(Sub)activiteiten als onderdeel van het behandelplan selecteren.</li>
-            </ol>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">16</td>
-      <td style="text-align:left">De cli&#xEB;nt logt thuis in en ziet een code om de app te activeren en
-        instructies om de app via de appstore te installeren op zijn iPhone. Hij
-        gebruikt de code om de app te activeren. (De app voor die gebruiker wordt
-        aangemeld voor berichten van Koppeltaal)</td>
-      <td style="text-align:left">
-        <ul>
-          <li>(Sub)activiteit lanceren
-            <ol>
-              <li>(met SSO)</li>
-            </ol>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">17</td>
-      <td style="text-align:left">De behandelaar ziet met regelmaat status, voortgang en resultaten uit
-        de app van de cli&#xEB;nt.</td>
-      <td style="text-align:left">
-        <ul>
-          <li>(Sub)activiteit monitoren.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">18</td>
-      <td style="text-align:left">Op een gegeven moment denkt de behandelaar aan een filmpje op internet
-        waarvan hij denkt dat het behulpzaam kan zijn voor in de &#x2018;rugzak&#x2019;
-        van deze cli&#xEB;nt. Hij kopieert een link naar het filmpje in een bericht
-        dat hij de cli&#xEB;nt stuurt. De cli&#xEB;nt opent de app in de ochtend
-        en ziet daar een tip van zijn behandelaar. De cli&#xEB;nt bekijkt de tip
-        en voegt deze toe aan zijn &#x2018;rugzak&#x2019; in de app.</td>
-      <td style="text-align:left">
-        <ul>
-          <li>Algemene informatie uitwisselen</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| **Scenario** | **Scenario per stap** | **Use case** |
+| :--- | :--- | :--- |
+| 8 | Een cliënt is in gesprek met de psychiater. Er is complexe problematiek aan de orde, maar de problematiek is niet ernstig. Er kan behandeld worden met blended care. De psychiater kiest een passende ROM-vragenlijst om beter beeld te krijgen van de startsituatie van de behandeling. | Selecteer passende ROM-vragenlijst \(sub activiteit\) aan cliënt. |
+| 9 | De cliënt ontvangt via de e-mail een uitnodiging om in te loggen | Ontvangen inlogverzoek. |
+| 10 | De cliënt logt in en ziet een knop om de vragenlijst te starten. De cliënt klikt en de vragenlijst wordt geopend. De cliënt vult de lijst in, maar stopt halverwege. Te moeilijk. | Opstarten en \(gedeeltelijk\) invullen ROM vragenlijst \(sub activiteit\) |
+| 11 | De behandelaar krijgt melding dat cliënt geen voortgang toont in behandeling | \(Sub\)activiteit monitoren. |
+| 12 | De cliënt geeft aan dat hij de vragenlijst moeilijk vindt en dat hij daarop afhaakt. Dat is onderdeel van het probleem waarom de cliënt in de eerste plaats kwam. In overleg besluiten behandelaar en cliënt een familielid bij te schakelen om te helpen. Het familielid kan dat op zijn eigen systeem zien wat de cliënt heeft ingevuld en daarop toelichting geven voor de behandelaar. De cliënt nodigt via het eHealthplatform zijn vrouw uit om mee te helpen. | Participant \(Derde\) opvoeren in het behandelplan. |
+| 13 | De behandelaar krijgt een signaal dat er een relatie is toegevoegd aan de pagina van de cliënt. | Ontvangen signaal dat relatie is toegevoegd |
+| 14 | Met behulp van zijn vrouw lukt het de client om de vragenlijst af te ronden. De behandelaar krijgt signaal van de afronding en bekijkt de resultaten ter voorbereiding op het volgende gesprek. | \(Sub\)activiteit evalueren |
+| 15 | In gesprek besluiten cliënt en behandelaar voor maatwerk op het gebied van eHealth en monitoring. De cliënt gaat een app gebruiken om zelf doelen te stellen, te monitoren en met zijn familie en vrienden passende content voor zelfzorg te verzamelen. De behandelaar kent de betreffende app toe aan de cliënt. | Behandelplan starten en \(Sub\)activiteiten als onderdeel van het behandelplan selecteren. |
+| 16 | De cliënt logt thuis in en ziet een code om de app te activeren en instructies om de app via de appstore te installeren op zijn iPhone. Hij gebruikt de code om de app te activeren. \(De app voor die gebruiker wordt aangemeld voor berichten van Koppeltaal\) | \(Sub\)activiteit lanceren \(met SSO\) |
+| 17 | De behandelaar ziet met regelmaat status, voortgang en resultaten uit de app van de cliënt. | \(Sub\)activiteit monitoren. |
+| 18 | Op een gegeven moment denkt de behandelaar aan een filmpje op internet waarvan hij denkt dat het behulpzaam kan zijn voor in de ‘rugzak’ van deze cliënt. Hij kopieert een link naar het filmpje in een bericht dat hij de cliënt stuurt. De cliënt opent de app in de ochtend en ziet daar een tip van zijn behandelaar. De cliënt bekijkt de tip en voegt deze toe aan zijn ‘rugzak’ in de app. | Algemene informatie uitwisselen |
 
 Specialistische zorg scenario – Use-cases
 

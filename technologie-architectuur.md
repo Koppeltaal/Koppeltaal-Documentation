@@ -40,7 +40,7 @@ Voor Koppeltaal 1.3 is een eigen verzameling FHIR resources vastgelegd met hun e
 | UserMessage | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/UserMessage](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/UserMessage) |
 | CareTeam | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/CareTeam](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/CareTeam) |
 
-Profile identifiers voor Koppeltaal resources
+Profile Identifiers voor Koppeltaal resources.
 
 Koppeltaal maakt gebruik van de **Other** resource extensie van FHIR DSTU1.
 

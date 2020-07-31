@@ -166,7 +166,7 @@ MessageHeader van CreateOrUpdateCarePlan
 
 Elk bericht dat tussen applicaties wordt uitgewisseld moet op zichzelf staan \(self-contained\), er wordt niet verwezen naar externe bronnen. De reden van dit uitgangspunt is dat nieuwe aangesloten applicaties altijd up-to-date zijn met de gegevensuitwisseling en dat er geen kopieën van gegevens opgeslagen worden. Alle gegevens waarvan de verzendende applicatie eigenaar van is, moeten in de berichtenbundel opgenomen worden.
 
-Gegevens waarvan de verzendende applicatie geen eigenaar van is, krijgen een verwijzing in de bundel mee via een url. Een voorbeeld hiervan is van een geselecteerde ActivityDefinition met een identifier in een CreateOrUpdateCarePlan-bericht.
+Gegevens waarvan de verzendende applicatie geen eigenaar van is, krijgen een verwijzing in de bundel mee via een URL. Een voorbeeld hiervan is van een geselecteerde ActivityDefinition met een identifier in een CreateOrUpdateCarePlan-bericht.
 
 ```text
 <CarePlan xmlns="http://hl7.org/fhir">
@@ -267,7 +267,7 @@ Aan elke resource \(gegevensbron\) wordt een unieke FHIR-basis URL toegewezen, w
 >
 > **POST** [https://vzvz.nl/fhir/Koppeltaal/**Other**/ActivityDefinition:6720](https://vzvz.nl/fhir/Koppeltaal/Other/ActivityDefinition:6720)
 
-URL opbouw
+URL opbouw.
 
 URL’s moeten voldoen aan RFC3986 sectie 6 appendix A.
 

@@ -40,7 +40,7 @@ Voor Koppeltaal 1.3 is een eigen verzameling FHIR resources vastgelegd met hun e
 | UserMessage | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/UserMessage](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/UserMessage) |
 | CareTeam | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/CareTeam](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/CareTeam) |
 
-Profile Identifiers voor Koppeltaal resources.
+Profile identifiers voor Koppeltaal resources
 
 Koppeltaal maakt gebruik van de **Other** resource extensie van FHIR DSTU1.
 
@@ -166,7 +166,7 @@ MessageHeader van CreateOrUpdateCarePlan
 
 Elk bericht dat tussen applicaties wordt uitgewisseld moet op zichzelf staan \(self-contained\), er wordt niet verwezen naar externe bronnen. De reden van dit uitgangspunt is dat nieuwe aangesloten applicaties altijd up-to-date zijn met de gegevensuitwisseling en dat er geen kopieën van gegevens opgeslagen worden. Alle gegevens waarvan de verzendende applicatie eigenaar van is, moeten in de berichtenbundel opgenomen worden.
 
-Gegevens waarvan de verzendende applicatie geen eigenaar van is, krijgen een verwijzing in de bundel mee via een URL. Een voorbeeld hiervan is van een geselecteerde ActivityDefinition met een identifier in een CreateOrUpdateCarePlan-bericht.
+Gegevens waarvan de verzendende applicatie geen eigenaar van is, krijgen een verwijzing in de bundel mee via een url. Een voorbeeld hiervan is van een geselecteerde ActivityDefinition met een identifier in een CreateOrUpdateCarePlan-bericht.
 
 ```text
 <CarePlan xmlns="http://hl7.org/fhir">
@@ -267,7 +267,7 @@ Aan elke resource \(gegevensbron\) wordt een unieke FHIR-basis URL toegewezen, w
 >
 > **POST** [https://vzvz.nl/fhir/Koppeltaal/**Other**/ActivityDefinition:6720](https://vzvz.nl/fhir/Koppeltaal/Other/ActivityDefinition:6720)
 
-URL opbouw.
+URL opbouw
 
 URL’s moeten voldoen aan RFC3986 sectie 6 appendix A.
 
@@ -345,7 +345,7 @@ Bij het wijzigen van de resource content moet de aanvrager \(client\) de meest r
 </OperationOutcome>
 ```
 
-Versie id foutmelding met Patient 382.
+Versie id foutmelding met Patient 382
 
 In antwoord op aanvragen wordt in het **MessageHeader.data** element gerefereerd naar de focal resource van het bericht, oftewel de root van het bericht. Deze referentie is alleen bij een wijziging op een bestaande resource geversioneerd.
 

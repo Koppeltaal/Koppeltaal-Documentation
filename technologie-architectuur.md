@@ -345,7 +345,7 @@ Bij het wijzigen van de resource content moet de aanvrager \(client\) de meest r
 </OperationOutcome>
 ```
 
-Versie id foutmelding met Patient 382
+Versie id foutmelding met Patient 382.
 
 In antwoord op aanvragen wordt in het **MessageHeader.data** element gerefereerd naar de focal resource van het bericht, oftewel de root van het bericht. Deze referentie is alleen bij een wijziging op een bestaande resource geversioneerd.
 

@@ -40,7 +40,7 @@ Voor Koppeltaal 1.3 is een eigen verzameling FHIR resources vastgelegd met hun e
 | UserMessage | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/UserMessage](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/UserMessage) |
 | CareTeam | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/CareTeam](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/CareTeam) |
 
-Profile identifiers voor Koppeltaal resources
+Profile Identifiers voor Koppeltaal resources.
 
 Koppeltaal maakt gebruik van de **Other** resource extensie van FHIR DSTU1.
 
@@ -144,7 +144,7 @@ In de paragraaf "FHIR Resources" is de structuur in detail verder uitgewerkt van
 
 In FHIR messaging of FHIR-berichten, wordt een verzoekbericht verstuurd van een bronapplicatie naar een bestemmingstoepassing, wanneer er een gebeurtenis plaatsvindt. Het verzoekbericht bestaat uit een bundel \(feed\) die wordt geïdentificeerd door het type bericht, waarbij de eerste \(FHIR\) resource in de bundel een **MessageHeader** resource is. De MessageHeader heeft een **event.code** element – de berichtgebeurtenis – die de aard van het verzoekbericht identificeert, en het bevat aanvullende verzoek metagegevens. De andere aanvullende \(FHIR\) resources in de bundel zijn afhankelijk van het type aanvraag. Het **data** element heeft een referentie naar de onderliggende resource \(de focal resource\), waar dit berichttype toe behoort.
 
-```text
+```markup
 <MessageHeader xmlns="http://hl7.org/fhir">
    …
    <identifier value="5cde6a461e795"/>
@@ -166,9 +166,9 @@ MessageHeader van CreateOrUpdateCarePlan
 
 Elk bericht dat tussen applicaties wordt uitgewisseld moet op zichzelf staan \(self-contained\), er wordt niet verwezen naar externe bronnen. De reden van dit uitgangspunt is dat nieuwe aangesloten applicaties altijd up-to-date zijn met de gegevensuitwisseling en dat er geen kopieën van gegevens opgeslagen worden. Alle gegevens waarvan de verzendende applicatie eigenaar van is, moeten in de berichtenbundel opgenomen worden.
 
-Gegevens waarvan de verzendende applicatie geen eigenaar van is, krijgen een verwijzing in de bundel mee via een url. Een voorbeeld hiervan is van een geselecteerde ActivityDefinition met een identifier in een CreateOrUpdateCarePlan-bericht.
+Gegevens waarvan de verzendende applicatie geen eigenaar van is, krijgen een verwijzing in de bundel mee via een URL. Een voorbeeld hiervan is van een geselecteerde ActivityDefinition met een identifier in een CreateOrUpdateCarePlan-bericht.
 
-```text
+```markup
 <CarePlan xmlns="http://hl7.org/fhir">
    …
    <activity id="280ff751d626">
@@ -187,7 +187,7 @@ Alle berichten en de daarin voorkomende resource moeten uniek binnen een domein 
 
 In de context van de gezondheidszorg worden de \(FHIR\) resources geïdentificeerd aan de hand van veelgebruikte type identficaties voor personen, organisaties, definities, etc. Deze \(FHIR\) resources worden in bronsystemen vastgelegd, waarin overdraagbare identificaties zijn toegewezen om zo de resources buiten de context van Koppeltaal te kunnen identificeren, te gebruiken en te volgen. Hiervoor wordt het element "**identifier**" gebruikt.
 
-```text
+```markup
 <Other id="6720" xmlns="http://hl7.org/fhir">
    <identifier>
       <use value="official"/>
@@ -267,7 +267,7 @@ Aan elke resource \(gegevensbron\) wordt een unieke FHIR-basis URL toegewezen, w
 >
 > **POST** [https://vzvz.nl/fhir/Koppeltaal/**Other**/ActivityDefinition:6720](https://vzvz.nl/fhir/Koppeltaal/Other/ActivityDefinition:6720)
 
-URL opbouw
+URL opbouw.
 
 URL’s moeten voldoen aan RFC3986 sectie 6 appendix A.
 
@@ -275,7 +275,7 @@ URL’s moeten voldoen aan RFC3986 sectie 6 appendix A.
 
 Een representatie van een bericht is een indeling waarin de gegevens \(FHIR resources\) worden getransporteerd tussen applicaties. Door gebruik te maken van HTTP content negotiatie \(onderhandeling over inhoud\) kan een aanvrager \(client\) vragen om een representatie in een bepaald formaat. FHIR staat meerdere representaties toe. De aanvragers \(clients\) kunnen worden opgebouwd rond XML en JSON.
 
-```text
+```markup
 <Patient xmlns="http://hl7.org/fhir">
    <name>
       <use value="official" />
@@ -295,7 +295,7 @@ Een representatie van een bericht is een indeling waarin de gegevens \(FHIR reso
 
 XML- content
 
-```text
+```javascript
 {
     "resourceType": "Patient",
     "name": [{
@@ -324,7 +324,7 @@ Om wijzigingen op gegevens gecontroleerd uit te voeren, wordt er gebruik gemaakt
 
 Bij het wijzigen van de resource content moet de aanvrager \(client\) de meest recente versie id van de resource meesturen. Indien de versie id van de aanvrager niet match met de versie id van wat de Koppeltaal server als laatst heeft uitgegeven, wordt het wijzigingsverzoek van de aanvrager niet geaccepteerd en krijgt de aanvrager een HTTP status code "409: Conflict" antwoord terug, met gedetailleerde informatie in een "OperationOutcome" resource over welke resource\(s\) de verkeerde versie id gebruiken.
 
-```text
+```markup
 <OperationOutcome xmlns="http://hl7.org/fhir">
    <text>
       …
@@ -345,11 +345,11 @@ Bij het wijzigen van de resource content moet de aanvrager \(client\) de meest r
 </OperationOutcome>
 ```
 
-Versie id foutmelding met Patient 382
+Versie id foutmelding met Patient 382.
 
 In antwoord op aanvragen wordt in het **MessageHeader.data** element gerefereerd naar de focal resource van het bericht, oftewel de root van het bericht. Deze referentie is alleen bij een wijziging op een bestaande resource geversioneerd.
 
-```text
+```markup
 <MessageHeader xmlns="http://hl7.org/fhir">
    …
    <data>
@@ -368,7 +368,7 @@ Bij informatie uitwisseling via FHIR Messaging hebben we ook te maken met \(eenm
 
 Het opvragen van het 'Conformance Statement' met betrekking to OAuth2 URL’s bij Koppeltaal wordt verkregen via de GET operatie naar een vast endpoint \(URL\), bijvoorbeeld GET [https://base.koppeltaal.nl/fhir/Koppeltaal\*\*/metadata\*\*](https://base.koppeltaal.nl/fhir/Koppeltaal**/metadata**). Hiermee krijgt de aanvrager informatie over de OAuth2 implementatie voor Single-Sign-On. De 'Conformance Statement' resource is hiervoor uitgebreid met launch \(opstart\) URL’s.
 
-```text
+```javascript
 {
   "resourceType": "Conformance",
   …
@@ -397,16 +397,14 @@ Volgende tabel geeft een overzicht van de nieuwe URL’s die door Koppeltaal wor
 
 | URI extensie | Omschrijving |
 | :--- | :--- |
-| \[[http://fhir.vitalhealthsoftware.com/Profile/Conformance\#Launch](http://fhir.vitalhealthsoftware.com/Profile/Conformance#Launch) |  |
-
-\]\([http://fhir.vitalhealthsoftware.com/Profile/Conformance\#Launch](http://fhir.vitalhealthsoftware.com/Profile/Conformance#Launch)
-
-\) \| Identificeert de OAuth2 "launch" URL voor de server \| \| [http://fhir-registry.smarthealthit.org/Profile/oauth-uris\#authorize](http://fhir-registry.smarthealthit.org/Profile/oauth-uris#authorize) \| Identificeert de OAuth2 "autorisatie" URL voor de server \| \| [http://fhir-registry.smarthealthit.org/Profile/oauth-uris\#token](http://fhir-registry.smarthealthit.org/Profile/oauth-uris#token) \| Identificeert de OAuth2 "token" URL voor de server \|
+| [http://fhir.vitalhealthsoftware.com/Profile/Conformance\#Launch](http://fhir.vitalhealthsoftware.com/Profile/Conformance#Launch) | Identificeert de OAuth2 "launch" URL voor de server |
+| [http://fhir-registry.smarthealthit.org/Profile/oauth-uris\#authorize](http://fhir-registry.smarthealthit.org/Profile/oauth-uris#authorize) | Identificeert de OAuth2 "autorisatie" URL voor de server |
+| [http://fhir-registry.smarthealthit.org/Profile/oauth-uris\#token](http://fhir-registry.smarthealthit.org/Profile/oauth-uris#token) | Identificeert de OAuth2 "token" URL voor de server |
 
 Daarnaast definieert Koppeltaal 4 extensies die de validatie van verzoeken \(request\) en antwoorden \(reply\) regelen:
 
 | **URI extensieURI extensie** | **Type** | **Omschrijving** |
-| :--- | :--- | :--- |
+| :--- | :---: | :--- |
 | [http://fhir.vitalhealthsoftware.com/Profile/Conformance\#ValidateRequestsAgainstSchema](http://fhir.vitalhealthsoftware.com/Profile/Conformance#ValidateRequestsAgainstSchema) | Boolean | Bij 'true', valideert de server het verzoek \(request\) tegen een XML Schema |
 | [http://fhir.vitalhealthsoftware.com/Profile/Conformance\#ValidateRepliesAgainstSchema](http://fhir.vitalhealthsoftware.com/Profile/Conformance#ValidateRepliesAgainstSchema) | Boolean | Bij 'true' valideert de server het antwoord \(reply\) tegen een XML Schema |
 | [http://fhir.vitalhealthsoftware.com/Profile/Conformance\#ValidateRequestsAgainstProfile](http://fhir.vitalhealthsoftware.com/Profile/Conformance#ValidateRequestsAgainstProfile) | Boolean | Bij 'true', valideert de server het verzoek \(request\) tegen een FHIR profiel |
@@ -457,7 +455,7 @@ Het routeren van binnenkomende berichten gebeurt binnen een domein en de bericht
 Koppeltaal biedt een functie aan om notificaties te versturen als er een nieuw bericht beschikbaar is voor een applicatie. Deze notificatie is geïmplementeerd middels REST WebHooks. Om een notificatie te kunnen ontvangen zijn de volgende configuratie acties nodig:
 
 * Een WebHook URL definiëren, tijdens de registratie en configuratie van een applicatie in het domein, die Koppeltaal kan aanroepen.
-* De lokale implementatie achter de WebHook URL is nodig om notificaties te kunnen interpreteren. Koppeltaal zal een event genereren, ter informatie dat er ‘nieuwe’ berichten beschikbaar zijn. De betreffende applicatie wordt maximaal 5 keer gesignaleerd. De applicatie kan daarna het bericht lezen zoals al beschreven in paragraaf 4.4 Bericht ophalen.
+* De lokale implementatie achter de WebHook URL is nodig om notificaties te kunnen interpreteren. Koppeltaal zal een event genereren, ter informatie dat er ‘nieuwe’ berichten beschikbaar zijn. De betreffende applicatie wordt maximaal 5 keer gesignaleerd. De applicatie kan daarna het bericht lezen zoals al beschreven in paragraaf 4.4 [Bericht ophalen](https://app.gitbook.com/@stibbe/s/koppeltaal-1-3-x-architectuur/~/drafts/-MDoUxToRRyPRHw2QUhb/technologie-architectuur/@drafts#bericht-ophalen).
 
 ### Bericht ophalen
 

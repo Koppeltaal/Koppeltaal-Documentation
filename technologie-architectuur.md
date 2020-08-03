@@ -136,7 +136,7 @@ De volgende event.codes \(interacties\) zijn gedefinieerd om de functionaliteit 
 
 Figuur 6. Interacties
 
-In de paragraaf "FHIR Resources" is de structuur in detail verder uitgewerkt van alle Koppeltaal resources met alle elementen en attributen.
+In de paragraaf "[FHIR Resources](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/technologie-architectuur#fhir-resources)" is de structuur in detail verder uitgewerkt van alle Koppeltaal resources met alle elementen en attributen.
 
 ### Uitgangspunten bij informatie-uitwisseling
 
@@ -438,7 +438,7 @@ Koppeltaal ondersteunt de volgende processen voor de uitwisseling van berichten:
 
 ### Bericht versturen
 
-Alle applicaties maken gebruik van de standaard HTTP operatie POST om berichten \(FHIR Message DSTU1\) te versturen. De berichten worden naar een vaste endpoint \(URL\) van Koppeltaal gestuurd, zie 'interactie ontvangen' \(technische service\) waarvan de basis URL bijvoorbeeld [https://koppeltaal.nl/FHIR/Koppeltaal/Mailbox](https://koppeltaal.nl/FHIR/Koppeltaal/Mailbox) is. Elk binnenkomend bericht wordt \(tijdelijk\) gepersisteerd in een datastore. De structuur van het bericht is, in hoofdstuk 3 Informatie-uitwisseling op basis van FHIR Messaging, beschreven.
+Alle applicaties maken gebruik van de standaard HTTP operatie POST om berichten \(FHIR Message DSTU1\) te versturen. De berichten worden naar een vaste endpoint \(URL\) van Koppeltaal gestuurd, zie 'interactie ontvangen' \(technische service\) waarvan de basis URL bijvoorbeeld [https://koppeltaal.nl/FHIR/Koppeltaal/Mailbox](https://koppeltaal.nl/FHIR/Koppeltaal/Mailbox) is. Elk binnenkomend bericht wordt \(tijdelijk\) gepersisteerd in een datastore. De structuur van het bericht is, in hoofdstuk  "[Informatie-uitwisseling op basis van FHIR Messaging](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/technologie-architectuur#informatie-uitwisseling-op-basis-van-fhir-messaging)", beschreven.
 
 De opslag van de Message Header \(metadata van het bericht\) en de content van het bericht \(Message Body\) zullen apart gepersisteerd worden in verschillende tabellen.
 
@@ -455,7 +455,7 @@ Het routeren van binnenkomende berichten gebeurt binnen een domein en de bericht
 Koppeltaal biedt een functie aan om notificaties te versturen als er een nieuw bericht beschikbaar is voor een applicatie. Deze notificatie is geïmplementeerd middels REST WebHooks. Om een notificatie te kunnen ontvangen zijn de volgende configuratie acties nodig:
 
 * Een WebHook URL definiëren, tijdens de registratie en configuratie van een applicatie in het domein, die Koppeltaal kan aanroepen.
-* De lokale implementatie achter de WebHook URL is nodig om notificaties te kunnen interpreteren. Koppeltaal zal een event genereren, ter informatie dat er ‘nieuwe’ berichten beschikbaar zijn. De betreffende applicatie wordt maximaal 5 keer gesignaleerd. De applicatie kan daarna het bericht lezen zoals al beschreven in paragraaf 4.4 [Bericht ophalen](https://app.gitbook.com/@stibbe/s/koppeltaal-1-3-x-architectuur/~/drafts/-MDoUxToRRyPRHw2QUhb/technologie-architectuur/@drafts#bericht-ophalen).
+* De lokale implementatie achter de WebHook URL is nodig om notificaties te kunnen interpreteren. Koppeltaal zal een event genereren, ter informatie dat er ‘nieuwe’ berichten beschikbaar zijn. De betreffende applicatie wordt maximaal 5 keer gesignaleerd. De applicatie kan daarna het bericht lezen zoals al beschreven in paragraaf [Bericht ophalen](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/technologie-architectuur#bericht-ophalen).
 
 ### Bericht ophalen
 
@@ -497,9 +497,9 @@ Volgens de OAuth2 specificaties kunnen er twee typen Clients worden onderscheide
 * "Public Client" Een Public Client draait volledig op een eindgebruiker apparaat. Gevolg is dat de applicatie geen "cliënt secret" kan beschermen in het geval dat er ook geen applicatie logica op een server zou draaien. Voorbeelden JavaScript app in een browser. The Ranj Kick-ASS game is een voorbeeld van een Public Client applicatie.
 * "Confidential Client" Is een applicatie die een "cliënt secret" kan beschermen door gebruik te maken van “server-side business logic”. Het grote verschil tussen Publieke en Confidentiële Clients is als de Client de toegang tot het Token endpoint gebruikt, de confidentiële Client de client\_id en client\_secret als basis authenticatie header kan aanleveren.
 
-Toegangstokens worden aangevraagd bij een OAuth2-compatibele autorisatieserver \(Koppeltaal server\) via een TLS beveiligde kanaal \(zie hoofdstuk 7 Beveiliging\).
+Toegangstokens worden aangevraagd bij een OAuth2-compatibele autorisatieserver \(Koppeltaal server\) via een TLS beveiligde kanaal \(zie hoofdstuk "[Beveiliging](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/technologie-architectuur#beveiliging)"\).
 
-Configuratie gegevens, zoals codes en toegangstokens, kan men via de Conformance Statement \(zie paragraaf 3.4.8 De 'Conformance Statement' \) opvragen.
+Configuratie gegevens, zoals codes en toegangstokens, kan men via de Conformance Statement \(zie paragraaf De '[Conformance Statement](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/technologie-architectuur#de-conformance-statement)' \) opvragen.
 
 De mate waarin informatie en gegevens \(resources\) beschermt moet worden zodat \(eind\)gebruikers, en andere producten de juiste mate van gegevenstoegang hebben passend bij hun soort en niveau van autorisatie.
 
@@ -541,7 +541,7 @@ Wanneer de gebruiker de applicatie URL opent, moeten de volgende gegevens aan Ko
 
 ### SMART Autorisatie voor webapplicaties
 
-Met behulp van de 'Conformance Statement' \(zie paragraaf 3.4.8 De 'Conformance Statement'\) kan een \(gelanceerde\) applicatie een OAuth2 autorisatie verzoek indienen bij Koppeltaal \(zie ook RFC 6749\). De applicatie gebruikt hierbij de authorize- en token endpoints uit de 'Conformance Statement'. De applicatie moet de scoop van het autorisatie verzoek specificeren, dit is onderdeel van het OAuth2 protocol, dat voor Koppeltaal v1.3 "patient/\*.\*" is. Dit betekent dat de applicatie toegang vraagt tot alle berichten van de patiënt waarop deze applicatie is geabonneerd. Verder worden bij het autorisatie verzoek de volgende parameters doorgegeven aan Koppeltaal:
+Met behulp van de 'Conformance Statement' \(zie paragraaf De '[Conformance Statement](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/technologie-architectuur#de-conformance-statement)'\) kan een \(gelanceerde\) applicatie een OAuth2 autorisatie verzoek indienen bij Koppeltaal \(zie ook RFC 6749\). De applicatie gebruikt hierbij de authorize- en token endpoints uit de 'Conformance Statement'. De applicatie moet de scoop van het autorisatie verzoek specificeren, dit is onderdeel van het OAuth2 protocol, dat voor Koppeltaal v1.3 "patient/\*.\*" is. Dit betekent dat de applicatie toegang vraagt tot alle berichten van de patiënt waarop deze applicatie is geabonneerd. Verder worden bij het autorisatie verzoek de volgende parameters doorgegeven aan Koppeltaal:
 
 * reponse\_type. Dit wordt ingevuld met de waarde 'code' waarmee de aanvragende applicatie aangeeft dat het een autorisatie code wil ontvangen.
 * client\_id. Moet worden ingevuld met de waarde van de toegewezen identifier van de aanroepende applicatie
@@ -687,7 +687,7 @@ Het transport van berichten volgens Koppeltaal v1.x is gebaseerd op een aantal s
 
 De \(huidige\) uitwisselingsmethoden van Koppeltaal is gebaseerd op basis van messages \(qua methodiek vergelijkbaar met HL7V2 messaging\). Deze standaard wordt gezien als voldoende stabiel als basis voor implementaties voor Koppeltaal 1.3. Elke FHIR message bestaat uit een FHIR MessageHeader element en uit een lijst van resources \(vergelijkbaar met HL7V2 message segmenten\) die gebaseerd zijn op FHIR DSTU1 \(Draft Standard for Trial Use\) en gedefinieerd worden in de MessageHeader. De verschillende messages realiseren de functionaliteit van Koppeltaal.
 
-In de volgende tabel staat welke FHIR resource entries minimaal aanwezig moeten zijn bij de voor gedefinieerde Koppeltaal bericht types \(MessageHeader.event.code: codering die het event identificeert wat het bericht betekent\). Indien er naar een FHIR resource wordt gerefereerd, dient deze volledig aanwezig te zijn zoals deze onder hoofdstuk 6 “Berichten” in volgende paragrafen beschreven wordt.
+In de volgende tabel staat welke FHIR resource entries minimaal aanwezig moeten zijn bij de voor gedefinieerde Koppeltaal bericht types \(MessageHeader.event.code: codering die het event identificeert wat het bericht betekent\). Indien er naar een FHIR resource wordt gerefereerd, dient deze volledig aanwezig te zijn zoals deze onder hoofdstuk “[Berichtenstructuur](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/technologie-architectuur#berichtenstructuur)” in volgende paragrafen beschreven wordt.
 
 <table>
   <thead>

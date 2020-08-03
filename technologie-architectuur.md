@@ -448,7 +448,7 @@ In Koppeltaal worden de subscripties \(abonnementen\) per type bericht, per gere
 
 ### Bericht routeren
 
-Het routeren van binnenkomende berichten gebeurt binnen een domein en de berichten worden aan die applicaties opgeleverd waar een subscriptie \(gekoppeld abonnement\) in Koppeltaal voor is. De subscripties zijn deel van de unieke _applicatie-instantie_ configuratie en zijn gespecificeerd per type bericht die door Koppeltaal worden ondersteund, zie Figuur 6. Interacties.
+Het routeren van binnenkomende berichten gebeurt binnen een domein en de berichten worden aan die applicaties opgeleverd waar een subscriptie \(gekoppeld abonnement\) in Koppeltaal voor is. De subscripties zijn deel van de unieke _applicatie-instantie_ configuratie en zijn gespecificeerd per type bericht die door Koppeltaal worden ondersteund, zie "[Interacties](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/technologie-architectuur#interacties)".
 
 ### Bericht notificatie
 
@@ -682,6 +682,8 @@ De expiratie tijd gespecificeerd door de "expires\_in" is 15 minuten of korter, 
 ## Berichtenstructuur
 
 Het transport van berichten volgens Koppeltaal v1.x is gebaseerd op een aantal standaarden: met name HTTP, HL7 FHIR DSTU 1 \(v0.0.82\) en relevante onderdelen van de HL7 standaard. De content \(inhoud\) kan zowel in JSON als in XML worden uitgedrukt. Koppeltaal gebruikt HTTP als transportmechanisme om FHIR berichten \(resources\) uit te kunnen wisselen en Atom feed om FHIR resources te bundelen. Zie onderstaand figuur.
+
+![Opbouw FHIR DSTU1 bericht](.gitbook/assets/fhir-dstu1-bericht.jpg)
 
 ### FHIR Messaging
 

@@ -12,7 +12,7 @@ Dit document beschrijft de bedrijfsarchitectuur van Koppeltaal GGZ versie 1.3.x.
 
 Dit architectuurdocument is bedoeld voor VZVZ om vragen te kunnen beantwoorden over huidige mogelijkheden en beperkingen van Koppeltaal en dient als basis voor eventuele uitbreiding van functionaliteiten. Het document bevat eveneens \(verwijzingen naar\) standaarden die door GGZ-instellingen en ICT-leveranciers voor die instellingen voor behandelprocessen en de daarbij behorende gegevensuitwisseling.
 
-De architectuurbeschrijving is onder te verdelen in drie secties, namelijk de ‘Bedrijfsarchitectuur’, de ‘Informatiesystemen architectuur’ en de ‘Technologie architectuur’.
+De architectuurbeschrijving is onder te verdelen in drie secties, namelijk de ‘[Bedrijfsarchitectuur](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/bedrijfsarchitectuur)’, de ‘[Informatiesystemen architectuur](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/informatiesystemen-architectuur)’ en de ‘[Technologie architectuur](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/technologie-architectuur)’.
 
 ![Koppeltaal architectuur](.gitbook/assets/1.jpeg)
 

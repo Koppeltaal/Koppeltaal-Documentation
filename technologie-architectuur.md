@@ -549,7 +549,7 @@ Met behulp van de 'Conformance Statement' \(zie paragraaf 3.4.8 De 'Conformance 
 * redirect\_uri. Is de URL waarheen de aanvragende applicatie wordt gerouteerd, na een succesvolle autorisatie bij Koppeltaal
 * state. Een optionele toestandswaarde dat de gelanceerde applicatie kan gebruiken voor het kunnen traceren van de aanvraag
 
-```text
+```bash
 https://vzvz.koppeltaal.nl/Outh2/Authorize?
    response_type=code&
    client_id=RANJKA&
@@ -562,7 +562,7 @@ SMART autorisatie verzoek
 
 Voor het autorisatie verzoek zal Koppeltaal een authorization\_code via de redirect\_uri teruggeven als de autorisatie aanvrager toegang krijgt. Indien het verzoek wordt afgewezen, krijgt de autorisatie aanvrager een foutmelding. Verder wordt de state van het autorisatie verzoek meegestuurd in het antwoord.
 
-```text
+```bash
 https://app/after-auth?
    code=124adf&
    state=98wrghuwuogerg97
@@ -588,7 +588,7 @@ Koppeltaal geeft de volgende informatie terug bij uitwisseling.
 * id\_token. Identificeert de patiënt en user details, als hierom gevraagd wordt
 * refresh\_token \(optioneel\). Token dat gebruikt kan worden om een nieuw toegangstoken te verkrijgen.
 
-```text
+```bash
 POST https://vzvz.koppeltaal.nl/Outh2/Token
 Authorization: Basic <credentials>
 
@@ -599,7 +599,7 @@ redirect_uri=https%3A%2F%2Fapp%2Fafter-auth&
 
 Toegangstoken opvragen
 
-```text
+```javascript
 {
    "access_token": "i8hweunweunweofiwweoijewiwe",
    "token_type": "bearer",
@@ -622,7 +622,7 @@ SMART Autorisatie voor mobiele apps lijkt vrij veel op de webapplicatie autorisa
 
 Een Mobile Launch Activatie code opvragen met alle benodigde parameters \(zoals bij de webapplicatie autorisatie beschreven\):
 
-```text
+```bash
 https://ggz.koppeltaal.nl/OAuth2/Koppeltaal/MobileLaunch?
    client_id=RANJKA&
    Patient=https%3A%2F%2Fggzeindhoven.minddistrict.com%2FPatient%2F72308&
@@ -634,7 +634,7 @@ Mobiele Launch Activate code opvragen
 
 Het antwoord is een activatie code en houdbaarheidsduur in dagen
 
-```text
+```javascript
 {
    "activation_code":"593740",
    "expires_in":7
@@ -649,7 +649,7 @@ Vervolgens moet de mobiele app, de authorize- en token endpoints via het 'Confor
 
 Koppeltaal retourneert op een autorisatie verzoek een JSON antwoord:
 
-```text
+```javascript
 {
    "authorisation_code": "0db34c09-201b-41da-af41-deee89302f4b"
 }
@@ -663,7 +663,7 @@ Voor een specifieke ClientId kan de Koppeltaal Server geconfigureerd worden om e
 
 Voorbeeld van de Token:
 
-```text
+```javascript
 { 
    "access_token": "f3d421f4-d036-468a-b9aa-de9c777ede95",
    "token_type":"Bearer",    
@@ -3028,7 +3028,7 @@ Tabel 16 Autorisatie beheer matrix
 
 ## Bijlage: Voorbeeld resource versioning
 
-```text
+```markup
 <entry>
     <link rel="self" href="http://co.healthonline.nl/Patient/215325/_history/2018-07-11T08:01:22:181.2659" />
     <content type="text/xml">
@@ -3063,7 +3063,7 @@ Voor elke resource wordt een data-element teruggegeven in de MessageHeader. In 1
 
 Hieronder een voorbeeld response in 1.3.5.
 
-```text
+```markup
 <feed
     xmlns="http://www.w3.org/2005/Atom">
     <id>urn:uuid:5931e3dc-243b-4f29-9200-78c238df9771</id>
@@ -3109,7 +3109,7 @@ Als er aan een 1.3.5 compatibele applicatie een 409 wordt teruggegeven omdat een
 
 Dit gebeurt in de volgende response:
 
-```text
+```markup
 <OperationOutcome xmlns="http://hl7.org/fhir">
     <text>
         <status value="generated"/>
@@ -3154,7 +3154,7 @@ die Koppeltaal niet ondersteunt \(in dit voorbeeld ‘Condition’\), wordt de v
 
 respons geretourneerd:
 
-```text
+```markup
 <OperationOutcome xmlns="http://hl7.org/fhir">
     <text>
         <status value="generated"/>

@@ -24,6 +24,8 @@ Door de manier waarop profiling wordt toegepast binnen FHIR kunnen er voor een b
 
 Voor Koppeltaal 1.3 is een eigen verzameling FHIR resources vastgelegd met hun eigen profile identifiers.
 
+#### Profile Identifiers
+
 | **Resource** | **Profile** **Identifiers** |
 | :--- | :--- |
 | ActivityDefinition | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/ActivityDefinition](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/ActivityDefinition) |
@@ -40,11 +42,11 @@ Voor Koppeltaal 1.3 is een eigen verzameling FHIR resources vastgelegd met hun e
 | UserMessage | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/UserMessage](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/UserMessage) |
 | CareTeam | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/CareTeam](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/CareTeam) |
 
-Profile Identifiers voor Koppeltaal resources.
-
 Koppeltaal maakt gebruik van de **Other** resource extensie van FHIR DSTU1.
 
 Other is ingevoerd om te kunnen omgaan met resource concepten die nog niet zijn gedefinieerd voor FHIR of die buiten het interessegebied van HL7 liggen. De volgende tabel geeft aan welke resource geen onderdeel zijn van FHIR DSTU1, maar wel specifiek als resource binnen Koppeltaal gebruikt wordt.
+
+#### Other extensions
 
 | **Other extension** | **Definitie** |
 | :--- | :--- |
@@ -54,15 +56,15 @@ Other is ingevoerd om te kunnen omgaan met resource concepten die nog niet zijn 
 | CarePlanActivityResult | Beschrijft de uitkomsten of berekende scores van een behandelplan activiteit |
 | CareTeam | Beschrijft welke personen toegang hebben tot een behandelplan of activiteit |
 
-Other extensies
-
 De **Application** resource is een representatie van een portaal, interventie of een ander soort aangeboden dienst door Koppeltaal. Een applicatie kan een list van activiteiten aanbieden. In de context van Koppeltaal is een Application resource een profiel van een **Device** resource.
 
 Alle berichten worden via HTTP operaties uitgewisseld. Op elke verzoekbericht wordt standaard een HTTP-response code teruggegeven. Bij problemen is er soms meer detail informatie vereist, dan alleen de HTTP-response code. Hiervoor wordt dan de **OperationOutcome** resource gebruikt, waarmee meerdere afzonderlijke problemen kunnen worden geïdentificeerd, die in lijn moeten zijn met de HTTP-response code.
 
 De kern van FHIR Messaging is de **MessageHeader** resource. Via het **event.code**- en **data** element – de berichtgebeurtenis met referentie naar content – worden de verschillende type berichten \(interacties\) gedefinieerd. De MessageHeader resource is voor Koppeltaal \(profiel\) uitgebreid met het Patient element, dat een verwijzing is naar een Patient resource die aangeeft bij welk dossier dit bericht behoort. Het MessageHeader.Patient element is echter geen onderdeel van de \(core\) FHIR MessageHeader.
 
-De volgende event.codes \(interacties\) zijn gedefinieerd om de functionaliteit van Koppeltaal af te dekken, met de daarbij behorende focal FHIR resource die de content van het verzoek bevat, zie het data element.
+#### Interacties
+
+De volgende event.codes \(**interacties**\) zijn gedefinieerd om de functionaliteit van Koppeltaal af te dekken, met de daarbij behorende focal FHIR resource die de content van het verzoek bevat, zie het data element.
 
 <table>
   <thead>
@@ -133,8 +135,6 @@ De volgende event.codes \(interacties\) zijn gedefinieerd om de functionaliteit 
     </tr>
   </tbody>
 </table>
-
-Figuur 6. Interacties
 
 In de paragraaf "[FHIR Resources](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/technologie-architectuur#fhir-resources)" is de structuur in detail verder uitgewerkt van alle Koppeltaal resources met alle elementen en attributen.
 

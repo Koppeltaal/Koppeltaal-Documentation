@@ -5,5 +5,5 @@
 * [Informatiesystemen architectuur](informatiesystemen-architectuur.md)
 * [Technologie architectuur](technologie-architectuur.md)
 * [Kaders en uitgangspunten](kaders-en-uitgangspunten.md)
-* [Woordenlijst](woordenlijst.md)
+* [Begrippenlijst](woordenlijst.md)
 

@@ -1,4 +1,4 @@
-# Woordenlijst
+# Begrippenlijst
 
 ### Applicatie
 
@@ -40,6 +40,14 @@ Synoniemen: Domain
 
 Het gebruik van informatie- en communicatietechnologie om personen met psychische klachten en/of aandoeningen te informeren en/of te ondersteunen met betrekking tot hun \(psychische\) gezondheid om zo het herstelproces en daarmee hun kwaliteit van leven te verbeteren.
 
+### EPD
+
+Het Elektronisch Patiënten Dossier wordt gebruikt om patiëntengegevens in digitale vorm te bewaren en beschikbaar te maken. Het doel van een EPD is meestal het zorgproces rondom een patiënt te ondersteunen. 
+
+### FHIR
+
+Fast Healthcare Interoperability Resources \(FHIR\) is een interoperabiliteitsstandaard om gezondheidsgegevens tussen informatiesystemen van zorgverleners te kunnen uitwisselen.
+
 ### Interventie
 
 Software en systeem die de cliënt gebruikt in het kader van een behandeling. Een App is een type interventie.
@@ -55,6 +63,10 @@ Synoniemen: IT-deelnemer
 Een persoon die een behandeling krijgt.
 
 Synoniemen: Cliënt
+
+### Portaal
+
+Een portaal is een webpagina die uit diverse bronnen geselecteerde informatie biedt en/of toegang geeft tot verschillende informatiebronnen en/of services \(apps\).
 
 ### Resource
 

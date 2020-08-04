@@ -79,7 +79,7 @@ Specialistische zorg scenario – Use-cases
 
 Koppeltaal biedt de volgende rollen en use-cases aan om de scenario’s, zoals hierboven beschreven, mogelijk te maken.
 
-![Use-cases](.gitbook/assets/usecaseskt.jpg)
+![](.gitbook/assets/usecaseskt%20%281%29.jpg)
 
 ### Rollen
 

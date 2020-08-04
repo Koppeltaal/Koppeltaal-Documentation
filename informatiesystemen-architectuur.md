@@ -30,18 +30,18 @@ Dienstverleners zullen onderling nadere afspraken moeten maken over de gebruikte
 
 ### Actoren en rollen
 
-Zoals in paragraaf 2.2 Domein en Applicatie beschreven is, zijn er verschillende type applicaties betrokken ter ondersteuning van een interactief zorgproces. Bij het inrichten van deze zorgprocessen is de verdeling van verantwoordelijkheden van belang. Hierbij maken we onderscheid tussen actoren en rollen. Actoren vertegenwoordigen personen of organisatorische eenheden, rollen vertegenwoordigen verantwoordelijkheden. Verschillende rollen kunnen worden toegekend aan een actor.
+Zoals in paragraaf "[Domein en Applicatie](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/informatiesystemen-architectuur#domein-en-applicatie)" beschreven is, zijn er verschillende type applicaties betrokken ter ondersteuning van een interactief zorgproces. Bij het inrichten van deze zorgprocessen is de verdeling van verantwoordelijkheden van belang. Hierbij maken we onderscheid tussen actoren en rollen. Actoren vertegenwoordigen personen of organisatorische eenheden, rollen vertegenwoordigen verantwoordelijkheden. Verschillende rollen kunnen worden toegekend aan een actor.
 
 Elk type applicatie kan één of meerdere \(applicatie\) functie rollen vervullen in de context van blended care.
 
 ![Actoren en rollen binnen Koppeltaal](.gitbook/assets/3%20%281%29.jpeg)
 
-De actoren die in de verschillende use-cases \(zie paragraaf 3 Use-cases\) ter sprake komen zijn:
+De actoren die in de verschillende use-cases \(zie paragraaf "[Use-cases](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/bedrijfsarchitectuur#use-cases)"\) ter sprake komen zijn:
 
-* Beheerder – Een persoon die wijzigingen kan aanbrengen die van invloed zijn op andere gebruikers van een systeem.
-* Patiënt – Een persoon aan wie medische hulp wordt verleend.
-* Behandelaar – Een persoon die medische handelingen of activiteiten verricht.
-* Derde – Een persoon die een bepaalde relatie met een Patiënt heeft ter ondersteuning van een medische behandeling.
+* **Beheerder** – Een persoon die wijzigingen kan aanbrengen die van invloed zijn op andere gebruikers van een systeem.
+* **Patiënt** – Een persoon aan wie medische hulp wordt verleend.
+* **Behandelaar** – Een persoon die medische handelingen of activiteiten verricht.
+* **Derde** – Een persoon die een bepaalde relatie met een Patiënt heeft ter ondersteuning van een medische behandeling.
 
 We onderscheiden de volgende rollen \(functionele verantwoordelijkheden\).
 
@@ -71,13 +71,13 @@ Er zijn verschillende type applicaties betrokken ter ondersteuning van een inter
 4. Een applicatie van het type “interventie” heeft:
    1. een \(unieke\) locatie waar de interventie te vinden is \(URL\)
    2. Een overeengekomen beveiligingslocatie waar eenmalig geverifieerd wordt dat de aanroepende partij een bekende \(en geregistreerde\) partij is die kan worden vertrouwd \(Single Sign-On\) in een gegeven domein.
-5. Elk geregistreerde applicatie krijgt één of meerdere functionele \(applicatie\) rollen in de context van blended care \(zie Figuur 3. Actoren en rollen\).
+5. Elk geregistreerde applicatie krijgt één of meerdere functionele \(applicatie\) rollen in de context van blended care \(zie "[Actoren en rollen](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/informatiesystemen-architectuur#actoren-en-rollen)"\).
 
 ### UC-KT-02 \(Sub\)activiteit registreren
 
 Alleen geregistreerde applicaties van het type “interventie” kunnen \(sub\)activiteiten registreren op basis van aandoening en behoeften van een patiënt.
 
-1. Een interventie bevat een \(sub\)activiteiten definitie lijst met minimaal 1 activiteitsdefinitite, wat de interventie voor de patiënt te bieden heeft.
+1. Een interventie bevat een \(sub\)activiteiten definitie lijst met minimaal 1 activiteitsdefinitie, wat de interventie voor de patiënt te bieden heeft.
 2. Elk \(sub\)activiteit is uniek identificeerbaar en heeft een beschrijving
 3. De definities en omschrijvingen van \(sub\)activiteiten kunnen dynamisch gewijzigd worden. Dit resulteert niet in nieuwe activiteiten.
 
@@ -159,7 +159,7 @@ Tijdens een behandeling kunnen participanten eenvoudige ongestructureerde inform
 
 De gegevensuitwisseling gebeurt via berichtenuitwisseling en is gebaseerd op een aantal standaarden: met name HTTP, **HL7 FHIR DSTU 1\(v0.0.82\)** en relevante onderdelen van de HL7 standaard.
 
-De kern van FHIR wordt gevormd door herbruikbare bouwstenen, de zogenaamde **FHIR resources**, waarmee oplossingen voor _uitwisseling van_ zorginhoudelijke _gegevens_ kunnen worden gebouwd. Elk bericht heeft een \(interactie\) type en hiermee kan bepaalde functionaliteit gerealiseerd worden binnen Koppeltaal \(zie paragraaf 5 [Interacties](https://confluence.vzvz.nl/display/AK/Interacties)\).
+De kern van FHIR wordt gevormd door herbruikbare bouwstenen, de zogenaamde **FHIR resources**, waarmee oplossingen voor _uitwisseling van_ zorginhoudelijke _gegevens_ kunnen worden gebouwd. Elk bericht heeft een \(interactie\) type en hiermee kan bepaalde functionaliteit gerealiseerd worden binnen Koppeltaal \(zie paragraaf [Interacties](https://confluence.vzvz.nl/display/AK/Interacties)\).
 
 Koppeltaal heeft een set berichten gedefinieerd waarmee de Koppeltaal use-cases kunnen worden afgedekt. Logische voorwaarde is dat de betrokken applicaties de benodigde berichten ondersteunen \(d.w.z. de structuur van de berichten kennen en de inhoud volledig kunnen interpreteren\). In de praktijk zien we dat verschillende applicaties, zoals portalen, interventies, platformen en EPD’s in Koppeltaal gecombineerd worden.
 
@@ -208,7 +208,7 @@ In deze paragraaf worden de verschillende interacties beschreven tussen de versc
 
 Er zijn verschillende applicatie leveranciers betrokken ter ondersteuning van een interactief zorgproces en deze zullen gecertificeerd en geregistreerd moeten worden. Het registratie proces, welke applicaties gebruik willen maken van Koppeltaal, is een \(handmatig\) configuratie proces. Indien betrokken applicatie leveranciers onderling informatie willen uitwisselen, zullen ze in hetzelfde domein aangemeld en geregistreerd moeten worden. Dit registratie proces worden door Koppeltaal Support uitgevoerd.
 
-Na het registratie proces kan begonnen worden met de uitwisseling van informatie \(FHIR resources\), dit gebeurt via voor gedefinieerde interacties tussen de geregistreerde applicaties. Elke interactie \(tussen applicaties\) bestaat uit een FHIR MessageHeader, gevolgd door andere FHIR resources \(zie paragraaf 4 Gegevensmodel\). Een codering in de MessageHeader geeft aan om wat voor soort interactie het gaat. Per type applicatie zijn er verschillende interacties beschikbaar.
+Na het registratie proces kan begonnen worden met de uitwisseling van informatie \(FHIR resources\), dit gebeurt via voor gedefinieerde interacties tussen de geregistreerde applicaties. Elke interactie \(tussen applicaties\) bestaat uit een FHIR MessageHeader, gevolgd door andere FHIR resources \(zie paragraaf "[Gegevensmodel](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/informatiesystemen-architectuur#gegevensmodel)"\). Een codering in de MessageHeader geeft aan om wat voor soort interactie het gaat. Per type applicatie zijn er verschillende interacties beschikbaar.
 
 In de interactie laag wordt er niet meet over een cliënt gesproken maar hanteren we de term patiënt.
 

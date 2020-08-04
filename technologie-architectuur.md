@@ -1,10 +1,3 @@
----
-description: >-
-  Deze pagina beschrijft de technologie architectuur van Koppeltaal GGZ versie
-  1.3.x maar doet geen uitspraken over de technische manier waarop de
-  deelnemende systemen gerealiseerd moeten worden.
----
-
 # Technologie architectuur
 
 ## Informatie-uitwisseling op basis van FHIR Messaging

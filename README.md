@@ -1,9 +1,3 @@
----
-description: >-
-  De Koppeltaal-architectuur wordt bepaald door het doel van Koppeltaal, het
-  zorgproces, de uitwisselingsbehoefte en de technologie.
----
-
 # Koppeltaal 1.3.x architectuur
 
 ![Logo\_vZVZ\_servicecentrum.JPG](.gitbook/assets/0.jpeg)

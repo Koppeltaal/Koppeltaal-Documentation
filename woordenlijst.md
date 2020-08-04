@@ -1,3 +1,9 @@
+---
+description: >-
+  Ook bij Koppeltaal wordt veel gebruik gemaakt van vakjargon. In deze
+  begrippenlijst vindt je een korte en bondige uitleg van deze terminologie.
+---
+
 # Begrippenlijst
 
 ### Applicatie
@@ -24,7 +30,7 @@ Synoniemen: Zorgproces
 
 ### CarePlan
 
- Is een plan waarin de wensen, mogelijkheden, behoeftes en beperkingen van **een** cliënt staan. Ook staan er doelen en activiteiten in en worden de afspraken over zorg erin vastgelegd.
+Is een plan waarin de wensen, mogelijkheden, behoeftes en beperkingen van **een** cliënt staan. Ook staan er doelen en activiteiten in en worden de afspraken over zorg erin vastgelegd.
 
 Synoniemen: ZorgPlan, Behandelsplan
 

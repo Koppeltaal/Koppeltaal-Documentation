@@ -23,6 +23,8 @@ De netwerktopologie beschrijft de fysieke verbindingen tussen de netwerkcomponen
 
 Het volgende model geeft de verzameling FHIR DSTU1 resources weer die binnen Koppeltaal 1.3 worden gebruikt.
 
+![FHIR resources](.gitbook/assets/fhir-resources.jpg)
+
 Alle FHIR resources zijn in de basis generiek en worden met behulp van profielen \(profiles\) uitgebreid en specifieker gemaakt voor een specifieke toepassing. In een profiel wordt bijvoorbeeld beschreven:
 
 * Welke resource elementen worden gebruikt en welke niet en welke additionele elementen \(extension\) worden toegevoegd die geen onderdeel zijn van de basisspecificatie
@@ -425,6 +427,8 @@ Algemene informatie over de 'Conformance Statement' kan men vinden bij [https://
 
 Koppeltaal ondersteunt alleen de voor gedefinieerde interacties en binnen deze sectie wordt gekeken naar deze interacties tussen de verschillende type applicaties binnen een domein.
 
+![Applicatie model](.gitbook/assets/applicaties%20%281%29.jpg)
+
 Er zijn verschillende typen applicaties betrokken ter ondersteuning van een interactief zorgproces. Functioneel zijn alle applicaties onderdeel van de gehele Koppeltaal omgeving en ondersteunen het interactieproces vanuit verschillende rollen voor de gebruikers. Per domein sluit een applicatie aan met een unieke _applicatie-instantie_, waarin die rollen binnen dat domein zijn gedefinieerd.
 
 We onderscheiden de volgende \(technische\) rollen binnen Koppeltaal:
@@ -485,6 +489,8 @@ De volgende additionele query parameters kunnen gespecifieerd worden:
 * ProcessingStatus: Filtert op de ProcessingStatus. \(New\|Claimed\|Success\|Failed\). Deze query parameter kan geen onderdeel zijn van de named query van interactie 1, zoals hierboven beschreven.
 
 Voor het ophalen en verwerken van de MessageHeaders is er een specifiek Koppeltaal element ‘ProcessingStatus’ toegevoegd, die aangeeft wat de stand is van de verwerking van een bericht. Dit element is geen standaard element van de MessageHeader resource.
+
+![Verwerkingsstatus](.gitbook/assets/verwerkingsstatus.jpg)
 
 Het 'ProcessingStatus' element heeft één van de 6 mogelijke verwerkingstoestanden. Namelijk:
 
@@ -549,6 +555,8 @@ Wanneer de gebruiker de applicatie URL opent, moeten de volgende gegevens aan Ko
 6. Een overeengekomen security token van de applicatie naar de Koppeltaal Server wordt verstuurd, zodat de Koppeltaal server kan verifiëren dat de aanroepende applicatie een bekende \(en geregistreerde\) applicatie is die kan worden vertrouwd in de context van domein en applicatie-instantie. Dit token bevat tenminste een Hash van de URL van de applicatie en voorkomt dat iemand de URL van de applicatie \(het adres\) aanpast en opnieuw indient bij de Koppeltaal Server. Tevens bevat het token een \(geheime\) code die zowel bij de applicatie als de Koppeltaal server bekend is en, mogelijk, een Nonce die voorkomt dat de URL meerder malen \(sessies, resource\) misbruikt kan worden.
 
 ### SMART Autorisatie voor webapplicaties
+
+![SMART Autorisatie sequence](.gitbook/assets/smart-autorisatie2.jpg)
 
 Met behulp van de 'Conformance Statement' \(zie paragraaf De '[Conformance Statement](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/technologie-architectuur#de-conformance-statement)'\) kan een \(gelanceerde\) applicatie een OAuth2 autorisatie verzoek indienen bij Koppeltaal \(zie ook RFC 6749\). De applicatie gebruikt hierbij de authorize- en token endpoints uit de 'Conformance Statement'. De applicatie moet de scoop van het autorisatie verzoek specificeren, dit is onderdeel van het OAuth2 protocol, dat voor Koppeltaal v1.3 "patient/\*.\*" is. Dit betekent dat de applicatie toegang vraagt tot alle berichten van de patiënt waarop deze applicatie is geabonneerd. Verder worden bij het autorisatie verzoek de volgende parameters doorgegeven aan Koppeltaal:
 
@@ -1510,6 +1518,8 @@ FHIR Bundle \(Atom feed\)
 MessageHeader
 
 Volgende plaatje laat zien dat de MessageHeader resource is uitgebreid met het Patient element dat een verwijzing is naar een Patient resource die aangeeft bij welk dossier dit bericht behoort. Het MessageHeader.Patient element is geen onderdeel van de \(core\) FHIR MessageHeader. Het data element heeft een referentie naar de onderliggende resource waar dit berichttype toe behoort.
+
+![MessageHeader met extensie en referentie](.gitbook/assets/messageheader.jpg)
 
 ### ActivityDefinition \(Other\)
 

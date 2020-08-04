@@ -14,7 +14,7 @@ Bij een blended care behandeling zijn tenminste een **cliënt** en een **behande
 
 ### Positie van Koppeltaal in het GGZ-referentiedomeinen model
 
-![](.gitbook/assets/informatiedomeinen%20%282%29.jpg)
+![Koppeltaal en GGZ Domein referentiemodel](.gitbook/assets/informatiedomeinen%20%282%29.jpg)
 
 In het door GGZ Nederland en Nictiz opgestelde GGZ Domein referentiemodel speelt Koppeltaal een mogelijke rol in de met blauwe aangeduide sub domeinen.
 

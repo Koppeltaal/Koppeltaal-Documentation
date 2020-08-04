@@ -1,3 +1,10 @@
+---
+description: >-
+  Deze pagina beschrijft de bedrijfsarchitectuur waarin beschreven staat welke
+  processen onder welke condities in de zorg ondersteund worden bij Koppeltaal
+  GGZ versie 1.3.x.
+---
+
 # Bedrijfsarchitectuur
 
 ## Koppeltaal

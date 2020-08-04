@@ -1,3 +1,9 @@
+---
+description: >-
+  Deze pagina beschrijft de informatiesystemen architectuur en de samenwerking
+  tussen de deelnemende systemen van Koppeltaal GGZ versie 1.3.x.
+---
+
 # Informatiesystemen architectuur
 
 ## Koppeltaal

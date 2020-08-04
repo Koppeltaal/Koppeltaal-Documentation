@@ -12,6 +12,10 @@ Een versie van een applicatie in 1 specifiek domein
 
 Synoniemen: Applicatie instantie, application instance
 
+### Behandelaar
+
+De uitvoerder van een behandeling
+
 ### Blended care
 
 Bij blended care worden reguliere face-to-face gesprekken gecombineerd met online interventies zoals bijvoorbeeld chat, beeldbellen, online behandelmodules en online inzage in het eigen gezondheidsdossier

@@ -4,7 +4,7 @@
 
 ### Geestelijke zorgverlening, blended care en behandelplan
 
-Koppeltaal integreert informatiestromen uit eHealth-modules, ROM en EPD in de werkomgeving van de behandelaar en cliënt. Zo heeft de behandelaar direct een volledig en actueel beeld van hun cliënt in één omgeving. Daarnaast is het mogelijk voor behandelaren om hun cliënten toegang te geven tot specifieke eHealth-modules en interventies van uiteenlopende leveranciers.
+Koppeltaal integreert informatiestromen uit eHealth-modules, ROM \(Routine Outcome Measurement\) en EPD \(Elektronische Patiënten Dossier\) in de werkomgeving van de behandelaar en cliënt. Zo heeft de behandelaar direct een volledig en actueel beeld van hun cliënt in één omgeving. Daarnaast is het mogelijk voor behandelaren om hun cliënten toegang te geven tot specifieke eHealth-modules en interventies van uiteenlopende leveranciers.
 
 Interoperabiliteit tussen de informatiesystemen is hier één van de belangrijke aspecten in de context van **blended care in de GGZ**. Bij blended care in de GGZ worden reguliere face-to-face gesprekken gecombineerd met **online interventies** zoals bijvoorbeeld chat, beeldbellen en **online behandelmodules**. Hierdoor kan een cliënt tijd- en plaats-onafhankelijk zorg gebruiken via een tablet of smartphone.
 
@@ -14,9 +14,9 @@ Bij een blended care behandeling zijn tenminste een **cliënt** en een **behande
 
 ### Positie van Koppeltaal in het GGZ-referentiedomeinen model
 
-![Koppeltaal en het GGZ-referentiedomein model](.gitbook/assets/2%20%282%29.jpeg)
+![Koppeltaal en het GGZ-referentiedomein model](.gitbook/assets/informatiedomeinen%20%281%29.jpg)
 
-In het door GGZ Nederland en Nictiz opgestelde GGZ Domein referentiemodel speelt Koppeltaal een mogelijke rol in de met een groene cirkel aangeduide sub domeinen.
+In het door GGZ Nederland en Nictiz opgestelde GGZ Domein referentiemodel speelt Koppeltaal een mogelijke rol in de met blauwe aangeduide sub domeinen.
 
 Koppeltaal helpt om behandeling te ondersteunen. Specifiek eHealth in blended care processen. Verder ondersteunt Koppeltaal de aanmeldingsprocessen via het synchroniseren van patiëntgegevens over verschillende applicaties. Daarnaast kan Koppeltaal \[in de toekomst\] een rol spelen in de resourceplanning, omdat er rond een behandelplan met Koppeltaal relaties gelegd kunnen worden tussen cliënt, behandelaar, en derden \(zoals familie, vrienden, ervaringsdeskundigen, etc.\).
 
@@ -31,7 +31,7 @@ In de context van Koppeltaal spelen de volgende juridische concepten, relaties, 
 * Gebruik van burgerservicenummer in de zorg
 * AVG-normen
 
-Behandelrelatie. Een behandelrelatie in het kader van de WGBO wordt aangegaan door de GGZ-deelnemers van Koppeltaal. De verantwoordelijkheid voor de gegevensverwerking in de context van deze overeenkomst ligt bij de GGZ-deelnemers.
+Behandelrelatie. Een behandelrelatie in het kader van de **Wet op de geneeskundige behandelingsovereenkomst** of **WGBO** wordt aangegaan door de GGZ-deelnemers van Koppeltaal. De verantwoordelijkheid voor de gegevensverwerking in de context van deze overeenkomst ligt bij de GGZ-deelnemers.
 
 De GGZ-deelnemers van Koppeltaal hebben contractuele relaties met ICT-leveranciers die voor hen gegevens verwerken. Deze relatie wordt tevens via een verwerkersovereenkomst geregeld.
 
@@ -782,7 +782,7 @@ De Leverancier Support rol worden door de verschillende ICT- en adapter leveranc
 
 ## Koppeltaal kwaliteitseisen \(ISO-norm 25010\)
 
-Niet-functionele \(software\) requirements zijn kwaliteitseisen waaraan een systeem moet voldoen. De ISO-norm 25010 beschrijft de [kwaliteitskenmerken](https://nl.wikipedia.org/wiki/Kwaliteit_%28hoedanigheid%29) van [software](https://nl.wikipedia.org/wiki/Software). Het model voor productkwaliteit onderscheidt acht hoofdcategorieën.
+Niet-functionele \(software\) requirements zijn kwaliteitseisen waaraan een systeem moet voldoen. De [ISO-norm 25010](https://nl.wikipedia.org/wiki/ISO_25010) beschrijft de kwaliteitskenmerken van software. Het model voor productkwaliteit onderscheidt acht hoofdcategorieën.
 
 1. **Functionele geschiktheid** \(Functional suitability\). De mate waarin een softwareproduct of computersysteem functies levert die voldoen aan de uitgesproken en veronderstelde behoeften, bij gebruik onder gespecificeerde condities.
 2. **Prestatie-efficiëntie** \(Performance efficiency\). De prestaties in verhouding tot de hoeveelheid middelen gebruikt onder genoemde condities.
@@ -819,7 +819,7 @@ De mate waarin informatie en gegevens \(resources\) beschermt moet worden zodat 
 
 ### Onderhoudbaarheid \(maintainability\)
 
-De mate waarin Koppeltaal effectief en efficiënt gewijzigd kan worden door aangewezen beheerders \(zie ook paragraaf 3.5 Beheerprocessen\). Dit gaat over de configuratie en beheer van:
+De mate waarin Koppeltaal effectief en efficiënt gewijzigd kan worden door aangewezen beheerders \(zie ook paragraaf "[Beheerprocessen](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/bedrijfsarchitectuur#beheerprocessen)"\). Dit gaat over de configuratie en beheer van:
 
 * domeinen
 * applicaties \(modularity\)

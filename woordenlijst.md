@@ -84,6 +84,10 @@ FHIR hanteert de definitie Resource \(lijst met mogelijke Resources: [https://ww
 
 Synoniemen: gegevensbron
 
+### SMART
+
+Staat voor "Substitutable Medical Applications, Reusable Technologies" en ontstond in 2010 met als doel een standaardraamwerk te bouwen dat de ontwikkeling mogelijk maakt van het onderling kunnen uitwisselen van zorgapplicaties.
+
 ### Zorgaanbieder
 
 Een instelling dan wel een solistisch werkende zorgverlener

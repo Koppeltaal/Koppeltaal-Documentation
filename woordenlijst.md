@@ -88,6 +88,10 @@ FHIR hanteert de definitie Resource \(lijst met mogelijke Resources: [https://ww
 
 Synoniemen: gegevensbron
 
+### ROM
+
+Routine Outcome Monitoring is de methodiek in de geestelijke gezondheidszorg waarbij regelmatig metingen gedaan worden van de toestand van de cliënten met het oog op evaluatie en eventueel bijsturing van de behandeling.
+
 ### SMART
 
 Staat voor "Substitutable Medical Applications, Reusable Technologies" en ontstond in 2010 met als doel een standaardraamwerk te bouwen dat de ontwikkeling mogelijk maakt van het onderling kunnen uitwisselen van zorgapplicaties.

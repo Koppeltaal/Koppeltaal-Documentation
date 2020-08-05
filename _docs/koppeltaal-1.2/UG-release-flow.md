@@ -4,18 +4,17 @@ category: User Guides
 order: 2
 ---
 
+# UG-release-flow
+
 ## Project test & release flow
 
 There are many parties that are affected when a new version of Koppeltaal is released. Therefor it is very important that there is a rigorous procedure to manage each release cycle. Below is a schematic overview of the flow of tests and releases.
 
-![Release flow](Koppeltaal_Test_&_Release_Flow_V2_-_resized.jpg)
+![Release flow](https://github.com/Koppeltaal/documentation/tree/083ac6eba8108c4b610d5248bb3e68b1bf268684/_docs/koppeltaal-1.2/Koppeltaal_Test_&_Release_Flow_V2_-_resized.jpg)
 
 ## There are three types of parties that are involved in the release of a new Koppeltaal server version:
 
-Koppeltaal server itself.
-Applications (clients) that send and receive messages via the Koppeltaal server.
-Connectors that the clients use to transform the messages from XML or JSON into their native language (C#, Python etc).
-In addition to the development cycle of the Koppeltaal server, each client and connector has a development cycle of their own. The Koppeltaal release and test flow aims to test each unit separately and only after its dependencies have passed their own tests. This way, any issues are found as quickly as possible and at their source and time and effort spent to track them down is minimized.
+Koppeltaal server itself. Applications \(clients\) that send and receive messages via the Koppeltaal server. Connectors that the clients use to transform the messages from XML or JSON into their native language \(C\#, Python etc\). In addition to the development cycle of the Koppeltaal server, each client and connector has a development cycle of their own. The Koppeltaal release and test flow aims to test each unit separately and only after its dependencies have passed their own tests. This way, any issues are found as quickly as possible and at their source and time and effort spent to track them down is minimized.
 
 The test flow consists of the stages described below. Each stage is only started after the tests of the stage before it have passed successfully and indicate no more issues.
 
@@ -39,37 +38,38 @@ The development cycle of each client application is the responsibility of the de
 
 In order to verify the correctness of the integration between the clients in a domain the Koppeltaal client acceptance tests are performed. If any issues are found they are fixed, and any component that is changed must be run through all preceding tests for that component again.
 
-
 ## Project release planning
 
-Delivery Team handles the release process, via Support, and verifies the process: 
+Delivery Team handles the release process, via Support, and verifies the process:
 
-  - Announcement of the expected release date  and notes via Slack and Mailing List
-  - Release version check in GIT HUB (Koppeltaal repository)
-  - Code completion and Code standards
-  - Unit Test completed
+* Announcement of the expected release date  and notes via Slack and Mailing List
+* Release version check in GIT HUB \(Koppeltaal repository\)
+* Code completion and Code standards
+* Unit Test completed
 
-![Delivery flow](Delivery.png)
+![Delivery flow](https://github.com/Koppeltaal/documentation/tree/083ac6eba8108c4b610d5248bb3e68b1bf268684/_docs/koppeltaal-1.2/Delivery.png)
 
 ## Handover process to Release Team
 
-  - Update from GIT - follow the Deployment document
-  - Deployment&Configuratiom
- Deployment Guide Koppeltaal  Deployment_Guide_Koppeltaal_XXX
-  - Validate release documentation: API documentation
-  - Validate Schemas and profiles
-  - Preparation Load and Performance Test 
-  - Execution Load and Performance Test
-  - Preparation Regression Test
-  - Execution Regression Test
-  - Go live acceptance and procedure
-  
+* Update from GIT - follow the Deployment document
+* Deployment&Configuratiom
+
+  Deployment Guide Koppeltaal  Deployment\_Guide\_Koppeltaal\_XXX
+
+* Validate release documentation: API documentation
+* Validate Schemas and profiles
+* Preparation Load and Performance Test 
+* Execution Load and Performance Test
+* Preparation Regression Test
+* Execution Regression Test
+* Go live acceptance and procedure
+
 ## Release planning
 
 When the Koppeltaal core team decides to release a new version, the planning is determined as follows.
 
-|Action|Duration|Performed by|
-| --- | --- | --- |
+| Action | Duration | Performed by |
+| :--- | :--- | :--- |
 | Decision to release | - | KT Core Team |
 | Make release notes | - | Development Team |
 | Regression test is run | - | Development Team |
@@ -83,12 +83,10 @@ When the Koppeltaal core team decides to release a new version, the planning is 
 
 Taken together, this means that after the decision to release, the following milestones occur:
 
-
 | Item | Date |
-| --- | --- |
-| Start ACC tests | as soon as practical (rework starts as soon as issues are reported) |
+| :--- | :--- |
+| Start ACC tests | as soon as practical \(rework starts as soon as issues are reported\) |
 | End ACC tests | 2 weeks after start |
 | End rework | 3 weeks after start |
 | Live update | 4 weeks after start |
-
 

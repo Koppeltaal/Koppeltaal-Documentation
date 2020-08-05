@@ -4,53 +4,47 @@ category: User Guides
 order: 2
 ---
 
-## Connecting to the Koppeltaal test server using SOAP UI
+# Connecting to the Koppeltaal test server using SOAP UI
 
+## Create a SOAP UI project \(SOAP UI version 5.0\)
 
-### Create a SOAP UI project (SOAP UI version 5.0)
+Download the open available tool to simulate REST api calls =&gt; SOAPUI \(version 5.0 at this moment\)
 
-Download the open available tool to simulate REST api calls =>  SOAPUI (version 5.0 at this moment)
-
- - http://soapui.org
-
+* [http://soapui.org](http://soapui.org)
 
 The last version of the Koppeltaal SOAP UI project :
 
- - https://github.com/Koppeltaal/Koppeltaal-Server/tree/master/tests/SoapUI 
+* [https://github.com/Koppeltaal/Koppeltaal-Server/tree/master/tests/SoapUI](https://github.com/Koppeltaal/Koppeltaal-Server/tree/master/tests/SoapUI) 
 
+## Define a request to get and claim the next message available in the queue
 
-### Define a request to get and claim the next message available in the queue
+![image alt text](https://github.com/Koppeltaal/documentation/tree/083ac6eba8108c4b610d5248bb3e68b1bf268684/_docs/koppeltaal-1.2/SOAP_UI_CONFIG1.png)
 
-![image alt text](SOAP_UI_CONFIG1.png)
+## Test
 
-
-### Test
-
-
-Once the claim is done a COMMIT action needs to be sent to the Koppeltaal server. The two phases COMMIT takes into acount the resilience of the system at any time (no loss of messages but duplicates possible). At the END of the process flow the COMMIT should send: Failed or Success status.
+Once the claim is done a COMMIT action needs to be sent to the Koppeltaal server. The two phases COMMIT takes into acount the resilience of the system at any time \(no loss of messages but duplicates possible\). At the END of the process flow the COMMIT should send: Failed or Success status.
 
 Message CLAIMED - with id 39
 
-```html
+```markup
  <feed xmlns="http://www.w3.org/2005/Atom">
   .....
  </feed>
 ```
 
-This can be done through a PUT to the RESOURCE: MessageHeader/{MessageHeaderID}. (SOAP NEW RESOURCE!)
+This can be done through a PUT to the RESOURCE: MessageHeader/{MessageHeaderID}. \(SOAP NEW RESOURCE!\)
 
-In de request parameters a value for the MessageHeaderID is required. This one could be taken from the original GetNextNewAndClaim that has been executed before (The ID from the MessageHeader ID). That should be something like: '<id>http://testkoppeltaal.vhscloud.nl/FHIR/Koppeltaal/MessageHeader/39</id>'. At this example '39' the MessageHeaderID.
+In de request parameters a value for the MessageHeaderID is required. This one could be taken from the original GetNextNewAndClaim that has been executed before \(The ID from the MessageHeader ID\). That should be something like: '[http://testkoppeltaal.vhscloud.nl/FHIR/Koppeltaal/MessageHeader/39](http://testkoppeltaal.vhscloud.nl/FHIR/Koppeltaal/MessageHeader/39)'. At this example '39' the MessageHeaderID.
 
 As content of the request we can simply add the whole MessageHeader node as a copy. In this tag only the status must change from Claimed to Success or Failed.
 
-![image alt text](SOAP_UI_CONFIG1.png)
+![image alt text](https://github.com/Koppeltaal/documentation/tree/083ac6eba8108c4b610d5248bb3e68b1bf268684/_docs/koppeltaal-1.2/SOAP_UI_CONFIG1.png)
 
 Content to be send back - changing the sate to 'SUCCESS'
 
 Example: GetNextAndClaim with messages in the queue:
 
-
-```html
+```markup
 <?xml version="1.0" encoding="utf-8"?> <feed xmlns="http://www.w3.org/2005/Atom">
 
  <id>urn:uuid:d3b90820-73f4-4b44-a27b-d99c1eb2ec77</id>
@@ -87,9 +81,9 @@ Example: GetNextAndClaim with messages in the queue:
          <software value="KoppeltaalRegressionTests" />
          <endpoint value="None" />
        </source>
-       
+
          <reference value="http://test.mijnapplicatie.nl/fhir/UserMessage/3605/_history/2015-06-18T12:23:29:771.6980" />
-       
+
      </MessageHeader>
    </content>
  </entry>
@@ -114,22 +108,22 @@ Example: GetNextAndClaim with messages in the queue:
            <reference value="http://test.mijnapplicatie.nl/fhir/Practitioner/" />
          </valueResource>
        </extension>
-       
+
          <coding>
            <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/OtherResourceUsage" />
            <code value="UserMessage" />
            <display value="UserMessage" />
          </coding>
-       
+
      </Other>
    </content>
  </entry>
 </feed>
 ```
 
-### Id management
+## Id management
 
-```html
+```markup
  <feed> Envelope id must be unique ID  for each new request
   e.g. <id>urn:uuid:5147c410-533f-4e4d-bf38-886ff386cec3</id>
  <Entry> Message id must be unique ID  for each new request
@@ -141,15 +135,13 @@ Example: GetNextAndClaim with messages in the queue:
    e.g. <identifier>urn:uuid:8fcced7a-0dea-4a32-9ed5-080ded9abaac</identifier>
 ```
 
-### Define a request to create a new CarePlan
+## Define a request to create a new CarePlan
 
-![image alt text](SimpleCarePlan.png)
+![image alt text](https://github.com/Koppeltaal/documentation/tree/083ac6eba8108c4b610d5248bb3e68b1bf268684/_docs/koppeltaal-1.2/SimpleCarePlan.png)
 
-Follow the TD to identify the required attributes to be included in the call. The next message identifies a NEW CLEAN CarePlan
-  A new CarePlan has no history (in the <reference> TAG there is no Version provided but the CarePlan ID must be UNIQUE identifiable
-  (Message ID's and Date are specific unique generated)
+Follow the TD to identify the required attributes to be included in the call. The next message identifies a NEW CLEAN CarePlan A new CarePlan has no history \(in the  TAG there is no Version provided but the CarePlan ID must be UNIQUE identifiable \(Message ID's and Date are specific unique generated\)
 
-```html
+```markup
 <?xml version="1.0" ?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
@@ -173,9 +165,9 @@ Follow the TD to identify the required attributes to be included in the call. Th
                    <code value="CreateOrUpdateCarePlan"/>
                    <display value="CreateOrUpdateCarePlan"/>
                </event>
-               
+
                    <reference value="http://local.emhp/CarePlan/7553"/>
-               
+
                <source>
                    <software value="KoppeltaalRegressionTests"/>
                    <endpoint value="None"/>
@@ -314,11 +306,11 @@ Follow the TD to identify the required attributes to be included in the call. Th
 </feed>
 ```
 
-### Create a Care Plan With Activity
+## Create a Care Plan With Activity
 
 This XML message will be used to add an activity to a careplan:
 
-```html
+```markup
    <id>urn:uuid:63843702-d78a-41ae-b58a-505b398d5169</id>
    <category label="MindDistrict Kickass"
        scheme="http://hl7.org/fhir/tag/security" term="http://ggz.koppeltaal.nl/fhir/Koppeltaal/Domain#MindDistrict Kickass"/>
@@ -339,9 +331,9 @@ This XML message will be used to add an activity to a careplan:
                    <code value="CreateOrUpdateCarePlan"/>
                    <display value="CreateOrUpdateCarePlan"/>
                </event>
-               
+
                    <reference value="http://local.emhp/CarePlan/7553"/>
-               
+
                <source>
                    <software value="KoppeltaalRegressionTests"/>
                    <endpoint value="None"/>
@@ -479,9 +471,9 @@ This XML message will be used to add an activity to a careplan:
    </entry>
 ```
 
-### Response Contains the UNIQIE VERSION ID
+## Response Contains the UNIQIE VERSION ID
 
-```html
+```markup
   <id>urn:uuid:07fb24ab-f598-488e-a637-ebbe12636012</id>
   <category term="http://ggz.koppeltaal.nl/fhir/Koppeltaal/Domain#MindDistrict Kickass" label="MindDistrict Kickass" scheme="http://hl7.org/fhir/tag/security"/>
   <category term="http://hl7.org/fhir/tag/message" scheme="http://hl7.org/fhir/tag"/>
@@ -506,23 +498,21 @@ This XML message will be used to add an activity to a careplan:
               <version value=""/>
               <endpoint value="https://testconnectors.vhscloud.nl/FHIR/Koppeltaal/Mailbox"/>
            </source>
-           
+
               <reference value="http://local.emhp/CarePlan/4289/_history/2015-06-18T11:56:11:338.7674"/>
-           
+
         </MessageHeader>
      </content>
   </entry>
 ```
 
-###  CarePlan Activity
+## CarePlan Activity
 
 The new CarePlan Activity will need to have the Version updated -CreateOrUpdateCarePlanActivityResult
 
-  The Response contains the CarePlan Version ID that must be provided for further updates referencing the same CarePlan 
-   <reference value="http://local.emhp/CarePlan/4289/_history/2015-06-18T11:56:11:338.7674"/>
+The Response contains the CarePlan Version ID that must be provided for further updates referencing the same CarePlan 
 
-
-```html
+```markup
 <MessageHeader xmlns="http://www.w3.org/2005/Atom">
 
            <extension xmlns="http://hl7.org/fhir"
@@ -551,12 +541,13 @@ The new CarePlan Activity will need to have the Version updated -CreateOrUpdateC
               <software value="KoppeltaalRegressionTests"/>
               <endpoint value="None"/>
            </source>
-           
+
               <reference value="http://local.emhp/CarePlanActivityStatus/426/_history/2015-06-18T12:08:47:450.4455"/>
-           
+
         </MessageHeader>
 ```
 
-### Response 
+## Response
 
-The Answer for the CreateOrUpdateCarePlanActivityResult status contains the 200 code 200 OK Server: Microsoft-IIS/8.0 Set-Cookie: ASP.NET_SessionId=c1hnzdl5gfuzwxquuj2eoxrn; path=/; HttpOnly
+The Answer for the CreateOrUpdateCarePlanActivityResult status contains the 200 code 200 OK Server: Microsoft-IIS/8.0 Set-Cookie: ASP.NET\_SessionId=c1hnzdl5gfuzwxquuj2eoxrn; path=/; HttpOnly
+

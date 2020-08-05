@@ -331,7 +331,7 @@ JSON- content
 
 Bij het aanmaken of wijzigen van resources, houdt de Koppeltaal server de resource content en versie id van de resource bij, en deelt bij nieuwe of bij wijzigingen van de resource content, een nieuwe versie id uit, dat een datetimestamp in UTC is. De aanvrager \(client\) mag de versie id nooit wijzigen.
 
-Om wijzigingen op gegevens gecontroleerd uit te voeren, wordt er gebruik gemaakt van "Optimistic Locking" omdat het HTTP protocol "stateless" is. De Koppeltaal server onthoudt geen locks.
+Om wijzigingen op gegevens gecontroleerd uit te voeren, wordt er gebruik gemaakt van "Optimistic Locking" omdat de Koppeltaal server zelf "stateless" is. De Koppeltaal server onthoudt geen locks.
 
 Bij het wijzigen van de resource content moet de aanvrager \(client\) de meest recente versie id van de resource meesturen. Indien de versie id van de aanvrager niet match met de versie id van wat de Koppeltaal server als laatst heeft uitgegeven, wordt het wijzigingsverzoek van de aanvrager niet geaccepteerd en krijgt de aanvrager een HTTP status code "409: Conflict" antwoord terug, met gedetailleerde informatie in een "OperationOutcome" resource over welke resource\(s\) de verkeerde versie id gebruiken.
 

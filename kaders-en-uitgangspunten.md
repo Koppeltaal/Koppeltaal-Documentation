@@ -14,7 +14,7 @@ De onderstaande documenten zijn normatief en leidend voor dit document.
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left">&gt; ### HL7</td>
+      <td style="text-align:left">[HL7]</td>
       <td style="text-align:left">
         <p>HL7 Version 3 Standard</p>
         <p>www.hl7.org</p>

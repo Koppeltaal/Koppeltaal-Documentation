@@ -14,7 +14,8 @@ De onderstaande documenten zijn normatief en leidend voor dit document.
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left"></td>
+      <td style="text-align:left"><b>HL7</b>
+      </td>
       <td style="text-align:left">
         <p>HL7 Version 3 Standard</p>
         <p>www.hl7.org</p>
@@ -22,7 +23,7 @@ De onderstaande documenten zijn normatief en leidend voor dit document.
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left">[URI]</td>
+      <td style="text-align:left">[###<code>URI</code>]</td>
       <td style="text-align:left">URI (Uniform resource identifier): https://nl.wikipedia.org/wiki/Uniform_resource_identifier</td>
       <td
       style="text-align:left">RFC3986</td>

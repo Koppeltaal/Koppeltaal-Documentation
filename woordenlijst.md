@@ -68,6 +68,10 @@ Leveranciers van applicaties
 
 Synoniemen: IT-deelnemer
 
+### OAuth
+
+OAuth \(Open Authorization\) is een open standaard voor autorisatie. Gebruikers kunnen hiermee een programma of website toegang geven tot hun gegevens, die opgeslagen zijn op een andere website, zonder hun gebruikersnaam en wachtwoord uit handen te geven.
+
 ### Patiënt
 
 Een persoon die een behandeling krijgt.

@@ -15,23 +15,22 @@ De onderstaande documenten zijn normatief en leidend voor dit document.
   <tbody>
     <tr>
       <td style="text-align:left">[HL7]</td>
-      <td style="text-align:left">
-        <p>HL7 Version 3 Standard</p>
-        <p>www.hl7.org</p>
+      <td style="text-align:left">HL7 Version 3 Standard <a href="www.hl7.org">www.hl7.org</a>
       </td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
       <td style="text-align:left">[URI]</td>
-      <td style="text-align:left">URI (Uniform resource identifier): https://nl.wikipedia.org/wiki/Uniform_resource_identifier</td>
-      <td
-      style="text-align:left">RFC3986</td>
+      <td style="text-align:left">URI (Uniform resource identifier): <a href="https://nl.wikipedia.org/wiki/Uniform_resource_identifier">https://nl.wikipedia.org/wiki/Uniform_resource_identifier</a>
+      </td>
+      <td style="text-align:left">RFC3986</td>
     </tr>
     <tr>
       <td style="text-align:left">[HTTP]</td>
       <td style="text-align:left">
         <p>RFC 2616 Hypertext Transfer Protocol -- HTTP/1.1</p>
-        <p>http://www.ietf.org</p>
+        <p><a href="https://tools.ietf.org/html/rfc2616">http://www.ietf.org</a>
+        </p>
       </td>
       <td style="text-align:left">RFC2616</td>
     </tr>
@@ -39,7 +38,8 @@ De onderstaande documenten zijn normatief en leidend voor dit document.
       <td style="text-align:left">[Namespaces]</td>
       <td style="text-align:left">
         <p>Namespaces in XML 1.0 (Second Edition)</p>
-        <p>www.w3.org/TR/xml-names/</p>
+        <p><a href="https://www.w3.org/TR/xml-names/">www.w3.org/TR/xml-names/</a>
+        </p>
       </td>
       <td style="text-align:left">1.0</td>
     </tr>
@@ -48,7 +48,8 @@ De onderstaande documenten zijn normatief en leidend voor dit document.
       <td style="text-align:left">
         <p>Extensible Markup Language (XML) 1.0, W3C Recommendation, Fourth Edition,
           16 August 2007</p>
-        <p>http://www.w3.org/TR/xml</p>
+        <p><a href="https://www.w3.org/TR/xml/">http://www.w3.org/TR/xml</a>
+        </p>
       </td>
       <td style="text-align:left">16-aug-2007</td>
     </tr>
@@ -75,11 +76,10 @@ De onderstaande documenten zijn normatief en leidend voor dit document.
     </tr>
     <tr>
       <td style="text-align:left">[Atom]</td>
-      <td style="text-align:left">
-        <p>RFC4287 The Atom Syndication Format a December 2005 Proposed Standard
-          developed by the <a href="http://www.ietf.org/html.charters/atompub-charter.html">IETF atompub Working Group</a>.</p>
-        <p><a href="https://www.w3.org/2005/Atom.html">https://www.w3.org/2005/Atom.html</a>
-        </p>
+      <td style="text-align:left">RFC4287 The Atom Syndication Format a December 2005 Proposed Standard
+        developed by the <a href="http://www.ietf.org/html.charters/atompub-charter.html">IETF atompub Working Group</a>.
+        <a
+        href="https://www.w3.org/2005/Atom.html">https://www.w3.org/2005/Atom.html</a>
       </td>
       <td style="text-align:left">12 dec 2005</td>
     </tr>
@@ -97,11 +97,11 @@ De onderstaande documenten zijn normatief en leidend voor dit document.
     <tr>
       <td style="text-align:left">[HTTP Authentication Scheme]</td>
       <td style="text-align:left">
-        <p>The &apos;Basic&apos; HTTP Authentication Scheme. This document defines
-          the &quot;Basic&quot; Hypertext Transfer Protocol (HTTP)</p>
+        <p><a href="https://tools.ietf.org/html/rfc7617">The &apos;Basic&apos; HTTP Authentication Scheme</a>.
+          This document defines the &quot;Basic&quot; Hypertext Transfer Protocol
+          (HTTP)</p>
         <p>authentication scheme, which transmits credentials as user-id/password
-          pairs,</p>
-        <p>encoded using Base64.</p>
+          pairs, encoded using Base64.</p>
       </td>
       <td style="text-align:left">RFC7617</td>
     </tr>
@@ -119,14 +119,11 @@ De onderstaande documenten zijn normatief en leidend voor dit document.
     </tr>
     <tr>
       <td style="text-align:left">[OpenID Connect]</td>
-      <td style="text-align:left">
-        <p>OpenID Connect 1.0 is a simple identity layer on top of the OAuth 2.0
-          protocol allows Clients to verify the identity of the End-User based on
-          the authentication performed by an Authorization Server, as well as to
-          obtain basic profile information about the End-User in an interoperable
-          and REST-like manner.</p>
-        <p><a href="https://openid.net/connect/">https://openid.net/connect/</a>
-        </p>
+      <td style="text-align:left">OpenID Connect 1.0 is a simple identity layer on top of the OAuth 2.0
+        protocol allows Clients to verify the identity of the End-User based on
+        the authentication performed by an Authorization Server, as well as to
+        obtain basic profile information about the End-User in an interoperable
+        and REST-like manner. <a href="https://openid.net/connect/">https://openid.net/connect/</a>
       </td>
       <td style="text-align:left"></td>
     </tr>

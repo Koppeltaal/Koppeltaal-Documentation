@@ -154,3 +154,5 @@ De onderstaande documenten hebben gediend als bron voor dit document:
 | \[RFC6819\] | Threat Model and Security Considerations | Jan 2013 |
 | \[RFC7515\] | JSON Web Signature | May 2015 |
 
+{% file src=".gitbook/assets/conceptual-design-koppeltaal-1.3.x-naar-2.0.docx" caption="Conceptual Design Koppeltaal" %}
+

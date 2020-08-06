@@ -149,12 +149,16 @@ De onderstaande documenten hebben gediend als bron voor dit document:
 | \[NEN7510\] | [NEN 7510 ](https://www.nen.nl/NEN-Shop/Norm/NEN-751012017A12020-nl.htm)‘Medische informatica - Informatiebeveiliging in de zorg’ is een Nederlandse norm die maatregelen beschrijft die zorginstellingen moeten nemen om op adequate wijze met patiëntgegevens om te gaan. | 2011 |
 | \[NEN7512\] | NEN 7512 gaat over de maatregelen die partijen moeten nemen bij uitwisseling van patiëntgegevens. | 2015 |
 | \[NEN7513\] | NEN 7513 heeft betrekking op logging - het vastleggen van acties - op elektronische patiëntendossiers. | 2010 |
-| \[Technisch ontwerp Koppeltaal 1.3.5\] | Technische design van het Koppeltaal Server versie 1.3.5 van Stichting Koppeltaal | 2.1 |
+| \[[Technisch ontwerp Koppeltaal 1.3.5](technologie-architectuur.md)\] | Technische design van het Koppeltaal Server versie 1.3.5 van Stichting Koppeltaal | 2.1 |
 | \[Conceptual Design Koppeltaal 1.3.x naar 2.0\] | Beschrijft welke richting gekozen wordt om van Koppeltaal 1.3.x naar 2.0 te komen. | 0.2 19-02-2018 |
 | \[RFC6819\] | Threat Model and Security Considerations | Jan 2013 |
 | \[RFC7515\] | JSON Web Signature | May 2015 |
 
+#### Technisch ontwerp Koppeltaal
+
 {% file src=".gitbook/assets/technisch-ontwerp-1.3.5-v2.1.pdf" caption="Technisch ontwerp Koppeltaal" %}
+
+#### Conceptual Design Koppeltaal
 
 {% file src=".gitbook/assets/conceptual-design-koppeltaal-1.3.x-naar-2.0.docx" caption="Conceptual Design Koppeltaal" %}
 

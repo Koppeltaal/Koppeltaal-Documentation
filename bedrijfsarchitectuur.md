@@ -48,9 +48,7 @@ Indien gebruik wordt gemaakt van het BSN bij gegevensuitwisseling, geldt ook de 
 
 Via het privacy beleid van de GGZ-deelnemer, en de keten van verwerkersovereenkomsten zoals hierboven beschreven \(en de maatregelen die ten gevolge van die overeenkomsten in de deelnemende organisaties en de Koppeltaal keten worden ingevoerd\) voldoet Koppeltaal aan de AVG-normen.
 
-## Scenario’s, rollen en use-cases
-
-### Scenario’s
+## Scenario’s
 
 Koppeltaal biedt via de standaard: flexibiliteit, keuzevrijheid en gebruiksgemak in blended care processen. Om te illustreren hoe de standaard dat doet beschrijven we hieronder twee voorbeeld scenario’s van verschillende blended care behandelingen. Een in de eerstelijns zorg en een in de gespecialiseerde GGZ zorg. De stappen in de scenario’s staan in de linker kolom beschreven, en in de rechterkolom staan Koppeltaal use cases die gebruikt worden in de ondersteuning van de betreffende stap in het proces.
 
@@ -70,9 +68,9 @@ In de specialistische GGZ zou Koppeltaal bijvoorbeeld in het volgende scenario i
 
 | **Scenario** | **Scenario per stap** | **Use case** |
 | :--- | :--- | :--- |
-| 8 | Een cliënt is in gesprek met de psychiater. Er is complexe problematiek aan de orde, maar de problematiek is niet ernstig. Er kan behandeld worden met blended care. De psychiater kiest een passende ROM-vragenlijst om beter beeld te krijgen van de startsituatie van de behandeling. | Selecteer passende ROM-vragenlijst \(sub activiteit\) aan cliënt. |
+| 8 | Een cliënt is in gesprek met de psychiater. Er is complexe problematiek aan de orde, maar de problematiek is niet ernstig. Er kan behandeld worden met blended care. De psychiater kiest een passende ROM-vragenlijst om beter beeld te krijgen van de startsituatie van de behandeling. | Selecteer passende \(sub\)activiteit \(ROM-vragenlijst\) aan cliënt. |
 | 9 | De cliënt ontvangt via de e-mail een uitnodiging om in te loggen | Ontvangen inlogverzoek. |
-| 10 | De cliënt logt in en ziet een knop om de vragenlijst te starten. De cliënt klikt en de vragenlijst wordt geopend. De cliënt vult de lijst in, maar stopt halverwege. Te moeilijk. | Opstarten en \(gedeeltelijk\) invullen ROM vragenlijst \(sub activiteit\) |
+| 10 | De cliënt logt in en ziet een knop om de vragenlijst te starten. De cliënt klikt en de vragenlijst wordt geopend. De cliënt vult de lijst in, maar stopt halverwege. Te moeilijk. | Opstarten \(sub\)activiteit \(gedeeltelijk invullen ROM vragenlijst\) |
 | 11 | De behandelaar krijgt melding dat cliënt geen voortgang toont in behandeling | \(Sub\)activiteit monitoren. |
 | 12 | De cliënt geeft aan dat hij de vragenlijst moeilijk vindt en dat hij daarop afhaakt. Dat is onderdeel van het probleem waarom de cliënt in de eerste plaats kwam. In overleg besluiten behandelaar en cliënt een familielid bij te schakelen om te helpen. Het familielid kan dat op zijn eigen systeem zien wat de cliënt heeft ingevuld en daarop toelichting geven voor de behandelaar. De cliënt nodigt via het eHealthplatform zijn vrouw uit om mee te helpen. | Participant \(Derde\) opvoeren in het behandelplan. |
 | 13 | De behandelaar krijgt een signaal dat er een relatie is toegevoegd aan de pagina van de cliënt. | Ontvangen signaal dat relatie is toegevoegd |
@@ -84,20 +82,20 @@ In de specialistische GGZ zou Koppeltaal bijvoorbeeld in het volgende scenario i
 
 Specialistische zorg scenario – Use-cases
 
-Koppeltaal biedt de volgende rollen en use-cases aan om de scenario’s, zoals hierboven beschreven, mogelijk te maken.
+Koppeltaal biedt de volgende **rollen** en **use-cases** aan om de scenario’s, zoals hierboven beschreven, mogelijk te maken.
 
 ![Koppeltaal use-cases](.gitbook/assets/usecaseskt2%20%282%29.jpg)
 
-### Rollen
+## Rollen
 
 * Beheerder. Degene die de applicaties\(interventies\) activeert en activiteiten beschikbaar stelt ten behoeve van een zorginstelling en zorgverleners.
 * Patiënt. Degene die behandeld wordt.
 * Behandelaar. Degene die de zorg aan de patiënt verleent.
 * Derde. Degene die een niet zorg verlenende relatie hebben met de patiënt en ondersteuning biedt bij een behandeling, zoals vrienden, familie, lotgenoten, en ervaringsdeskundigen.
 
-### Use-cases
+## Use-cases
 
-#### Applicatie registreren
+### UC-KT-01 Applicatie registreren
 
 <table>
   <thead>
@@ -121,7 +119,8 @@ Koppeltaal biedt de volgende rollen en use-cases aan om de scenario’s, zoals h
     </tr>
     <tr>
       <td style="text-align:left">Beschrijving</td>
-      <td style="text-align:left">Applicatie per zorgbehoefte geregistreerd in het Koppeltaal domein</td>
+      <td style="text-align:left">Verschillende type applicaties per zorgbehoefte geregistreerd in het Koppeltaal
+        domein ter ondersteuning van een interactief zorgproces.</td>
     </tr>
     <tr>
       <td style="text-align:left">Primaire actor</td>
@@ -149,12 +148,27 @@ Koppeltaal biedt de volgende rollen en use-cases aan om de scenario’s, zoals h
     </tr>
     <tr>
       <td style="text-align:left">Opmerkingen</td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">
+        <ol>
+          <li>Elke applicatie krijgt een Applicatie Identifier en naam.</li>
+          <li>Een applicatie van het type &#x201C;<a href="https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/woordenlijst#interventie">interventie</a>&#x201D;
+            heeft:
+            <ol>
+              <li>een (unieke) locatie waar de interventie te vinden is (URL)</li>
+              <li>Een overeengekomen beveiligingslocatie waar eenmalig geverifieerd wordt
+                dat de aanroepende partij een bekende (en geregistreerde) partij is die
+                kan worden vertrouwd (Single Sign-On) in een gegeven domein.</li>
+            </ol>
+          </li>
+          <li>Elk geregistreerde applicatie krijgt &#xE9;&#xE9;n of meerdere functionele
+            (applicatie) rollen in de context van blended care (zie &quot;<a href="https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/informatiesystemen-architectuur#actoren-en-rollen">Actoren en rollen</a>&quot;).</li>
+        </ol>
+      </td>
     </tr>
   </tbody>
 </table>
 
-#### \(Sub\)activiteiten registreren
+### UC-KT-02 \(Sub\)activiteiten registreren
 
 <table>
   <thead>
@@ -178,8 +192,9 @@ Koppeltaal biedt de volgende rollen en use-cases aan om de scenario’s, zoals h
     </tr>
     <tr>
       <td style="text-align:left">Beschrijving</td>
-      <td style="text-align:left">Per applicatie worden activiteiten definities geregistreerd, die aangeboden
-        worden op basis van aandoening en behoeften van de cli&#xEB;nt.</td>
+      <td style="text-align:left">Per applicatie van het type &quot;interventie&quot; worden (sub)activiteiten
+        definities geregistreerd, die aangeboden worden op basis van aandoening
+        en behoeften van de cli&#xEB;nt.</td>
     </tr>
     <tr>
       <td style="text-align:left">Primaire actor</td>
@@ -207,12 +222,21 @@ Koppeltaal biedt de volgende rollen en use-cases aan om de scenario’s, zoals h
     </tr>
     <tr>
       <td style="text-align:left">Opmerkingen</td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">
+        <ol>
+          <li>Een applicatie van het type &quot;interventie&quot; bevat een (sub)activiteiten
+            definitie lijst met minimaal 1 activiteitsdefinitie, wat de interventie
+            voor de pati&#xEB;nt te bieden heeft.</li>
+          <li>Elk (sub)activiteit is uniek identificeerbaar en heeft een beschrijving</li>
+          <li>De definities en omschrijvingen van (sub)activiteiten kunnen dynamisch
+            gewijzigd worden. Dit resulteert niet in nieuwe activiteiten.</li>
+        </ol>
+      </td>
     </tr>
   </tbody>
 </table>
 
-#### Behandelplan opzetten
+### UC-KT-03 Behandelplan opzetten
 
 <table>
   <thead>
@@ -224,7 +248,7 @@ Koppeltaal biedt de volgende rollen en use-cases aan om de scenario’s, zoals h
   <tbody>
     <tr>
       <td style="text-align:left">Naam</td>
-      <td style="text-align:left">Behandelplan opzetten</td>
+      <td style="text-align:left">Behandelplan opzetten.</td>
     </tr>
     <tr>
       <td style="text-align:left">Scenario</td>
@@ -240,7 +264,9 @@ Koppeltaal biedt de volgende rollen en use-cases aan om de scenario’s, zoals h
     <tr>
       <td style="text-align:left">Beschrijving</td>
       <td style="text-align:left">Het opzetten en/of aanpassen van een behandelplan door het kiezen van
-        activiteiten en participanten op basis van aandoening en behoefte client</td>
+        (sub)activiteiten en participanten op basis van aandoening en behoefte
+        cli&#xEB;nt. Dit behandelplan draagt bij voor een ge&#xEF;ntegreerd beeld
+        van de behandeling tussen zorgverlener en pati&#xEB;nt.</td>
     </tr>
     <tr>
       <td style="text-align:left">Primaire actor</td>
@@ -256,7 +282,8 @@ Koppeltaal biedt de volgende rollen en use-cases aan om de scenario’s, zoals h
     </tr>
     <tr>
       <td style="text-align:left">Trigger</td>
-      <td style="text-align:left">Behandelaar stelt met Pati&#xEB;nt een behandelplan samen.</td>
+      <td style="text-align:left">Een behandelplan wordt ge&#xEF;nitieerd door een behandelaar voor een
+        pati&#xEB;nt en is verantwoordelijk voor het behandelplan</td>
     </tr>
     <tr>
       <td style="text-align:left">Procesflow</td>
@@ -269,12 +296,28 @@ Koppeltaal biedt de volgende rollen en use-cases aan om de scenario’s, zoals h
     </tr>
     <tr>
       <td style="text-align:left">Opmerkingen</td>
-      <td style="text-align:left">Behoefte van pati&#xEB;nt staat voorop</td>
+      <td style="text-align:left">
+        <ol>
+          <li>De pati&#xEB;nt is standaard de uitvoerder van het behandelplan en kan
+            aanpassingen doen op het behandelplan.</li>
+          <li>Een behandelplan bevat geselecteerde activiteiten die door de pati&#xEB;nt
+            kunnen worden uitgevoerd.</li>
+          <li>Elke activiteit krijgt een start- en einddatum wanneer de activiteit wordt
+            uitgevoerd</li>
+          <li>Zowel op niveau van het behandelplan als op het niveau van een activiteit,
+            kunnen behandelaars- en derden gegevens als participanten zijn gelinkt
+            aan het behandelplan.</li>
+          <li>Als een behandelplan aan een pati&#xEB;nt is toegewezen zijn alle geselecteerde
+            activiteiten direct toegankelijk voor deze pati&#xEB;nt.</li>
+          <li>De behandelrelatie tussen de pati&#xEB;nt en behandelaar is gemaakt via
+            het behandelplan (en impliciet via de activiteiten daarin).</li>
+        </ol>
+      </td>
     </tr>
   </tbody>
 </table>
 
-#### \(Sub\)activiteiten selecteren
+### UC-KT-04 \(Sub\)activiteiten selecteren
 
 <table>
   <thead>
@@ -300,8 +343,10 @@ Koppeltaal biedt de volgende rollen en use-cases aan om de scenario’s, zoals h
     </tr>
     <tr>
       <td style="text-align:left">Beschrijving</td>
-      <td style="text-align:left">Het selecteren van (sub)activiteiten adhv definities op basis van aandoening
-        en behoefte van cli&#xEB;nt</td>
+      <td style="text-align:left">Toevoegen van (sub)activiteiten vindt plaats in overleg met de pati&#xEB;nt
+        op basis van gezamenlijke besluitvorming. In de keuze van activiteiten
+        wordt rekening gehouden met de aard van de behandeling en pati&#xEB;nten
+        voorkeur.</td>
     </tr>
     <tr>
       <td style="text-align:left">Primaire actor</td>
@@ -334,7 +379,7 @@ Koppeltaal biedt de volgende rollen en use-cases aan om de scenario’s, zoals h
   </tbody>
 </table>
 
-#### \(Sub\)activiteit lanceren
+### UC-KT-05 \(Sub\)activiteit lanceren
 
 <table>
   <thead>
@@ -397,7 +442,7 @@ Koppeltaal biedt de volgende rollen en use-cases aan om de scenario’s, zoals h
   </tbody>
 </table>
 
-#### \(Sub\)activiteit monitoren
+### UC-KT-06 \(Sub\)activiteit monitoren
 
 <table>
   <thead>
@@ -423,8 +468,8 @@ Koppeltaal biedt de volgende rollen en use-cases aan om de scenario’s, zoals h
     </tr>
     <tr>
       <td style="text-align:left">Beschrijving</td>
-      <td style="text-align:left">Voortgang en status van activiteiten volgen, die door de pati&#xEB;nt
-        wordt uitgevoerd</td>
+      <td style="text-align:left">Tijdens het starten en uitvoering van een (sub)activiteit door een participant,
+        wordt de status van een activiteit geactualiseerd en doorgegeven.</td>
     </tr>
     <tr>
       <td style="text-align:left">Primaire actor</td>
@@ -457,7 +502,7 @@ Koppeltaal biedt de volgende rollen en use-cases aan om de scenario’s, zoals h
   </tbody>
 </table>
 
-#### \(Sub\)activiteit evalueren
+### UC-KT-07 \(Sub\)activiteit evalueren
 
 <table>
   <thead>
@@ -485,7 +530,7 @@ Koppeltaal biedt de volgende rollen en use-cases aan om de scenario’s, zoals h
       <td style="text-align:left">Beschrijving</td>
       <td style="text-align:left">Aan het eind of tijdens een activiteit door een participant, een uitkomst
         of de tot dusver behaalde resultaten van bijvoorbeeld een voltooide sub-sectie
-        ingevulde vragenlijst van een activiteit doorgegeven</td>
+        ingevulde vragenlijst van een activiteit evalueren.</td>
     </tr>
     <tr>
       <td style="text-align:left">Primaire actor</td>
@@ -513,12 +558,19 @@ Koppeltaal biedt de volgende rollen en use-cases aan om de scenario’s, zoals h
     </tr>
     <tr>
       <td style="text-align:left">Opmerkingen</td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">
+        <p></p>
+        <ol>
+          <li>Tijdens een activiteit kan een uitkomst of de tot dusver behaalde resultaten
+            van bijvoorbeeld een voltooide sub-sectie ingevulde vragenlijst doorgegeven
+            worden.</li>
+        </ol>
+      </td>
     </tr>
   </tbody>
 </table>
 
-#### Participant opvoeren
+### UC-KT-08 Participant opvoeren
 
 <table>
   <thead>
@@ -579,7 +631,7 @@ Koppeltaal biedt de volgende rollen en use-cases aan om de scenario’s, zoals h
   </tbody>
 </table>
 
-#### Inlogverzoek sturen naar participant
+### UC-KT-09 Inlogverzoek sturen naar participant
 
 <table>
   <thead>
@@ -638,7 +690,7 @@ Koppeltaal biedt de volgende rollen en use-cases aan om de scenario’s, zoals h
   </tbody>
 </table>
 
-#### Derden toegevoegd signalering
+### UC-KT-10 Derden toegevoegd signalering
 
 <table>
   <thead>
@@ -663,7 +715,8 @@ Koppeltaal biedt de volgende rollen en use-cases aan om de scenario’s, zoals h
     <tr>
       <td style="text-align:left">Beschrijving</td>
       <td style="text-align:left">In overleg met behandelaar besluiten derden bij te schakelen om te helpen.
-        Zodra client, derden ingeschakeld heeft, wordt behandelaar hierover ge&#xEF;nformeerd.</td>
+        Zodra cli&#xEB;nt, derden ingeschakeld heeft, wordt behandelaar hierover
+        ge&#xEF;nformeerd.</td>
     </tr>
     <tr>
       <td style="text-align:left">Primaire actor</td>
@@ -696,7 +749,7 @@ Koppeltaal biedt de volgende rollen en use-cases aan om de scenario’s, zoals h
   </tbody>
 </table>
 
-#### Algemene informatie uitwisselen
+### UC-KT-11 Algemene informatie uitwisselen
 
 <table>
   <thead>
@@ -749,18 +802,27 @@ Koppeltaal biedt de volgende rollen en use-cases aan om de scenario’s, zoals h
     </tr>
     <tr>
       <td style="text-align:left">Opmerkingen</td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">
+        <ol>
+          <li>Informatie berichten bevatten alleen tekst.</li>
+          <li>Wanneer een participant informatie wil uitwisselen met een ander (geregistreerd)
+            participant binnen de context van een behandeling, kan de participant een
+            bericht sturen alleen naar een ander participant die bij de behandeling
+            betrokken is.</li>
+          <li>Informatie berichten worden niet als notificatie berichten gebruikt.</li>
+        </ol>
+      </td>
     </tr>
   </tbody>
 </table>
 
-### Bedrijfsobjecten
+## Bedrijfsobjecten
 
 De use-cases benoemen niet alleen de actoren, maar noemen ook “bedrijfsobjecten”, zoals Behandelplan, Activiteit, Behandelaar, Patiënt en Derde. Het volgende model toont de bedrijfsobjecten en hun onderliggende relaties.
 
 ![Bedrijfsobjecten](.gitbook/assets/4%20%282%29.jpeg)
 
-### Beheerprocessen
+## Beheerprocessen
 
 Om Koppeltaal als integratie standaard van informatiesystemen ter beschikking te stellen voor instellingen voor Geestelijke Gezondheidszorg, zijn er beheerprocessen nodig tussen zorgaanbieders, leveranciers en stichting Koppeltaal.
 

@@ -60,7 +60,7 @@ Fast Healthcare Interoperability Resources \(FHIR\) is een interoperabiliteitsst
 
 ### Interventie
 
-Software en systeem die de cliënt gebruikt in het kader van een behandeling. Een App is een type interventie.
+Software en systeem die de cliënt gebruikt in het kader van een behandeling ter ondersteuning of bij een doelbewuste ingreep. Een App is een type interventie.
 
 ### Leverancier
 

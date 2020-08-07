@@ -63,104 +63,6 @@ Zowel interventies als bronsystemen kunnen in andere applicatie typen \(zie Port
 
 Voor het beheer, zoals de registratie en configuratie van de portalen, interventies en bronsystemen, hebben we de rol: **Koppeltaal Support**.
 
-## Use-cases
-
-![Koppeltaal use-cases](.gitbook/assets/4%20%281%29.jpeg)
-
-### UC-KT-01 Applicatie registreren
-
-Er zijn verschillende type applicaties betrokken ter ondersteuning van een interactief zorgproces en deze zullen geregistreerd moeten worden en hiermee geïntegreerd in een Koppeltaal domein.
-
-1. Applicaties worden door de beheerder \(Koppeltaal Support\) geregistreerd.
-2. Portalen, interventies en bronsystemen worden geregistreerd binnen een Koppeltaal domein in een daarvoor bestemde Application Register.
-3. Elke applicatie krijgt een Applicatie Identifier en naam.
-4. Een applicatie van het type “interventie” heeft:
-   1. een \(unieke\) locatie waar de interventie te vinden is \(URL\)
-   2. Een overeengekomen beveiligingslocatie waar eenmalig geverifieerd wordt dat de aanroepende partij een bekende \(en geregistreerde\) partij is die kan worden vertrouwd \(Single Sign-On\) in een gegeven domein.
-5. Elk geregistreerde applicatie krijgt één of meerdere functionele \(applicatie\) rollen in de context van blended care \(zie "[Actoren en rollen](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/informatiesystemen-architectuur#actoren-en-rollen)"\).
-
-### UC-KT-02 \(Sub\)activiteit registreren
-
-Alleen geregistreerde applicaties van het type “interventie” kunnen \(sub\)activiteiten registreren op basis van aandoening en behoeften van een patiënt.
-
-1. Een interventie bevat een \(sub\)activiteiten definitie lijst met minimaal 1 activiteitsdefinitie, wat de interventie voor de patiënt te bieden heeft.
-2. Elk \(sub\)activiteit is uniek identificeerbaar en heeft een beschrijving
-3. De definities en omschrijvingen van \(sub\)activiteiten kunnen dynamisch gewijzigd worden. Dit resulteert niet in nieuwe activiteiten.
-
-### UC-KT-03 Behandelplan opzetten
-
-Na een intake van een patiënt wordt er een behandelplan opgesteld. Dit behandelplan draagt bij voor een geïntegreerd beeld van de behandeling tussen zorgverlener en patiënt.
-
-1. In een behandelplan staan de doelen en de wijze waarop de patiënt en de behandelaar deze doelen willen bereiken.
-2. Een behandelplan wordt geïnitieerd door een behandelaar voor een patiënt en is verantwoordelijk voor het behandelplan. De patiënt is standaard de uitvoerder van het behandelplan en kan aanpassingen doen op het behandelplan.
-3. Een behandelplan bevat geselecteerde activiteiten die door de patiënt kunnen worden uitgevoerd.
-4. Elke activiteit krijgt een start- en einddatum wanneer de activiteit wordt uitgevoerd
-5. Zowel op niveau van het behandelplan als op het niveau van een activiteit, kunnen behandelaars- en derden gegevens als participanten zijn gelinkt aan het behandelplan.
-6. Als een behandelplan aan een patiënt is toegewezen zijn alle geselecteerde activiteiten direct toegankelijk voor deze patiënt.
-7. De behandelrelatie tussen de patiënt en behandelaar is gemaakt via het behandelplan \(en impliciet via de activiteiten daarin\).
-
-### UC-KT-04 \(Sub\)activiteiten selecteren
-
-Toevoegen van activiteiten vindt plaats in overleg met de patiënt op basis van gezamenlijke besluitvorming. In de keuze van activiteiten wordt rekening gehouden met de aard van de behandeling en patiënten voorkeur.
-
-### UC-KT-05 \(Sub\)activiteit lanceren
-
-Na het aanmaken van een behandelplan met één of meer activiteiten door een behandelaar voor een patiënt, kan de patiënt deze activiteiten in zijn portaal \(eigen omgeving binnen de context van een zorginstelling\) starten door een interventie te lanceren. Koppeltaal biedt hiermee een scala aan eHealth interventies beschikbaar.
-
-1. Een patiënten portaal ontvangt via Koppeltaal een \(unieke\) locatie waar de interventie te vinden is \(URL\).
-2. De patiënt zal via Koppeltaal deze URL openen en stuurt de volgende informatie \(context\) op om de interventie met de daarbij behorende activiteit\(en\) te kunnen lanceren:
-   1. Applicatie Identifier \(gekoppeld aan een interventie\) – noodzakelijk voor Koppeltaal om de geregistreerde interventie en zijn URL op te kunnen zoeken.
-   2. Activiteit Identifier. Wordt gebruikt om de juiste activiteit te identificeren.
-   3. Patiënt Identifier. Wordt gebruikt om de patiënt te identificeren door de lancerende interventie.
-   4. Gebruikers Identifier. Welke rol binnen een activiteit gebruikt wordt.
-   5. Optionele aanvullende informatie.
-   6. Authenticatie token zodat Koppeltaal kan verifiëren dat de interventie een bekende \(en geregistreerde\) applicatie is die kan worden vertrouwd.
-3. Als een activiteit gestart wordt, wordt de status van de activiteit ‘in uitvoering’ gezet. Bij wijziging van de status van een activiteit, worden geabonneerden \(applicaties\) geïnformeerd \(genotificeerd\) over de status wijziging.
-
-### UC-KT-06 \(Sub\)activiteit monitoren
-
-Tijdens het starten en uitvoering van een activiteit door een participant, wordt de status van een activiteit geactualiseerd en doorgegeven aan Koppeltaal. Koppeltaal informeert geïnteresseerden applicaties over de geactualiseerde activiteit. Hiermee kan Koppeltaal de directe werkomgeving van de zorgverlener ondersteunen.
-
-1. Wanneer een participant begint met het uitvoeren van een activiteit, verandert de status van ‘beschikbaar’ in ‘in uitvoering’.
-2. Tijdens de uitvoering van een activiteit wordt de status up-to-date gehouden binnen de context van een behandeling.
-3. Bij wijziging van de status van een activiteit, worden geabonneerden \(applicaties\) geïnformeerd \(genotificeerd\) over de status wijziging.
-
-De geïnformeerde \(applicatie\) haalt en verwerkt de status van een activiteit voor eigen doeleinden. Hierdoor wordt bijvoorbeeld de eigenaar van een behandelplan op de hoogte gehouden van de verandering in status en kan de eigenaar van het behandelplan op zijn beurt geïnteresseerden in het behandelplan op de hoogte stellen van de wijziging.
-
-### UC-KT-07 \(Sub\)activiteit evalueren
-
-Aan het eind of tijdens een activiteit door een participant, kan een uitkomst van een activiteit doorgegeven worden aan Koppeltaal. Koppeltaal ondersteunt hiermee het evaluatie proces tussen cliënt en zorgaanbieder.
-
-1. Tijdens een activiteit kan een uitkomst of de tot dusver behaalde resultaten van bijvoorbeeld een voltooide sub-sectie ingevulde vragenlijst doorgegeven worden.
-2. Geabonneerden \(applicaties\) worden geïnformeerd \(genotificeerd\) over de uitkomst\(en\) of behaalde resultaten.
-
-De geïnformeerde \(applicatie\) haalt en verwerkt de uitkomst\(en\) of behaalde resultaten van een activiteit voor eigen doeleinden.
-
-### UC-KT-08 Participant opvoeren
-
-Bij elke behandelplan, moeten de gebruikers of participanten: patiënt, behandelaar\(s\) en derden geregistreerd zijn binnen Koppeltaal.
-
-1. Na de intake wordt een behandelaar of behandelteam toegewezen aan een patiënt, waarmee de behandelrelatie wordt vastgelegd.
-2. Derden kunnen later toegevoegd worden. Derden worden aan een cliënt gerelateerd.
-3. Koppeltaal draagt bij aan het verkrijgen van een “geïntegreerd cliëntbeeld” voor zorgverlener en patiënt. Dat wil zeggen dat Koppeltaal ervoor zorgt dat alle geïnteresseerde applicaties gesynchroniseerd worden om de identificatie van gebruikers gelijk te houden binnen een domein.
-4. Een participant moet uniek identificeerbaar zijn, ook buiten Koppeltaal om. Dit om meervoudige registratie en duplicaten van participanten in een domein te voorkomen.
-
-### UC-KT-09 Inlogverzoek naar participant
-
-Nadat de activiteiten in een behandelplan vastgelegd zijn, kan de behandelaar een inlogverzoek versturen naar de patiënt, zodat deze aan de slag kan met de activiteiten. De patiënt ontvangt hiervoor via Koppeltaal een \(unieke\) locatie waar de interventie te vinden is \(URL\).
-
-### UC-KT-10 Derden toegevoegd signalering
-
-In samenspraak met de patiënt kunnen derden ingeschakeld worden bij een behandeling. Zodra de patiënt gerelateerde \(derden\) heeft ingeschakeld, wordt de behandelaar hierover geïnformeerd.
-
-### UC-KT-11 Algemene informatie uitwisselen
-
-Tijdens een behandeling kunnen participanten eenvoudige ongestructureerde informatie uitwisselen. Koppeltaal biedt de participanten hiermee een communicatie kanaal aan.
-
-1. Informatie berichten bevatten alleen tekst.
-2. Wanneer een participant informatie wil uitwisselen met een ander \(geregistreerd\) participant binnen de context van een behandeling, kan de participant een bericht sturen alleen naar een ander participant die bij de behandeling betrokken is.
-3. Informatie berichten worden niet als notificatie berichten gebruikt.
-
 ## Gegevensmodel
 
 De gegevensuitwisseling gebeurt via berichtenuitwisseling en is gebaseerd op een aantal standaarden: met name HTTP, **HL7 FHIR DSTU 1\(v0.0.82\)** en relevante onderdelen van de HL7 standaard.
@@ -219,6 +121,101 @@ Na het registratie proces kan begonnen worden met de uitwisseling van informatie
 In de interactie laag wordt er niet meet over een cliënt gesproken maar hanteren we de term patiënt.
 
 ![Interacties gegroepeerd](.gitbook/assets/6%20%281%29.jpeg)
+
+### Use-case versus interacties <a id="use-case-versus-interacties"></a>
+
+In het volgende overzicht ziet men met welke interacties de verschillende use-cases ondersteund. De verschillende interacties realiseren de huidige functionaliteit van Koppeltaal.
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left"><b>Use-case</b>
+      </th>
+      <th style="text-align:left"><b>Interactie</b>
+      </th>
+      <th style="text-align:left"><b>Omschrijving</b>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        <p>UC-KT-01</p>
+        <p>Applicatie registreren</p>
+      </td>
+      <td style="text-align:left">-</td>
+      <td style="text-align:left">Applicatie per zorgbehoefte geregistreerd in het Koppeltaal domein. Hier
+        zijn geen interacties tussen systemen voor gedefinieerd, maar moet handmatig
+        door een beheerder (Koppeltaal Support) geconfigureerd worden.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>UC-KT-02</p>
+        <p>(Sub)activiteiten registreren</p>
+      </td>
+      <td style="text-align:left">CreateOrUpdateActivityDefinition</td>
+      <td style="text-align:left">Elke interventie moet tenminste &#xE9;&#xE9;n activiteit hebben geregistreerd
+        en kan aangepast danwel uitgebreid worden</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>UC-KT-03/</p>
+        <p>UC-KT-04/</p>
+        <p>UC-KT-09</p>
+        <p>Behandelplan starten</p>
+      </td>
+      <td style="text-align:left">CreateOrUpdateCarePlan GetMessage(Headers)</td>
+      <td style="text-align:left">Na een intake wordt er een behandelplan opgesteld en activiteiten toegekend
+        aan een pati&#xEB;nt. Nadat activiteiten toegekend zijn wordt pati&#xEB;nt
+        genotificeerd via inlogverzoek. Dit behandelplan draagt bij voor een ge&#xEF;ntegreerd
+        pati&#xEB;ntenbeeld tussen zorgverlener en pati&#xEB;nt.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>UC-KT-05</p>
+        <p>Interventie lanceren</p>
+      </td>
+      <td style="text-align:left">PostLaunchRequest</td>
+      <td style="text-align:left">OAuth 2.0 standaard en SMART-on-FHIR voorschriften.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>UC-KT-06</p>
+        <p>Voortgang monitoren</p>
+      </td>
+      <td style="text-align:left">UpdateCarePlanActivityStatus GetMessage(Headers)</td>
+      <td style="text-align:left">Voortgang en status van een activiteit delen en ontvangen van een interventie.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>UC-KT-07</p>
+        <p>Activiteit evalueren</p>
+      </td>
+      <td style="text-align:left">CreateOrUpdateCarePlanActivityResult GetMessage(Headers)</td>
+      <td style="text-align:left">Uitslagen en resultaten delen en ontvangen van een interventie</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>UC-KT-08/</p>
+        <p>UC-KT-10</p>
+        <p>Gebruikers aanmaken</p>
+      </td>
+      <td style="text-align:left">CreateOrUpdatePatient CreateOrUpdatePractitioner CreateOrUpdateRelatedPerson
+        GetMessage(Headers)</td>
+      <td style="text-align:left">Verschillende typen gebruikers kunnen worden aangemaakt. Na opvoeren van
+        een gebruiker worden alle ge&#xEF;nteresseerde applicaties gesynchroniseerd
+        en kunnen andere applicaties de gegevens aanvullen.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>UC-KT-11</p>
+        <p>Informatie uitwisselen</p>
+      </td>
+      <td style="text-align:left">CreateOrUpdateMessage GetMessage(Headers)</td>
+      <td style="text-align:left">Algemene informatie delen en ontvangen tussen participanten</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Informatie zoeken en ophalen
 
@@ -303,101 +300,5 @@ Het lanceren van een interventie gaat volgens de OAuth 2.0 standaard en SMART-on
 
 ![Interventie lanceren](.gitbook/assets/13.jpeg)
 
-## Use-case versus interacties
-
 In het volgende overzicht ziet men met welke interacties de verschillende use-cases ondersteund. De verschillende interacties realiseren de huidige functionaliteit van Koppeltaal.
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left"><b>Use-case</b>
-      </th>
-      <th style="text-align:left"><b>Interactie</b>
-      </th>
-      <th style="text-align:left"><b>Omschrijving</b>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">
-        <p>UC-KT-01</p>
-        <p>Applicatie registreren</p>
-      </td>
-      <td style="text-align:left">-</td>
-      <td style="text-align:left">Applicatie per zorgbehoefte geregistreerd in het Koppeltaal domein. Hier
-        zijn geen interacties tussen systemin voor gedefinieerd maar moet handmatig
-        door een beheerder (Koppeltaal Support) geconfigueerd worden.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>UC-KT-02</p>
-        <p>(Sub)activiteiten registreren</p>
-      </td>
-      <td style="text-align:left">CreateOrUpdateActivityDefinition</td>
-      <td style="text-align:left">Elke interventie moet tenminste &#xE9;&#xE9;n activiteit hebben geregistreerd
-        en kan aangepast danwel uitgebreidt worden</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>UC-KT-03/</p>
-        <p>UC-KT-04/</p>
-        <p>UC-KT-09</p>
-        <p>Behandelplan starten</p>
-      </td>
-      <td style="text-align:left">CreateOrUpdateCarePlan</td>
-      <td style="text-align:left">Na een intake wordt er een behandelplan opgesteld en activiteiten toegekend
-        aan een pati&#xEB;nt. Nadat activiteiten toegekend zijn wordt pati&#xEB;nt
-        genotificeerd via inlogverzoek. Dit behandelplan draagt bij voor een ge&#xEF;ntegreerd
-        pati&#xEB;ntenbeeld tussen zorgverlener en pati&#xEB;nt.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>UC-KT-05</p>
-        <p>Interventie lanceren</p>
-      </td>
-      <td style="text-align:left">PostLaunchRequest</td>
-      <td style="text-align:left">OAuth 2.0 standaard en SMART-on-FHIR voorschriften.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>UC-KT-06</p>
-        <p>Voortgang monitoren</p>
-      </td>
-      <td style="text-align:left">UpdateCarePlanActivityStatus</td>
-      <td style="text-align:left">Voortgang en status van een activiteit delen en ontvangen van een interventie.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>UC-KT-07</p>
-        <p>Activiteit evalueren</p>
-      </td>
-      <td style="text-align:left">CreateOrUpdateCarePlanActivityResult</td>
-      <td style="text-align:left">Uitslagen en resultaten delen en ontvangen van een interventie</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>UC-KT-08/</p>
-        <p>UC-KT-10</p>
-        <p>Gebruikers aanmaken</p>
-      </td>
-      <td style="text-align:left">
-        <p>CreateOrUpdatePatient</p>
-        <p>CreateOrUpdatePractitioner</p>
-        <p>CreateOrUpdateRelatedPerson</p>
-      </td>
-      <td style="text-align:left">Verschillende typen gebruikers kunnen worden aangemaakt. Na opvoeren van
-        een gebruiker worden alle ge&#xEF;ntereseerde applicaties gesynchroniseerd
-        en kunnen andere applicaties de gegevens aanvullen.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>UC-KT-11</p>
-        <p>Informatie uitwisselen</p>
-      </td>
-      <td style="text-align:left">CreateOrUpdateMessage</td>
-      <td style="text-align:left">Algemene informatie delen en ontvangen tussen participanten</td>
-    </tr>
-  </tbody>
-</table>
 

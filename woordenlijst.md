@@ -4,7 +4,7 @@ description: >-
   begrippenlijst vindt je een korte en bondige uitleg van deze terminologie.
 ---
 
-# Begrippenlijst
+# Afkortingen en begrippenlijst
 
 ### Applicatie
 

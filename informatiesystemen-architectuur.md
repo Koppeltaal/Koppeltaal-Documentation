@@ -120,7 +120,7 @@ Na het registratie proces kan begonnen worden met de uitwisseling van informatie
 
 In de interactie laag wordt er niet meet over een cliënt gesproken maar hanteren we de term patiënt.
 
-![Interacties gegroepeerd](.gitbook/assets/6%20%281%29.jpeg)
+![Interacties gegroepeerd](.gitbook/assets/interacties.jpg)
 
 ### Use-case versus interacties <a id="use-case-versus-interacties"></a>
 

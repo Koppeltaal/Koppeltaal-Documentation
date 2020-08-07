@@ -1,7 +1,8 @@
 ---
 description: >-
   Ook bij Koppeltaal wordt veel gebruik gemaakt van vakjargon. In deze
-  begrippenlijst vindt je een korte en bondige uitleg van deze terminologie.
+  afkortingen en begrippenlijst vindt je een korte en bondige uitleg van deze
+  terminologie.
 ---
 
 # Afkortingen en begrippenlijst

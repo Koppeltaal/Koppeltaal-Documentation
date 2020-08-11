@@ -31,7 +31,6 @@ NEN 7510-1:2017: het verschaffen van zekerheid met betrekking tot de juistheid v
 
 ### Autorisatie
 
-  
 NEN 7510-1:2017: Het toekennen van bevoegdheden. \[BRON: NEN 7510:2011\]
 
 ### AVG

@@ -106,6 +106,19 @@ De onderstaande documenten zijn normatief en leidend voor dit document.
       <td style="text-align:left">RFC7617</td>
     </tr>
     <tr>
+      <td style="text-align:left">[Authorization header]</td>
+      <td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7235#section-4.2">Hypertext Transfer Protocol (HTTP/1.1): Authentication</a>
+      </td>
+      <td style="text-align:left">rfc7235#section-4.2</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">JSON Web Token</td>
+      <td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7519">JSON Web Token (JWT)</a>.
+        M. Jones; J. Bradley; N. Sakimura. IETF. May 2015. Proposed Standard. URL:</td>
+      <td
+      style="text-align:left">RFC7519</td>
+    </tr>
+    <tr>
       <td style="text-align:left">[OAuth2]</td>
       <td style="text-align:left">
         <p>RFC6749 OAuth 2.0 Framework, RFC6750 Bearer Tokens</p>
@@ -123,7 +136,7 @@ De onderstaande documenten zijn normatief en leidend voor dit document.
         protocol allows Clients to verify the identity of the End-User based on
         the authentication performed by an Authorization Server, as well as to
         obtain basic profile information about the End-User in an interoperable
-        and REST-like manner. <a href="https://openid.net/connect/">https://openid.net/connect/</a>
+        and REST-like manner. <a href="https://openid.net/specs/openid-connect-core-1_0.html">https://openid.net/connect/</a>
       </td>
       <td style="text-align:left"></td>
     </tr>
@@ -151,8 +164,10 @@ De onderstaande documenten hebben gediend als bron voor dit document:
 | \[NEN7513\] | NEN 7513 heeft betrekking op logging - het vastleggen van acties - op elektronische patiëntendossiers. | 2010 |
 | \[[Technisch ontwerp Koppeltaal 1.3.5](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/kaders-en-uitgangspunten#technisch-ontwerp-koppeltaal)\] | Technische design van het Koppeltaal Server versie 1.3.5 van Stichting Koppeltaal | 2.1 |
 | \[[Conceptual Design Koppeltaal 1.3.x naar 2.0](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/kaders-en-uitgangspunten#conceptual-design-koppeltaal)\] | Beschrijft welke richting gekozen wordt om van Koppeltaal 1.3.x naar 2.0 te komen. | 0.2 19-02-2018 |
-| \[RFC6819\] | Threat Model and Security Considerations | Jan 2013 |
-| \[RFC7515\] | JSON Web Signature | May 2015 |
+| \[RFC6819\] | [Threat Model and Security Considerations](https://tools.ietf.org/html/rfc6819) | Jan 2013 |
+| \[RFC7515\] | [JSON Web Signature](https://tools.ietf.org/html/rfc7515) | May 2015 |
+| \[RFC7517\] | [JSON Web Key \(JWK\)](https://tools.ietf.org/html/rfc7517). M. Jones. IETF. May 2015 |  |
+| \[RFC7523\] | [JSON Web Token \(JWT\) Profile](https://tools.ietf.org/html/rfc7523) [for](https://tools.ietf.org/html/rfc7523) [OAuth](https://tools.ietf.org/html/rfc7523) [2.0 Client](https://tools.ietf.org/html/rfc7523) [Authentication](https://tools.ietf.org/html/rfc7523) [and](https://tools.ietf.org/html/rfc7523) [Authorization](https://tools.ietf.org/html/rfc7523) [Grants](https://tools.ietf.org/html/rfc7523). M. Jones; B. Campbell; C. Mortimore. IETF. May 2015. |  |
 
 #### Technisch ontwerp Koppeltaal
 

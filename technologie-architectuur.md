@@ -151,9 +151,9 @@ In de paragraaf "[FHIR Resources](https://stibbe.gitbook.io/koppeltaal-1-3-x-arc
 
 ### Uitgangspunten bij informatie-uitwisseling
 
-#### Informatie uitwisseling gebeurt via FHIR Messaging.
+#### Informatie uitwisseling gebeurt via FHIR Messaging en operationele uitkomsten.
 
-In FHIR messaging of FHIR-berichten, wordt een bericht verstuurd van een bronapplicatie naar één of meerdere bestemmingen, wanneer er een gebeurtenis plaatsvindt. Het bericht bestaat uit een bundel die wordt geïdentificeerd door het type bericht, waarbij de eerste \(FHIR\) resource in de bundel een **MessageHeader** resource is. De MessageHeader heeft een **identifier** en een **event.code** element – de berichtgebeurtenis – die de aard van het bericht uniek identificeert, en het bevat aanvullende verzoek metagegevens. De andere aanvullende \(FHIR\) resources in de bundel zijn afhankelijk van het type aanvraag. Het **data** element heeft een referentie naar de onderliggende resource \(de focal resource\), waar dit berichttype toe behoort.
+In FHIR messaging of FHIR-berichten, wordt een bericht verstuurd van een bronapplicatie naar één of meerdere bestemmingen, wanneer er een gebeurtenis plaatsvindt. Het bericht bestaat uit een bundel die wordt geïdentificeerd door het type bericht, waarbij de eerste \(FHIR\) resource in de bundel een **MessageHeader** resource is. De MessageHeader heeft een **identifier -** en een **event.code** element – de berichtgebeurtenis – die de aard van het bericht uniek identificeert, en het bevat aanvullende verzoek metagegevens. De andere aanvullende \(FHIR\) resources in de bundel zijn afhankelijk van het type aanvraag. Het **data** element heeft een referentie naar de onderliggende resource \(de focal resource\), waar dit berichttype toe behoort.
 
 ```markup
 <MessageHeader xmlns="http://hl7.org/fhir">
@@ -172,6 +172,8 @@ In FHIR messaging of FHIR-berichten, wordt een bericht verstuurd van een bronapp
 ```
 
 MessageHeader van CreateOrUpdateCarePlan
+
+Operationele uitkomsten zijn een verzameling van fout-, waarschuwings- en informatieberichten die gedetailleerde informatie geven over het resultaat van een bepaalde gebeurtenis. Het bericht, een **OperationOutcome** resource, wordt geleverd als een directe systeem response, of als onderdeel daarvan, waar ze informatie geven over het resultaat van een bepaalde gebeurtenis.
 
 #### Berichten zijn self-contained
 

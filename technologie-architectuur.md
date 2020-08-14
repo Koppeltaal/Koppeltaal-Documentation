@@ -3197,3 +3197,368 @@ respons geretourneerd:
 
 Voorbeeld van een “Condition” respons bericht.
 
+## Bijlage: Voorbeeld CreateOrUpdateCarePlan
+
+Elke interactie \(bundel\) begint met een MessageHeader resource entry. In de MessageHeader.event.code vindt men de interactie. De volgende entry in de bundel, is de focal resource, behorende bij de interactie. Afhankelijk van het interactie type kunnen er nog meer entries volgen met FHIR resources.
+
+XML voorbeeld van CreateOrUpdateCarePlan.
+
+```markup
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+   <id>urn:uuid:97b7a1e2-ca51-415e-b06c-fc8564a979fa</id>
+   <updated>2020-08-13T02:30:41Z</updated>
+   <category term="http://ggz.koppeltaal.nl/fhir/Koppeltaal/Domain#PythonAdapterTesting" label="PythonAdapterTesting" scheme="http://hl7.org/fhir/tag/security" />
+   <category term="http://hl7.org/fhir/tag/message" scheme="http://hl7.org/fhir/tag" />
+   <entry>
+      <id>http://127.0.0.1:37527/app/fhir/Koppeltaal/MessageHeader/139882808154208</id>
+      <content type="text/xml">
+         <MessageHeader xmlns="http://hl7.org/fhir" id="ref002">
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#Patient">
+               <valueResource>
+                  <reference value="http://127.0.0.1:37527/app/fhir/Koppeltaal/Patient/751512203" />
+               </valueResource>
+            </extension>
+            <identifier value="3f03e865-e87c-4337-922c-5be69dbcd243" />
+            <timestamp value="2020-08-13T02:30:41+00:00" />
+            <event>
+               <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageEvents" />
+               <code value="CreateOrUpdateCarePlan" />
+               <display value="CreateOrUpdateCarePlan" />
+            </event>
+            <source id="ref001">
+               <name value="Minddistrict integration for 'app.None'" />
+               <software value="Koppeltaal python adapter" />
+               <version value="1.3.5.5" />
+               <endpoint value="http://127.0.0.1:37527/app/fhir/Koppeltaal" />
+            </source>
+            <data>
+               <reference value="http://127.0.0.1:37527/app/fhir/Koppeltaal/CarePlan/751512212/_history/2020-08-13T02:30:41:965.6822" />
+            </data>
+         </MessageHeader>
+      </content>
+   </entry>
+   <entry>
+      <id>http://127.0.0.1:37527/app/fhir/Koppeltaal/CarePlan/751512212</id>
+      <link rel="self" href="http://127.0.0.1:37527/app/fhir/Koppeltaal/CarePlan/751512212/_history/2020-08-13T02:30:41:965.6822" />
+      <content type="text/xml">
+         <CarePlan xmlns="http://hl7.org/fhir" id="ref006">
+            <patient>
+               <reference value="http://127.0.0.1:37527/app/fhir/Koppeltaal/Patient/751512203" />
+            </patient>
+            <status value="active" />
+            <participant id="ref005">
+               <role>
+                  <coding>
+                     <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanParticipantRole" />
+                     <code value="Caregiver" />
+                     <display value="Caregiver" />
+                  </coding>
+               </role>
+               <member>
+                  <reference value="http://127.0.0.1:37527/app/fhir/Koppeltaal/Practitioner/751512208" />
+               </member>
+            </participant>
+            <activity id="ref004">
+               <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ActivityIdentifier">
+                  <valueString value="a8e57a6d3e064e86b08f77877de2322c" />
+               </extension>
+               <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ActivityDefinition">
+                  <valueString value="KTSTESTGAME" />
+               </extension>
+               <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ActivityDescription">
+                  <valueString value="Testtest" />
+               </extension>
+               <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ActivityKind">
+                  <valueCoding>
+                     <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityKind" />
+                     <code value="Game" />
+                     <display value="Game" />
+                  </valueCoding>
+               </extension>
+               <extension id="ref003" url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#Participant">
+                  <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ParticipantMember">
+                     <valueResource>
+                        <reference value="http://127.0.0.1:37527/app/fhir/Koppeltaal/Practitioner/751512208" />
+                     </valueResource>
+                  </extension>
+                  <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ParticipantRole">
+                     <valueCodeableConcept>
+                        <coding>
+                           <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanParticipantRole" />
+                           <code value="Caregiver" />
+                           <display value="Caregiver" />
+                        </coding>
+                     </valueCodeableConcept>
+                  </extension>
+               </extension>
+               <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#StartDate">
+                  <valueDateTime value="2020-08-13T02:30:41.699503" />
+               </extension>
+               <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ActivityStatus">
+                  <valueCoding>
+                     <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus" />
+                     <code value="Available" />
+                     <display value="Available" />
+                  </valueCoding>
+               </extension>
+               <prohibited value="false" />
+            </activity>
+         </CarePlan>
+      </content>
+   </entry>
+   <entry>
+      <id>http://127.0.0.1:37527/app/fhir/Koppeltaal/Patient/751512203</id>
+      <link rel="self" href="http://127.0.0.1:37527/app/fhir/Koppeltaal/Patient/751512203/_history/2020-08-13T02:30:41:965.6822" />
+      <content type="text/xml">
+         <Patient xmlns="http://hl7.org/fhir" id="ref009">
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/Patient#Age">
+               <valueInteger value="50" />
+            </extension>
+            <name id="ref008">
+               <use value="official" />
+            </name>
+            <telecom id="ref007">
+               <system value="email" />
+               <value value="charles@example.com" />
+               <use value="home" />
+            </telecom>
+            <birthDate value="1970-01-01T00:00:00" />
+            <active value="true" />
+         </Patient>
+      </content>
+   </entry>
+   <entry>
+      <id>http://127.0.0.1:37527/app/fhir/Koppeltaal/Practitioner/751512208</id>
+      <link rel="self" href="http://127.0.0.1:37527/app/fhir/Koppeltaal/Practitioner/751512208/_history/2020-08-13T02:30:41:965.6822" />
+      <content type="text/xml">
+         <Practitioner xmlns="http://hl7.org/fhir" id="ref012">
+            <name id="ref011">
+               <use value="official" />
+            </name>
+            <telecom id="ref010">
+               <system value="email" />
+               <value value="timor@example.com" />
+               <use value="work" />
+            </telecom>
+         </Practitioner>
+      </content>
+   </entry>
+</feed>
+```
+
+JSON voorbeeld van CreateOrUpdateCarePlan.
+
+```javascript
+{
+  "resourceType": "Bundle",
+  "id": "urn:uuid:97b7a1e2-ca51-415e-b06c-fc8564a979fa",
+  "updated": "2020-08-13T02:30:41+00:00",
+  "category": [
+    {
+      "term": "http://ggz.koppeltaal.nl/fhir/Koppeltaal/Domain#PythonAdapterTesting",
+      "label": "PythonAdapterTesting",
+      "scheme": "http://hl7.org/fhir/tag/security"
+    },
+    {
+      "term": "http://hl7.org/fhir/tag/message",
+      "scheme": "http://hl7.org/fhir/tag"
+    }
+  ],
+  "entry": [
+    {
+      "content": {
+        "id": "ref002",
+        "extension": [
+          {
+            "url": "http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#Patient",
+            "valueResource": {
+              "reference": "http://127.0.0.1:37527/app/fhir/Koppeltaal/Patient/751512203"
+            }
+          }
+        ],
+        "identifier": "3f03e865-e87c-4337-922c-5be69dbcd243",
+        "timestamp": "2020-08-13T02:30:41+00:00",
+        "data": [
+          {
+            "reference": "http://127.0.0.1:37527/app/fhir/Koppeltaal/CarePlan/751512212"
+          }
+        ],
+        "event": {
+          "code": "CreateOrUpdateCarePlan",
+          "system": "http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageEvents",
+          "display": "CreateOrUpdateCarePlan"
+        },
+        "source": {
+          "id": "ref001",
+          "name": "Minddistrict integration for 'app.None'",
+          "software": "Koppeltaal python adapter",
+          "version": "1.3.5.5",
+          "endpoint": "http://127.0.0.1:37527/app/fhir/Koppeltaal"
+        },
+        "resourceType": "MessageHeader"
+      },
+      "id": "http://127.0.0.1:37527/app/fhir/Koppeltaal/MessageHeader/139882808154208"
+    },
+    {
+      "content": {
+        "id": "ref006",
+        "activity": [
+          {
+            "id": "ref004",
+            "extension": [
+              {
+                "url": "http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ActivityIdentifier",
+                "valueString": "a8e57a6d3e064e86b08f77877de2322c"
+              },
+              {
+                "url": "http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ActivityDefinition",
+                "valueString": "KTSTESTGAME"
+              },
+              {
+                "url": "http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ActivityDescription",
+                "valueString": "Testtest"
+              },
+              {
+                "url": "http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ActivityKind",
+                "valueCoding": {
+                  "code": "Game",
+                  "system": "http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityKind",
+                  "display": "Game"
+                }
+              },
+              {
+                "url": "http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#Participant",
+                "id": "ref003",
+                "extension": [
+                  {
+                    "url": "http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ParticipantMember",
+                    "valueResource": {
+                      "reference": "http://127.0.0.1:37527/app/fhir/Koppeltaal/Practitioner/751512208"
+                    }
+                  },
+                  {
+                    "url": "http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ParticipantRole",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "code": "Caregiver",
+                          "system": "http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanParticipantRole",
+                          "display": "Caregiver"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#StartDate",
+                "valueDateTime": "2020-08-13T02:30:41.699503"
+              },
+              {
+                "url": "http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ActivityStatus",
+                "valueCoding": {
+                  "code": "Available",
+                  "system": "http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus",
+                  "display": "Available"
+                }
+              }
+            ],
+            "prohibited": false
+          }
+        ],
+        "participant": [
+          {
+            "id": "ref005",
+            "member": {
+              "reference": "http://127.0.0.1:37527/app/fhir/Koppeltaal/Practitioner/751512208"
+            },
+            "role": {
+              "coding": [
+                {
+                  "code": "Caregiver",
+                  "system": "http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanParticipantRole",
+                  "display": "Caregiver"
+                }
+              ]
+            }
+          }
+        ],
+        "patient": {
+          "reference": "http://127.0.0.1:37527/app/fhir/Koppeltaal/Patient/751512203"
+        },
+        "status": "active",
+        "resourceType": "CarePlan"
+      },
+      "id": "http://127.0.0.1:37527/app/fhir/Koppeltaal/CarePlan/751512212",
+      "link": [
+        {
+          "rel": "self",
+          "href": "http://127.0.0.1:37527/app/fhir/Koppeltaal/CarePlan/751512212"
+        }
+      ]
+    },
+    {
+      "content": {
+        "id": "ref009",
+        "extension": [
+          {
+            "url": "http://ggz.koppeltaal.nl/fhir/Koppeltaal/Patient#Age",
+            "valueInteger": 50
+          }
+        ],
+        "active": true,
+        "birthDate": "1970-01-01T00:00:00",
+        "telecom": [
+          {
+            "id": "ref007",
+            "system": "email",
+            "value": "charles@example.com",
+            "use": "home"
+          }
+        ],
+        "name": [
+          {
+            "id": "ref008",
+            "use": "official"
+          }
+        ],
+        "resourceType": "Patient"
+      },
+      "id": "http://127.0.0.1:37527/app/fhir/Koppeltaal/Patient/751512203",
+      "link": [
+        {
+          "rel": "self",
+          "href": "http://127.0.0.1:37527/app/fhir/Koppeltaal/Patient/751512203"
+        }
+      ]
+    },
+    {
+      "content": {
+        "id": "ref012",
+        "telecom": [
+          {
+            "id": "ref010",
+            "system": "email",
+            "value": "timor@example.com",
+            "use": "work"
+          }
+        ],
+        "name": {
+          "id": "ref011",
+          "use": "official"
+        },
+        "resourceType": "Practitioner"
+      },
+      "id": "http://127.0.0.1:37527/app/fhir/Koppeltaal/Practitioner/751512208",
+      "link": [
+        {
+          "rel": "self",
+          "href": "http://127.0.0.1:37527/app/fhir/Koppeltaal/Practitioner/751512208"
+        }
+      ]
+    }
+  ]
+}
+```
+

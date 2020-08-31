@@ -300,5 +300,5 @@ Het lanceren van een interventie gaat volgens de OAuth 2.0 standaard en SMART-on
 
 ![Interventie lanceren](.gitbook/assets/13.jpeg)
 
-In het volgende overzicht ziet men met welke interacties de verschillende use-cases ondersteund. De verschillende interacties realiseren de huidige functionaliteit van Koppeltaal.
+
 

@@ -16,7 +16,7 @@ Deze site beschrijft de architectuur van Koppeltaal GGZ versie 1.3.x. De site is
 
 ### Leeswijzer
 
-Deze architectuurbeschrijving site is gericht op zorgaanbieders, leveranciers van zorginformatiesystemen voor blended care \(zoals bijvoorbeeld eHealth, client/behandelaarportalen, EPD en ROM\), de leverancier van de gemeenschappelijke Koppeltaal-infrastructuur \(inclusief Koppeltaal server\). De site biedt een overzicht van de belangrijkste aspecten van de generieke functionaliteit en mogelijkheden van Koppeltaal. Het document bevat eveneens \(verwijzingen naar\) standaarden die GGZ-instellingen en ICT-leveranciers gebruiken voor digitale gegevensuitwisseling in de blended care behandelprocessen.
+De architectuurbeschrijving site is bedoeld voor VZVZ om vragen te kunnen beantwoorden over huidige mogelijkheden en beperkingen van Koppeltaal en dient als basis voor eventuele uitbreiding van functionaliteiten. Het document bevat eveneens \(verwijzingen naar\) standaarden die door GGZ-instellingen en ICT-leveranciers voor die instellingen voor behandelprocessen en de daarbij behorende gegevensuitwisseling.
 
 De architectuurbeschrijving is onder te verdelen in drie secties, namelijk de ‘[Bedrijfsarchitectuur](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/bedrijfsarchitectuur)’, de ‘[Informatiesystemen architectuur](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/informatiesystemen-architectuur)’ en de ‘[Technologie architectuur](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/technologie-architectuur)’.
 

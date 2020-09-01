@@ -73,7 +73,7 @@ Koppeltaal heeft een set berichten gedefinieerd waarmee de Koppeltaal use-cases 
 
 Omdat Koppeltaal gebruik maakt van FHIR DSTU1 zijn er bepaalde \(Koppeltaal\) resource concepten die niet gedefinieerd zijn voor FHIR of die buiten het interessegebied van HL7 liggen. Hiervoor gebruiken we de _Other_ resource, zodat we ook met specifieke Koppeltaal resources kunnen omgaan.
 
-![Koppeltaal FHIR Resource DSTU1](.gitbook/assets/5%20%282%29.jpeg)
+![Gegevensmodel](.gitbook/assets/resources%20%281%29.jpg)
 
 ### MessageHeader
 
@@ -83,7 +83,7 @@ De ontvanger van het bericht verwerkt het verzoek en retourneert eventueel een a
 
 ### CarePlan
 
-Het **CarePlan** is \(nu\) de meest gebruikte resource, binnen Koppeltaal 1.3.x. Het CarePlan wordt als raamwerk gebruikt \(en is een extractie of een vertaling van een behandelplan\) om een blended care behandeling op te starten en te volgen. Hierin worden activiteiten, die in het kader van de zorg, aan één patiënt toegewezen. Verder worden de betrokkenen \(participanten\) bij de behandeling in het CarePlan vastgelegd.
+Het **CarePlan** is \(nu\) de meest gebruikte resource, binnen Koppeltaal 1.3.x. Het CarePlan wordt als raamwerk gebruikt \(en is een extractie of een vertaling van een behandelplan\) om een blended care behandeling op te starten en te volgen. Hierin worden activiteiten \(of taken\), die in het kader van de zorg, aan één patiënt toegewezen. Een activiteit bevat een cruciale referentie naar de [ActivityDefintion ](informatiesystemen-architectuur.md#activitydefinition)op welke deze is gebaseerd, dit is nodig om te weten welke activiteit door Koppeltaal uitgevoerd moet worden. Verder worden de betrokkenen \([participanten](informatiesystemen-architectuur.md#participant)\) bij de behandeling in het CarePlan vastgelegd.
 
 ### Participant
 

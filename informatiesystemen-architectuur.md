@@ -10,9 +10,11 @@ description: >-
 
 ### Domein en Applicatie
 
-In de doelstelling van stichting Koppeltaal is middels het woord ‘interne’ een beperking voor de gegevensuitwisseling opgenomen. Met deze beperking wordt bedoeld dat de gegevensuitwisseling altijd plaatsvindt onder de verantwoordelijkheid van één **zorgaanbieder.** In de Koppeltaal architectuur is daarom gekozen voor het concept **domein.** Een domein, in Koppeltaal, is synoniem aan een zorgaanbieder, en beperkt de gegevensuitwisseling tot _interne gegevensuitwisseling_ onder verantwoordelijkheid van de betreffende zorgaanbieder.
+In de doelstelling van stichting Koppeltaal is middels het woord ‘interne’ een beperking voor de gegevensuitwisseling opgenomen. Met deze beperking wordt bedoeld dat de gegevensuitwisseling altijd plaatsvindt onder de verantwoordelijkheid van één **zorgaanbieder.** In de Koppeltaal architectuur is daarom gekozen voor het concept **domein.** Een domein, in Koppeltaal, is synoniem aan een zorgaanbieder, en beperkt de gegevensuitwisseling tot _interne gegevensuitwisseling_ onder verantwoordelijkheid van de betreffende zorgaanbieder. 
 
-De gegevensuitwisseling vindt plaats tussen applicaties. In Koppeltaal staat het begrip **applicatie** voor alle vormen van eHealth platformen en informatiesystemen \(zoals portalen, interventie- en bronsystemen\) die voor de zorgaanbieder relevant zijn om gegevens tussen uit te wisselen, in de context van blended care behandelingen.
+De gegevensuitwisseling vindt plaats tussen applicaties. In Koppeltaal staat het begrip **applicatie** voor alle vormen van eHealth platformen en informatiesystemen \(zoals portalen, interventie- en bronsystemen\) die voor de zorgaanbieder relevant zijn om gegevens tussen uit te wisselen, in de context van blended care behandelingen. 
+
+Aan de hand van de gebruikte credentials die een applicatie gebruikt wordt bepaald in welk domein de gegevens worden uitgewisseld.
 
 ![Koppeltaal applicaties](.gitbook/assets/2%20%281%29.jpeg)
 
@@ -184,7 +186,8 @@ In het volgende overzicht ziet men met welke interacties de verschillende use-ca
         <p>Voortgang monitoren</p>
       </td>
       <td style="text-align:left">UpdateCarePlanActivityStatus GetMessage(Headers)</td>
-      <td style="text-align:left">Voortgang en status van een activiteit delen en ontvangen van een interventie.</td>
+      <td style="text-align:left">Voortgang en status van een activiteit delen en ontvangen van een interventie.
+        Een interventie is aan een behandelplan gerelateerd.</td>
     </tr>
     <tr>
       <td style="text-align:left">

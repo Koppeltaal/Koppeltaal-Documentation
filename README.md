@@ -6,8 +6,6 @@ description: >-
 
 # Koppeltaal 1.3.x architectuur
 
-![Logo\_vZVZ\_servicecentrum.JPG](.gitbook/assets/koppeltaal.jpg)
-
 ## Doel en aanleiding
 
 ### Doel en scope

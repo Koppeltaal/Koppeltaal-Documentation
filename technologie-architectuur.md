@@ -23,7 +23,7 @@ De netwerktopologie beschrijft de fysieke verbindingen tussen de netwerkcomponen
 
 Het volgende model geeft de verzameling FHIR DSTU1 resources weer die binnen Koppeltaal 1.3 worden gebruikt.
 
-![FHIR resources](.gitbook/assets/fhir-resources.jpg)
+![FHIR Resources](.gitbook/assets/fhir-resources%20%281%29.jpg)
 
 Alle FHIR resources zijn in de basis generiek en worden met behulp van profielen \(profiles\) uitgebreid en specifieker gemaakt voor een specifieke toepassing. In een profiel wordt bijvoorbeeld beschreven:
 

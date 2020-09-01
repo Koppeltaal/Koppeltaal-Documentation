@@ -10,6 +10,8 @@ description: >-
 
 ![](.gitbook/assets/koppeltaal%20%281%29.jpg)
 
+
+
 ## Doel en aanleiding
 
 ### Doel en scope

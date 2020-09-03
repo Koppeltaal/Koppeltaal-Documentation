@@ -1,7 +1,7 @@
 ---
 description: >-
-  De Koppeltaal-architectuur wordt bepaald door het doel van Koppeltaal, het
-  zorgproces, de uitwisselingsbehoefte en de technologie.
+  De Koppeltaal-architectuur wordt bepaald door het doel van Koppeltaal,
+  zorginhoudelijke processen, de uitwisselingsbehoefte en de technologie.
 ---
 
 # Koppeltaal 1.3.x architectuur

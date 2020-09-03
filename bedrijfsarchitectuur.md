@@ -151,7 +151,7 @@ Koppeltaal biedt de volgende **rollen** en **use-cases** aan om de scenario’s,
       <td style="text-align:left">
         <ol>
           <li>Elke applicatie krijgt een Applicatie Identifier en naam.</li>
-          <li>Een applicatie van het type &#x201C;<a href="https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/woordenlijst#interventie">interventie</a>&#x201D;
+          <li>Een applicatie van het type &#x201C;<a href="woordenlijst.md#interventie">interventie</a>&#x201D;
             heeft:
             <ol>
               <li>een (unieke) locatie waar de interventie te vinden is (URL)</li>
@@ -161,7 +161,7 @@ Koppeltaal biedt de volgende **rollen** en **use-cases** aan om de scenario’s,
             </ol>
           </li>
           <li>Elk geregistreerde applicatie krijgt &#xE9;&#xE9;n of meerdere functionele
-            (applicatie) rollen in de context van blended care (zie &quot;<a href="https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/informatiesystemen-architectuur#actoren-en-rollen">Actoren en rollen</a>&quot;).</li>
+            (applicatie) rollen in de context van blended care (zie &quot;<a href="informatiesystemen-architectuur.md#actoren-en-rollen">Actoren en rollen</a>&quot;).</li>
         </ol>
       </td>
     </tr>
@@ -888,7 +888,7 @@ De mate waarin informatie en gegevens \(resources\) beschermt moet worden zodat 
 
 ### Onderhoudbaarheid \(maintainability\)
 
-De mate waarin Koppeltaal effectief en efficiënt gewijzigd kan worden door aangewezen beheerders \(zie ook paragraaf "[Beheerprocessen](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/bedrijfsarchitectuur#beheerprocessen)"\). Dit gaat over de configuratie en beheer van:
+De mate waarin Koppeltaal effectief en efficiënt gewijzigd kan worden door aangewezen beheerders \(zie ook paragraaf "[Beheerprocessen](bedrijfsarchitectuur.md#beheerprocessen)"\). Dit gaat over de configuratie en beheer van:
 
 * domeinen
 * applicaties \(modularity\)

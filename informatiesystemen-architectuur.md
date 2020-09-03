@@ -38,7 +38,7 @@ Dienstverleners zullen onderling nadere afspraken moeten maken over de gebruikte
 
 ### Actoren en rollen
 
-Zoals in paragraaf "[Domein en Applicatie](informatiesystemen-architectuur.md#domein-en-applicatie)" beschreven is, zijn er verschillende type applicaties betrokken ter ondersteuning van een interactief zorgproces. Bij het inrichten van deze zorgprocessen is de verdeling van verantwoordelijkheden van belang. Hierbij maken we onderscheid tussen actoren en rollen. **Actoren** vertegenwoordigen personen of organisatorische eenheden. **Rollen** vertegenwoordigen verantwoordelijkheden. Verschillende rollen kunnen worden toegekend aan een actor.
+Zoals in paragraaf "[Domein en Applicatie](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/informatiesystemen-architectuur#domein-en-applicatie)" beschreven is, zijn er verschillende type applicaties betrokken ter ondersteuning van een interactief zorgproces. Bij het inrichten van deze zorgprocessen is de verdeling van verantwoordelijkheden van belang. Hierbij maken we onderscheid tussen actoren en rollen. Actoren vertegenwoordigen personen of organisatorische eenheden, rollen vertegenwoordigen verantwoordelijkheden. Verschillende rollen kunnen worden toegekend aan een actor.
 
 Elk type applicatie kan één of meerdere \(applicatie\) functie rollen vervullen in de context van blended care.
 
@@ -69,7 +69,7 @@ Voor het beheer, zoals de registratie en configuratie van de portalen, intervent
 
 De gegevensuitwisseling gebeurt via berichtenuitwisseling en is gebaseerd op een aantal standaarden: met name HTTP, **HL7 FHIR DSTU 1\(v0.0.82\)** en relevante onderdelen van de HL7 standaard.
 
-De kern van FHIR wordt gevormd door herbruikbare bouwstenen, de zogenaamde **FHIR resources**, waarmee oplossingen voor _uitwisseling van_ zorginhoudelijke _gegevens_ kunnen worden gebouwd. Elk bericht heeft een \(interactie\) type en hiermee kan bepaalde functionaliteit gerealiseerd worden binnen Koppeltaal \(zie paragraaf [Interacties](informatiesystemen-architectuur.md#interacties)\).
+De kern van FHIR wordt gevormd door herbruikbare bouwstenen, de zogenaamde **FHIR resources**, waarmee oplossingen voor _uitwisseling van_ zorginhoudelijke _gegevens_ kunnen worden gebouwd. Elk bericht heeft een \(interactie\) type en hiermee kan bepaalde functionaliteit gerealiseerd worden binnen Koppeltaal \(zie paragraaf [Interacties](https://confluence.vzvz.nl/display/AK/Interacties)\).
 
 Koppeltaal heeft een set berichten gedefinieerd waarmee de Koppeltaal use-cases kunnen worden afgedekt. Logische voorwaarde is dat de betrokken applicaties de benodigde berichten ondersteunen \(d.w.z. de structuur van de berichten kennen en de inhoud volledig kunnen interpreteren\). In de praktijk zien we dat verschillende applicaties, zoals portalen, interventies, platformen en EPD’s in Koppeltaal gecombineerd worden.
 
@@ -116,26 +116,11 @@ ActivityDefinition maakt het mogelijk aan de hand van een bepaalde activiteit de
 
 In deze paragraaf worden de verschillende interacties beschreven tussen de verschillende applicaties. Het doel van deze paragraaf is de toepassing van Koppeltaal voor de verschillende use-cases weer te geven, alsmede de vereisten en aanpassingen in Koppeltaal toe te lichten.
 
-| Interactie | Omschrijving |
-| :--- | :--- |
-| CreateOrUpdatePractitioner | Behandelaars aanmaken of aanpassen tussen applicaties in één domein. |
-| CreateOrUpdatePatient | Patiënt aanmaken of aanpassen tussen applicaties in één domein. |
-| CreateOrUpdateRelatedPerson | Derden \(familie gerelateerde\) aanmaken of aanpassen tussen applicaties in één domein. |
-| CreateOrUpdateActivityDefinition | \(Sub\)activiteiten publiceren voor gebruik in andere applicaties in het domein. |
-| UpdateActivityStatus | Voortgang- en statusberichten van \(sub\)activiteiten delen en ontvangen. |
-| CreateOrUpdateCarePlanActivityResult | Resultaatberichten van \(sub\)activiteiten delen en ontvangen. |
-| CreateOrUpdateCarePlan | \(Sub\)activiteiten uit applicaties toekennen aan een gebruiker \(patiënt en/of derden\) in een andere applicatie dan waar de \(Sub\)activiteiten zijn opgeslagen. |
-| GetActivityDefinitions | \(Sub\)activiteiten definitielijst ophalen voor gebruik in andere applicaties in het domein. |
-| PostLaunchRequest | Lanceren van een interventie. |
-| CreateOrUpdateUserMessage | Algemene gebruikersberichten delen en ontvangen |
-| GetMessageHeaders | Kopteksten van applicatieberichten ophalen in het domein. |
-| GetMessage | Inhoud van een applicatiebericht ophalen in het domein.  |
-
 Er zijn verschillende applicatie leveranciers betrokken ter ondersteuning van een interactief zorgproces en deze zullen gecertificeerd en geregistreerd moeten worden. Het registratie proces, welke applicaties gebruik willen maken van Koppeltaal, is een \(handmatig\) configuratie proces. Indien betrokken applicatie leveranciers onderling informatie willen uitwisselen, zullen ze in hetzelfde domein aangemeld en geregistreerd moeten worden. Dit registratie proces worden door Koppeltaal Support uitgevoerd.
 
-Na het registratie proces kan begonnen worden met de uitwisseling van informatie \(FHIR resources\), dit gebeurt via voorgedefinieerde interacties tussen de geregistreerde applicaties. Elke interactie \(tussen applicaties\) bestaat uit een FHIR MessageHeader, gevolgd door andere FHIR resources \(zie paragraaf "[Gegevensmodel](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/informatiesystemen-architectuur#gegevensmodel)"\). Een codering in de MessageHeader geeft aan om wat voor soort interactie het gaat. Per type applicatie zijn er verschillende interacties beschikbaar.
+Na het registratie proces kan begonnen worden met de uitwisseling van informatie \(FHIR resources\), dit gebeurt via voor gedefinieerde interacties tussen de geregistreerde applicaties. Elke interactie \(tussen applicaties\) bestaat uit een FHIR MessageHeader, gevolgd door andere FHIR resources \(zie paragraaf "[Gegevensmodel](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/informatiesystemen-architectuur#gegevensmodel)"\). Een codering in de MessageHeader geeft aan om wat voor soort interactie het gaat. Per type applicatie zijn er verschillende interacties beschikbaar.
 
-In de interactie laag wordt er niet meer over een cliënt gesproken maar hanteren we de term patiënt.
+In de interactie laag wordt er niet meet over een cliënt gesproken maar hanteren we de term patiënt.
 
 ![Interacties gegroepeerd](.gitbook/assets/interacties.jpg)
 

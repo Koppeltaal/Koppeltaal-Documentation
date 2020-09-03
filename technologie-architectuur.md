@@ -39,19 +39,19 @@ Voor Koppeltaal 1.3 is een eigen verzameling FHIR resources vastgelegd met hun e
 
 | **Resource** | **Profile** **Identifiers** |
 | :--- | :--- |
-| ActivityDefinition | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/ActivityDefinition](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/ActivityDefinition) |
-| Device | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/Application](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/Application) |
-| MessageHeader | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/MessageHeader](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/MessageHeader) |
-| Patient | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/Patient](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/Patient) |
-| Practitioner | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/Practitioner](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/Practitioner) |
-| RelatedPerson | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/RelatedPerson](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/RelatedPerson) |
-| Organization | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/Organization](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/Organization) |
-| Person | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/Person](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/Person) |
-| CarePlan | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/CarePlan](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/CarePlan) |
-| CarePlanActivityStatus | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/CarePlanActivityStatus](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/CarePlanActivityStatus) |
-| CarePlanActivityResult | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/CarePlanActivityResult](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/CarePlanActivityResult) |
-| UserMessage | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/UserMessage](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/UserMessage) |
-| CareTeam | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/CareTeam](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/CareTeam) |
+| ActivityDefinition | http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/ActivityDefinition |
+| Device | http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/Application |
+| MessageHeader | http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/MessageHeader |
+| Patient | http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/Patient |
+| Practitioner | http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/Practitioner |
+| RelatedPerson | http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/RelatedPerson |
+| Organization | http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/Organization |
+| Person | http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/Person |
+| CarePlan | http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/CarePlan |
+| CarePlanActivityStatus | http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/CarePlanActivityStatus |
+| CarePlanActivityResult | http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/CarePlanActivityResult |
+| UserMessage | http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/UserMessage |
+| CareTeam | http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/CareTeam |
 
 Koppeltaal maakt gebruik van de **Other** resource extensie van FHIR DSTU1.
 
@@ -147,7 +147,7 @@ De volgende event.codes \(**interacties**\) zijn gedefinieerd om de functionalit
   </tbody>
 </table>
 
-In de paragraaf "[FHIR Resources](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/technologie-architectuur#fhir-resources)" is de structuur in detail verder uitgewerkt van alle Koppeltaal resources met alle elementen en attributen.
+In de paragraaf "[FHIR Resources](technologie-architectuur.md#fhir-resources)" is de structuur in detail verder uitgewerkt van alle Koppeltaal resources met alle elementen en attributen.
 
 ### Uitgangspunten bij informatie-uitwisseling
 
@@ -274,11 +274,11 @@ Aan elke resource \(gegevensbron\) wordt een unieke FHIR-basis URL toegewezen, w
 
 > _scheme://FHIR Basis URL + "/" + **Resource Type** + "/" + id \[ + "/\_history/" + Versie Id\]_
 >
-> **GET** [https://vzvz.nl/fhir/Koppeltaal/**Other**/ActivityDefinition:6720/\_history/2019-11-14T14:34:26:611.7847](https://vzvz.nl/fhir/Koppeltaal/Other/ActivityDefinition:6720/_history/2019-11-14T14:34:26:611.7847)
+> **GET** https://vzvz.nl/fhir/Koppeltaal/**Other**/ActivityDefinition:6720/\_history/2019-11-14T14:34:26:611.7847
 >
 > Als de resource nog niet aangemaakt is, is er nog geen historie. Voorbeeld:
 >
-> **POST** [https://vzvz.nl/fhir/Koppeltaal/**Other**/ActivityDefinition:6720](https://vzvz.nl/fhir/Koppeltaal/Other/ActivityDefinition:6720)
+> **POST** https://vzvz.nl/fhir/Koppeltaal/**Other**/ActivityDefinition:6720
 
 URL opbouw.
 
@@ -379,7 +379,7 @@ Conformance is het voldoen aan \(interne\) kwaliteitsdoelstellingen en het invul
 
 Bij informatie uitwisseling via FHIR Messaging hebben we ook te maken met \(eenmalige\) authenticatie van de participanten door gebruik te maken van Single Sign-On \(SSO\) bij het lanceren van interventies \(eHealth modules\). Hierbij moeten participanten zich eenmalig authentiseren, waarna ze automatisch toegang krijgen tot meerdere applicaties en resources in een domein van Koppeltaal. Met behulp van het 'Conformance Statement' kunnen aangesloten applicaties informatie over de OAuth2 implementatie bij Koppeltaal voor Single-Sign-On achterhalen.
 
-Het opvragen van het 'Conformance Statement' met betrekking to OAuth2 URL’s bij Koppeltaal wordt verkregen via de GET operatie naar een vast endpoint \(URL\), bijvoorbeeld GET [https://base.koppeltaal.nl/fhir/Koppeltaal\*\*/metadata\*\*](https://base.koppeltaal.nl/fhir/Koppeltaal**/metadata**). Hiermee krijgt de aanvrager informatie over de OAuth2 implementatie voor Single-Sign-On. De 'Conformance Statement' resource is hiervoor uitgebreid met launch \(opstart\) URL’s.
+Het opvragen van het 'Conformance Statement' met betrekking to OAuth2 URL’s bij Koppeltaal wordt verkregen via de GET operatie naar een vast endpoint \(URL\), bijvoorbeeld GET https://base.koppeltaal.nl/fhir/Koppeltaal\*\*/metadata\*\*. Hiermee krijgt de aanvrager informatie over de OAuth2 implementatie voor Single-Sign-On. De 'Conformance Statement' resource is hiervoor uitgebreid met launch \(opstart\) URL’s.
 
 ```javascript
 {
@@ -410,18 +410,18 @@ Volgende tabel geeft een overzicht van de nieuwe URL’s die door Koppeltaal wor
 
 | URI extensie | Omschrijving |
 | :--- | :--- |
-| [http://fhir.vitalhealthsoftware.com/Profile/Conformance\#Launch](http://fhir.vitalhealthsoftware.com/Profile/Conformance#Launch) | Identificeert de OAuth2 "launch" URL voor de server |
-| [http://fhir-registry.smarthealthit.org/Profile/oauth-uris\#authorize](http://fhir-registry.smarthealthit.org/Profile/oauth-uris#authorize) | Identificeert de OAuth2 "autorisatie" URL voor de server |
-| [http://fhir-registry.smarthealthit.org/Profile/oauth-uris\#token](http://fhir-registry.smarthealthit.org/Profile/oauth-uris#token) | Identificeert de OAuth2 "token" URL voor de server |
+| http://fhir.vitalhealthsoftware.com/Profile/Conformance\#Launch | Identificeert de OAuth2 "launch" URL voor de server |
+| http://fhir-registry.smarthealthit.org/Profile/oauth-uris\#authorize | Identificeert de OAuth2 "autorisatie" URL voor de server |
+| http://fhir-registry.smarthealthit.org/Profile/oauth-uris\#token | Identificeert de OAuth2 "token" URL voor de server |
 
 Daarnaast definieert Koppeltaal 4 extensies die de validatie van verzoeken \(request\) en antwoorden \(reply\) regelen:
 
 | **URI extensieURI extensie** | **Type** | **Omschrijving** |
 | :--- | :---: | :--- |
-| [http://fhir.vitalhealthsoftware.com/Profile/Conformance\#ValidateRequestsAgainstSchema](http://fhir.vitalhealthsoftware.com/Profile/Conformance#ValidateRequestsAgainstSchema) | Boolean | Bij 'true', valideert de server het verzoek \(request\) tegen een XML Schema |
-| [http://fhir.vitalhealthsoftware.com/Profile/Conformance\#ValidateRepliesAgainstSchema](http://fhir.vitalhealthsoftware.com/Profile/Conformance#ValidateRepliesAgainstSchema) | Boolean | Bij 'true' valideert de server het antwoord \(reply\) tegen een XML Schema |
-| [http://fhir.vitalhealthsoftware.com/Profile/Conformance\#ValidateRequestsAgainstProfile](http://fhir.vitalhealthsoftware.com/Profile/Conformance#ValidateRequestsAgainstProfile) | Boolean | Bij 'true', valideert de server het verzoek \(request\) tegen een FHIR profiel |
-| [http://fhir.vitalhealthsoftware.com/Profile/Conformance\#ValidateRepliesAgainstProfile](http://fhir.vitalhealthsoftware.com/Profile/Conformance#ValidateRepliesAgainstProfile) | Boolean | Bij 'true' valideert de server het antwoord \(reply\) tegen een FHIR profiel |
+| http://fhir.vitalhealthsoftware.com/Profile/Conformance\#ValidateRequestsAgainstSchema | Boolean | Bij 'true', valideert de server het verzoek \(request\) tegen een XML Schema |
+| http://fhir.vitalhealthsoftware.com/Profile/Conformance\#ValidateRepliesAgainstSchema | Boolean | Bij 'true' valideert de server het antwoord \(reply\) tegen een XML Schema |
+| http://fhir.vitalhealthsoftware.com/Profile/Conformance\#ValidateRequestsAgainstProfile | Boolean | Bij 'true', valideert de server het verzoek \(request\) tegen een FHIR profiel |
+| http://fhir.vitalhealthsoftware.com/Profile/Conformance\#ValidateRepliesAgainstProfile | Boolean | Bij 'true' valideert de server het antwoord \(reply\) tegen een FHIR profiel |
 
 Algemene informatie over de 'Conformance Statement' kan men vinden bij [https://www.hl7.org/fhir/DSTU1/conformance.html](https://www.hl7.org/fhir/DSTU1/conformance.html).
 
@@ -453,7 +453,7 @@ Koppeltaal ondersteunt de volgende processen voor de uitwisseling van berichten:
 
 ### Bericht versturen
 
-Alle applicaties maken gebruik van de standaard HTTP operatie POST om berichten \(FHIR Message DSTU1\) te versturen. De berichten worden naar een vaste endpoint \(URL\) van Koppeltaal gestuurd, zie 'interactie ontvangen' \(technische service\) waarvan de basis URL bijvoorbeeld [https://koppeltaal.nl/FHIR/Koppeltaal/Mailbox](https://koppeltaal.nl/FHIR/Koppeltaal/Mailbox) is. Elk binnenkomend bericht wordt \(tijdelijk\) gepersisteerd in een datastore. De structuur van het bericht is, in hoofdstuk  "[Informatie-uitwisseling op basis van FHIR Messaging](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/technologie-architectuur#informatie-uitwisseling-op-basis-van-fhir-messaging)", beschreven.
+Alle applicaties maken gebruik van de standaard HTTP operatie POST om berichten \(FHIR Message DSTU1\) te versturen. De berichten worden naar een vaste endpoint \(URL\) van Koppeltaal gestuurd, zie 'interactie ontvangen' \(technische service\) waarvan de basis URL bijvoorbeeld https://koppeltaal.nl/FHIR/Koppeltaal/Mailbox is. Elk binnenkomend bericht wordt \(tijdelijk\) gepersisteerd in een datastore. De structuur van het bericht is, in hoofdstuk  "[Informatie-uitwisseling op basis van FHIR Messaging](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/technologie-architectuur#informatie-uitwisseling-op-basis-van-fhir-messaging)", beschreven.
 
 De opslag van de Message Header \(metadata van het bericht\) en de content van het bericht \(Message Body\) zullen apart gepersisteerd worden in verschillende tabellen.
 
@@ -3049,6 +3049,52 @@ Koppeltaal Support beheert verschillende diensten, zoals het beheer van de domei
 </table>
 
 Tabel 16 Autorisatie beheer matrix
+
+## Implementatiegraad
+
+Koppeltaal heeft als doel een integratie standaard te implementeren, waarmee interne gegevensuitwisseling een applicatie-integratie wordt geregeld bij zorginstellingen die diensten voor gedragsverandering en daarmee direct samenhangende diensten verlenen.
+
+Elke zorginstelling is anders. De mate van wat er geïmplementeerd moet worden en hoe dat het beste gedaan kan worden, verschilt per situatie. Om specifieke eigenschappen van Koppeltaal te verduidelijken en te verklaren naar de verschillende IT leveranciers, willen we voor Koppeltaal verschillen **implementatie gradaties** definiëren, waaraan een \(GGZ\) zorginstelling minimaal aan moet voldoen en daarnaast de optionele opbouwende diensten waaraan een zorginstelling aan kan voldoen.
+
+Gegevensuitwisseling vindt plaats tussen applicaties. In Koppeltaal staat het begrip **applicatie** voor alle vormen van eHealth platformen en informatiesystemen \(zoals portalen, interventie- en bronsystemen\) die voor de zorgaanbieder relevant zijn om gegevens tussen uit te wisselen, in de context van blended care behandelingen \(zie ook [Domein en Applicatie](informatiesystemen-architectuur.md#domein-en-applicatie)\). Echter de informatie uitwisseling tussen applicaties gebeurt asynchroon omdat de applicaties 'loosely coupled' zijn, om zo de afhankelijkheid tussen applicaties zo klein mogelijk te houden. Er moet wel een balans zijn tussen de applicaties die de berichten aanmaken en versturen, en die de berichten ontvangen en vervolgens verwerken en visa versa.
+
+We willen de implementatiegraad bepalen aan de hand van een matrix waarin een overzicht is van [applicatie rollen](informatiesystemen-architectuur.md#actoren-en-rollen) versus \(verplichte of optionele\) [interacties](informatiesystemen-architectuur.md#use-case-versus-interacties). Interacties kunnen worden geïnitieerd en kunnen worden uitgevoerd. De initiator van een interactie verstuurd informatie, en de uitvoerende ontvangt informatie. We hebben per applicatie rol 4 mogelijkheden, namelijk: Zenden Verplicht \(**ZV**\) en Ontvangen Verplicht \(**OV**\) geven een verplichte implementatie weer van een interactie voor elke zorginstelling. Zenden Optioneel \(**ZO**\) en Ontvangen Optioneel \(**OO**\) geven optionele interacties weer, deze kunnen per zorginstelling \(optioneel\) geïmplementeerd worden.
+
+|  | Bron systeem | Portaal |  |  | Interventie |  |  |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+|  | **EPD** | **Behandelaar** | **Patient** | **Derde** | **Game** | **E-** **Leanrning** | **ROM** |
+| WebLaunch \(SSO\) |  | ZV\[1\] | ZV\[1\] | ZV\[1\] | OV\[1\] | OV\[1\] | OV\[1\] |
+| CreateOrUpdateCarePlan |  | ZV/OV\[1\] | ZV/OV\[1\] | ZV/OV\[1\] | OV\[1\] | OV\[1\] | OV\[1\] |
+| CreateOrUpdatePatient | ZV\[2\] | ZO/OV\[2\] | ZO/OV\[2\] |  | OV\[2\] | OV\[2\] | OV\[2\] |
+| CreateOrUpdatePractitioner | ZV\[2\] | ZO/OV\[2\] |  |  | OV\[2\] | OV\[2\] | OV\[2\] |
+| CreateOrUpdateRelatedPerson | ZV\[3\] | OV\[3\] | ZO/OV\[3\] | ZO/OV\[3\] | OV\[3\] | OV\[3\] | OV\[3\] |
+| CreateOrUpdateActivityDefinition |  |  |  |  | ZO\[3\] | ZO\[3\] | ZO\[3\] |
+| GetActivityDefinitions |  | OV\[2\] | OV\[2\] | OV\[2\] |  |  |  |
+| UpdateCarePlanActivityStatus   \(Available, InProgress, Completed, Canceled\) |  | OV\[2\] | OV\[2\] | OV\[2\] | ZO\[3\] | ZO\[3\] | ZO\[3\] |
+| CreateOrUpdateCarePlanActivityResult |  | OO\[3\] | OO\[3\] | OO\[3\] | ZO\[3\] | ZO\[3\] | ZO\[3\] |
+| CreateOrUpdateUserMessage | ZO\[3\] | ZO/OO\[3\] | ZO/OO\[3\] | ZO/OO\[3\] | ZO\[3\] | ZO\[3\] | ZO\[3\] |
+
+\[1\]: **Implementatie graad 1**
+
+* Portalen kunnen interventies \(zoals ROM\) lanceren 
+* Interventies kunnen gelanceerd worden
+* Behandelaar initieert een behandelplan \(CarePlan\) voor de patiënt
+
+\[2\]: **Implementatie graad 2** 
+
+* Portalen en interventies verplichte \(ZV en OV\) interacties geïmplementeerd
+
+\[3\]: **Implementatie graad 3**
+
+* Portalen en interventies optionele \(ZO en OO\) interacties geïmplementeerd
+
+Kanttekeningen:
+
+* Zendende en ontvangende partij moeten dezelfde interacties ondersteunen en aangeven op welk implementatiegraad ze zitten van hun aan te bieden product 
+* Het EPD bronsysteem wordt gebruikt om patiënten te kunnen identificeren en kan aangevuld worden met andere gegevens. Deze aanvullende gegevens worden \(nu\) niet overgenomen door het EPD bronsysteem \(zie ook Matrix\). De initiërende behandelaar \(portaal\) is verantwoordelijk voor het CarePlan. 
+* Patiënten \(portaal\) kunnen aanpassingen doen op \(delen van\) een CarePlan \(functioneel proces\).
+* Activity Definitions van interventies kunnen ook met de hand \(door een beheerder\) toegevoegd worden. Dit is de reden waarom de interactie CreateOrUpdateActivityDefinition niet een hoge prio heeft, qua implementatiegraad.
+* CreateOrUpdateRelatedPerson heeft een lagere prioriteit qua implementatie dan CreateOrUpdatePatient.
 
 ## Bijlage: Voorbeeld resource versioning
 

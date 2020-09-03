@@ -38,13 +38,13 @@ Dienstverleners zullen onderling nadere afspraken moeten maken over de gebruikte
 
 ### Actoren en rollen
 
-Zoals in paragraaf "[Domein en Applicatie](informatiesystemen-architectuur.md#domein-en-applicatie)" beschreven is, zijn er verschillende type applicaties betrokken ter ondersteuning van een interactief zorgproces. Bij het inrichten van deze zorgprocessen is de verdeling van verantwoordelijkheden van belang. Hierbij maken we onderscheid tussen actoren en rollen. **Actoren** vertegenwoordigen personen of organisatorische eenheden. **Rollen** vertegenwoordigen verantwoordelijkheden. Verschillende rollen kunnen worden toegekend aan een actor.
+Zoals in paragraaf "[Domein en Applicatie](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/informatiesystemen-architectuur#domein-en-applicatie)" beschreven is, zijn er verschillende type applicaties betrokken ter ondersteuning van een interactief zorgproces. Bij het inrichten van deze zorgprocessen is de verdeling van verantwoordelijkheden van belang. Hierbij maken we onderscheid tussen actoren en rollen. Actoren vertegenwoordigen personen of organisatorische eenheden, rollen vertegenwoordigen verantwoordelijkheden. Verschillende rollen kunnen worden toegekend aan een actor.
 
 Elk type applicatie kan één of meerdere \(applicatie\) functie rollen vervullen in de context van blended care.
 
 ![Actoren en rollen binnen Koppeltaal](.gitbook/assets/3%20%281%29.jpeg)
 
-De actoren die in de verschillende use-cases \(zie paragraaf "[Use-cases](bedrijfsarchitectuur.md#use-cases)"\) ter sprake komen zijn:
+De actoren die in de verschillende use-cases \(zie paragraaf "[Use-cases](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/bedrijfsarchitectuur#use-cases)"\) ter sprake komen zijn:
 
 * **Beheerder** – Een persoon die wijzigingen kan aanbrengen die van invloed zijn op andere gebruikers van een systeem.
 * **Patiënt** – Een persoon aan wie medische hulp wordt verleend.
@@ -69,7 +69,7 @@ Voor het beheer, zoals de registratie en configuratie van de portalen, intervent
 
 De gegevensuitwisseling gebeurt via berichtenuitwisseling en is gebaseerd op een aantal standaarden: met name HTTP, **HL7 FHIR DSTU 1\(v0.0.82\)** en relevante onderdelen van de HL7 standaard.
 
-De kern van FHIR wordt gevormd door herbruikbare bouwstenen, de zogenaamde **FHIR resources**, waarmee oplossingen voor _uitwisseling van_ zorginhoudelijke _gegevens_ kunnen worden gebouwd. Elk bericht heeft een \(interactie\) type en hiermee kan bepaalde functionaliteit gerealiseerd worden binnen Koppeltaal \(zie paragraaf [Interacties](informatiesystemen-architectuur.md#interacties)\).
+De kern van FHIR wordt gevormd door herbruikbare bouwstenen, de zogenaamde **FHIR resources**, waarmee oplossingen voor _uitwisseling van_ zorginhoudelijke _gegevens_ kunnen worden gebouwd. Elk bericht heeft een \(interactie\) type en hiermee kan bepaalde functionaliteit gerealiseerd worden binnen Koppeltaal \(zie paragraaf [Interacties](https://confluence.vzvz.nl/display/AK/Interacties)\).
 
 Koppeltaal heeft een set berichten gedefinieerd waarmee de Koppeltaal use-cases kunnen worden afgedekt. Logische voorwaarde is dat de betrokken applicaties de benodigde berichten ondersteunen \(d.w.z. de structuur van de berichten kennen en de inhoud volledig kunnen interpreteren\). In de praktijk zien we dat verschillende applicaties, zoals portalen, interventies, platformen en EPD’s in Koppeltaal gecombineerd worden.
 
@@ -116,26 +116,11 @@ ActivityDefinition maakt het mogelijk aan de hand van een bepaalde activiteit de
 
 In deze paragraaf worden de verschillende interacties beschreven tussen de verschillende applicaties. Het doel van deze paragraaf is de toepassing van Koppeltaal voor de verschillende use-cases weer te geven, alsmede de vereisten en aanpassingen in Koppeltaal toe te lichten.
 
-| Interactie | Omschrijving |
-| :--- | :--- |
-| CreateOrUpdatePractitioner | Behandelaars aanmaken of aanpassen tussen applicaties in één domein. |
-| CreateOrUpdatePatient | Patiënt aanmaken of aanpassen tussen applicaties in één domein. |
-| CreateOrUpdateRelatedPerson | Derden \(familie gerelateerde\) aanmaken of aanpassen tussen applicaties in één domein. |
-| CreateOrUpdateActivityDefinition | \(Sub\)activiteiten publiceren voor gebruik in andere applicaties in het domein. |
-| UpdateActivityStatus | Voortgang- en statusberichten van \(sub\)activiteiten delen en ontvangen. |
-| CreateOrUpdateCarePlanActivityResult | Resultaatberichten van \(sub\)activiteiten delen en ontvangen. |
-| CreateOrUpdateCarePlan | \(Sub\)activiteiten uit applicaties toekennen aan een gebruiker \(patiënt en/of derden\) in een andere applicatie dan waar de \(Sub\)activiteiten zijn opgeslagen. |
-| GetActivityDefinitions | \(Sub\)activiteiten definitielijst ophalen voor gebruik in andere applicaties in het domein. |
-| PostLaunchRequest | Lanceren van een interventie. |
-| CreateOrUpdateUserMessage | Algemene gebruikersberichten delen en ontvangen |
-| GetMessageHeaders | Kopteksten van applicatieberichten ophalen in het domein. |
-| GetMessage | Inhoud van een applicatiebericht ophalen in het domein.  |
-
 Er zijn verschillende applicatie leveranciers betrokken ter ondersteuning van een interactief zorgproces en deze zullen gecertificeerd en geregistreerd moeten worden. Het registratie proces, welke applicaties gebruik willen maken van Koppeltaal, is een \(handmatig\) configuratie proces. Indien betrokken applicatie leveranciers onderling informatie willen uitwisselen, zullen ze in hetzelfde domein aangemeld en geregistreerd moeten worden. Dit registratie proces worden door Koppeltaal Support uitgevoerd.
 
-Na het registratie proces kan begonnen worden met de uitwisseling van informatie \(FHIR resources\), dit gebeurt via voorgedefinieerde interacties tussen de geregistreerde applicaties. Elke interactie \(tussen applicaties\) bestaat uit een FHIR MessageHeader, gevolgd door andere FHIR resources \(zie paragraaf "[Gegevensmodel](informatiesystemen-architectuur.md#gegevensmodel)"\). Een codering in de MessageHeader geeft aan om wat voor soort interactie het gaat. Per type applicatie zijn er verschillende interacties beschikbaar.
+Na het registratie proces kan begonnen worden met de uitwisseling van informatie \(FHIR resources\), dit gebeurt via voor gedefinieerde interacties tussen de geregistreerde applicaties. Elke interactie \(tussen applicaties\) bestaat uit een FHIR MessageHeader, gevolgd door andere FHIR resources \(zie paragraaf "[Gegevensmodel](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/informatiesystemen-architectuur#gegevensmodel)"\). Een codering in de MessageHeader geeft aan om wat voor soort interactie het gaat. Per type applicatie zijn er verschillende interacties beschikbaar.
 
-In de interactie laag wordt er niet meer over een cliënt gesproken maar hanteren we de term patiënt.
+In de interactie laag wordt er niet meet over een cliënt gesproken maar hanteren we de term patiënt.
 
 ![Interacties gegroepeerd](.gitbook/assets/interacties.jpg)
 
@@ -157,10 +142,8 @@ In het volgende overzicht ziet men met welke interacties de verschillende use-ca
   <tbody>
     <tr>
       <td style="text-align:left">
-        <p><a href="bedrijfsarchitectuur.md#uc-kt-01-applicatie-registreren">UC-KT-01</a>
-        </p>
-        <p><a href="bedrijfsarchitectuur.md#uc-kt-01-applicatie-registreren">Applicatie registreren</a>
-        </p>
+        <p>UC-KT-01</p>
+        <p>Applicatie registreren</p>
       </td>
       <td style="text-align:left">-</td>
       <td style="text-align:left">Applicatie per zorgbehoefte geregistreerd in het Koppeltaal domein. Hier
@@ -169,10 +152,8 @@ In het volgende overzicht ziet men met welke interacties de verschillende use-ca
     </tr>
     <tr>
       <td style="text-align:left">
-        <p><a href="bedrijfsarchitectuur.md#uc-kt-02-sub-activiteiten-registreren">UC-KT-02</a>
-        </p>
-        <p><a href="bedrijfsarchitectuur.md#uc-kt-02-sub-activiteiten-registreren">(Sub)activiteiten registreren</a>
-        </p>
+        <p>UC-KT-02</p>
+        <p>(Sub)activiteiten registreren</p>
       </td>
       <td style="text-align:left">CreateOrUpdateActivityDefinition</td>
       <td style="text-align:left">Elke interventie moet tenminste &#xE9;&#xE9;n activiteit hebben geregistreerd
@@ -180,12 +161,10 @@ In het volgende overzicht ziet men met welke interacties de verschillende use-ca
     </tr>
     <tr>
       <td style="text-align:left">
-        <p><a href="bedrijfsarchitectuur.md#uc-kt-03-behandelplan-opzetten">UC-KT-03</a>/</p>
-        <p><a href="bedrijfsarchitectuur.md#uc-kt-04-sub-activiteiten-selecteren">UC-KT-04</a>/</p>
-        <p><a href="bedrijfsarchitectuur.md#uc-kt-09-inlogverzoek-sturen-naar-participant">UC-KT-09</a>
-        </p>
-        <p><a href="bedrijfsarchitectuur.md#uc-kt-09-inlogverzoek-sturen-naar-participant">Behandelplan starten</a>
-        </p>
+        <p>UC-KT-03/</p>
+        <p>UC-KT-04/</p>
+        <p>UC-KT-09</p>
+        <p>Behandelplan starten</p>
       </td>
       <td style="text-align:left">CreateOrUpdateCarePlan GetMessage(Headers)</td>
       <td style="text-align:left">Na een intake wordt er een behandelplan opgesteld en activiteiten toegekend
@@ -195,20 +174,16 @@ In het volgende overzicht ziet men met welke interacties de verschillende use-ca
     </tr>
     <tr>
       <td style="text-align:left">
-        <p><a href="bedrijfsarchitectuur.md#uc-kt-05-sub-activiteit-lanceren">UC-KT-05</a>
-        </p>
-        <p><a href="bedrijfsarchitectuur.md#uc-kt-05-sub-activiteit-lanceren">Interventie lanceren</a>
-        </p>
+        <p>UC-KT-05</p>
+        <p>Interventie lanceren</p>
       </td>
       <td style="text-align:left">PostLaunchRequest</td>
       <td style="text-align:left">OAuth 2.0 standaard en SMART-on-FHIR voorschriften.</td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <p><a href="bedrijfsarchitectuur.md#uc-kt-06-sub-activiteit-monitoren">UC-KT-06</a>
-        </p>
-        <p><a href="bedrijfsarchitectuur.md#uc-kt-06-sub-activiteit-monitoren">Voortgang monitoren</a>
-        </p>
+        <p>UC-KT-06</p>
+        <p>Voortgang monitoren</p>
       </td>
       <td style="text-align:left">UpdateCarePlanActivityStatus GetMessage(Headers)</td>
       <td style="text-align:left">Voortgang en status van een activiteit delen en ontvangen van een interventie.
@@ -216,21 +191,17 @@ In het volgende overzicht ziet men met welke interacties de verschillende use-ca
     </tr>
     <tr>
       <td style="text-align:left">
-        <p><a href="bedrijfsarchitectuur.md#uc-kt-07-sub-activiteit-evalueren">UC-KT-07</a>
-        </p>
-        <p><a href="bedrijfsarchitectuur.md#uc-kt-07-sub-activiteit-evalueren">Activiteit evalueren</a>
-        </p>
+        <p>UC-KT-07</p>
+        <p>Activiteit evalueren</p>
       </td>
       <td style="text-align:left">CreateOrUpdateCarePlanActivityResult GetMessage(Headers)</td>
       <td style="text-align:left">Uitslagen en resultaten delen en ontvangen van een interventie</td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <p><a href="bedrijfsarchitectuur.md#uc-kt-08-participant-opvoeren">UC-KT-08</a>/</p>
-        <p><a href="bedrijfsarchitectuur.md#uc-kt-10-derden-toegevoegd-signalering">UC-KT-10</a>
-        </p>
-        <p><a href="bedrijfsarchitectuur.md#uc-kt-10-derden-toegevoegd-signalering">Gebruikers aanmaken</a>
-        </p>
+        <p>UC-KT-08/</p>
+        <p>UC-KT-10</p>
+        <p>Gebruikers aanmaken</p>
       </td>
       <td style="text-align:left">CreateOrUpdatePatient CreateOrUpdatePractitioner CreateOrUpdateRelatedPerson
         GetMessage(Headers)</td>
@@ -240,10 +211,8 @@ In het volgende overzicht ziet men met welke interacties de verschillende use-ca
     </tr>
     <tr>
       <td style="text-align:left">
-        <p><a href="bedrijfsarchitectuur.md#uc-kt-11-algemene-informatie-uitwisselen">UC-KT-11</a>
-        </p>
-        <p><a href="bedrijfsarchitectuur.md#uc-kt-11-algemene-informatie-uitwisselen">Informatie uitwisselen</a>
-        </p>
+        <p>UC-KT-11</p>
+        <p>Informatie uitwisselen</p>
       </td>
       <td style="text-align:left">CreateOrUpdateMessage GetMessage(Headers)</td>
       <td style="text-align:left">Algemene informatie delen en ontvangen tussen participanten</td>

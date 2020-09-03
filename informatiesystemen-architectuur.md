@@ -116,11 +116,15 @@ ActivityDefinition maakt het mogelijk aan de hand van een bepaalde activiteit de
 
 In deze paragraaf worden de verschillende interacties beschreven tussen de verschillende applicaties. Het doel van deze paragraaf is de toepassing van Koppeltaal voor de verschillende use-cases weer te geven, alsmede de vereisten en aanpassingen in Koppeltaal toe te lichten.
 
+| Interactie | Omschrijving |
+| :--- | :--- |
+|  |  |
+
 Er zijn verschillende applicatie leveranciers betrokken ter ondersteuning van een interactief zorgproces en deze zullen gecertificeerd en geregistreerd moeten worden. Het registratie proces, welke applicaties gebruik willen maken van Koppeltaal, is een \(handmatig\) configuratie proces. Indien betrokken applicatie leveranciers onderling informatie willen uitwisselen, zullen ze in hetzelfde domein aangemeld en geregistreerd moeten worden. Dit registratie proces worden door Koppeltaal Support uitgevoerd.
 
-Na het registratie proces kan begonnen worden met de uitwisseling van informatie \(FHIR resources\), dit gebeurt via voor gedefinieerde interacties tussen de geregistreerde applicaties. Elke interactie \(tussen applicaties\) bestaat uit een FHIR MessageHeader, gevolgd door andere FHIR resources \(zie paragraaf "[Gegevensmodel](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/informatiesystemen-architectuur#gegevensmodel)"\). Een codering in de MessageHeader geeft aan om wat voor soort interactie het gaat. Per type applicatie zijn er verschillende interacties beschikbaar.
+Na het registratie proces kan begonnen worden met de uitwisseling van informatie \(FHIR resources\), dit gebeurt via voorgedefinieerde interacties tussen de geregistreerde applicaties. Elke interactie \(tussen applicaties\) bestaat uit een FHIR MessageHeader, gevolgd door andere FHIR resources \(zie paragraaf "[Gegevensmodel](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/informatiesystemen-architectuur#gegevensmodel)"\). Een codering in de MessageHeader geeft aan om wat voor soort interactie het gaat. Per type applicatie zijn er verschillende interacties beschikbaar.
 
-In de interactie laag wordt er niet meet over een cliënt gesproken maar hanteren we de term patiënt.
+In de interactie laag wordt er niet meer over een cliënt gesproken maar hanteren we de term patiënt.
 
 ![Interacties gegroepeerd](.gitbook/assets/interacties.jpg)
 

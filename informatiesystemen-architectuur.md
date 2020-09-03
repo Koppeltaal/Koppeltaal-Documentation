@@ -69,7 +69,7 @@ Voor het beheer, zoals de registratie en configuratie van de portalen, intervent
 
 De gegevensuitwisseling gebeurt via berichtenuitwisseling en is gebaseerd op een aantal standaarden: met name HTTP, **HL7 FHIR DSTU 1\(v0.0.82\)** en relevante onderdelen van de HL7 standaard.
 
-De kern van FHIR wordt gevormd door herbruikbare bouwstenen, de zogenaamde **FHIR resources**, waarmee oplossingen voor _uitwisseling van_ zorginhoudelijke _gegevens_ kunnen worden gebouwd. Elk bericht heeft een \(interactie\) type en hiermee kan bepaalde functionaliteit gerealiseerd worden binnen Koppeltaal \(zie paragraaf [Interacties](https://confluence.vzvz.nl/display/AK/Interacties)\).
+De kern van FHIR wordt gevormd door herbruikbare bouwstenen, de zogenaamde **FHIR resources**, waarmee oplossingen voor _uitwisseling van_ zorginhoudelijke _gegevens_ kunnen worden gebouwd. Elk bericht heeft een \(interactie\) type en hiermee kan bepaalde functionaliteit gerealiseerd worden binnen Koppeltaal \(zie paragraaf [Interacties](informatiesystemen-architectuur.md#interacties)\).
 
 Koppeltaal heeft een set berichten gedefinieerd waarmee de Koppeltaal use-cases kunnen worden afgedekt. Logische voorwaarde is dat de betrokken applicaties de benodigde berichten ondersteunen \(d.w.z. de structuur van de berichten kennen en de inhoud volledig kunnen interpreteren\). In de praktijk zien we dat verschillende applicaties, zoals portalen, interventies, platformen en EPD’s in Koppeltaal gecombineerd worden.
 
@@ -124,7 +124,7 @@ In deze paragraaf worden de verschillende interacties beschreven tussen de versc
 | CreateOrUpdateActivityDefinition | \(Sub\)activiteiten publiceren voor gebruik in andere applicaties in het domein. |
 | UpdateActivityStatus | Voortgang- en statusberichten van \(sub\)activiteiten delen en ontvangen. |
 | CreateOrUpdateCarePlanActivityResult | Resultaatberichten van \(sub\)activiteiten delen en ontvangen. |
-| CreateOrUpdateCarePlan | \(Sub\)activiteiten uit applicaties toekennen aan een gebruiker \(Patient, RelatedPerson\) in een andere applicatie dan waar de \(Sub\)activiteiten zijn opgeslagen. |
+| CreateOrUpdateCarePlan | \(Sub\)activiteiten uit applicaties toekennen aan een gebruiker \(patiënt en/of derden\) in een andere applicatie dan waar de \(Sub\)activiteiten zijn opgeslagen. |
 | GetActivityDefinitions | \(Sub\)activiteiten definitielijst ophalen voor gebruik in andere applicaties in het domein. |
 | PostLaunchRequest | Lanceren van een interventie. |
 | CreateOrUpdateUserMessage | Algemene gebruikersberichten delen en ontvangen |

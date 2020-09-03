@@ -3050,6 +3050,52 @@ Koppeltaal Support beheert verschillende diensten, zoals het beheer van de domei
 
 Tabel 16 Autorisatie beheer matrix
 
+## Implementatiegraad
+
+Koppeltaal heeft als doel een integratie standaard te implementeren, waarmee interne gegevensuitwisseling een applicatie-integratie wordt geregeld bij zorginstellingen die diensten voor gedragsverandering en daarmee direct samenhangende diensten verlenen.
+
+Elke zorginstelling is anders. De mate van wat er geïmplementeerd moet worden en hoe dat het beste gedaan kan worden, verschilt per situatie. Om specifieke eigenschappen van Koppeltaal te verduidelijken en te verklaren naar de verschillende IT leveranciers, willen we voor Koppeltaal verschillen **implementatie gradaties** definiëren, waaraan een \(GGZ\) zorginstelling minimaal aan moet voldoen en daarnaast de optionele opbouwende diensten waaraan een zorginstelling aan kan voldoen.
+
+Gegevensuitwisseling vindt plaats tussen applicaties. In Koppeltaal staat het begrip **applicatie** voor alle vormen van eHealth platformen en informatiesystemen \(zoals portalen, interventie- en bronsystemen\) die voor de zorgaanbieder relevant zijn om gegevens tussen uit te wisselen, in de context van blended care behandelingen \(zie ook [Domein en Applicatie](informatiesystemen-architectuur.md#domein-en-applicatie)\). Echter de informatie uitwisseling tussen applicaties gebeurt asynchroon omdat de applicaties 'loosely coupled' zijn, om zo de afhankelijkheid tussen applicaties zo klein mogelijk te houden. Er moet wel een balans zijn tussen de applicaties die de berichten aanmaken en versturen, en die de berichten ontvangen en vervolgens verwerken en visa versa.
+
+We willen de implementatiegraad bepalen aan de hand van een matrix waarin een overzicht is van [applicatie rollen](informatiesystemen-architectuur.md#actoren-en-rollen) versus \(verplichte of optionele\) [interacties](informatiesystemen-architectuur.md#use-case-versus-interacties). Interacties kunnen worden geïnitieerd en kunnen worden uitgevoerd. De initiator van een interactie verstuurd informatie, en de uitvoerende ontvangt informatie. We hebben per applicatie rol 4 mogelijkheden, namelijk: Zenden Verplicht \(**ZV**\) en Ontvangen Verplicht \(**OV**\) geven een verplichte implementatie weer van een interactie voor elke zorginstelling. Zenden Optioneel \(**ZO**\) en Ontvangen Optioneel \(**OO**\) geven optionele interacties weer, deze kunnen per zorginstelling \(optioneel\) geïmplementeerd worden.
+
+|  | Bron systeem | Portaal |  |  | Interventie |  |  |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+|  | **EPD** | **Behandelaar** | **Patient** | **Derde** | **Game** | **E-** **Leanrning** | **ROM** |
+| WebLaunch \(SSO\) |  | ZV\[1\] | ZV\[1\] | ZV\[1\] | OV\[1\] | OV\[1\] | OV\[1\] |
+| CreateOrUpdateCarePlan |  | ZV/OV\[1\] | ZV/OV\[1\] | ZV/OV\[1\] | OV\[1\] | OV\[1\] | OV\[1\] |
+| CreateOrUpdatePatient | ZV\[2\] | ZO/OV\[2\] | ZO/OV\[2\] |  | OV\[2\] | OV\[2\] | OV\[2\] |
+| CreateOrUpdatePractitioner | ZV\[2\] | ZO/OV\[2\] |  |  | OV\[2\] | OV\[2\] | OV\[2\] |
+| CreateOrUpdateRelatedPerson | ZV\[3\] | OV\[3\] | ZO/OV\[3\] | ZO/OV\[3\] | OV\[3\] | OV\[3\] | OV\[3\] |
+| CreateOrUpdateActivityDefinition |  |  |  |  | ZO\[3\] | ZO\[3\] | ZO\[3\] |
+| GetActivityDefinitions |  | OV\[2\] | OV\[2\] | OV\[2\] |  |  |  |
+| UpdateCarePlanActivityStatus   \(Available, InProgress, Completed, Canceled\) |  | OV\[2\] | OV\[2\] | OV\[2\] | ZO\[3\] | ZO\[3\] | ZO\[3\] |
+| CreateOrUpdateCarePlanActivityResult |  | OO\[3\] | OO\[3\] | OO\[3\] | ZO\[3\] | ZO\[3\] | ZO\[3\] |
+| CreateOrUpdateUserMessage | ZO\[3\] | ZO/OO\[3\] | ZO/OO\[3\] | ZO/OO\[3\] | ZO\[3\] | ZO\[3\] | ZO\[3\] |
+
+\[1\]: **Implementatie graad 1**
+
+* Portalen kunnen interventies \(zoals ROM\) lanceren 
+* Interventies kunnen gelanceerd worden
+* Behandelaar initieert een behandelplan \(CarePlan\) voor de patiënt
+
+\[2\]: **Implementatie graad 2** 
+
+* Portalen en interventies verplichte \(ZV en OV\) interacties geïmplementeerd
+
+\[3\]: **Implementatie graad 3**
+
+* Portalen en interventies optionele \(ZO en OO\) interacties geïmplementeerd
+
+Kanttekeningen:
+
+* Zendende en ontvangende partij moeten dezelfde interacties ondersteunen en aangeven op welk implementatiegraad ze zitten van hun aan te bieden product 
+* Het EPD bronsysteem wordt gebruikt om patiënten te kunnen identificeren en kan aangevuld worden met andere gegevens. Deze aanvullende gegevens worden \(nu\) niet overgenomen door het EPD bronsysteem \(zie ook Matrix\). De initiërende behandelaar \(portaal\) is verantwoordelijk voor het CarePlan. 
+* Patiënten \(portaal\) kunnen aanpassingen doen op \(delen van\) een CarePlan \(functioneel proces\).
+* Activity Definitions van interventies kunnen ook met de hand \(door een beheerder\) toegevoegd worden. Dit is de reden waarom de interactie CreateOrUpdateActivityDefinition niet een hoge prio heeft, qua implementatiegraad.
+* CreateOrUpdateRelatedPerson heeft een lagere prioriteit qua implementatie dan CreateOrUpdatePatient.
+
 ## Bijlage: Voorbeeld resource versioning
 
 ```markup

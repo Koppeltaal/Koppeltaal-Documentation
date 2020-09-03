@@ -38,7 +38,7 @@ Dienstverleners zullen onderling nadere afspraken moeten maken over de gebruikte
 
 ### Actoren en rollen
 
-Zoals in paragraaf "[Domein en Applicatie](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/informatiesystemen-architectuur#domein-en-applicatie)" beschreven is, zijn er verschillende type applicaties betrokken ter ondersteuning van een interactief zorgproces. Bij het inrichten van deze zorgprocessen is de verdeling van verantwoordelijkheden van belang. Hierbij maken we onderscheid tussen actoren en rollen. Actoren vertegenwoordigen personen of organisatorische eenheden, rollen vertegenwoordigen verantwoordelijkheden. Verschillende rollen kunnen worden toegekend aan een actor.
+Zoals in paragraaf "[Domein en Applicatie](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/informatiesystemen-architectuur#domein-en-applicatie)" beschreven is, zijn er verschillende type applicaties betrokken ter ondersteuning van een interactief zorgproces. Bij het inrichten van deze zorgprocessen is de verdeling van verantwoordelijkheden van belang. Hierbij maken we onderscheid tussen actoren en rollen. **Actoren** vertegenwoordigen personen of organisatorische eenheden. **Rollen** vertegenwoordigen verantwoordelijkheden. Verschillende rollen kunnen worden toegekend aan een actor..
 
 Elk type applicatie kan één of meerdere \(applicatie\) functie rollen vervullen in de context van blended care.
 

@@ -516,7 +516,7 @@ Volgens de OAuth2 specificaties kunnen er twee typen Clients worden onderscheide
 
 Toegangstokens worden aangevraagd bij een OAuth2-compatibele autorisatieserver \(Koppeltaal server\) via een TLS beveiligde kanaal \(zie hoofdstuk "[Beveiliging](technologie-architectuur.md#beveiliging)"\).
 
-Configuratie gegevens, zoals codes en toegangstokens, kan men via de Conformance Statement \(zie paragraaf De '[Conformance Statement](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/technologie-architectuur#de-conformance-statement)' \) opvragen.
+Configuratie gegevens, zoals codes en toegangstokens, kan men via de Conformance Statement \(zie paragraaf De '[Conformance Statement](informatiesystemen-architectuur.md#de-conformance-statement)' \) opvragen.
 
 De mate waarin informatie en gegevens \(resources\) beschermt moet worden zodat \(eind\)gebruikers, en andere producten de juiste mate van gegevenstoegang hebben passend bij hun soort en niveau van autorisatie.
 

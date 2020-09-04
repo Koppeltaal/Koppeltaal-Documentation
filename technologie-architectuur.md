@@ -13,7 +13,7 @@ description: >-
 
 Het transport van berichten volgens Koppeltaal v1.x is gebaseerd op een aantal standaarden: met name _HTTP_, _HL7 FHIR DSTU 1_ \(v0.0.82\) en relevante onderdelen van de HL7 standaard. De content \(inhoud\) kan zowel in _JSON_ als in _XML_ worden uitgedrukt. Koppeltaal gebruikt HTTP als transportmechanisme om FHIR berichten \(resources\) uit te kunnen wisselen en _Atom feed_ om FHIR resources te bundelen. De kern van FHIR wordt gevormd door de _FHIR DSTU1 resources_, waarmee oplossingen voor uitwisseling van zorginhoudelijke gegevens kunnen worden gebouwd. Door middel van profiling \(het maken van specificaties in de vorm van structure definitions en extensions\) en onderlinge verwijzingen is het mogelijk een specifieke set van FHIR resources voor een bepaalde use case, binnen een domein, te definiëren. Elke applicatie type \(eHealth platformen, portalen, interventies of bronsystemen\) gebruikt een eigen set van FHIR resources die via een adapter \(programmeertaal afhankelijke abstractie laag\) met Koppeltaal berichten uitwisselt over het openbare internet.
 
-![FHIR Messaging over HTTP](.gitbook/assets/fhir-messaging-bericht.jpg)
+![FHIR Messaging over HTTP.](.gitbook/assets/fhir-messaging-bericht.jpg)
 
 ### Netwerktopologie
 

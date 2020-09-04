@@ -116,6 +116,21 @@ ActivityDefinition maakt het mogelijk aan de hand van een bepaalde activiteit de
 
 In deze paragraaf worden de verschillende interacties beschreven tussen de verschillende applicaties. Het doel van deze paragraaf is de toepassing van Koppeltaal voor de verschillende use-cases weer te geven, alsmede de vereisten en aanpassingen in Koppeltaal toe te lichten.
 
+| Interactie | Omschrijving |
+| :--- | :--- |
+| CreateOrUpdatePractitioner | Behandelaars aanmaken of aanpassen tussen applicaties in één domein. |
+| CreateOrUpdatePatient | Patiënt aanmaken of aanpassen tussen applicaties in één domein. |
+| CreateOrUpdateRelatedPerson | Derden \(familie gerelateerde\) aanmaken of aanpassen tussen applicaties in één domein. |
+| CreateOrUpdateActivityDefinition | \(Sub\)activiteiten publiceren voor gebruik in andere applicaties in het domein. |
+| UpdateActivityStatus | Voortgang- en statusberichten van \(sub\)activiteiten delen en ontvangen. |
+| CreateOrUpdateCarePlanActivityResult | Resultaatberichten van \(sub\)activiteiten delen en ontvangen. |
+| CreateOrUpdateCarePlan | \(Sub\)activiteiten uit applicaties toekennen aan een gebruiker \(patiënt en/of derden\) in een andere applicatie dan waar de \(Sub\)activiteiten zijn opgeslagen. |
+| GetActivityDefinitions | \(Sub\)activiteiten definitielijst ophalen voor gebruik in andere applicaties in het domein. |
+| PostLaunchRequest | Lanceren van een interventie. |
+| CreateOrUpdateUserMessage | Algemene gebruikersberichten delen en ontvangen. |
+| GetMessageHeaders | Kopteksten van applicatieberichten ophalen in het domein. |
+| GetMessage | Inhoud van een applicatiebericht ophalen in het domein. |
+
 Er zijn verschillende applicatie leveranciers betrokken ter ondersteuning van een interactief zorgproces en deze zullen gecertificeerd en geregistreerd moeten worden. Het registratie proces, welke applicaties gebruik willen maken van Koppeltaal, is een \(handmatig\) configuratie proces. Indien betrokken applicatie leveranciers onderling informatie willen uitwisselen, zullen ze in hetzelfde domein aangemeld en geregistreerd moeten worden. Dit registratie proces worden door Koppeltaal Support uitgevoerd.
 
 Na het registratie proces kan begonnen worden met de uitwisseling van informatie \(FHIR resources\), dit gebeurt via voor gedefinieerde interacties tussen de geregistreerde applicaties. Elke interactie \(tussen applicaties\) bestaat uit een FHIR MessageHeader, gevolgd door andere FHIR resources \(zie paragraaf "[Gegevensmodel](informatiesystemen-architectuur.md#gegevensmodel)"\). Een codering in de MessageHeader geeft aan om wat voor soort interactie het gaat. Per type applicatie zijn er verschillende interacties beschikbaar.

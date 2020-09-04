@@ -560,7 +560,7 @@ Wanneer de gebruiker de applicatie URL opent, moeten de volgende gegevens aan Ko
 
 ![SMART Autorisatie sequence](.gitbook/assets/smart-autorisatie2.jpg)
 
-Met behulp van de 'Conformance Statement' \(zie paragraaf De '[Conformance Statement](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/technologie-architectuur#de-conformance-statement)'\) kan een \(gelanceerde\) applicatie een OAuth2 autorisatie verzoek indienen bij Koppeltaal \(zie ook RFC 6749\). De applicatie gebruikt hierbij de authorize- en token endpoints uit de 'Conformance Statement'. De applicatie moet de scoop van het autorisatie verzoek specificeren, dit is onderdeel van het OAuth2 protocol, dat voor Koppeltaal v1.3 "patient/\*.\*" is. Dit betekent dat de applicatie toegang vraagt tot alle berichten van de patiënt waarop deze applicatie is geabonneerd. Verder worden bij het autorisatie verzoek de volgende parameters doorgegeven aan Koppeltaal:
+Met behulp van de 'Conformance Statement' \(zie paragraaf De '[Conformance Statement](informatiesystemen-architectuur.md#de-conformance-statement)'\) kan een \(gelanceerde\) applicatie een OAuth2 autorisatie verzoek indienen bij Koppeltaal \(zie ook RFC 6749\). De applicatie gebruikt hierbij de authorize- en token endpoints uit de 'Conformance Statement'. De applicatie moet de scoop van het autorisatie verzoek specificeren, dit is onderdeel van het OAuth2 protocol, dat voor Koppeltaal v1.3 "patient/\*.\*" is. Dit betekent dat de applicatie toegang vraagt tot alle berichten van de patiënt waarop deze applicatie is geabonneerd. Verder worden bij het autorisatie verzoek de volgende parameters doorgegeven aan Koppeltaal:
 
 * reponse\_type. Dit wordt ingevuld met de waarde 'code' waarmee de aanvragende applicatie aangeeft dat het een autorisatie code wil ontvangen.
 * client\_id. Moet worden ingevuld met de waarde van de toegewezen identifier van de aanroepende applicatie
@@ -708,7 +708,7 @@ Het transport van berichten volgens Koppeltaal v1.x is gebaseerd op een aantal s
 
 De \(huidige\) uitwisselingsmethoden van Koppeltaal is gebaseerd op basis van messages \(qua methodiek vergelijkbaar met HL7V2 messaging\). Deze standaard wordt gezien als voldoende stabiel als basis voor implementaties voor Koppeltaal 1.3. Elke FHIR message bestaat uit een FHIR MessageHeader element en uit een lijst van resources \(vergelijkbaar met HL7V2 message segmenten\) die gebaseerd zijn op FHIR DSTU1 \(Draft Standard for Trial Use\) en gedefinieerd worden in de MessageHeader. De verschillende messages realiseren de functionaliteit van Koppeltaal.
 
-In de volgende tabel staat welke FHIR resource entries minimaal aanwezig moeten zijn bij de voor gedefinieerde Koppeltaal bericht types \(MessageHeader.event.code: codering die het event identificeert wat het bericht betekent\). Indien er naar een FHIR resource wordt gerefereerd, dient deze volledig aanwezig te zijn zoals deze onder hoofdstuk “[Berichtenstructuur](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/technologie-architectuur#berichtenstructuur)” in volgende paragrafen beschreven wordt.
+In de volgende tabel staat welke FHIR resource entries minimaal aanwezig moeten zijn bij de voor gedefinieerde Koppeltaal bericht types \(MessageHeader.event.code: codering die het event identificeert wat het bericht betekent\). Indien er naar een FHIR resource wordt gerefereerd, dient deze volledig aanwezig te zijn zoals deze onder hoofdstuk "[FHIR Resources](technologie-architectuur.md#fhir-resources)"  in volgende paragrafen beschreven wordt.
 
 <table>
   <thead>
@@ -950,9 +950,8 @@ Tabel 2. FHIR Bundle \(Atom feed\) De verschillende onderdelen van de FHIR feed 
       <td style="text-align:left">Type</td>
       <td style="text-align:left">
         <p>URI. Examples:</p>
-        <p>term=&quot;<a href="http://ggz.koppeltaal.nl/fhir/Koppeltaal/Domain#{domainname}">http://ggz.koppeltaal.nl/fhir/Koppeltaal/Domain#{domainname}</a>&quot;
-          term=&quot;<a href="http://hl7.org/fhir/tag/message">http://hl7.org/fhir/tag/message</a>
-        </p>
+        <p>term=&quot;http://ggz.koppeltaal.nl/fhir/Koppeltaal/Domain#{domainname}&quot;
+          term=&quot;http://hl7.org/fhir/tag/message&quot;</p>
       </td>
     </tr>
     <tr>
@@ -971,8 +970,8 @@ Tabel 2. FHIR Bundle \(Atom feed\) De verschillende onderdelen van de FHIR feed 
       <td style="text-align:left">Type</td>
       <td style="text-align:left">
         <p>URI. Examples:</p>
-        <p>scheme=&quot;<a href="http://hl7.org/fhir/tag/security">http://hl7.org/fhir/tag/security</a>&quot;</p>
-        <p>scheme=&quot;<a href="http://hl7.org/fhir/tag">http://hl7.org/fhir/tag</a>&quot;</p>
+        <p>scheme=&quot;http://hl7.org/fhir/tag/security&quot;</p>
+        <p>scheme=&quot;http://hl7.org/fhir/tag&quot;</p>
       </td>
     </tr>
     <tr>
@@ -1237,7 +1236,7 @@ FHIR Bundle \(Atom feed\)
         <p>Binding</p>
         <p>Comments</p>
       </td>
-      <td style="text-align:left"><a href="https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#MessageEvents">MessageEvents</a>
+      <td style="text-align:left"><a href="technologie-architectuur.md#messageevents">MessageEvents</a>
         <br
         />This field contains the message type, see also the event.code in 6.1 FHIR
         Messag.</td>
@@ -1386,8 +1385,7 @@ FHIR Bundle \(Atom feed\)
     </tr>
     <tr>
       <td style="text-align:left">Extension</td>
-      <td style="text-align:left"><a href="http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#Patient">http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#Patient</a>
-      </td>
+      <td style="text-align:left">http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#Patient</td>
     </tr>
     <tr>
       <td style="text-align:left">Comments</td>
@@ -1410,8 +1408,7 @@ FHIR Bundle \(Atom feed\)
     </tr>
     <tr>
       <td style="text-align:left">Extension</td>
-      <td style="text-align:left"><a href="http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#ProcessingStatus">http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#ProcessingStatus</a>
-      </td>
+      <td style="text-align:left">http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#ProcessingStatus</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>MessageHeader.processingStatus.status</b>
@@ -1432,13 +1429,12 @@ FHIR Bundle \(Atom feed\)
     </tr>
     <tr>
       <td style="text-align:left">Binding</td>
-      <td style="text-align:left"><a href="https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#ProcessingStatus">ProcessingStatus</a>
+      <td style="text-align:left"><a href="technologie-architectuur.md#processingstatus">ProcessingStatus</a>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">Extension</td>
-      <td style="text-align:left"><a href="http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#ProcessingStatusStatus">http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#ProcessingStatusStatus</a>
-      </td>
+      <td style="text-align:left">http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#ProcessingStatusStatus</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>MessageHeader.processingStatus.statusLastChanged</b>
@@ -1459,8 +1455,7 @@ FHIR Bundle \(Atom feed\)
     </tr>
     <tr>
       <td style="text-align:left">Extension</td>
-      <td style="text-align:left"><a href="http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#ProcessingStatusStatusLastChanged">http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#ProcessingStatusStatusLastChanged</a>
-      </td>
+      <td style="text-align:left">http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#ProcessingStatusStatusLastChanged</td>
     </tr>
     <tr>
       <td style="text-align:left">Comments</td>
@@ -1485,8 +1480,7 @@ FHIR Bundle \(Atom feed\)
     </tr>
     <tr>
       <td style="text-align:left">Extension</td>
-      <td style="text-align:left"><a href="http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#ProcessingStatusException">http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#ProcessingStatusException</a>
-      </td>
+      <td style="text-align:left">http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#ProcessingStatusException</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>MessageHeader.isExpired</b>
@@ -1507,8 +1501,7 @@ FHIR Bundle \(Atom feed\)
     </tr>
     <tr>
       <td style="text-align:left">Extension</td>
-      <td style="text-align:left"><a href="http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#IsExpired">http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#IsExpired</a>
-      </td>
+      <td style="text-align:left">http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#IsExpired</td>
     </tr>
     <tr>
       <td style="text-align:left">Notes</td>
@@ -1532,23 +1525,23 @@ Volgende plaatje laat zien dat de MessageHeader resource is uitgebreid met het P
 | Definition | Allows Koppeltaal to recognize the Other resource as an ActivityDefinition. |
 | Control | 1..1 |
 | Type | CodeableConcept |
-| Binding | [OtherResourceUsage](https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#OtherResourceUsage) |
+| Binding | [OtherResourceUsage](technologie-architectuur.md#otherresourceusage) |
 | **ActivityDefinition.application** |  |
 | Definition | The application that this ApplicationDefinition is available in. |
 | Control | 1..1 |
-| Type | Resource\([Application](https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#Application)\) |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#Application](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#Application) |
+| Type | Resource\([Application](technologie-architectuur.md#application-device-profile)\) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#Application |
 | Notes | The DisplayName of this relation is the Application's identifier. This value should be used in the SSO sequence as ClientID. |
 | **ActivityDefinition.name** |  |
 | Definition | Name of the game, questionnaire, etc. A single application may provide multiple activities, e.g. a ROM provider will provide several different questionnaires. |
 | Type | string |
 | Control | 1..1 |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#ActivityName](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#ActivityName) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#ActivityName |
 | **ActivityDefinition.activityDefinitionIdentifier** |  |
 | Definition | A unique identifier for this activity definition. |
 | Control | 0..1 |
 | Type | Identifier |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#ActivityDefinitionIdentifier](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#ActivityDefinitionIdentifier) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#ActivityDefinitionIdentifier |
 | **ActivityDefinition.identifier** |  |
 | Definition | One or more unique identifier for this activity definition. |
 | Control | 0..\* |
@@ -1558,68 +1551,68 @@ Volgende plaatje laat zien dat de MessageHeader resource is uitgebreid met het P
 | Definition | A description of the activity. May be used to judge the intended use of an activity. |
 | Type | string |
 | Control | 0..1 |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#ActivityDescription](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#ActivityDescription) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#ActivityDescription |
 | **ActivityDefinition.type** |  |
 | Definition | The type of activity. |
 | Control | 1..1 |
 | Type | CodeableConcept |
-| Binding | [ActivityKind](https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#ActivityKind) |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#ActivityKind](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#ActivityKind) |
+| Binding | [ActivityKind](technologie-architectuur.md#activitykind) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#ActivityKind |
 | **ActivityDefinition.subActivity** |  |
 | Definition | A list of available modules within the activity. |
 | Control | 0..\* |
 | Comments | For example, within the KickAss game, subactivities may be defined as the missions that are available in the game. |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#SubActivity](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#SubActivity) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#SubActivity |
 | **ActivityDefinition.subActivity.name** |  |
 | Definition | The name of the subactivity. |
 | Control | 1..1 |
 | Type | string |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#SubActivityName](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#SubActivityName) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#SubActivityName |
 | **ActivityDefinition.subActivity.identifier** |  |
 | Definition | An identifier for this specific subactivity. |
 | Control | 1..1 |
 | Type | string |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#SubActivityIdentifier](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#SubActivityIdentifier) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#SubActivityIdentifier |
 | **ActivityDefinition.subActivity.description** |  |
 | Definition | A description of the subactivity that can be used to judge the intended use of the subactvity. |
 | Control | 0..1 |
 | Type | string |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#SubActivityDescription](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#SubActivityDescription) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#SubActivityDescription |
 | **ActivityDefinition.subActivity.isActive** |  |
 | Definition | Indicates if the sub activity is active |
 | Control | 0..1 |
 | Type | boolean |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#SubActivityIsActive](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#SubActivityIsActive) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#SubActivityIsActive |
 | Comments | If no value is specified, value 'true' is assumed. This is to preserve backwards compatibility. |
 | **ActivityDefinition.defaultPerformer** |  |
 | Definition | The person that is normally responsible for performing this activity. |
 | Control | 0..1 |
 | Type | Code |
-| Binding | [ActivityPerformer](https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#ActivityPerformer) |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#DefaultPerformer](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#DefaultPerformer) |
+| Binding | [ActivityPerformer](technologie-architectuur.md#activityperformer) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#DefaultPerformer |
 | **ActivityDefinition.isActive** |  |
 | Definition | The person that is normally responsible for performing this activity. |
 | Control | 0..1 |
 | Type | boolean |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#IsActive](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#IsActive) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#IsActive |
 | Comments | If no value is specified, value 'true' is assumed. This is to preserve backwards compatibility. |
 | **ActivityDefinition.isDomainSpecific** |  |
 | Definition | Indicates whether this domain is only available in the current domain or available in all domains that the providing application is part of. |
 | Control | 0..1 |
 | Type | boolean |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#IsDomainSpecific](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#IsDomainSpecific) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#IsDomainSpecific |
 | **ActivityDefinition.launchType** |  |
 | Definition | Indicates how activities of this type should be launched. |
 | Control | 0..1 |
 | Type | code |
-| Binding | [ActivityDefinitionLaunchType](https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#ActivityDefinitionLaunchType) |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#LaunchType](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#LaunchType) |
+| Binding | [ActivityDefinitionLaunchType](technologie-architectuur.md#activitydefinitionlaunchtype) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#LaunchType |
 | Notes | When this field is empty, value 'Web' is assumed. |
 | **ActivityDefinition.isArchived** |  |
 | Definition | Indicates if the activity is archived. |
 | Control | 0..1 |
 | Type | boolean |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#IsArchived](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#IsArchived) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#IsArchived |
 | Comments | Archived ActivityDefinitions are by default not returned when GET-ting ActivityDefinitions. If no value is specified, value 'false' is assumed. This is to preserve backwards compatibility. |
 
 ActivityDefinition \(Other\)
@@ -1632,11 +1625,11 @@ ActivityDefinition \(Other\)
 | **CarePlan.Patient** |  |
 | Definition | Identifies the Patient whose intended care is described by the plan. |
 | Control | 0..1 |
-| Type | Resource\([Patient](https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#Patient)\) |
+| Type | Resource\([Patient](technologie-architectuur.md#patient)\) |
 | **CarePlan.status** |  |
 | Definition | Indicates whether the plan is currently being acted upon, represents future intentions or is now just historical record. |
 | Control | 1..1 |
-| Binding | CarePlanStatus: Indicates whether the plan is currently being acted upon, represents future intentions or is now just historical record. \(See [http://hl7.org/fhir/care-plan-status](http://hl7.org/fhir/care-plan-status) for values.\) |
+| Binding | CarePlanStatus: Indicates whether the plan is currently being acted upon, represents future intentions or is now just historical record. \(See http://hl7.org/fhir/care-plan-status for values.\) |
 | Type | Code |
 | Is modifier | True |
 | **CarePlan.participant** |  |
@@ -1645,7 +1638,7 @@ ActivityDefinition \(Other\)
 | Comments | Within the context of Koppeltaal, it is expected that at least the requester of the careplan is given as a participant with role ‘Requester’. |
 | **CarePlan.participant.role** |  |
 | Control | 0..1 |
-| Binding | [CarePlanParticipantRole](https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#CarePlanParticipantRole) |
+| Binding | [CarePlanParticipantRole](technologie-architectuur.md#careplanparticipantrole) |
 | Type | CodeableConcept |
 | Comments | For the Practitioner that is has requested \(‘assigned’\) the careplan the role should be ‘Requester’. |
 | **CarePlan.participant.member** |  |
@@ -1656,8 +1649,8 @@ ActivityDefinition \(Other\)
 | **CarePlan.participant.careTeam** |  |
 | Definition | CareTeam is given as participant |
 | Control | 1..\* |
-| Type | Resource\(CareTeam\) |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ParticipantCareTeam](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ParticipantCareTeam) |
+| Type | Resource\([CareTeam](technologie-architectuur.md#careteam-other)\) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ParticipantCareTeam |
 | **CarePlan.goal** |  |
 | Definition | Describes the intended objective\(s\) of carrying out the Care Plan. |
 | Control | 0..\* |
@@ -1669,7 +1662,7 @@ ActivityDefinition \(Other\)
 | **CarePlan.goal.status** |  |
 | Definition | Indicates whether the goal has been reached and is still considered relevant. |
 | Control | 0..1 |
-| Binding | CarePlanGoalStatus: Indicates whether the goal has been met and is still being targeted \(see [http://hl7.org/fhir/care-plan-goal-status](http://hl7.org/fhir/care-plan-goal-status) for values\). |
+| Binding | CarePlanGoalStatus: Indicates whether the goal has been met and is still being targeted \(see http://hl7.org/fhir/care-plan-goal-status for values\). |
 | Type | Code |
 | **CarePlan.goal.notes** |  |
 | Definition | Any comments related to the goal. |
@@ -1684,46 +1677,46 @@ ActivityDefinition \(Other\)
 | Definition | An id used to identify this activity in subsequent status updates. |
 | Control | 1..1 |
 | Type | string |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ActivityID](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ActivityID) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ActivityID |
 | **CarePlan.activity.identifier** |  |
 | Definition | An identifier for this activity. Used when sending an ActivityStatusUpdate. |
 | Control | 0..1 |
 | Type | string |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ActivityIdentifier](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ActivityIdentifier) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ActivityIdentifier |
 | **CarePlan.activity.definition** |  |
 | Definition | The identifier of the ActivityDefinition that describes the activity to be performed. |
 | Control | 0..1 |
 | Type | string |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ActivityDefinition](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ActivityDefinition) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ActivityDefinition |
 | Comments | The ActivityDefinition identified by this field may be located either directly in the bundle or in the set of ActivityDefinitions available at the Koppeltaal Server. |
 | **CarePlan.activity.type** |  |
 | Definition | The type of activity. |
 | Control | 1..1 |
 | Type | Coding |
-| Binding | [ActivityKind](https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#ActivityKind) |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ActivityKind](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ActivityKind) |
+| Binding | [ActivityKind](technologie-architectuur.md#activitykind) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ActivityKind |
 | Comments | Needed for activities that are not defined by an ActvityDefinition; copied from ActivityDefinition otherwise. |
 | **CarePlan.activity.description** |  |
 | Definition | Description of the activity. |
 | Control | 0..1 |
 | Type | string |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ActivityDescription](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ActivityDescription) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ActivityDescription |
 | Comments | Needed for activities that are not defined by an ActvityDefinition; copied from ActivityDefinition.description otherwise. |
 | **CarePlan.activity.subactivity** |  |
 | Definition | A list of subactivities that should be performed. |
 | Control | 0..\* |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#SubActivity](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#SubActivity) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#SubActivity |
 | **CarePlan.activity.subactivity.identifier** |  |
 | Definition | The identifier of the subactivity. |
 | Type | string |
 | Control | 1..1 |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#SubActivityIdentifier](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#SubActivityIdentifier) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#SubActivityIdentifier |
 | **CarePlan.activity.subactivity.status** |  |
 | Definition | The status of the subactivity. |
 | Control | 0..1 |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#SubActivityStatus](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#SubActivityStatus) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#SubActivityStatus |
 | Comments | Note that the list of assigned subactivities may differ from the list of subactivities available in the ActivityDefinition. This means that the assigner of the careplan has chosen to not let the performer perform all subactivities. The list of assigned subactivities should be a subset of the subactivites available in the ActivityDefinition. |
-| Binding | CarePlanActivityStatus |
+| Binding | [CarePlanActivityStatus](technologie-architectuur.md#careplanactivitystatus) |
 | Type | Code |
 | **CarePlan.activity.goal** |  |
 | Definition | Describes the intended objective\(s\) of carrying out this activity. |
@@ -1737,35 +1730,35 @@ ActivityDefinition \(Other\)
 | **CarePlan.activity.participant** |  |
 | Definition | Identifies all people and organizations who are involved in the activity and has read permission on the activity. |
 | Control | 0..\* |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#Participant](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#Participant) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#Participant |
 | Comments | Participants are not mentioned in the activity.simple.performer. |
 | **CarePlan.activity.participant.role** |  |
 | Control | 0..1 |
-| Binding | [CarePlanParticipantRole](https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#CarePlanParticipantRole) |
+| Binding | [CarePlanParticipantRole](technologie-architectuur.md#careplanparticipantrole) |
 | Type | CodeableConcept |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ParticipantRole](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ParticipantRole) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ParticipantRole |
 | Comments | Note that ‘performer’ is not a separate role, but instead is specified in the field CarePlan.activity.simple.performer. |
 | **CarePlan.activity.participant.member** |  |
 | Definition | The specific person who is participating/expected to participate in the activity. |
 | Control | 1..1 |
 | Type | Resource\(RelatedPerson\|Practitioner\|Patient\) |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ParticipantMember](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ParticipantMember) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ParticipantMember |
 | **CarePlan.activity.participant.careTeam** |  |
 | Definition | Careteams who are involved in the activity |
 | Control | 0..\* |
 | Type | Resource\(CareTeam\) |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ParticipantCareTeam](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ParticipantCareTeam) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ParticipantCareTeam |
 | **CarePlan.activity.startDate** |  |
 | Definition | The date that this activity should be started. |
 | Control | 1..1 |
 | Type | dateTime |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#StartDate](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#StartDate) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#StartDate |
 | **CarePlan.activity.CarePlanActivityStatus** |  |
 | Definition | Identifies what progress is being made for the specific activity. |
 | Control | 1..1 |
-| Binding | [CarePlanActivityStatus](https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#CarePlanActivityStatus) |
+| Binding | [CarePlanActivityStatus](technologie-architectuur.md#careplanactivitystatus-other) |
 | Type | Coding |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ActivityStatus](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ActivityStatus) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ActivityStatus |
 | **CarePlan.activity.notes** |  |
 | Definition | Any notes that are entered for this activity. |
 | Control | 0..1 |
@@ -1774,33 +1767,33 @@ ActivityDefinition \(Other\)
 | Definition | The date and time when the activity was started. |
 | Control | 0..1 |
 | Type | instant |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#Started](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#Started) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#Started |
 | **CarePlan.activity.finished** |  |
 | Definition | The date and time when the activity was completed. |
 | Control | 0..1 |
 | Type | instant |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#Finished](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#Finished) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#Finished |
 | **CarePlan.activity.cancelled** |  |
 | Definition | The date and time when the activity was cancelled or skipped. |
 | Control | 0..1 |
 | Type | instant |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#Cancelled](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#Cancelled) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#Cancelled |
 | **CarePlan.activity.endDate** |  |
 | Definition | The date and time after which the activity will no longer be available. |
 | Control | 0..1 |
 | Type | dateTime |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#EndDate](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#EndDate) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#EndDate |
 | **CarePlan.relation** |  |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#Relation](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#Relation) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#Relation |
 | Definition | Identifies any relations this careplan may have. |
 | Control | 0..\* |
 | **CarePlan.relation.type** |  |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#RelationType](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#RelationType) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#RelationType |
 | Definition | The type of the relation. |
 | Control | 1..1 |
-| Binding | [CarePlanRelationTypes](https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#CarePlanRelationTypes) |
+| Binding | [CarePlanRelationTypes](technologie-architectuur.md#careplanrelationtypes) |
 | **CarePlan.relation.reference** |  |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#RelationReference](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#RelationReference) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#RelationReference |
 | Definition | The related object. |
 | Control | 1..1 |
 | Type | Resource\(Any\) |
@@ -1821,38 +1814,38 @@ In de definitiebepaling van het CareTeam is zo veel mogelijk gebruik gemaakt van
 | Definitie | Geeft Koppeltaal de mogelijkheid om het Other resource te herkennen als een CareTeam |
 | Control | 1..1 |
 | Type | CodeableConcept |
-| Binding | OtherResourceUsage |
+| Binding | [OtherResourceUsage](technologie-architectuur.md#otherresourceusage) |
 | **CareTeam.Identifier** |  |
 | Defnitie | Identifier voor het care team die het care team binnen het domein uniek identificeert |
 | Control | 0..\* |
 | Type | Identifier |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeam\#CareTeamIdentifier](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeam#CareTeamIdentifier) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeam\#CareTeamIdentifier |
 | **CareTeam.status** |  |
 | Definitie | Geeft de status van het care team aan. |
 | Control | 0..1 |
 | Type | Coding |
-| Binding | CareTeamStatus |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeam\#Status](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeam#Status) |
+| Binding | [CareTeamStatus](technologie-architectuur.md#careteamstatus) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeam\#Status |
 | **CareTeam.name** |  |
 | Definitie | Een label voor menselijk gebruik bedoeld om care teams mee te onderscheiden |
 | Control | 0..1 |
 | Type | string |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeam\#Name](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeam#Name) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeam\#Name |
 | **CareTeam.subject** |  |
 | Definitie | De patiënt aan wie het care team zorg levert |
 | Control | 0..1 |
 | Type | Resource \(Patient\) |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeam\#Subject](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeam#Subject) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeam\#Subject |
 | **CareTeam.period** |  |
 | Definitie | Geeft aan wanneer het care team in werking treedt \(of is bedoeld\) en eindigt. |
 | Control | 0..1 |
 | Type | Period |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeam\#Period](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeam#Period) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeam\#Period |
 | **CareTeam.managingOrganization** |  |
 | Definitie | De organisatie die verantwoordelijk is voor het care team |
 | Control | 0..\* |
 | Type | Resource\(Organization\) |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeam\#ManagingOrganization](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeam#ManagingOrganization) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeam\#ManagingOrganization |
 
 CareTeam \(Other\)
 
@@ -1866,36 +1859,36 @@ CareTeam \(Other\)
 | Definition | The ID of the activity that is the subject of this message. |
 | Control | 1..1 |
 | Type | string |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus\#ActivityStatus](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus#ActivityStatus) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus\#ActivityStatus |
 | Notes | This must have the same value as CarePlan.activity.identifier for that activity in the CreateOrUpdateCarePlan message. |
 | **CarePlanActivityStatus.activityStatus** |  |
 | Definition | Identifies what progress is being made for the specific CarePlanActivity. |
 | Control | 1..1 |
-| Binding | [CarePlanActivityStatus](https://support.koppeltaal.nl/wiki/index.php?title=CarePlanActivityStatus&action=edit&redlink=1) |
+| Binding | [CarePlanActivityStatus](technologie-architectuur.md#careplanactivitystatus-other) |
 | Type | Coding |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus\#ActivityStatus](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus#ActivityStatus) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus\#ActivityStatus |
 | **CarePlanActivityStatus.subactivity** |  |
 | Definition | The subactivities assigned as part of this activity. |
 | Control | 0..\* |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus\#SubActivity](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus#SubActivity) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus\#SubActivity |
 | Comments | Note that the list of assigned subactivities may differ from the list of subactivities available in the ActivityDefinition. This means that the assigner of the careplan has chosen to not let the performer perform all subactivities. The list of assigned subactivities should be a subset of the subactivites available in the ActivityDefinition. |
 | **CarePlanActivityStatus.subactivity.identifier** |  |
 | Definition | The identifier of this subactivity. |
 | Control | 1..1 |
 | Type | string |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus\#SubActivityIdentifier](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus#SubActivityIdentifier) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus\#SubActivityIdentifier |
 | Comments | Must match the identifier of a subactivity as defined in the ActivityDefinition. |
 | **CarePlanActivityStatus.subactivity.status** |  |
 | Definition | Identifies what progress is being made for this subactivity. |
 | Control | 1..1 |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus\#SubActivityStatus](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus#SubActivityStatus) |
-| Binding | [CarePlanActivityStatuses](https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#CarePlanActivityStatuses) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus\#SubActivityStatus |
+| Binding | [CarePlanActivityStatus](technologie-architectuur.md#careplanactivitystatus) |
 | Type | Coding |
 | **CarePlanActivityStatus.percentageCompleted** |  |
 | Definition | An indication of the progress made on the CarePlanActivity. |
 | Control | 0..1 |
 | Type | integer |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus\#PercentageCompleted](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus#PercentageCompleted) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus\#PercentageCompleted |
 | **CarePlanActivityStatus.blackBoxState** |  |
 | Definition | BlackBoxState allows applications using Koppeltaal to extend messages with information that is not necessarily understood by other applications. The application including BlackBoxState must subscribe to the message to which the BlackBoxState is attached, allowing the application to reload the BlackBoxState next time the application starts for a certain user. BlackBoxState is implemented using the FHIR extension mechanism. Extensions can be nested. For an example, look at how the ProcessingStatus extension is defined for the MessageHeader resource. Applications using BlackBoxState must create a FHIR profile that describes their extension\(s\). |
 | Control | 0..1 |
@@ -1973,7 +1966,7 @@ CarePlanActivityStatus \(Other\)
     </tr>
     <tr>
       <td style="text-align:left">Binding</td>
-      <td style="text-align:left"><a href="https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#CarePlanActivityResultStatus">CarePlanActivityResultStatus</a>
+      <td style="text-align:left"><a href="technologie-architectuur.md#careplanactivityresultstatus">CarePlanActivityResultStatus</a>
       </td>
     </tr>
     <tr>
@@ -2039,7 +2032,7 @@ CarePlanActivityStatus \(Other\)
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">Resource(<a href="https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#Patient">Patient</a>)</td>
+      <td style="text-align:left">Resource(<a href="technologie-architectuur.md#patient">Patient</a>)</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>CarePlanActivityResult.performer</b>
@@ -2056,7 +2049,7 @@ CarePlanActivityStatus \(Other\)
     </tr>
     <tr>
       <td style="text-align:left">Resource</td>
-      <td style="text-align:left">Resource(<a href="https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#Organization">Organization</a>)</td>
+      <td style="text-align:left">Resource(<a href="technologie-architectuur.md#organization">Organization</a>)</td>
     </tr>
     <tr>
       <td style="text-align:left">Comments</td>
@@ -2125,7 +2118,7 @@ CarePlanActivityStatus \(Other\)
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">Resource(<a href="https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#h.x3jvacdqju92">Observation</a>)</td>
+      <td style="text-align:left">Resource(Observation)</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>CarePlanActivityResult.presentedForm</b>
@@ -2164,7 +2157,7 @@ CarePlanActivityStatus \(Other\)
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">Resource(<a href="https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#h.w2jukt6b7sm7">Questionnaire</a>)</td>
+      <td style="text-align:left">Resource(Questionnaire)</td>
     </tr>
   </tbody>
 </table>
@@ -2242,7 +2235,7 @@ CarePlanActivityResult \(Other\)
       <td style="text-align:left">Comments</td>
       <td style="text-align:left">All known identifiers shall be given. A typical identifier for an organization
         is the AGB code. If no other identifier is known, a system specific identifier
-        can be given. (See <a href="https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#h.p09w0b53b6hw">Identifiers</a> for
+        can be given. (See <a href="technologie-architectuur.md#identifiers">Identifiers </a>for
         information on formatting.)</td>
     </tr>
     <tr>
@@ -2454,7 +2447,7 @@ Organization
 | Definition | An identifier that applies to this person as a Patient. |
 | Control | 0..\* |
 | Type | Identifier |
-| Comments | All known identifiers shall be given. A typical identifier for a Patient is the BSN. If no other identifier is known, a system specific identifier can be given. \(See [Identifiers](https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#h.p09w0b53b6hw) for information on formatting.\) |
+| Comments | All known identifiers shall be given. A typical identifier for a Patient is the BSN. If no other identifier is known, a system specific identifier can be given. \(See [Identifiers ](technologie-architectuur.md#identifiers)for information on formatting.\) |
 | **Patient.name** |  |
 | Definition | A list of names associated with the person. |
 | Control | 1..\* |
@@ -2477,7 +2470,7 @@ Organization
 | Definition | The age of the individual. |
 | Control | 0..1 |
 | Type | Integer |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Patient\#Age](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Patient#Age) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/Patient\#Age |
 | **Patient.address** |  |
 | Definition | Addresses for the individual. |
 | Control | 0..\* |
@@ -2500,11 +2493,11 @@ Patient
 | Definition | An identifier that applies to this person in this role. |
 | Control | 0..\* |
 | Type | Identifier |
-| Comments | All known identifiers shall be given. A typical identifier for a Practitioner is the AGB or UZI code. If no other identifier is known, a system specific identifier can be given. \(See [Identifiers](https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#h.p09w0b53b6hw) for information on formatting.\) |
+| Comments | All known identifiers shall be given. A typical identifier for a Practitioner is the AGB or UZI code. If no other identifier is known, a system specific identifier can be given. \(See [Identifiers ](technologie-architectuur.md#identifiers)for information on formatting.\) |
 | **Practitioner.organization** |  |
 | Definition | The organization that the practitioner represents. |
 | Control | 0..1 |
-| Type | Resource\([Organization](https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#h.lgcft5t97i2r)\) |
+| Type | Resource\([Organization](technologie-architectuur.md#organization)\) |
 | **Practitioner.telecom** |  |
 | Definition | A contact detail \(e.g. a telephone number or an email address\) by which the individual practitioner may be contacted. |
 | Control | 0..\* |
@@ -2521,11 +2514,11 @@ Practitioner
 | Definition | Identifier for a person within a particular scope. |
 | Control | 0..\* |
 | Type | Identifier |
-| Comments | All known identifiers shall be given. A typical identifier for a person is the BSN. If no other identifier is known, a system specific identifier can be given. \(See [Identifiers](https://www.koppeltaal.nl/release-13#Identifiers) for information on formatting.\) |
+| Comments | All known identifiers shall be given. A typical identifier for a person is the BSN. If no other identifier is known, a system specific identifier can be given. \(See [Identifiers ](technologie-architectuur.md#identifiers)for information on formatting.\) |
 | **RelatedPerson.patient** |  |
 | Definition | The Patient this person is related to. |
 | Control | 1..1 |
-| Type | Resource\([Patient](https://www.koppeltaal.nl/release-13#Patient)\) |
+| Type | Resource\(Patient\) |
 | **RelatedPerson.relationship** |  |
 | Definition | The nature of the relationship between a Patient and the related person. |
 | Control | 0..1 |
@@ -2569,7 +2562,7 @@ RelatedPerson
 | **Application.type** |  |
 | Definition | The kind of device. |
 | Control | 1..1 |
-| Binding | [DeviceKind](https://www.koppeltaal.nl/release-13#DeviceKind) |
+| Binding | [DeviceKind](technologie-architectuur.md#devicekind) |
 | Type | CodeableConcept |
 | **Application.url** |  |
 | Definition | A network address on which the device may be contacted directly. |
@@ -2579,9 +2572,9 @@ RelatedPerson
 | **Application.roles** |  |
 | Definition | The roles this application has. |
 | Control | 0..\* |
-| Binding | [ApplicationRoles](https://www.koppeltaal.nl/release-13#ApplicationRoles) |
+| Binding | [ApplicationRoles](technologie-architectuur.md#applicationroles) |
 | Type | CodeableConcept |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/Application\#ApplicationRoles](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Application#ApplicationRoles) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/Application\#ApplicationRoles |
 
 Application
 
@@ -2594,39 +2587,39 @@ Application
 | Definition | An uri that describes the context of the message. |
 | Control | 0..1 |
 | Type | Uri |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/UserMessage\#Context](http://ggz.koppeltaal.nl/fhir/Koppeltaal/UserMessage#Context) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/UserMessage\#Context |
 | **UserMessage.code** |  |
 | Definition | Allows Koppeltaal to recognize the Other resource as a UserMessage. |
 | Control | 1..1 |
 | Type | CodeableConcept |
-| Binding | [OtherResourceUsage](https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#OtherResourceUsage) |
+| Binding | [OtherResourceUsage](technologie-architectuur.md#otherresourceusage) |
 | **UserMessage.from** |  |
 | Definition | The sender of the message. |
 | Control | 1..1 |
-| Type | Resource\([Patient](https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#Patient)\|Practitioner\|RelatedPerson\|[Application](https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#Device)\) |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/UserMessage\#From](http://ggz.koppeltaal.nl/fhir/Koppeltaal/UserMessage#From) |
+| Type | Resource\(Patient\|Practitioner\|RelatedPerson\|Application\) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/UserMessage\#From |
 | **UserMessage.to** |  |
 | Definition | The intended receiver of the message. |
 | Control | 1..1 |
-| Type | Resource\([Patient](https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#Patient)\|Practitioner\|RelatedPerson\) |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/UserMessage\#To](http://ggz.koppeltaal.nl/fhir/Koppeltaal/UserMessage#To) |
+| Type | Resource\(Patient\|Practitioner\|RelatedPerson\) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/UserMessage\#To |
 | **UserMessage.messageKind** |  |
 | Definition | Which kind of message this represents. |
 | Control | 1..1 |
 | Type | CodeableConcept |
-| Binding | [MessageKind](https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#MessageKind) |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/UserMessage\#MessageKind](http://ggz.koppeltaal.nl/fhir/Koppeltaal/UserMessage#MessageKind) |
+| Binding | [MessageKind](technologie-architectuur.md#messagekind) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/UserMessage\#MessageKind |
 | **UserMessage.subjectString** |  |
 | Definition | A short description of the content of the message. |
 | Control | 1..1 |
 | Type | string |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/UserMessage\#SubjectString](http://ggz.koppeltaal.nl/fhir/Koppeltaal/UserMessage#SubjectString) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/UserMessage\#SubjectString |
 | Comments | This attribute is not called ‘subject’ because FHIR already defines an attribute with that name for a different purpose. |
 | **UserMessage.content** |  |
 | Definition | The text content of the message. Can be rich text. |
 | Control | 1..1 |
 | Type | string |
-| Extension | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/UserMessage\#Content](http://ggz.koppeltaal.nl/fhir/Koppeltaal/UserMessage#Content) |
+| Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/UserMessage\#Content |
 
 UserMessage
 
@@ -2650,15 +2643,15 @@ Onderstaande identificatie systemen worden veel gebruikt in de gezondsheidszorg 
 
 Common Identifiers
 
-Notitie: De System Uri’s vindt men bij \[[http://fhir.nl/fhir/NamingSystems/\[SystemUri\]\(http://fhir.nl/fhir/NamingSystems/%5bSystemUri\)\](http://fhir.nl/fhir/NamingSystems/[SystemUri]%28http://fhir.nl/fhir/NamingSystems/%5bSystemUri%29\)\]
+Notitie: De System Uri’s vindt men bij \[http://fhir.nl/fhir/NamingSystems/\[SystemUri\]\(http://fhir.nl/fhir/NamingSystems/%5bSystemUri\)\\]
 
 ## Value Sets
 
 ### CarePlanActivityResultStatus
 
-| **Code system URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityResultStatus](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityResultStatus) |
+| **Code system URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityResultStatus |
 | :--- | :--- |
-| **Value set URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/CarePlanActivityResul…](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/CarePlanActivityResultStatus) |
+| **Value set URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/CarePlanActivityResul… |
 | **Definition** | The possible statuses that a CarePlanActivityResult can have. |
 
 | Code | Display | Definition |
@@ -2669,9 +2662,9 @@ Notitie: De System Uri’s vindt men bij \[[http://fhir.nl/fhir/NamingSystems/\[
 
 ### MessageEvents
 
-| **Code system URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageEvents](http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageEvents) |
+| **Code system URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageEvents |
 | :--- | :--- |
-| **Value set URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/MessageEvents](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/MessageEvents) |
+| **Value set URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/MessageEvents |
 | **Definition** | The type of event that a message represents. |
 
 | Code | Display | Definition |
@@ -2684,9 +2677,9 @@ Notitie: De System Uri’s vindt men bij \[[http://fhir.nl/fhir/NamingSystems/\[
 
 ### ApplicationRoles
 
-| **Code system URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ApplicationRoles](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ApplicationRoles) |
+| **Code system URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ApplicationRoles |
 | :--- | :--- |
-| **Value set URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/ApplicationRoles](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/ApplicationRoles) |
+| **Value set URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/ApplicationRoles |
 | **Definition** | The Roles that a Koppeltaal Application can have. |
 
 | Code | Display | Definition |
@@ -2700,9 +2693,9 @@ Notitie: De System Uri’s vindt men bij \[[http://fhir.nl/fhir/NamingSystems/\[
 
 ### DeviceKind
 
-| **Code system URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/DeviceKind](http://ggz.koppeltaal.nl/fhir/Koppeltaal/DeviceKind) |
+| **Code system URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/DeviceKind |
 | :--- | :--- |
-| **Value set URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/DeviceKind](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/DeviceKind) |
+| **Value set URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/DeviceKind |
 | **Definition** | The type of a device. In Koppeltaal we only support ‘Application’. |
 
 | Code | Display | Definition |
@@ -2711,9 +2704,9 @@ Notitie: De System Uri’s vindt men bij \[[http://fhir.nl/fhir/NamingSystems/\[
 
 ### ActivityKind
 
-| **Code system URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityKind](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityKind) |
+| **Code system URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityKind |
 | :--- | :--- |
-| **Value set URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/ActivityKind](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/ActivityKind) |
+| **Value set URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/ActivityKind |
 | **Definition** | The type of the activity. |
 
 | Code | Display | Definition |
@@ -2726,9 +2719,9 @@ Notitie: De System Uri’s vindt men bij \[[http://fhir.nl/fhir/NamingSystems/\[
 
 ### MessageKind
 
-| **Code system URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/UserMessageKind](http://ggz.koppeltaal.nl/fhir/Koppeltaal/UserMessageKind) |
+| **Code system URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/UserMessageKind |
 | :--- | :--- |
-| **Value set URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/UserMessageKind](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/UserMessageKind) |
+| **Value set URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/UserMessageKind |
 | **Definition** | The type of the UserMessage. Receiving applications may use the given value as an indication of how to process and/or display this message, e.g. marking urgent messages red, displaying them on a Practitioner’s home page or sending an email notification. |
 
 | Code | Display | Definition |
@@ -2743,9 +2736,9 @@ Notitie: De System Uri’s vindt men bij \[[http://fhir.nl/fhir/NamingSystems/\[
 
 ### CarePlanActivityStatus
 
-| **Code system URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus) |
+| **Code system URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus |
 | :--- | :--- |
-| **Value set URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/CarePlanActivityStatus](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/CarePlanActivityStatus) |
+| **Value set URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/CarePlanActivityStatus |
 | **Definition** | The possible statuses that a CarePlanActivity can have. |
 
 | Code | Display | Definition |
@@ -2760,24 +2753,24 @@ Notitie: De System Uri’s vindt men bij \[[http://fhir.nl/fhir/NamingSystems/\[
 
 ### OtherResourceUsage
 
-| **Code system URL:** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/OtherResourceUsage](http://ggz.koppeltaal.nl/fhir/Koppeltaal/OtherResourceUsage) |
+| **Code system URL:** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/OtherResourceUsage |
 | :--- | :--- |
-| **Value set UR:** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValuSet/OtherResourceUsage](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValuSet/OtherResourceUsage) |
+| **Value set UR:** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValuSet/OtherResourceUsage |
 | **Definition** | Used to identify the different types of Other resources used in Koppeltaal. |
 
 | Code | Display | Definition |
 | :--- | :--- | :--- |
-| ActivityDefinition | ActivityDefinition | Used to identify the Koppeltaal resource [ActivityDefinition](https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#ActivityDefinition). |
-| UserMessage | UserMessage | Used to identify the Koppeltaal resource [UserMessage](https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#UserMessage). |
-| CarePlanActivityStatus | CarePlanActivityStatus | Used to identify the Koppeltaal resource [CarePlanActivityStatus](https://support.koppeltaal.nl/resources/42-koppeltaal-api-1-3#CarePlanActivityStatus). |
+| ActivityDefinition | ActivityDefinition | Used to identify the Koppeltaal resource ActivityDefinition. |
+| UserMessage | UserMessage | Used to identify the Koppeltaal resource UserMessage. |
+| CarePlanActivityStatus | CarePlanActivityStatus | Used to identify the Koppeltaal resource CarePlanActivityStatus. |
 | CarePlanActivityResult | CarePlanActivityResult | Used to identify the Koppeltaal resource CarePlanActivityResult. |
 | CareTeam | CareTeam | Used to identify the Koppeltaal resource CareTeam. |
 
 ### QuestionnaireStatus
 
-| **Code system URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/QuestionnaireStatus](http://ggz.koppeltaal.nl/fhir/Koppeltaal/QuestionnaireStatus) |
+| **Code system URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/QuestionnaireStatus |
 | :--- | :--- |
-| **Value set URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/QuestionnaireStatus](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/QuestionnaireStatus) |
+| **Value set URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/QuestionnaireStatus |
 | **Definition** | The different statuses a questionnaire can have. |
 
 | Code | Display | Definition |
@@ -2790,9 +2783,9 @@ Notitie: De System Uri’s vindt men bij \[[http://fhir.nl/fhir/NamingSystems/\[
 
 ### CarePlanParticipantRole
 
-| **Code system URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanParticipantRole](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanParticipantRole) |
+| **Code system URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanParticipantRole |
 | :--- | :--- |
-| **Value set URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/CarePlanParticipantRo…](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/CarePlanParticipantRole) |
+| **Value set URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/CarePlanParticipantRo… |
 | **Definition** | A person can participate in a CarePlan or CarePlanActivity in different roles. |
 
 | Code | Display | Definition |
@@ -2806,9 +2799,9 @@ Notitie: De System Uri’s vindt men bij \[[http://fhir.nl/fhir/NamingSystems/\[
 
 ### ProcessingStatus
 
-| **Code system URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ProcessingStatus](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ProcessingStatus) |
+| **Code system URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ProcessingStatus |
 | :--- | :--- |
-| **Value set URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/ProcessingStatus](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/ProcessingStatus) |
+| **Value set URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/ProcessingStatus |
 | **Definition** | The processing status of a message. |
 
 | Code | Display | Definition |
@@ -2822,9 +2815,9 @@ Notitie: De System Uri’s vindt men bij \[[http://fhir.nl/fhir/NamingSystems/\[
 
 ### ActivityPerformer
 
-| **Code system URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityPerformer](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityPerformer) |
+| **Code system URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityPerformer |
 | :--- | :--- |
-| **Value set URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/ActivityPerformer](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/ActivityPerformer) |
+| **Value set URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/ActivityPerformer |
 | **Definition** | Types of persons that can perform activities. |
 
 | Code | Display | Definition |
@@ -2835,22 +2828,22 @@ Notitie: De System Uri’s vindt men bij \[[http://fhir.nl/fhir/NamingSystems/\[
 
 ### ActivityDefinitionLaunchType
 
-| **Code system URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinitionLaunchType](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinitionLaunchType) |
+| **Code system URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinitionLaunchType |
 | :--- | :--- |
-| **Value set URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/ActivityDefinitionLau…](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/ActivityDefinitionLaunchType) |
+| **Value set URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/ActivityDefinitionLau… |
 | **Definition** | Available methods of launching an activity. |
 
 | Code | Display | Definition |
 | :--- | :--- | :--- |
-| Web | Web | The activity is reachable by navigating to the URL returned by the [Web Launch Sequence](https://www.koppeltaal.nl/release-13#We_%20Launch_Sequence). |
-| Mobile | Mobile | The activity must be activated by using the code returned by the [Mobile Launch Sequence](https://www.koppeltaal.nl/release-13#Mobile_Launch_Sequence). |
+| Web | Web | The activity is reachable by navigating to the URL returned by the Web Launch Sequence. |
+| Mobile | Mobile | The activity must be activated by using the code returned by the Mobile Launch Sequence. |
 | None | None | The activity cannot be started. |
 
 ### CarePlanRelationTypes
 
-| **Code system URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanRelationTypes](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanRelationTypes) |
+| **Code system URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanRelationTypes |
 | :--- | :--- |
-| **Value set URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/CarePlanRelationTypes](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/CarePlanRelationTypes) |
+| **Value set URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/CarePlanRelationTypes |
 | **Definition** | The kind of relation that a CarePlan has with the referred object. |
 
 | Code | Display | Definition |
@@ -2859,9 +2852,9 @@ Notitie: De System Uri’s vindt men bij \[[http://fhir.nl/fhir/NamingSystems/\[
 
 ### CareTeamStatus
 
-| **Code system URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeamStatus](http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeamStatus) |
+| **Code system URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeamStatus |
 | :--- | :--- |
-| **Value set URL** | [http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/CareTeamStatus](http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/CareTeamStatus) |
+| **Value set URL** | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ValueSet/CareTeamStatus |
 | **Definition** | The kind of relation that a CarePlan has with the referred object. |
 
 | Code | **Display** | **Definitie** |
@@ -3126,11 +3119,11 @@ Kanttekeningen:
 
 ## Bijlage: Response voorbeelden
 
-Als response op een POST van CreateOrUpdateCarePlan vanaf versie 1.3.5 worden alle uitgekeerde resource versies teruggegeven.
+Als response op een POST van CreateOrUpdateCarePlan vanaf Koppeltaal versie 1.3.5 worden alle uitgekeerde resource versies teruggegeven.
 
-Voor elke resource wordt een data-element teruggegeven in de MessageHeader. In 1.3.3 was dit alleen het geval voor de focal resource.
+Voor elke resource wordt een data-element teruggegeven in de MessageHeader. In Koppeltaal versie 1.3.3 was dit alleen het geval voor de focal resource.
 
-Hieronder een voorbeeld response in 1.3.5.
+Hieronder een voorbeeld response in Koppeltaal versie 1.3.5.
 
 ```markup
 <feed
@@ -3174,7 +3167,7 @@ Hieronder een voorbeeld response in 1.3.5.
 
 Versionering op resource content
 
-Als er aan een 1.3.5 compatibele applicatie een 409 wordt teruggegeven omdat een of meer verkeerde versies zijn meegestuurd, worden hierin de resources teruggegeven waarvan de verkeerde versie was meegestuurd.
+Als er aan een Koppeltaal versie 1.3.5 compatibele applicatie een 409 wordt teruggegeven omdat een of meer verkeerde versies zijn meegestuurd, worden hierin de resources teruggegeven waarvan de verkeerde versie was meegestuurd.
 
 Dit gebeurt in de volgende response:
 

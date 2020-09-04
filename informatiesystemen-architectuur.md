@@ -10,13 +10,13 @@ description: >-
 
 ### Domein en Applicatie
 
-In de doelstelling van stichting Koppeltaal is middels het woord ‘interne’ een beperking voor de gegevensuitwisseling opgenomen. Met deze beperking wordt bedoeld dat de gegevensuitwisseling altijd plaatsvindt onder de verantwoordelijkheid van één **zorgaanbieder.** In de Koppeltaal architectuur is daarom gekozen voor het concept **domein.** Een domein, in Koppeltaal, is synoniem aan een zorgaanbieder, en beperkt de gegevensuitwisseling tot _interne gegevensuitwisseling_ onder verantwoordelijkheid van de betreffende zorgaanbieder. 
+In de doelstelling van stichting Koppeltaal is middels het woord ‘interne’ een beperking voor de gegevensuitwisseling opgenomen. Met deze beperking wordt bedoeld dat de gegevensuitwisseling altijd plaatsvindt onder de verantwoordelijkheid van één **zorgaanbieder.** In de Koppeltaal architectuur is daarom gekozen voor het concept **domein.** Een domein, in Koppeltaal, is synoniem aan een zorgaanbieder, en beperkt de gegevensuitwisseling tot _interne gegevensuitwisseling_ onder verantwoordelijkheid van de betreffende zorgaanbieder.
 
-De gegevensuitwisseling vindt plaats tussen applicaties. In Koppeltaal staat het begrip **applicatie** voor alle vormen van eHealth platformen en informatiesystemen \(zoals portalen, interventie- en bronsystemen\) die voor de zorgaanbieder relevant zijn om gegevens tussen uit te wisselen, in de context van blended care behandelingen. 
+De gegevensuitwisseling vindt plaats tussen applicaties. In Koppeltaal staat het begrip **applicatie** voor alle vormen van eHealth platformen en informatiesystemen \(zoals portalen, interventie- en bronsystemen\) die voor de zorgaanbieder relevant zijn om gegevens tussen uit te wisselen, in de context van blended care behandelingen.
 
 Aan de hand van de gebruikte credentials die een applicatie gebruikt wordt bepaald in welk domein de gegevens worden uitgewisseld.
 
-![Koppeltaal applicaties](.gitbook/assets/2%20%281%29.jpeg)
+![Koppeltaal applicaties](.gitbook/assets/koppeltaalcollaboration.jpg)
 
 De volgende type applicaties onderscheiden we waarmee zorgaanbieders hun informatiesystemen naadloos op elkaar willen aansluiten binnen Koppeltaal.
 
@@ -38,13 +38,13 @@ Dienstverleners zullen onderling nadere afspraken moeten maken over de gebruikte
 
 ### Actoren en rollen
 
-Zoals in paragraaf "[Domein en Applicatie](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/informatiesystemen-architectuur#domein-en-applicatie)" beschreven is, zijn er verschillende type applicaties betrokken ter ondersteuning van een interactief zorgproces. Bij het inrichten van deze zorgprocessen is de verdeling van verantwoordelijkheden van belang. Hierbij maken we onderscheid tussen actoren en rollen. Actoren vertegenwoordigen personen of organisatorische eenheden, rollen vertegenwoordigen verantwoordelijkheden. Verschillende rollen kunnen worden toegekend aan een actor.
+Zoals in paragraaf "[Domein en Applicatie](informatiesystemen-architectuur.md#domein-en-applicatie)" beschreven is, zijn er verschillende type applicaties betrokken ter ondersteuning van een interactief zorgproces. Bij het inrichten van deze zorgprocessen is de verdeling van verantwoordelijkheden van belang. Hierbij maken we onderscheid tussen actoren en rollen. Actoren vertegenwoordigen personen of organisatorische eenheden, rollen vertegenwoordigen verantwoordelijkheden. Verschillende rollen kunnen worden toegekend aan een actor.
 
 Elk type applicatie kan één of meerdere \(applicatie\) functie rollen vervullen in de context van blended care.
 
-![Actoren en rollen binnen Koppeltaal](.gitbook/assets/3%20%281%29.jpeg)
+![Actoren en rollen](.gitbook/assets/applicatie-rollen.jpg)
 
-De actoren die in de verschillende use-cases \(zie paragraaf "[Use-cases](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/bedrijfsarchitectuur#use-cases)"\) ter sprake komen zijn:
+De actoren die in de verschillende use-cases \(zie paragraaf "[Use-cases](bedrijfsarchitectuur.md#use-cases)"\) ter sprake komen zijn:
 
 * **Beheerder** – Een persoon die wijzigingen kan aanbrengen die van invloed zijn op andere gebruikers van een systeem.
 * **Patiënt** – Een persoon aan wie medische hulp wordt verleend.
@@ -75,7 +75,7 @@ Koppeltaal heeft een set berichten gedefinieerd waarmee de Koppeltaal use-cases 
 
 Omdat Koppeltaal gebruik maakt van FHIR DSTU1 zijn er bepaalde \(Koppeltaal\) resource concepten die niet gedefinieerd zijn voor FHIR of die buiten het interessegebied van HL7 liggen. Hiervoor gebruiken we de _Other_ resource, zodat we ook met specifieke Koppeltaal resources kunnen omgaan.
 
-![Gegevensmodel](.gitbook/assets/resources%20%281%29.jpg)
+![Gegevensmodel](https://github.com/Koppeltaal/Koppeltaal-Documentation/raw/master/.gitbook/assets/resources%20%281%29.jpg)
 
 ### MessageHeader
 
@@ -85,7 +85,7 @@ De ontvanger van het bericht verwerkt het verzoek en retourneert eventueel een a
 
 ### CarePlan
 
-Het **CarePlan** is \(nu\) de meest gebruikte resource, binnen Koppeltaal 1.3.x. Het CarePlan wordt als raamwerk gebruikt \(en is een extractie of een vertaling van een behandelplan\) om een blended care behandeling op te starten en te volgen. Hierin worden activiteiten \(of taken\), die in het kader van de zorg, aan één patiënt toegewezen. Een activiteit bevat een cruciale referentie naar de [ActivityDefintion ](informatiesystemen-architectuur.md#activitydefinition)op welke deze is gebaseerd, dit is nodig om te weten welke activiteit door Koppeltaal uitgevoerd moet worden. Verder worden de betrokkenen \([participanten](informatiesystemen-architectuur.md#participant)\) bij de behandeling in het CarePlan vastgelegd.
+Het **CarePlan** is \(nu\) de meest gebruikte resource, binnen Koppeltaal 1.3.x. Het CarePlan wordt als raamwerk gebruikt \(en is een extractie of een vertaling van een behandelplan\) om een blended care behandeling op te starten en te volgen. Hierin worden activiteiten \(of taken\), die in het kader van de zorg, aan één patiënt toegewezen. Een activiteit bevat een cruciale referentie naar de [ActivityDefintion ](https://github.com/Koppeltaal/Koppeltaal-Documentation/blob/master/informatiesystemen-architectuur.md#activitydefinition)op welke deze is gebaseerd, dit is nodig om te weten welke activiteit door Koppeltaal uitgevoerd moet worden. Verder worden de betrokkenen \([participanten](https://github.com/Koppeltaal/Koppeltaal-Documentation/blob/master/informatiesystemen-architectuur.md#participant)\) bij de behandeling in het CarePlan vastgelegd.
 
 ### Participant
 
@@ -122,9 +122,9 @@ Na het registratie proces kan begonnen worden met de uitwisseling van informatie
 
 In de interactie laag wordt er niet meet over een cliënt gesproken maar hanteren we de term patiënt.
 
-![Interacties gegroepeerd](.gitbook/assets/interacties.jpg)
+![Interacties gegroepeerd](https://github.com/Koppeltaal/Koppeltaal-Documentation/raw/master/.gitbook/assets/interacties.jpg)
 
-### Use-case versus interacties <a id="use-case-versus-interacties"></a>
+### Use-case versus interacties
 
 In het volgende overzicht ziet men met welke interacties de verschillende use-cases ondersteund. De verschillende interacties realiseren de huidige functionaliteit van Koppeltaal.
 
@@ -224,9 +224,9 @@ In het volgende overzicht ziet men met welke interacties de verschillende use-ca
 
 Koppeltaal heeft voor elke applicatie een bestemmingsqueue waarin de gegevens \(tijdelijk\) worden opgeslagen, die nog niet door de betreffende applicatie is opgehaald en verwerkt. Hierdoor hoeven applicaties niet continue en direct in verbinding te staan met andere applicaties. Elke geregistreerde applicatie kan op elk moment Koppeltaal bevragen met de specifieke GET \(opvragen\) API aanroep \(HTTP operatie\) of er berichten klaar staan met een bepaalde MessageHeader code, status of patiënt dossier \(de GetMessageHeaders interactie\). Koppeltaal stuurt op deze specifieke aanvraag een bundel met MessageHeaders terug naar de betreffende applicatie die matchen met het verzoek. Vervolgens kan de berichtinhoud aan de hand van de MessageHeader.Id opgehaald worden \(de GetMessage interactie\). Bij deze interactie wordt er geen gebruik gemaakt van een MessageHeader omdat er geen communicatie is tussen applicaties.
 
-![Informatie zoeken en ophalen](.gitbook/assets/7.jpeg)
+![Informatie zoeken en ophalen](https://github.com/Koppeltaal/Koppeltaal-Documentation/raw/master/.gitbook/assets/7.jpeg)
 
-#### Notificeren
+**Notificeren**
 
 Om het bevragen van Koppeltaal te ontlasten, biedt Koppeltaal een functie aan om notificaties \(notification\) te versturen naar applicaties, binnen een domein. Hiermee halen de applicaties pas gegevens op als de gegevens bij Koppeltaal, in de bestemmingsqueue van de te ontvangen applicatie, klaar staan. Het is aan de applicatie leveranciers de keuze of ze hiervan gebruik willen maken. Tijdens het registratie proces van de applicaties, kan dit per applicatie geconfigureerd worden om een notificatie te willen ontvangen van Koppeltaal. Elke applicatie kan via een abonnement aangeven, in welke interacties hij geïnteresseerd is. Voor Koppeltaal 1.3.x wordt dit door de beheerder van Koppeltaal Support ingevoerd.
 
@@ -236,7 +236,7 @@ Koppeltaal bevat een applicatie register dat de definities registreert van activ
 
 De activiteiten definities kunnen worden opgevraagd met een specifieke GET \(opvragen\) API aanroep. Deze aanroep biedt de Activity Definities aan die beschikbaar worden gesteld door de interventie. Deze Activity Definities kunnen gebruikt worden door een CarePlan \(via CarePlan.activity\).
 
-![Registratie en lezen van activiteiten](.gitbook/assets/8.jpeg)
+![Registratie en lezen van activiteiten](https://github.com/Koppeltaal/Koppeltaal-Documentation/raw/master/.gitbook/assets/8.jpeg)
 
 ### Aanmaken CarePlan
 
@@ -250,7 +250,7 @@ Binnen Koppeltaal 1.3.5.is het CareTeam geïntroduceerd. Het is de verwachting d
 
 Als een CarePlan aan een patiënt is toegewezen zijn alle geselecteerde activiteiten direct toegankelijk voor de patiënt. De relatie tussen de patiënt en behandelaar is gemaakt via het CarePlan \(en impliciet via de activiteiten daarin\).
 
-![CarePlan aanmaken en toewijzen](.gitbook/assets/9.jpeg)
+![CarePlan aanmaken en toewijzen](https://github.com/Koppeltaal/Koppeltaal-Documentation/raw/master/.gitbook/assets/9.jpeg)
 
 ### Participanten opvoeren en uitwisselen
 
@@ -266,7 +266,7 @@ Als voorbeeld, een nieuwe patiënt wordt ingeschreven in het EPD \(bronsysteem\)
 * het ophalen van de Patient \(resource\) gegevens bij Koppeltaal
 * de verdere \(lokale\) afhandeling binnen de applicaties \(Portaal, Interventie, etc.\) om een account voor deze gebruiker te kunnen regelen en de gebruiker ID te koppelen
 
-![Participanten synchronisatie](.gitbook/assets/10.jpeg)
+![Participanten synchronisatie](https://github.com/Koppeltaal/Koppeltaal-Documentation/raw/master/.gitbook/assets/10.jpeg)
 
 ### Activiteit monitoren en evalueren
 
@@ -274,17 +274,17 @@ Er kan een set van interacties gebruikt worden om de status van een activiteit b
 
 * De CreateOrUpdateCarePlan interactie: Deze interactie bevat de informatie over het behandelplan en initieert de status van het plan. Als een behandelaar \(Practitioner resource\) een of meerdere activiteiten toewijst aan een patiënt \(Patient resource\), wordt een CarePlan resource gemaakt met de aangegeven activiteiten en de status wordt op ‘Available’ \(beschikbaar\) gezet. Er kunnen daarnaast activiteiten toegewezen worden aan derden \(RelatedPerson resource\).
 * De UpdateCarePlanActivityStatus interactie: Deze interactie wordt gebruikt om de status van activiteiten binnen het behandelplan up-to-date te houden met CarePlanActivityStatus als FocalResource. Merk op dat een statuswijziging van één CarePlanActivity een statusverandering in een andere CarePlanActivity kan veroorzaken. Als een CarePlanActivity bijvoorbeeld afhankelijk is van een andere, kan het beëindigen van een CarePlanActivity ertoe leiden dat afhankelijke CarePlanActivities beschikbaar komen. Als er meerdere partijen betrokken zijn bij een behandelplan, zullen er meerdere activiteiten per partij binnen het behandelplan aangemaakt zijn.
-* Zodra een CarePlanActivity beschikbaar is, kunnen er resultaten worden gegenereerd en geëvalueerd. Resultaten worden gecommuniceerd met behulp van de CreateOrUpdateCarePlanActivityResult  interactie, met CarePlanActivityResult als FocalResource. Resultaten kunnen tussentijdse resultaten zijn en als zodanig onderhevig zijn aan veranderingen.
+* Zodra een CarePlanActivity beschikbaar is, kunnen er resultaten worden gegenereerd en geëvalueerd. Resultaten worden gecommuniceerd met behulp van de CreateOrUpdateCarePlanActivityResult interactie, met CarePlanActivityResult als FocalResource. Resultaten kunnen tussentijdse resultaten zijn en als zodanig onderhevig zijn aan veranderingen.
 
 Wanneer de patiënt of gerelateerde persoon bijvoorbeeld begint met het uitvoeren van een activiteit uit een behandeling \(CarePlanActivity\), verandert zijn status van 'beschikbaar' in 'in uitvoering'.
 
 Vervolgens wordt de interactie UpdateCarePlanActivityStatus verzonden met de CarePlanActivity waarvan de status is gewijzigd. Dit is bedoeld om de applicatie die eigenaar is van het CarePlan op de hoogte te stellen van de verandering in status. De verantwoordelijke toepassing kan vervolgens beurtelings een interactie CreateOrUpdateCarePlan verzenden om alle toepassingen die geïnteresseerd zijn in het CarePlan als geheel \(in plaats van specifieke activiteiten in het CarePlan\) op de hoogte te stellen van de wijziging.
 
-![Activiteiten monitoren](.gitbook/assets/11.jpeg)
+![Activiteiten monitoren](https://github.com/Koppeltaal/Koppeltaal-Documentation/raw/master/.gitbook/assets/11.jpeg)
 
 ### Informatie uitwisselen
 
-Informatie berichten tussen participanten wordt gebruikt om eenvoudige ongestructureerde informatie uit te kunnen uitwisselen. Dit gebeurt via de [CreateOrUpdateUserMessage]() met UserMessage als FocalResource. Deze berichten bevatten alleen tekst.
+Informatie berichten tussen participanten wordt gebruikt om eenvoudige ongestructureerde informatie uit te kunnen uitwisselen. Dit gebeurt via de [CreateOrUpdateUserMessage](https://github.com/Koppeltaal/Koppeltaal-Documentation/blob/master) met UserMessage als FocalResource. Deze berichten bevatten alleen tekst.
 
 Merk op dat een user bericht niet als notificatie bericht gebruikt wordt.
 
@@ -295,13 +295,11 @@ Als voorbeeld, een patiënt heeft een specifieke vraag over een behandeling aan 
 * het notificeren van geabonneerde informatie systemen \(Practitioner Portaal\)
 * het ophalen van de UserMessage \(resource\) gegevens bij Koppeltaal door de behandelaar. Het ophalen van de UserMessage gebeurt via 5.1 Informatie zoeken en ophalen.
 
-![Informatie-uitwisseling](.gitbook/assets/12.jpeg)
+![Informatie-uitwisseling](https://github.com/Koppeltaal/Koppeltaal-Documentation/raw/master/.gitbook/assets/12.jpeg)
 
 ### Het lanceren van een interventie
 
 Het lanceren van een interventie gaat volgens de OAuth 2.0 standaard en SMART-on-FHIR voorschriften. Na het aanmaken van een CarePlan met één of meer activiteiten door een behandelaar voor een patiënt, kan de patiënt deze activiteiten in zijn portaal \(eigen omgeving binnen de context van een zorginstelling\) starten door een interventie te lanceren. Hiervoor gebruikt de patiënt een unieke interventie adres \(URL\) die in het portaal wordt klaargezet. Zodra de patiënt deze URL opent wordt de patiënt via Koppeltaal naar de interventie geleidt binnen de context van een behandeling \(zie PostLaunchRequest\). De interventie ontvangt de context van de LaunchRequest en een Autorisatie endpoint waarmee hij om toegang tot de gegevens vraagt bij Koppeltaal. Koppeltaal geeft de interventie vervolgens een access token waarmee de interventie vervolgens Koppeltaal kan updaten over de voortgang van bepaalde activiteiten die door een participant wordt uitgevoerd. Als de acces token verlopen is kan de interventie om een refresh token vragen.
 
-![Interventie lanceren](.gitbook/assets/13.jpeg)
-
-
+![Interventie lanceren](https://github.com/Koppeltaal/Koppeltaal-Documentation/raw/master/.gitbook/assets/13.jpeg)
 

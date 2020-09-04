@@ -469,22 +469,22 @@ Het routeren van binnenkomende berichten gebeurt binnen een domein en de bericht
 Koppeltaal biedt een functie aan om notificaties te versturen als er een nieuw bericht beschikbaar is voor een applicatie. Deze notificatie is geïmplementeerd middels REST WebHooks. Om een notificatie te kunnen ontvangen zijn de volgende configuratie acties nodig:
 
 * Een WebHook URL definiëren, tijdens de registratie en configuratie van een applicatie in het domein, die Koppeltaal kan aanroepen.
-* De lokale implementatie achter de WebHook URL is nodig om notificaties te kunnen interpreteren. Koppeltaal zal een event genereren, ter informatie dat er ‘nieuwe’ berichten beschikbaar zijn. De betreffende applicatie wordt maximaal 5 keer gesignaleerd. De applicatie kan daarna het bericht lezen zoals al beschreven in paragraaf [Bericht ophalen](informatiesystemen-architectuur.md). 
+* De lokale implementatie achter de WebHook URL is nodig om notificaties te kunnen interpreteren. Koppeltaal zal een event genereren, ter informatie dat er ‘nieuwe’ berichten beschikbaar zijn. De betreffende applicatie wordt maximaal 5 keer gesignaleerd. De applicatie kan daarna het bericht lezen zoals al beschreven in paragraaf [Bericht ophalen](informatiesystemen-architectuur.md#bericht-ophalen). 
 * In de notificatie wordt een correlatie id \(MessageHeader.identifier\) meegestuurd van het bericht dat beschikbaar is voor de applicatie. 
 
 ### Bericht ophalen
 
-Alle applicaties maken gebruik van de standaard HTTP operatie GET om berichten \(FHIR Message DSTU1\) op te halen. De berichten kunnen van een vaste endpoint \(URL\) bij Koppeltaal opgehaald worden, zie 'interactie ophalen' \(technische service\) waarvan de basis URL bijvoorbeeld [https://koppeltaal.nl/FHIR/Koppeltaal/MessageHeader](https://koppeltaal.nl/FHIR/Koppeltaal/MessageHeader) is.
+Alle applicaties maken gebruik van de standaard HTTP operatie GET om berichten \(FHIR Message DSTU1\) op te halen. De berichten kunnen van een vaste endpoint \(URL\) bij Koppeltaal opgehaald worden, zie 'interactie ophalen' \(technische service\) waarvan de basis URL bijvoorbeeld https://koppeltaal.nl/FHIR/Koppeltaal/MessageHeader is.
 
 Aan de hand van de basis URL en MessgageHeader.id kan men één geïdentificeerd bericht ophalen. Met behulp van de basis URL, \_search operatie en query parameters kan men een bundel MessageHeaders opvragen en hiermee vervolgens de bundel doorzoeken naar de juiste MessageHeader.id met onderliggende content.
 
 De volgende \_search operatie query parameters worden door Koppeltaal 1.3 ondersteund.
 
-1. [https://koppeltaal.nl/FHIR/Koppeltaal/MessageHeader/\_search?\_query=MessageHeader.GetNextNewAndClaim](https://koppeltaal.nl/FHIR/Koppeltaal/MessageHeader/_search?_query=MessageHeader.GetNextNewAndClaim) - zoeken naar berichten met ProcessingStatus= "New", maak ProcessingStatus "Claimed", en stuur een Bundle voor dat specifieke bericht terug. Deze call zal altijd het gevolg moeten zijn van een update van de Message status. Deze interactie heeft tot gevolg dat de berichtstatus wordt aangepast.
-2. [https://koppeltaal.nl/FHIR/Koppeltaal/MessageHeader/\_search?\_count=\[X\](https://koppeltaal.nl/FHIR/Koppeltaal/MessageHeader/_search?_count=[X\)\] - deze stuurt een Bundle van MessageHeaders terug om de applicaties te laten zoeken naar een of meerdere specifieke berichten. Een pagesize kan doorgegeven worden met de \_count parameter, met een max van 1000.
-3. [https://koppeltaal.nl/FHIR/Koppeltaal/MessageHeader/\_search?\_id=\[id\](https://koppeltaal.nl/FHIR/Koppeltaal/MessageHeader/_search?_id=[id\)\] - deze kan gebruikt worden om een complete Bundle voor een specifiek bericht te krijgen \(bijv. Als de MessageHeader bekend was door de voorgaande zoekactie\)
+1. https://koppeltaal.nl/FHIR/Koppeltaal/MessageHeader/\_search?\_query=MessageHeader.GetNextNewAndClaim - zoeken naar berichten met ProcessingStatus= "New", maak ProcessingStatus "Claimed", en stuur een Bundle voor dat specifieke bericht terug. Deze call zal altijd het gevolg moeten zijn van een update van de Message status. Deze interactie heeft tot gevolg dat de berichtstatus wordt aangepast.
+2. https://koppeltaal.nl/FHIR/Koppeltaal/MessageHeader/\_search?\_count=\[X\\] - deze stuurt een Bundle van MessageHeaders terug om de applicaties te laten zoeken naar een of meerdere specifieke berichten. Een pagesize kan doorgegeven worden met de \_count parameter, met een max van 1000.
+3. https://koppeltaal.nl/FHIR/Koppeltaal/MessageHeader/\_search?\_id=\[id\\] - deze kan gebruikt worden om een complete Bundle voor een specifiek bericht te krijgen \(bijv. Als de MessageHeader bekend was door de voorgaande zoekactie\)
 
-De volgende additionele query parameters kunnen gespecifieerd worden:
+De volgende additionele query parameters kunnen gespecificeerd worden:
 
 * Patient: Filtert op de patiënt dossier waar het bericht aan gerelateerd is.
 * Event: Filtert op het bericht type
@@ -514,7 +514,7 @@ Volgens de OAuth2 specificaties kunnen er twee typen Clients worden onderscheide
 * "Public Client" Een Public Client draait volledig op een eindgebruiker apparaat. Gevolg is dat de applicatie geen "cliënt secret" kan beschermen in het geval dat er ook geen applicatie logica op een server zou draaien. Voorbeelden JavaScript app in een browser. The Ranj Kick-ASS game is een voorbeeld van een Public Client applicatie.
 * "Confidential Client" Is een applicatie die een "cliënt secret" kan beschermen door gebruik te maken van “server-side business logic”. Het grote verschil tussen Publieke en Confidentiële Clients is als de Client de toegang tot het Token endpoint gebruikt, de confidentiële Client de client\_id en client\_secret als basis authenticatie header kan aanleveren.
 
-Toegangstokens worden aangevraagd bij een OAuth2-compatibele autorisatieserver \(Koppeltaal server\) via een TLS beveiligde kanaal \(zie hoofdstuk "[Beveiliging](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/technologie-architectuur#beveiliging)"\).
+Toegangstokens worden aangevraagd bij een OAuth2-compatibele autorisatieserver \(Koppeltaal server\) via een TLS beveiligde kanaal \(zie hoofdstuk "[Beveiliging](technologie-architectuur.md#beveiliging)"\).
 
 Configuratie gegevens, zoals codes en toegangstokens, kan men via de Conformance Statement \(zie paragraaf De '[Conformance Statement](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/technologie-architectuur#de-conformance-statement)' \) opvragen.
 

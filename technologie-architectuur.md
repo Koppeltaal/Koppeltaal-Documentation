@@ -250,8 +250,7 @@ De volgende tabel toont welke type "identifiers" er gebruikt worden in de versch
     <tr>
       <td style="text-align:left">ActivityDefinition</td>
       <td style="text-align:left">
-        <p><a href="http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/ActivityDefinition">http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/ActivityDefinition#</a>
-        </p>
+        <p>http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/ActivityDefinition#</p>
         <p>ActivityDefinitionIdentifier</p>
       </td>
     </tr>

@@ -21,7 +21,7 @@ Bij een blended care behandeling zijn tenminste een **cliënt** en een **behande
 
 ### Positie van Koppeltaal in het GGZ-referentiedomeinen model
 
-![Koppeltaal positionering in GGZ Domein referentiemodel](.gitbook/assets/informatiedomeinen2.jpg)
+![Koppeltaal positionering in GGZ Domein referentiemodel.](.gitbook/assets/informatiedomeinen2.jpg)
 
 In het door GGZ Nederland en Nictiz opgestelde GGZ Domein referentiemodel speelt Koppeltaal een mogelijke rol in de met blauwe aangeduide sub domeinen.
 
@@ -151,7 +151,7 @@ Koppeltaal biedt de volgende **rollen** en **use-cases** aan om de scenario’s,
       <td style="text-align:left">
         <ol>
           <li>Elke applicatie krijgt een Applicatie Identifier en naam.</li>
-          <li>Een applicatie van het type &#x201C;<a href="https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/woordenlijst#interventie">interventie</a>&#x201D;
+          <li>Een applicatie van het type &quot;<a href="woordenlijst.md#interventie">interventie</a>&quot;
             heeft:
             <ol>
               <li>een (unieke) locatie waar de interventie te vinden is (URL)</li>
@@ -161,7 +161,7 @@ Koppeltaal biedt de volgende **rollen** en **use-cases** aan om de scenario’s,
             </ol>
           </li>
           <li>Elk geregistreerde applicatie krijgt &#xE9;&#xE9;n of meerdere functionele
-            (applicatie) rollen in de context van blended care (zie &quot;<a href="https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/informatiesystemen-architectuur#actoren-en-rollen">Actoren en rollen</a>&quot;).</li>
+            (applicatie) rollen in de context van blended care (zie &quot;<a href="informatiesystemen-architectuur.md#actoren-en-rollen">Actoren en rollen</a>&quot;).</li>
         </ol>
       </td>
     </tr>
@@ -227,7 +227,7 @@ Koppeltaal biedt de volgende **rollen** en **use-cases** aan om de scenario’s,
           <li>Een applicatie van het type &quot;interventie&quot; bevat een (sub)activiteiten
             definitie lijst met minimaal 1 activiteitsdefinitie, wat de interventie
             voor de pati&#xEB;nt te bieden heeft.</li>
-          <li>Elk (sub)activiteit is uniek identificeerbaar en heeft een beschrijving</li>
+          <li>Elk (sub)activiteit is uniek identificeerbaar en heeft een beschrijving.</li>
           <li>De definities en omschrijvingen van (sub)activiteiten kunnen dynamisch
             gewijzigd worden. Dit resulteert niet in nieuwe activiteiten.</li>
         </ol>
@@ -888,7 +888,7 @@ De mate waarin informatie en gegevens \(resources\) beschermt moet worden zodat 
 
 ### Onderhoudbaarheid \(maintainability\)
 
-De mate waarin Koppeltaal effectief en efficiënt gewijzigd kan worden door aangewezen beheerders \(zie ook paragraaf "[Beheerprocessen](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/bedrijfsarchitectuur#beheerprocessen)"\). Dit gaat over de configuratie en beheer van:
+De mate waarin Koppeltaal effectief en efficiënt gewijzigd kan worden door aangewezen beheerders \(zie ook paragraaf "[Beheerprocessen](bedrijfsarchitectuur.md#beheerprocessen)"\). Dit gaat over de configuratie en beheer van:
 
 * domeinen
 * applicaties \(modularity\)

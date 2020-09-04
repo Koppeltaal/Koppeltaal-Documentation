@@ -3385,7 +3385,7 @@ XML voorbeeld van CreateOrUpdateCarePlan.
 </feed>
 ```
 
-JSON voorbeeld van CreateOrUpdateCarePlan.
+JSON voorbeeld van CreateOrUpdateCarePlan
 
 ```javascript
 {
@@ -3599,4 +3599,6 @@ JSON voorbeeld van CreateOrUpdateCarePlan.
   ]
 }
 ```
+
+
 

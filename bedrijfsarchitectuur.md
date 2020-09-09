@@ -822,32 +822,13 @@ De use-cases benoemen niet alleen de actoren, maar noemen ook “bedrijfsobjecte
 
 ![Bedrijfsobjecten](.gitbook/assets/4%20%282%29.jpeg)
 
-## Beheerprocessen
+## Koppeltaal Dossier Afspraken en Procedures
 
-Om Koppeltaal als integratie standaard van informatiesystemen ter beschikking te stellen voor instellingen voor Geestelijke Gezondheidszorg, zijn er beheerprocessen nodig tussen zorgaanbieders, leveranciers en stichting Koppeltaal.
+Om Koppeltaal als integratie standaard van informatiesystemen ter beschikking te stellen voor instellingen voor Geestelijke Gezondheidszorg, zijn er afspraken en procedures nodig tussen GGZ-instelling, haar applicatie-leveranciers, Koppeltaal Support en de regie-organisatie Koppeltaal. Deze werkafspraken zijn aanvullend op de bestaande contractuele relatie tussen GGZ-instelling en haar applicatie-leveranciers die via Koppeltaal met elkaar zijn verbonden.Hiervoor is het [Koppeltaal Dossier Afspraken en Procedures \(DAP\)](https://www.koppeltaal.nl/sites/default/files/content-files/Koppeltaal%20DAP%20versie%201.1.pdf) geschreven om technische uitwisseling van patiëntgegevens in de Koppeltaal keten zo goed mogelijk te ondersteunen door heldere afspraken tussen alle sleutelspelers in de keten vast te leggen.
 
-We onderscheiden de volgende functionele beheer lagen \(zie Beheerprocessen\).
 
-We hebben **Koppeltaalregie** die de kwaliteit en levering van uitbestede diensten door aanbieders coördineert.
 
-We hebben **Koppeltaalketen** die ervoor zorgt dat de juiste gegevens en informatie beschikbaar komt voor de ketenpartners van Koppeltaal en het aanmeldpunt is van meldingen, verzoeken en gegevens.
-
-We hebben **Koppeltaalcomponenten** die ervoor zorgt dat de verschillende Koppeltaal componenten \(systemen\) beschikbaar zijn voor de ondersteuning en gebruikersbeheer van informatievoorziening. Daarnaast wordt gekeken of de Koppeltaal componenten in lijn zijn met de gestelde bedrijfsdoelen. Deze worden vastgelegd in architectuurproducten en bewaakt door de architectuur.
-
-We hebben **Koppeltaaldiensten** die onderverdeeld zijn in de volgende ondersteunende beheerprocessen:
-
-* Functioneel beheer. Het in stand houden en aansturen van de informatievoorziening.
-* Domeinbeheer. Het ervoor zorgen dat de domeinen beschikbaar zijn
-* Identiteitenbeheer. Het beheren en beschikbaar stellen van gegevens van gebruikers en hun autorisaties.
-* Applicatiebeheer. Het aanpassen van toepassingsprogrammatuur en gegevensverzamelingen.
-* Infrastructuurbeheer Het in stand houden en beheren van de-infrastructuur en ontwikkelingen daarvan.
-* Applicatieontwikkeling Het ontwikkelen toepassingsprogrammatuur en gegevensverzamelingen.
-
-De rollen Regie- en Keten Support worden door VZVZ-servicecentrum uitgevoerd
-
-De Leverancier Support rol worden door de verschillende ICT- en adapter leveranciers ingevuld. De Koppeltaal Support wordt in eerste instantie door VZVZ uitgevoerd.
-
-![Beheerprocessen](.gitbook/assets/5%20%281%29.jpeg)
+De afspraken in deze Koppeltaal-DAP zijn gebaseerd op de architectuur van Koppeltaal en bekrachtigd bij besluit van de IT-Deelnemerraad van Koppeltaal.
 
 ## Koppeltaal kwaliteitseisen \(ISO-norm 25010\)
 

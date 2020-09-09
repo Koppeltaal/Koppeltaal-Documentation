@@ -542,19 +542,24 @@ Bij Koppeltaal maken we gebruik van Single-Sign-On \(SSO\). Hiermee kunnen eindg
 
 Koppeltaal ondersteunt twee typen van Single-Sign-On flows, met Koppeltaal Server als OAuth2-compatibele autorisatieserver en de Applicatie als OAuth2 Client:
 
-* SMART Autorisatie voor webapplicaties \(zie 5.3\), voor het autoriseren en starten van webapplicaties \(zoals een eHealth-module, of een ROM lijst\).
-* SMART Autorisatie voor mobiele apps \(zie 5.4\), voor het starten van een app op een smartphone van een eindgebruiker.
+* [SMART Autorisatie voor webapplicaties](technologie-architectuur.md#smart-autorisatie-voor-webapplicaties), voor het autoriseren en starten van webapplicaties \(zoals een eHealth-module, of een ROM lijst\).
+* [SMART Autorisatie voor mobiele apps](technologie-architectuur.md#smart-autorisatie-voor-mobiele-apps), voor het starten van een app op een smartphone van een eindgebruiker.
 
 Koppeltaal biedt na het authenticatie proces en na selectie van activiteiten via het Portal de gebruiker een URL link aan naar een applicatie \(interventie\), waarmee de gebruiker de applicatie kan starten. De gebruiker heeft hiermee zowel het Portal als een \(web of mobiele\) applicatie tot zijn beschikking.
 
 Wanneer de gebruiker de applicatie URL opent, moeten de volgende gegevens aan Koppeltaal doorgegeven worden:
 
 1. Application Identifier \(gekoppeld aan een specifieke applicatie\) – noodzakelijk om de Koppeltaalserver de publicerende applicatie en zijn URL op te kunnen zoeken.
-2. CarePlanActivity identifier – gebruikt om te achterhalen welke activiteiten een bepaalde applicatie \(Game\) herkent.
-3. Patient identifier – wordt gebruikt om de patiënt te identificeren door de applicatie \(Game\).
-4. User identifier – wordt gebruikt door de applicatie om correcte views te laten zien voor die gebruiker
-5. Optioneel aanvullende applicatie informatie – bijv. dat er een specifieke pagina door de applicatie moet worden geopend.
-6. Een overeengekomen security token van de applicatie naar de Koppeltaal Server wordt verstuurd, zodat de Koppeltaal server kan verifiëren dat de aanroepende applicatie een bekende \(en geregistreerde\) applicatie is die kan worden vertrouwd in de context van domein en applicatie-instantie. Dit token bevat tenminste een Hash van de URL van de applicatie en voorkomt dat iemand de URL van de applicatie \(het adres\) aanpast en opnieuw indient bij de Koppeltaal Server. Tevens bevat het token een \(geheime\) code die zowel bij de applicatie als de Koppeltaal server bekend is en, mogelijk, een Nonce die voorkomt dat de URL meerder malen \(sessies, resource\) misbruikt kan worden.
+2. Patient identifier – wordt gebruikt om de patiënt te identificeren door de applicatie \(Game\).
+3. User identifier – wordt gebruikt door de applicatie om correcte views te laten zien voor die gebruiker
+4. Optioneel aanvullende applicatie informatie – bijv. dat er een specifieke pagina door de applicatie moet worden geopend.
+5. Een overeengekomen security token van de applicatie naar de Koppeltaal Server wordt verstuurd, zodat de Koppeltaal server kan verifiëren dat de aanroepende applicatie een bekende \(en geregistreerde\) applicatie is die kan worden vertrouwd in de context van domein en applicatie-instantie. Dit token bevat tenminste een Hash van de URL van de applicatie en voorkomt dat iemand de URL van de applicatie \(het adres\) aanpast en opnieuw indient bij de Koppeltaal Server. Tevens bevat het token een \(geheime\) code die zowel bij de applicatie als de Koppeltaal server bekend is en, mogelijk, een Nonce die voorkomt dat de URL meerder malen \(sessies, resource\) misbruikt kan worden.
+
+Naast de bovengenoemde velden, kunnen er ook _optionele velden_ gebruikt worden die doorgegeven worden:
+
+1. CarePlanActivity identifier – gebruikt om te achterhalen welke activiteiten een bepaalde applicatie \(Game\) herkent.
+
+
 
 ### SMART Autorisatie voor webapplicaties
 
@@ -3040,53 +3045,7 @@ Koppeltaal Support beheert verschillende diensten, zoals het beheer van de domei
   </tbody>
 </table>
 
-Tabel 16 Autorisatie beheer matrix
-
-## Implementatiegraad
-
-Koppeltaal heeft als doel een integratie standaard te implementeren, waarmee interne gegevensuitwisseling een applicatie-integratie wordt geregeld bij zorginstellingen die diensten voor gedragsverandering en daarmee direct samenhangende diensten verlenen.
-
-Elke zorginstelling is anders. De mate van wat er geïmplementeerd moet worden en hoe dat het beste gedaan kan worden, verschilt per situatie. Om specifieke eigenschappen van Koppeltaal te verduidelijken en te verklaren naar de verschillende IT leveranciers, willen we voor Koppeltaal verschillen **implementatie gradaties** definiëren, waaraan een \(GGZ\) zorginstelling minimaal aan moet voldoen en daarnaast de optionele opbouwende diensten waaraan een zorginstelling aan kan voldoen.
-
-Gegevensuitwisseling vindt plaats tussen applicaties. In Koppeltaal staat het begrip **applicatie** voor alle vormen van eHealth platformen en informatiesystemen \(zoals portalen, interventie- en bronsystemen\) die voor de zorgaanbieder relevant zijn om gegevens tussen uit te wisselen, in de context van blended care behandelingen \(zie ook [Domein en Applicatie](informatiesystemen-architectuur.md#domein-en-applicatie)\). Echter de informatie uitwisseling tussen applicaties gebeurt asynchroon omdat de applicaties 'loosely coupled' zijn, om zo de afhankelijkheid tussen applicaties zo klein mogelijk te houden. Er moet wel een balans zijn tussen de applicaties die de berichten aanmaken en versturen, en die de berichten ontvangen en vervolgens verwerken en visa versa.
-
-We willen de implementatiegraad bepalen aan de hand van een matrix waarin een overzicht is van [applicatie rollen](informatiesystemen-architectuur.md#actoren-en-rollen) versus \(verplichte of optionele\) [interacties](informatiesystemen-architectuur.md#use-case-versus-interacties). Interacties kunnen worden geïnitieerd en kunnen worden uitgevoerd. De initiator van een interactie verstuurd informatie, en de uitvoerende ontvangt informatie. We hebben per applicatie rol 4 mogelijkheden, namelijk: Zenden Verplicht \(**ZV**\) en Ontvangen Verplicht \(**OV**\) geven een verplichte implementatie weer van een interactie voor elke zorginstelling. Zenden Optioneel \(**ZO**\) en Ontvangen Optioneel \(**OO**\) geven optionele interacties weer, deze kunnen per zorginstelling \(optioneel\) geïmplementeerd worden.
-
-|  | Bron systeem | Portaal |  |  | Interventie |  |  |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-|  | **EPD** | **Behandelaar** | **Patient** | **Derde** | **Game** | **E-** **Leanrning** | **ROM** |
-| WebLaunch \(SSO\) |  | ZV\[1\] | ZV\[1\] | ZV\[1\] | OV\[1\] | OV\[1\] | OV\[1\] |
-| CreateOrUpdateCarePlan |  | ZV/OV\[1\] | ZV/OV\[1\] | ZV/OV\[1\] | OV\[1\] | OV\[1\] | OV\[1\] |
-| CreateOrUpdatePatient | ZV\[2\] | ZO/OV\[2\] | ZO/OV\[2\] |  | OV\[2\] | OV\[2\] | OV\[2\] |
-| CreateOrUpdatePractitioner | ZV\[2\] | ZO/OV\[2\] |  |  | OV\[2\] | OV\[2\] | OV\[2\] |
-| CreateOrUpdateRelatedPerson | ZV\[3\] | OV\[3\] | ZO/OV\[3\] | ZO/OV\[3\] | OV\[3\] | OV\[3\] | OV\[3\] |
-| CreateOrUpdateActivityDefinition |  |  |  |  | ZO\[3\] | ZO\[3\] | ZO\[3\] |
-| GetActivityDefinitions |  | OV\[2\] | OV\[2\] | OV\[2\] |  |  |  |
-| UpdateCarePlanActivityStatus   \(Available, InProgress, Completed, Canceled\) |  | OV\[2\] | OV\[2\] | OV\[2\] | ZO\[3\] | ZO\[3\] | ZO\[3\] |
-| CreateOrUpdateCarePlanActivityResult |  | OO\[3\] | OO\[3\] | OO\[3\] | ZO\[3\] | ZO\[3\] | ZO\[3\] |
-| CreateOrUpdateUserMessage | ZO\[3\] | ZO/OO\[3\] | ZO/OO\[3\] | ZO/OO\[3\] | ZO\[3\] | ZO\[3\] | ZO\[3\] |
-
-\[1\]: **Implementatie graad 1**
-
-* Portalen kunnen interventies \(zoals ROM\) lanceren 
-* Interventies kunnen gelanceerd worden
-* Behandelaar initieert een behandelplan \(CarePlan\) voor de patiënt
-
-\[2\]: **Implementatie graad 2** 
-
-* Portalen en interventies verplichte \(ZV en OV\) interacties geïmplementeerd
-
-\[3\]: **Implementatie graad 3**
-
-* Portalen en interventies optionele \(ZO en OO\) interacties geïmplementeerd
-
-Kanttekeningen:
-
-* Zendende en ontvangende partij moeten dezelfde interacties ondersteunen en aangeven op welk implementatiegraad ze zitten van hun aan te bieden product 
-* Het EPD bronsysteem wordt gebruikt om patiënten te kunnen identificeren en kan aangevuld worden met andere gegevens. Deze aanvullende gegevens worden \(nu\) niet overgenomen door het EPD bronsysteem \(zie ook Matrix\). De initiërende behandelaar \(portaal\) is verantwoordelijk voor het CarePlan. 
-* Patiënten \(portaal\) kunnen aanpassingen doen op \(delen van\) een CarePlan \(functioneel proces\).
-* Activity Definitions van interventies kunnen ook met de hand \(door een beheerder\) toegevoegd worden. Dit is de reden waarom de interactie CreateOrUpdateActivityDefinition niet een hoge prio heeft, qua implementatiegraad.
-* CreateOrUpdateRelatedPerson heeft een lagere prioriteit qua implementatie dan CreateOrUpdatePatient.
+Tabel 16 Autorisatie beheer matrix.
 
 ## Bijlage: Voorbeeld resource versioning
 

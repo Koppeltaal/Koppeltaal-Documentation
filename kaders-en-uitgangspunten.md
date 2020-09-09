@@ -153,7 +153,7 @@ De onderstaande documenten zijn normatief en leidend voor dit document.
   </tbody>
 </table>
 
-### Informatief.
+### Informatief
 
 De onderstaande documenten hebben gediend als bron voor dit document:
 

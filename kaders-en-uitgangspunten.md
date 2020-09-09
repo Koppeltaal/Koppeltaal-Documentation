@@ -153,7 +153,7 @@ De onderstaande documenten zijn normatief en leidend voor dit document.
   </tbody>
 </table>
 
-### Informatief
+### Informatief.
 
 De onderstaande documenten hebben gediend als bron voor dit document:
 
@@ -161,9 +161,10 @@ De onderstaande documenten hebben gediend als bron voor dit document:
 | :--- | :--- | :--- |
 | \[NEN7510\] | [NEN 7510 ](https://www.nen.nl/NEN-Shop/Norm/NEN-751012017A12020-nl.htm)‘Medische informatica - Informatiebeveiliging in de zorg’ is een Nederlandse norm die maatregelen beschrijft die zorginstellingen moeten nemen om op adequate wijze met patiëntgegevens om te gaan. | 2011 |
 | \[NEN7512\] | NEN 7512 gaat over de maatregelen die partijen moeten nemen bij uitwisseling van patiëntgegevens. | 2015 |
-| \[NEN7513\] | NEN 7513 heeft betrekking op logging - het vastleggen van acties - op elektronische patiëntendossiers. | 2010 |
+| \[NEN7513\] | NEN 7513 heeft betrekking op logging - het vastleggen van acties - op elektronische patiëntendossiers. | 2018 |
 | \[[Technisch ontwerp Koppeltaal 1.3.5](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/kaders-en-uitgangspunten#technisch-ontwerp-koppeltaal)\] | Technische design van het Koppeltaal Server versie 1.3.5 van Stichting Koppeltaal | 2.1 |
 | \[[Conceptual Design Koppeltaal 1.3.x naar 2.0](https://stibbe.gitbook.io/koppeltaal-1-3-x-architectuur/kaders-en-uitgangspunten#conceptual-design-koppeltaal)\] | Beschrijft welke richting gekozen wordt om van Koppeltaal 1.3.x naar 2.0 te komen. | 0.2 19-02-2018 |
+| \[[Koppeltaal DAP](https://www.koppeltaal.nl/sites/default/files/content-files/Koppeltaal%20DAP%20versie%201.1.pdf)\] | Het Dossier Afspraken en Procedures \(DAP\) is om technische uitwisseling van patiëntgegevens in de Koppeltaalketen te ondersteunen door afspraken tussen sleutelspelers in de keten vast te leggen. | 1.1 10-4-2020 |
 | \[RFC6819\] | [Threat Model and Security Considerations](https://tools.ietf.org/html/rfc6819) | Jan 2013 |
 | \[RFC7515\] | [JSON Web Signature](https://tools.ietf.org/html/rfc7515) | May 2015 |
 | \[RFC7517\] | [JSON Web Key \(JWK\)](https://tools.ietf.org/html/rfc7517). M. Jones. IETF. May 2015 |  |

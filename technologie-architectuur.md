@@ -552,14 +552,12 @@ Wanneer de gebruiker de applicatie URL opent, moeten de volgende gegevens aan Ko
 1. Application Identifier \(gekoppeld aan een specifieke applicatie\) – noodzakelijk om de Koppeltaalserver de publicerende applicatie en zijn URL op te kunnen zoeken.
 2. Patient identifier – wordt gebruikt om de patiënt te identificeren door de applicatie \(Game\).
 3. User identifier – wordt gebruikt door de applicatie om correcte views te laten zien voor die gebruiker
-4. Optioneel aanvullende applicatie informatie – bijv. dat er een specifieke pagina door de applicatie moet worden geopend.
-5. Een overeengekomen security token van de applicatie naar de Koppeltaal Server wordt verstuurd, zodat de Koppeltaal server kan verifiëren dat de aanroepende applicatie een bekende \(en geregistreerde\) applicatie is die kan worden vertrouwd in de context van domein en applicatie-instantie. Dit token bevat tenminste een Hash van de URL van de applicatie en voorkomt dat iemand de URL van de applicatie \(het adres\) aanpast en opnieuw indient bij de Koppeltaal Server. Tevens bevat het token een \(geheime\) code die zowel bij de applicatie als de Koppeltaal server bekend is en, mogelijk, een Nonce die voorkomt dat de URL meerder malen \(sessies, resource\) misbruikt kan worden.
+4. Een overeengekomen security token van de applicatie naar de Koppeltaal Server wordt verstuurd, zodat de Koppeltaal server kan verifiëren dat de aanroepende applicatie een bekende \(en geregistreerde\) applicatie is die kan worden vertrouwd in de context van domein en applicatie-instantie. Dit token bevat tenminste een Hash van de URL van de applicatie en voorkomt dat iemand de URL van de applicatie \(het adres\) aanpast en opnieuw indient bij de Koppeltaal Server. Tevens bevat het token een \(geheime\) code die zowel bij de applicatie als de Koppeltaal server bekend is en, mogelijk, een Nonce die voorkomt dat de URL meerder malen \(sessies, resource\) misbruikt kan worden.
 
 Naast de bovengenoemde velden, kunnen er ook _optionele velden_ gebruikt worden die doorgegeven worden:
 
 1. CarePlanActivity identifier – gebruikt om te achterhalen welke activiteiten een bepaalde applicatie \(Game\) herkent.
-
-
+2. Aanvullende applicatie informatie - bijvoorbeeld dat er een specifieke pagina door de applicatie moet worden geopend.
 
 ### SMART Autorisatie voor webapplicaties
 

@@ -559,6 +559,8 @@ Naast de bovengenoemde velden, kunnen er ook _optionele velden_ gebruikt worden 
 
 1. CarePlanActivity identifier – gebruikt om te achterhalen welke activiteiten een bepaalde applicatie \(Game\) herkent.
 
+
+
 ### SMART Autorisatie voor webapplicaties
 
 ![SMART Autorisatie sequence](.gitbook/assets/smart-autorisatie2.jpg)

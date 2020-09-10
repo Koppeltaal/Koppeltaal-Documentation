@@ -64,7 +64,7 @@ Synoniemen: ZorgPlan, Behandelsplan
 
 ### DAP
 
-Dossier Afspraken en Procedures waarin operationele werkafspraken tussen aanbieder \(ICT-dienstverleners\) en gebruikers \(zorgaanbieder\) staan omschreven. 
+Dossier Afspraken en Procedures waarin operationele werkafspraken tussen aanbieder \(ICT-dienstverleners\) en gebruikers \(zorgaanbieder\) staan omschreven.
 
 ### Derden
 

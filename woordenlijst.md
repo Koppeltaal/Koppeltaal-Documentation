@@ -62,6 +62,10 @@ Is een plan waarin de wensen, mogelijkheden, behoeftes en beperkingen van **een*
 
 Synoniemen: ZorgPlan, Behandelsplan
 
+### DAP
+
+Dossier Afspraken en Procedures waarin operationele werkafspraken tussen aanbieder \(ICT-dienstverleners\) en gebruikers \(zorgaanbieder\) staan omschreven. 
+
 ### Derden
 
 Anderen dan behandelaar of patiënt die bij de behandeling worden betrokken, zoals naaste familie.

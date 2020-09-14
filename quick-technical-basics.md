@@ -4,37 +4,33 @@ Versie: 1
 Datum: 18 februari 2020  
 Auteurs: Joos Brokamp & Joris Scharp, [Headease b.v.](https://headease.nl)
 
-{% hint style="info" %}
+{% hint style="warning" %}
 De informatie in dit document is gebaseerd op [Koppeltaal 1.3.x architectuur](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/)
 {% endhint %}
 
-| :warning: De informatie in dit document is gebaseerd op [Koppeltaal 1.3.x architectuur](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/) |
-| :--- |
-
-
 ## Koppeltaal
 
-Stichting Koppeltaal heeft als doel om interoperabiliteit tussen e-healthsystemen te vergroten door een standaard te ontwikkelen. Hier is de Koppeltaal integratiestandaard uit voortgekomen, die weer gebaseerd is op de HL7 FHIR standaard. Zo worden gegevensuitwisseling en applicatie-integratie vergemakkelijkt. Een van de kernconcepten voor de beveiliging van de gegevens en acties binnen Koppeltaal is het domein. 
+Stichting Koppeltaal heeft als doel om interoperabiliteit tussen e-healthsystemen te vergroten door een standaard te ontwikkelen. Hier is de Koppeltaal integratiestandaard uit voortgekomen, die weer gebaseerd is op de HL7 FHIR standaard. Zo worden gegevensuitwisseling en applicatie-integratie vergemakkelijkt. Een van de kernconcepten voor de beveiliging van de gegevens en acties binnen Koppeltaal is het domein.
 
-| :information\_source: Lees meer over de business architectuur in het [Koppeltaal Architectuur document, Koppeltaal](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/bedrijfsarchitectuur#koppeltaal) |
-| :--- |
-
+{% hint style="info" %}
+Lees meer over de business architectuur in het [Koppeltaal Architectuur document, Koppeltaal](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/bedrijfsarchitectuur#koppeltaal)
+{% endhint %}
 
 ## Koppeltaal Domein
 
 Een Koppeltaal Domein is een functionele encapsulatie van een Koppeltaal server ten behoeve van beveiliging. Het representeert een vertrouwelijk datadomein waarbinnen alle interoperabiliteit plaatsvindt binnen de context van een GGZ-instelling. Gegevens binnen het domein kunnen enkel uitgelezen worden door de applicaties die expliciet zijn toegelaten door de domeinbeheerder en daartoe voorzien zijn van een set credentials.
 
-| :information\_source: Lees meer over Koppeltaaldomeinen in het [Koppeltaal Architectuur document, Domein en Applicatie](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/informatiesystemen-architectuur#domein-en-applicatie) |
-| :--- |
-
+{% hint style="info" %}
+Lees meer over Koppeltaaldomeinen in het [Koppeltaal Architectuur document, Domein en Applicatie](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/informatiesystemen-architectuur#domein-en-applicatie)
+{% endhint %}
 
 ### Domein credentials
 
 Elke actie binnen een domein wordt geautoriseerd aan de hand van credentials. Credentials zijn gekoppeld aan een applicatie en een domein. De Koppeltaalserver weet welke credentials tot welk domein behoren \(figuur 1\). Een applicatie zou theoretisch meerdere credentials kunnen beheren die toegang verschaffen tot verschillende domeinen.
 
-| :information\_source: Lees meer over de credentials in het [Koppeltaal Architectuur document, Authenticatie](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/technologie-architectuur#authenticatie) |
-| :--- |
-
+{% hint style="info" %}
+Lees meer over de credentials in het [Koppeltaal Architectuur document, Authenticatie](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/technologie-architectuur#authenticatie)
+{% endhint %}
 
 ![](.gitbook/assets/koppeltaal-domains.png)
 
@@ -62,9 +58,9 @@ Het behandelplan wordt in Koppeltaal beschreven door de CarePlan resource. Hieri
   
 _Figuur 2: Versimpelde weergave van belangrijke relaties rondom het CarePlan: Het CarePlan is altijd gekoppeld aan een patiënt. Taken \(CarePlanActivity\) verwijzen naar diens ActivityDefinition. Deelnemers \(participants\) verwijzen naar een user in het domein._
 
-| :information\_source: Lees meer over Koppeltaal resources in het [Koppeltaal Architectuur document, FHIR Resources](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/technologie-architectuur#fhir-resources) |
-| :--- |
-
+{% hint style="info" %}
+Lees meer over Koppeltaal resources in het [Koppeltaal Architectuur document, FHIR Resources](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/technologie-architectuur#fhir-resources)
+{% endhint %}
 
 ### Koppeltaalberichten
 
@@ -80,25 +76,25 @@ _Tabel 1: Voorbeelden van berichtsoorten met event naam, doelomschrijving en ger
 
 Berichten dienen naar een centraal endpoint van de Koppeltaal server verstuurd te worden, de KoppeltaalMailbox. De gebruikte credentials waarmee het bericht verstuurd is, bepaalt in welk domein het bericht terecht komt. Enkel de applicaties die luisteren naar gekozen events \(abonnees\) zullen het bericht ontvangen.
 
-| :information\_source: Lees meer over Koppeltaalberichten in het [Koppeltaal Architectuur document, FHIR Messaging](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/technologie-architectuur#fhir-messaging) |
-| :--- |
-
+{% hint style="info" %}
+Lees meer over Koppeltaalberichten in het [Koppeltaal Architectuur document, FHIR Messaging](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/technologie-architectuur#fhir-messaging)
+{% endhint %}
 
 ### KoppeltaalMailbox
 
 Ook wel bekend als de Koppelbox. Ontvangen berichten worden slechts minimaal door de server gevalideerd. Applicaties zijn grotendeels zelf verantwoordelijk voor het correct invullen van de beschikbare resource velden. Na ontvangst worden kopieën van het bericht gedistribueerd naar de inboxen van geabonneerde applicaties. Berichtgegevens worden na maximaal 56 dagen van de Koppeltaal server verwijderd en dienen voor die tijd lokaal opgeslagen te zijn. De Koppeltaal server fungeert dus voornamelijk als message broker.
 
-| :information\_source: Lees meer over de Koppelbox in het [Koppeltaal Architectuur document, Het applicatie model](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/technologie-architectuur#het-applicatie-model) |
-| :--- |
-
+{% hint style="info" %}
+Lees meer over de Koppelbox in het [Koppeltaal Architectuur document, Het applicatie model](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/technologie-architectuur#het-applicatie-model)
+{% endhint %}
 
 ## Hoe doe ik x? \(Voorbeelden\)
 
 Onderstaand een aantal veelvoorkomende gebruiksscenario’s.
 
-| :information\_source: Lees meer over door Koppeltaal ondersteunde scenario’s in het [Koppeltaal Architectuur document, Interacties](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/informatiesystemen-architectuur#interacties) |
-| :--- |
-
+{% hint style="info" %}
+Lees meer over door Koppeltaal ondersteunde scenario’s in het [Koppeltaal Architectuur document, Interacties](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/informatiesystemen-architectuur#interacties)
+{% endhint %}
 
 ### Taken met voortgang tonen
 
@@ -122,7 +118,7 @@ Versimpelde actiesequentie:
 3. Applicatie X ontvangt CarePlan van patiënt met de taak \(CarePlanActivity\).
 4. Applicatie X voert web launch uit van taak \(CarePlanActivity\).
 
-| :information\_source: Lees meer over Koppeltaal launches in het [Koppeltaal Architectuur document, De Single-Sign-On \(SSO\) flow](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/technologie-architectuur#de-single-sign-on-sso-flow) |
-| :--- |
-
+{% hint style="info" %}
+Lees meer over Koppeltaal launches in het [Koppeltaal Architectuur document, De Single-Sign-On \(SSO\) flow](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/technologie-architectuur#de-single-sign-on-sso-flow)
+{% endhint %}
 

@@ -10,7 +10,7 @@ Auteurs: Joos Brokamp & Joris Scharp, [Headease b.v.](https://headease.nl)
 
 ## Koppeltaal
 
-Stichting Koppeltaal heeft als doel om interoperabiliteit tussen e-healthsystemen te vergroten door een standaard te ontwikkelen. Hier is de Koppeltaal integratiestandaard uit voortgekomen, die weer gebaseerd is op de HL7 FHIR standaard. Zo worden gegevensuitwisseling en applicatie-integratie vergemakkelijkt. Een van de kernconcepten voor de beveiliging van de gegevens en acties binnen Koppeltaal is het domein.
+Stichting Koppeltaal heeft als doel om interoperabiliteit tussen e-healthsystemen te vergroten door een standaard te ontwikkelen. Hier is de Koppeltaal integratiestandaard uit voortgekomen, die weer gebaseerd is op de HL7 FHIR standaard. Zo worden gegevensuitwisseling en applicatie-integratie vergemakkelijkt. Een van de kernconcepten voor de beveiliging van de gegevens en acties binnen Koppeltaal is het domein. 
 
 | :information\_source: Lees meer over de business architectuur in het [Koppeltaal Architectuur document, Koppeltaal](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/bedrijfsarchitectuur#koppeltaal) |
 | :--- |

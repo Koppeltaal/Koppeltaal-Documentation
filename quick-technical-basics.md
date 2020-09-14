@@ -49,6 +49,8 @@ Elke actie binnen een domein wordt geautoriseerd aan de hand van credentials. Cr
 | :--- |
 
 
+![](.gitbook/assets/koppeltaal-domains.png)
+
   
 _Figuur 1: Applicaties worden geautoriseerd om handelingen binnen een domein uit te voeren door middel van de gebruikte credentials. Applicatie X en Applicatie Y kunnen elkaars berichten uitlezen omdat ze beiden toegang hebben tot Domein A. Applicatie Z is agnostisch t.o.v Domein A._
 
@@ -67,6 +69,8 @@ Een applicatie kan binnen het domein kenbaar maken dat deze een zekere e-health 
 #### CarePlan
 
 Het behandelplan wordt in Koppeltaal beschreven door de CarePlan resource. Hierin staan onder meer de personen die betrekking hebben op de behandeling en de taken die zijn toegewezen. Een taak maakt onderdeel uit van het CarePlan in de vorm van een CarePlanActivity, welke geen eigen resource is binnen Koppeltaal. Een taak bevat een cruciale referentie naar de ActivityDefinition op welke deze is gebaseerd, dit is nodig voor de Koppeltaal server om te weten waar een taak uitgevoerd moet worden. Ook bevat het CarePlan een lijst met referenties naar gebruikers genaamd participants. Deze referenties verwijzen naar behandelaren \(Practitioner\) en eventuele derden \(RelatedPerson\) die direct of indirect betrekking hebben op de behandeling \(figuur 2\).
+
+![](.gitbook/assets/koppeltaal-careplan-resource-relationships-simplified.png)
 
   
 _Figuur 2: Versimpelde weergave van belangrijke relaties rondom het CarePlan: Het CarePlan is altijd gekoppeld aan een patiënt. Taken \(CarePlanActivity\) verwijzen naar diens ActivityDefinition. Deelnemers \(participants\) verwijzen naar een user in het domein._

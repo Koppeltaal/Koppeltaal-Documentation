@@ -6,4 +6,5 @@
 * [Technologie architectuur](technologie-architectuur.md)
 * [Kaders en uitgangspunten](kaders-en-uitgangspunten.md)
 * [Afkortingen en begrippenlijst](woordenlijst.md)
+* [Quick technical basics](quick-technical-basics.md)
 

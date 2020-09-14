@@ -4,6 +4,10 @@ Versie: 1
 Datum: 18 februari 2020  
 Auteurs: Joos Brokamp & Joris Scharp, [Headease b.v.](https://headease.nl)
 
+{% hint style="info" %}
+De informatie in dit document is gebaseerd op [Koppeltaal 1.3.x architectuur](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/)
+{% endhint %}
+
 | :warning: De informatie in dit document is gebaseerd op [Koppeltaal 1.3.x architectuur](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/) |
 | :--- |
 

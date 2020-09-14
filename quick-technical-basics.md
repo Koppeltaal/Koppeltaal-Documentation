@@ -1,6 +1,6 @@
 # Quick technical basics
 
-Versie: 1  
+Versie: 1.0  
 Datum: 18 februari 2020  
 Auteurs: Joos Brokamp & Joris Scharp, [Headease b.v.](https://headease.nl)
 

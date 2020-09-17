@@ -476,15 +476,15 @@ Koppeltaal biedt een functie aan om notificaties te versturen als er een nieuw b
 
 Alle applicaties maken gebruik van de standaard HTTP operatie GET om berichten \(FHIR Message DSTU1\) op te halen. De berichten kunnen van een vaste endpoint \(URL\) bij Koppeltaal opgehaald worden, zie 'interactie ophalen' \(technische service\) waarvan de basis URL bijvoorbeeld https://koppeltaal.nl/FHIR/Koppeltaal/MessageHeader is.
 
-Aan de hand van de basis URL en MessgageHeader.id kan men één geïdentificeerd bericht ophalen. Met behulp van de basis URL, \_search operatie en query parameters kan men een bundel MessageHeaders opvragen en hiermee vervolgens de bundel doorzoeken naar de juiste MessageHeader.id met onderliggende content.
+Aan de hand van de basis URL en MessgageHeader.id kan men één geïdentificeerd bericht ophalen. Met behulp van de basis URL, `_search` operatie en `_query` parameters kan men een bundel MessageHeaders opvragen en hiermee vervolgens de bundel doorzoeken naar de juiste MessageHeader.id met onderliggende content.
 
-De volgende \_search operatie query parameters worden door Koppeltaal 1.3 ondersteund.
+De volgende `_search` operatie en `_query` parameters worden door Koppeltaal 1.3 ondersteund.
 
-1. https://koppeltaal.nl/FHIR/Koppeltaal/MessageHeader/\_search?\_query=MessageHeader.GetNextNewAndClaim - zoeken naar berichten met ProcessingStatus= "New", maak ProcessingStatus "Claimed", en stuur een Bundle voor dat specifieke bericht terug. Deze call zal altijd het gevolg moeten zijn van een update van de Message status. Deze interactie heeft tot gevolg dat de berichtstatus wordt aangepast.
-2. https://koppeltaal.nl/FHIR/Koppeltaal/MessageHeader/\_search?\_count=\[X\\] - deze stuurt een Bundle van MessageHeaders terug om de applicaties te laten zoeken naar een of meerdere specifieke berichten. Een pagesize kan doorgegeven worden met de \_count parameter, met een max van 1000.
-3. https://koppeltaal.nl/FHIR/Koppeltaal/MessageHeader/\_search?\_id=\[id\\] - deze kan gebruikt worden om een complete Bundle voor een specifiek bericht te krijgen \(bijv. Als de MessageHeader bekend was door de voorgaande zoekactie\)
+1. `GET https://koppeltaal.nl/FHIR/Koppeltaal/MessageHeader/_search?_query=MessageHeader.GetNextNewAndClaim` - zoeken naar een volgend bericht met ProcessingStatus= "New", maak ProcessingStatus "Claimed", en stuur dat specifieke bericht terug. Deze call zal altijd het gevolg moeten zijn van een update van de Message status. Deze interactie heeft tot gevolg dat de berichtstatus wordt aangepast.
+2. `GET https://koppeltaal.nl/FHIR/Koppeltaal/MessageHeader/_search?_count=[X\]` - deze stuurt een Bundle van MessageHeaders terug om de applicaties te laten zoeken naar een of meerdere specifieke berichten. Een pagesize kan doorgegeven worden met de \_count parameter, met een max van 1000.
+3. `GET https://koppeltaal.nl/FHIR/Koppeltaal/MessageHeader/_search?_id=[id\]` - deze kan gebruikt worden om een complete Bundle voor een specifiek bericht te krijgen \(bijv. Als de MessageHeader bekend was door de voorgaande zoekactie\)
 
-De volgende additionele query parameters kunnen gespecificeerd worden:
+De volgende additionele \_query parameters kunnen gespecificeerd worden:
 
 * Patient: Filtert op de patiënt dossier waar het bericht aan gerelateerd is.
 * Event: Filtert op het bericht type

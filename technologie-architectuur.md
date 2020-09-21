@@ -1632,7 +1632,7 @@ ActivityDefinition \(Other\)
 | **CarePlan.status** |  |
 | Definition | Indicates whether the plan is currently being acted upon, represents future intentions or is now just historical record. |
 | Control | 1..1 |
-| Binding | CarePlanStatus: Indicates whether the plan is currently being acted upon, represents future intentions or is now just historical record. \(See http://hl7.org/fhir/care-plan-status for values.\) |
+| Binding | CarePlanStatus: Indicates whether the plan is currently being acted upon, represents future intentions or is now just historical record. \(See http://hl7.org/fhir/DSTU1/care-plan-status.html for values.\) |
 | Type | Code |
 | Is modifier | True |
 | **CarePlan.participant** |  |
@@ -1665,7 +1665,7 @@ ActivityDefinition \(Other\)
 | **CarePlan.goal.status** |  |
 | Definition | Indicates whether the goal has been reached and is still considered relevant. |
 | Control | 0..1 |
-| Binding | CarePlanGoalStatus: Indicates whether the goal has been met and is still being targeted \(see http://hl7.org/fhir/care-plan-goal-status for values\). |
+| Binding | CarePlanGoalStatus: Indicates whether the goal has been met and is still being targeted \(see http://hl7.org/fhir/DSTU1/care-plan-goal-status.html for values\). |
 | Type | Code |
 | **CarePlan.goal.notes** |  |
 | Definition | Any comments related to the goal. |
@@ -2463,7 +2463,7 @@ Organization
 | **Patient.gender** |  |
 | Definition | Administrative Gender - the gender that the Patient is considered to have for administration and record keeping purposes. |
 | Control | 0..1 |
-| Binding | AdministrativeGender: \(see [http://hl7.org/fhir/dSTU1/valueset-administrative-gender](http://hl7.org/fhir/dSTU1/valueset-administrative-gender).html\) |
+| Binding | AdministrativeGender: \(see [http://hl7.org/fhir/DSTU1/valueset-administrative-gender.html](http://hl7.org/fhir/DSTU1/valueset-administrative-gender.html)\) |
 | Type | CodeableConcept |
 | **Patient.birthDate** |  |
 | Definition | The date of birth for the individual. |
@@ -2538,7 +2538,7 @@ Practitioner
 | **RelatedPerson.gender** |  |
 | Definition | Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes. |
 | Control | 0..1 |
-| Binding | AdministrativeGender: \(see [http://hl7.org/fhir/dSTU1/valueset-administrative-gender](http://hl7.org/fhir/dSTU1/valueset-administrative-gender).html\) |
+| Binding | AdministrativeGender: \(see [http://hl7.org/fhir/DSTU1/valueset-administrative-gender.html](http://hl7.org/fhir/DSTU1/valueset-administrative-gender.html)\) |
 | Type | CodeableConcept |
 | **RelatedPerson.address** |  |
 | Definition | Addresses for the individual. |

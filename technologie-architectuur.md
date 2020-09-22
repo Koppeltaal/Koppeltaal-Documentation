@@ -2525,7 +2525,7 @@ Practitioner
 | **RelatedPerson.relationship** |  |
 | Definition | The nature of the relationship between a Patient and the related person. |
 | Control | 0..1 |
-| Binding | PatientRelationshipType: \(see [http://hl7.org/fhir/vs/relatedperson-relationshiptype](http://hl7.org/fhir/vs/relatedperson-relationshiptype)\) |
+| Binding | PatientRelationshipType: \(see [https://www.hl7.org/fhir/DSTU1/valueset-relatedperson-relationshiptype.html](https://www.hl7.org/fhir/DSTU1/valueset-relatedperson-relationshiptype.html)\) |
 | Type | CodeableConcept |
 | **RelatedPerson.name** |  |
 | Definition | A name associated with the person. |

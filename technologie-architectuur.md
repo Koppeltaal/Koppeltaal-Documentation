@@ -21,7 +21,7 @@ De netwerktopologie beschrijft de fysieke verbindingen tussen de netwerkcomponen
 
 ### Het informatiemodel
 
-Het volgende model geeft de verzameling FHIR DSTU1 resources weer die binnen Koppeltaal 1.3 worden gebruikt.
+Het volgende model geeft de verzameling FHIR DSTU1 resources weer die binnen Koppeltaal 1.3 worden gebruikt. Het Koppeltaal 1.3 informatiemodel is gebaseerd FHIR Messaging \(berichten\). Bij FHIR Messaging is men gedwongen om een verzameling van resources \(gegevens\) op te halen, ongeacht of men daarvan maar een deel van gebruikt.  
 
 ![FHIR Resources](.gitbook/assets/fhir-resources%20%281%29.jpg)
 

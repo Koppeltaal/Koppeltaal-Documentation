@@ -1632,7 +1632,7 @@ ActivityDefinition \(Other\)
 | **CarePlan.status** |  |
 | Definition | Indicates whether the plan is currently being acted upon, represents future intentions or is now just historical record. |
 | Control | 1..1 |
-| Binding | CarePlanStatus: Indicates whether the plan is currently being acted upon, represents future intentions or is now just historical record. \(See http://hl7.org/fhir/DSTU1/care-plan-status.html for values.\) |
+| Binding | CarePlanStatus: Indicates whether the plan is currently being acted upon, represents future intentions or is now just historical record. \(See [http://hl7.org/fhir/DSTU1/care-plan-status.html](http://hl7.org/fhir/DSTU1/care-plan-status.html) for values.\) |
 | Type | Code |
 | Is modifier | True |
 | **CarePlan.participant** |  |

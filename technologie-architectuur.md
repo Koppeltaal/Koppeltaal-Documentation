@@ -1665,7 +1665,7 @@ ActivityDefinition \(Other\)
 | **CarePlan.goal.status** |  |
 | Definition | Indicates whether the goal has been reached and is still considered relevant. |
 | Control | 0..1 |
-| Binding | CarePlanGoalStatus: Indicates whether the goal has been met and is still being targeted \(see http://hl7.org/fhir/DSTU1/care-plan-goal-status.html for values\). |
+| Binding | CarePlanGoalStatus: Indicates whether the goal has been met and is still being targeted \(see [http://hl7.org/fhir/DSTU1/care-plan-goal-status.html](http://hl7.org/fhir/DSTU1/care-plan-goal-status.html) for values\). |
 | Type | Code |
 | **CarePlan.goal.notes** |  |
 | Definition | Any comments related to the goal. |

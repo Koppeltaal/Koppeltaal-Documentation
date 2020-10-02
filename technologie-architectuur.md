@@ -21,7 +21,7 @@ De netwerktopologie beschrijft de fysieke verbindingen tussen de netwerkcomponen
 
 ### Het informatiemodel
 
-Het volgende model geeft de verzameling FHIR DSTU1 resources weer die binnen Koppeltaal 1.3 worden gebruikt. Het Koppeltaal 1.3 informatiemodel is gebaseerd FHIR Messaging \(berichten\). Bij FHIR Messaging is men gedwongen om een verzameling van resources \(gegevens\) op te halen, ongeacht of men daarvan maar een deel van gebruikt.  
+Het volgende model geeft de verzameling FHIR DSTU1 resources weer die binnen Koppeltaal 1.3 worden gebruikt. De FHIR specificatie definieert een set van datatypes die als FHIR resource elementen gebruikt worden. Het Koppeltaal 1.3 informatiemodel is gebaseerd FHIR Messaging \(berichten\). Bij FHIR Messaging is men gedwongen om een verzameling van resources \(gegevens\) op te halen, ongeacht of men daarvan maar een deel van gebruikt.  
 
 ![FHIR Resources](.gitbook/assets/fhir-resources%20%281%29.jpg)
 
@@ -807,6 +807,22 @@ FHIR Messagetypes
 \[1\] De Event.code is een element van de MessageHeader en identificeert het berichttype \(of interactie\).
 
 ## FHIR Resources
+
+### Data Types
+
+De FHIR resource elementen worden gespecificeerd aan de hand van een set data types. Er zijn twee categorieën data types: de primitieve types, geïmporteerd uit de XML Schema \([https://www.w3.org/TR/xmlschema-2](https://www.w3.org/TR/xmlschema-2/)\) en complexe types, die herbruikbare clusters van elementen zijn.
+
+De volgende tabel geeft een overzicht van de primitieve types en de beperkingen die in deze specificatie gebruikt worden. De primitieve typen hebben hier geen sub-eigenschappen maar wel extensies.
+
+| FHIR Primitieve Type | XML Schema | Omschrijving |
+| :--- | :--- | :--- |
+| boolean | xs:boolean | Waarden kunnen true of false zijn |
+| integer | xs:int | Een signed 32-bit integer |
+| decimal | xs:decimal | Een rationeel getal |
+| string | xs:string | Een rij Unicode karakters \(max 1MB\) |
+| uri | xs:anyURI | Een Uniform Resource Identifier referentie |
+| date | samenstelling van xs:date, xsgYearMonth, xs:gYear | Een datum |
+| dateTime | samenstelling van xs:dateTime, xs:date, xs:gYearMonth, xs:gYear | Een tijdstempel |
 
 ### FHIR Bundle \(Atom Feeds\)
 

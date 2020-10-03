@@ -818,11 +818,13 @@ De volgende tabel geeft een overzicht van de primitieve types en de beperkingen 
 | :--- | :--- | :--- |
 | boolean | xs:boolean | Waarden kunnen true of false zijn |
 | integer | xs:int | Een signed 32-bit integer |
-| decimal | xs:decimal | Een rationeel getal |
+| decimal | xs:decimal | Een rationeel getal. Hier wordt geen begruik gemaakt van exponenten. |
 | string | xs:string | Een rij Unicode karakters \(max 1MB\) |
-| uri | xs:anyURI | Een Uniform Resource Identifier referentie |
-| date | samenstelling van xs:date, xsgYearMonth, xs:gYear | Een datum |
+| uri | xs:anyURI | Een Uniform Resource Identifier referentie \(RFC3986\) |
+| date | samenstelling van xs:date, xsgYearMonth, xs:gYear | Een datum. Zit geen tijdszone in. |
 | dateTime | samenstelling van xs:dateTime, xs:date, xs:gYearMonth, xs:gYear | Een tijdstempel |
+
+De volgende FHIR resources zullen worden gespecificeerd aan de hand van bovenstaande FHIR primitieve types.
 
 ### FHIR Bundle \(Atom Feeds\)
 
@@ -865,7 +867,7 @@ Tabel 2. FHIR Bundle \(Atom feed\) De verschillende onderdelen van de FHIR feed 
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">Uri (as defined in RFC3986)</td>
+      <td style="text-align:left">uri (as defined in RFC3986)</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>feed.title</b>
@@ -882,7 +884,7 @@ Tabel 2. FHIR Bundle \(Atom feed\) De verschillende onderdelen van de FHIR feed 
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">String</td>
+      <td style="text-align:left">string</td>
     </tr>
     <tr>
       <td style="text-align:left">Comment</td>
@@ -904,7 +906,7 @@ Tabel 2. FHIR Bundle \(Atom feed\) De verschillende onderdelen van de FHIR feed 
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">DateTimeType</td>
+      <td style="text-align:left">dateTime</td>
     </tr>
     <tr>
       <td style="text-align:left">Comment</td>
@@ -925,7 +927,7 @@ Tabel 2. FHIR Bundle \(Atom feed\) De verschillende onderdelen van de FHIR feed 
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">String</td>
+      <td style="text-align:left">string</td>
     </tr>
     <tr>
       <td style="text-align:left">Comment</td>
@@ -1008,7 +1010,7 @@ Tabel 2. FHIR Bundle \(Atom feed\) De verschillende onderdelen van de FHIR feed 
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">String. Example: label=&quot;{label<b>}&quot;</b>
+      <td style="text-align:left">string. Example: label=&quot;{label<b>}&quot;</b>
       </td>
     </tr>
     <tr>
@@ -1045,7 +1047,7 @@ Tabel 2. FHIR Bundle \(Atom feed\) De verschillende onderdelen van de FHIR feed 
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">URI</td>
+      <td style="text-align:left">uri</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>feed.entry.id</b>
@@ -1063,7 +1065,7 @@ Tabel 2. FHIR Bundle \(Atom feed\) De verschillende onderdelen van de FHIR feed 
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">URI</td>
+      <td style="text-align:left">uri</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>feed.entry.link</b>
@@ -1095,7 +1097,7 @@ Tabel 2. FHIR Bundle \(Atom feed\) De verschillende onderdelen van de FHIR feed 
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">URI</td>
+      <td style="text-align:left">uri</td>
     </tr>
     <tr>
       <td style="text-align:left">Attribute</td>
@@ -1110,7 +1112,7 @@ Tabel 2. FHIR Bundle \(Atom feed\) De verschillende onderdelen van de FHIR feed 
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">String</td>
+      <td style="text-align:left">string</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>feed.entry.opdated</b>
@@ -1129,7 +1131,7 @@ Tabel 2. FHIR Bundle \(Atom feed\) De verschillende onderdelen van de FHIR feed 
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">DateTime</td>
+      <td style="text-align:left">dateTime</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>feed.entry.content</b>
@@ -1166,7 +1168,7 @@ Tabel 2. FHIR Bundle \(Atom feed\) De verschillende onderdelen van de FHIR feed 
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">String</td>
+      <td style="text-align:left">string</td>
     </tr>
   </tbody>
 </table>

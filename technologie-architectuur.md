@@ -1549,12 +1549,12 @@ Volgende plaatje laat zien dat de MessageHeader resource is uitgebreid met het P
 | **ActivityDefinition.activityDefinitionIdentifier** |  |
 | Definition | A unique identifier for this activity definition. |
 | Control | 0..1 |
-| Type | Identifier |
+| Type | identifier |
 | Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#ActivityDefinitionIdentifier |
 | **ActivityDefinition.identifier** |  |
 | Definition | One or more unique identifier for this activity definition. |
 | Control | 0..\* |
-| Type | Identifier |
+| Type | identifier |
 | Notes | Deprecated |
 | **ActivityDefinition.description** |  |
 | Definition | A description of the activity. May be used to judge the intended use of an activity. |
@@ -1596,7 +1596,7 @@ Volgende plaatje laat zien dat de MessageHeader resource is uitgebreid met het P
 | **ActivityDefinition.defaultPerformer** |  |
 | Definition | The person that is normally responsible for performing this activity. |
 | Control | 0..1 |
-| Type | Code |
+| Type | code |
 | Binding | [ActivityPerformer](technologie-architectuur.md#activityperformer) |
 | Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition\#DefaultPerformer |
 | **ActivityDefinition.isActive** |  |
@@ -1639,7 +1639,7 @@ ActivityDefinition \(Other\)
 | Definition | Indicates whether the plan is currently being acted upon, represents future intentions or is now just historical record. |
 | Control | 1..1 |
 | Binding | CarePlanStatus: Indicates whether the plan is currently being acted upon, represents future intentions or is now just historical record. \(See [http://hl7.org/fhir/DSTU1/care-plan-status.html](http://hl7.org/fhir/DSTU1/care-plan-status.html) for values.\) |
-| Type | Code |
+| Type | code |
 | Is modifier | True |
 | **CarePlan.participant** |  |
 | Definition | Identifies all people and organizations who are expected to be involved in the care envisioned by this plan. |
@@ -1672,7 +1672,7 @@ ActivityDefinition \(Other\)
 | Definition | Indicates whether the goal has been reached and is still considered relevant. |
 | Control | 0..1 |
 | Binding | CarePlanGoalStatus: Indicates whether the goal has been met and is still being targeted \(see [http://hl7.org/fhir/DSTU1/care-plan-goal-status.html](http://hl7.org/fhir/DSTU1/care-plan-goal-status.html) for values\). |
-| Type | Code |
+| Type | code |
 | **CarePlan.goal.notes** |  |
 | Definition | Any comments related to the goal. |
 | Control | 0..1 |
@@ -1726,7 +1726,7 @@ ActivityDefinition \(Other\)
 | Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#SubActivityStatus |
 | Comments | Note that the list of assigned subactivities may differ from the list of subactivities available in the ActivityDefinition. This means that the assigner of the careplan has chosen to not let the performer perform all subactivities. The list of assigned subactivities should be a subset of the subactivites available in the ActivityDefinition. |
 | Binding | [CarePlanActivityStatus](technologie-architectuur.md#careplanactivitystatus) |
-| Type | Code |
+| Type | code |
 | **CarePlan.activity.goal** |  |
 | Definition | Describes the intended objective\(s\) of carrying out this activity. |
 | Control | 0..\* |
@@ -1827,7 +1827,7 @@ In de definitiebepaling van het CareTeam is zo veel mogelijk gebruik gemaakt van
 | **CareTeam.Identifier** |  |
 | Defnitie | Identifier voor het care team die het care team binnen het domein uniek identificeert |
 | Control | 0..\* |
-| Type | Identifier |
+| Type | identifier |
 | Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeam\#CareTeamIdentifier |
 | **CareTeam.status** |  |
 | Definitie | Geeft de status van het care team aan. |
@@ -1901,7 +1901,7 @@ CareTeam \(Other\)
 | **CarePlanActivityStatus.blackBoxState** |  |
 | Definition | BlackBoxState allows applications using Koppeltaal to extend messages with information that is not necessarily understood by other applications. The application including BlackBoxState must subscribe to the message to which the BlackBoxState is attached, allowing the application to reload the BlackBoxState next time the application starts for a certain user. BlackBoxState is implemented using the FHIR extension mechanism. Extensions can be nested. For an example, look at how the ProcessingStatus extension is defined for the MessageHeader resource. Applications using BlackBoxState must create a FHIR profile that describes their extension\(s\). |
 | Control | 0..1 |
-| Type | Base64Binary |
+| Type | base64Binary |
 | Extension | \#Field as defined by application that owns this |
 | Comments | This extension must be further defined in a profile by the owner. |
 
@@ -2210,7 +2210,7 @@ CarePlanActivityResult \(Other\)
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">String</td>
+      <td style="text-align:left">string</td>
     </tr>
     <tr>
       <td style="text-align:left">Invariants</td>
@@ -2233,7 +2233,7 @@ CarePlanActivityResult \(Other\)
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">Identifier</td>
+      <td style="text-align:left">identifier</td>
     </tr>
     <tr>
       <td style="text-align:left">Invariants</td>
@@ -2455,7 +2455,7 @@ Organization
 | **Patient.identifier** |  |
 | Definition | An identifier that applies to this person as a Patient. |
 | Control | 0..\* |
-| Type | Identifier |
+| Type | identifier |
 | Comments | All known identifiers shall be given. A typical identifier for a Patient is the BSN. If no other identifier is known, a system specific identifier can be given. \(See [Identifiers ](technologie-architectuur.md#identifiers)for information on formatting.\) |
 | **Patient.name** |  |
 | Definition | A list of names associated with the person. |
@@ -2478,7 +2478,7 @@ Organization
 | **Patient.age** |  |
 | Definition | The age of the individual. |
 | Control | 0..1 |
-| Type | Integer |
+| Type | integer |
 | Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/Patient\#Age |
 | **Patient.address** |  |
 | Definition | Addresses for the individual. |
@@ -2501,7 +2501,7 @@ Patient
 | **Practitioner.identifier** |  |
 | Definition | An identifier that applies to this person in this role. |
 | Control | 0..\* |
-| Type | Identifier |
+| Type | identifier |
 | Comments | All known identifiers shall be given. A typical identifier for a Practitioner is the AGB or UZI code. If no other identifier is known, a system specific identifier can be given. \(See [Identifiers ](technologie-architectuur.md#identifiers)for information on formatting.\) |
 | **Practitioner.organization** |  |
 | Definition | The organization that the practitioner represents. |
@@ -2522,7 +2522,7 @@ Practitioner
 | **RelatedPerson.identifier** |  |
 | Definition | Identifier for a person within a particular scope. |
 | Control | 0..\* |
-| Type | Identifier |
+| Type | identifier |
 | Comments | All known identifiers shall be given. A typical identifier for a person is the BSN. If no other identifier is known, a system specific identifier can be given. \(See [Identifiers ](technologie-architectuur.md#identifiers)for information on formatting.\) |
 | **RelatedPerson.patient** |  |
 | Definition | The Patient this person is related to. |
@@ -2567,7 +2567,7 @@ RelatedPerson
 | **Application.identifier** |  |
 | Definition | Identifiers assigned to this application by various organizations. The most likely organizations to assign identifiers are the manufacturer and the owner, though regulatory agencies may also assign an identifier. The identifiers identify the particular device, not the kind of device. |
 | Control | 0..1 |
-| Type | Identifier |
+| Type | identifier |
 | **Application.type** |  |
 | Definition | The kind of device. |
 | Control | 1..1 |
@@ -2595,7 +2595,7 @@ Application
 | **UserMessage.context** |  |
 | Definition | An uri that describes the context of the message. |
 | Control | 0..1 |
-| Type | Uri |
+| Type | uri |
 | Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/UserMessage\#Context |
 | **UserMessage.code** |  |
 | Definition | Allows Koppeltaal to recognize the Other resource as a UserMessage. |

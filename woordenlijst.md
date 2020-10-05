@@ -128,6 +128,10 @@ Synoniemen: Cliënt
 
 Een portaal is een webpagina die uit diverse bronnen geselecteerde informatie biedt en/of toegang geeft tot verschillende informatiebronnen en/of services \(apps\).
 
+### Profiling
+
+Het aanscherpen van bestaande specificaties in de vorm van structuur definities \(structure definitions\), uitbreidingen \(extensions\) en onderlinge verwijzingen \(references\). Hierdoor is het mogelijk een specifieke set van resources voor een bepaalde "use case" \(klantenreis\) te definiëren.
+
 ### Resource
 
 FHIR hanteert de definitie Resource \(lijst met mogelijke Resources: [https://www.hl7.org/fhir/resourcelist.html](https://www.hl7.org/fhir/resourcelist.html)\)

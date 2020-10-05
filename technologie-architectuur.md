@@ -1898,6 +1898,7 @@ CareTeam \(Other\)
 | Control | 0..1 |
 | Type | integer |
 | Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus\#PercentageCompleted |
+| Comments | percentageCompleted specifies a value from 0 to 100 |
 | **CarePlanActivityStatus.blackBoxState** |  |
 | Definition | BlackBoxState allows applications using Koppeltaal to extend messages with information that is not necessarily understood by other applications. The application including BlackBoxState must subscribe to the message to which the BlackBoxState is attached, allowing the application to reload the BlackBoxState next time the application starts for a certain user. BlackBoxState is implemented using the FHIR extension mechanism. Extensions can be nested. For an example, look at how the ProcessingStatus extension is defined for the MessageHeader resource. Applications using BlackBoxState must create a FHIR profile that describes their extension\(s\). |
 | Control | 0..1 |

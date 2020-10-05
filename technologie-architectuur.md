@@ -812,27 +812,7 @@ FHIR Messagetypes
 
 De FHIR resource elementen worden gespecificeerd aan de hand van een set data types. Er zijn twee categorieën data types: de eenvoudige en primitieve types, geïmporteerd uit de XML Schema \([https://www.w3.org/TR/xmlschema-2](https://www.w3.org/TR/xmlschema-2/)\) en complexe types, die herbruikbare clusters van elementen zijn.
 
-De volgende tabel geeft een overzicht van de primitieve types en de beperkingen die in deze specificatie gebruikt worden. De primitieve typen hebben hier geen sub-eigenschappen maar wel extensies.
-
-| FHIR Primitieve Type | XML Schema | Omschrijving |
-| :--- | :--- | :--- |
-| boolean | xs:boolean | Waarden kunnen true of false zijn |
-| integer | xs:int | Een signed 32-bit integer |
-| decimal | xs:decimal | Een rationeel getal. Hier wordt geen gebruik gemaakt van exponenten. |
-| instant | xs:dateTime | Een instantie in tijd uitgedrukt, tot op de seconde bekend en inclusief een tijdzone |
-| string | xs:string | Een rij Unicode karakters \(max 1MB\) |
-| uri | xs:anyURI | Een Uniform Resource Identifier referentie \(RFC3986\) |
-| date | samenstelling van xs:date, xs:gYearMonth, xs:gYear | Een datum. Zit geen tijdzone in. |
-| dateTime | samenstelling van xs:dateTime, xs:date, xs:gYearMonth, xs:gYear | Een tijdstempel |
-
-| FHIR Types | FHIR Primitieve Type | Omschrijving |
-| :--- | :--- | :--- |
-| code | string | Geeft de waarde aan dat afkomstig is uit een reeks gecontroleerde strings die elders zijn gedefinieerd \(zie het gebruik van codes voor meer informatie\) |
-| oid | uri | Een OID dat een URI representeerd \(RFC3001\) |
-| uuid | uri | Een UUID dat een URI representeerd \(RFC4122\) |
-| id | string | Een identifier van max 36 karakters |
-
-De volgende FHIR resources zullen worden gespecificeerd aan de hand van bovenstaande FHIR primitieve types.
+De set data types die in de FHIR resources elementen uit de Technologie architectuur worden gebruikt, vindt men in [FHIR DSTU 1 Data Types](http://hl7.org/fhir/DSTU1/datatypes.html) terug.
 
 ### FHIR Bundle \(Atom Feeds\)
 

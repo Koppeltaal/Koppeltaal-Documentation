@@ -164,5 +164,11 @@ Een instelling dan wel een solistisch werkende zorgverlener.
 
 Synoniemen: Zorginstelling, domein
 
+### Zorgteam
+
+Het zorgteam omvat alle zorgaanbieders die van plan zijn deel te nemen aan de coördinatie en behandeling voor een patiënt.
+
+Synoniemen: CareTeam
+
 
 

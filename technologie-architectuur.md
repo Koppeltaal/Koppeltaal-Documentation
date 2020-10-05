@@ -1200,7 +1200,7 @@ FHIR Bundle \(Atom feed\)
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">Id</td>
+      <td style="text-align:left">id</td>
     </tr>
     <tr>
       <td style="text-align:left">Comments</td>
@@ -1224,7 +1224,7 @@ FHIR Bundle \(Atom feed\)
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">Instant</td>
+      <td style="text-align:left">instant</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>MessageHeader.event</b>
@@ -1282,7 +1282,7 @@ FHIR Bundle \(Atom feed\)
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">String</td>
+      <td style="text-align:left">string</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>MessageHeader.source.software</b>
@@ -1300,7 +1300,7 @@ FHIR Bundle \(Atom feed\)
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">String</td>
+      <td style="text-align:left">string</td>
     </tr>
     <tr>
       <td style="text-align:left">Comments</td>
@@ -1322,7 +1322,7 @@ FHIR Bundle \(Atom feed\)
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">String</td>
+      <td style="text-align:left">string</td>
     </tr>
     <tr>
       <td style="text-align:left">Requirements</td>
@@ -1343,7 +1343,7 @@ FHIR Bundle \(Atom feed\)
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">Uri</td>
+      <td style="text-align:left">uri</td>
     </tr>
     <tr>
       <td style="text-align:left">Comments</td>
@@ -1434,7 +1434,7 @@ FHIR Bundle \(Atom feed\)
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">Code</td>
+      <td style="text-align:left">code</td>
     </tr>
     <tr>
       <td style="text-align:left">Binding</td>
@@ -1460,7 +1460,7 @@ FHIR Bundle \(Atom feed\)
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">Instant</td>
+      <td style="text-align:left">instant</td>
     </tr>
     <tr>
       <td style="text-align:left">Extension</td>
@@ -1485,7 +1485,7 @@ FHIR Bundle \(Atom feed\)
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">String</td>
+      <td style="text-align:left">string</td>
     </tr>
     <tr>
       <td style="text-align:left">Extension</td>
@@ -1506,7 +1506,7 @@ FHIR Bundle \(Atom feed\)
     </tr>
     <tr>
       <td style="text-align:left">Type</td>
-      <td style="text-align:left">Boolean</td>
+      <td style="text-align:left">boolean</td>
     </tr>
     <tr>
       <td style="text-align:left">Extension</td>

@@ -162,6 +162,10 @@ Versnellingsprogramma Informatie-uitwisseling Patiënt en Professional.
 
 Vereniging van Zorgaanbieders voor Zorgcommunicatie.
 
+### ZIB
+
+Een ZIB \(Zorg Informatie Bouwsteen\) is een gegevensmodel bestaande uit één of meer gegevenselementen, inclusief hun betekenis, datatypes en onderlinge relaties, die als geheel een relevant zorginhoudelijk concept beschrijven.
+
 ### Zorgaanbieder
 
 Een instelling dan wel een solistisch werkende zorgverlener.

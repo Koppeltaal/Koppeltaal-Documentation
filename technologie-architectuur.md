@@ -3081,124 +3081,6 @@ Tabel 16 Autorisatie beheer matrix.
 </entry>
 ```
 
-## Bijlage: Response voorbeelden
-
-Als response op een POST van CreateOrUpdateCarePlan vanaf Koppeltaal versie 1.3.5 worden alle uitgekeerde resource versies teruggegeven.
-
-Voor elke resource wordt een data-element teruggegeven in de MessageHeader. In Koppeltaal versie 1.3.3 was dit alleen het geval voor de focal resource.
-
-Hieronder een voorbeeld response in Koppeltaal versie 1.3.5.
-
-```markup
-<feed
-    xmlns="http://www.w3.org/2005/Atom">
-    <id>urn:uuid:5931e3dc-243b-4f29-9200-78c238df9771</id>
-    <category term="http://ggz.koppeltaal.nl/fhir/Koppeltaal/Domain#Dev" label="Dev" scheme="http://hl7.org/fhir/tag/security"/>
-    <category term="http://hl7.org/fhir/tag/message" scheme="http://hl7.org/fhir/tag"/>
-    <entry>
-        <id>urn:uuid:cab1c156-125c-49d2-9765-cab3e9fddff2</id>
-        <content type="text/xml">
-            <MessageHeader
-                xmlns="http://hl7.org/fhir">
-                <identifier value="urn:uuid:cab1c156-125c-49d2-9765-cab3e9fddff2"/>
-                <timestamp value="2018-05-23T09:33:55+02:00"/>
-                <event>
-                    <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageEvents"/>
-                    <code value="CreateOrUpdateCarePlan"/>
-                    <display value="CreateOrUpdateCarePlan"/>
-                </event>
-                <response>
-                    <identifier value="03e2edd0-ef69-49ed-97e9-b075a45a118a"/>
-                    <code value="ok"/>
-                </response>
-                <source>
-                    <name value=""/>
-                    <software value=""/>
-                    <version value=""/>
-                    <endpoint value="https://demo.koppeltaal.nl/FHIR/Koppeltaal/Mailbox"/>
-                </source>
-                <data>
-                    <reference value="http://demo.koppeltaal.nl/CarePlan/5044/_history/2018-05-23T07:33:55:708.2583"/>
-                </data>
-                <data>
-                    <reference value="http://demo.koppeltaal.nl/Patient/1055/_history/2018-05-23T07:33:55:708.2583"/>
-                </data>
-            </MessageHeader>
-        </content>
-    </entry>
-</feed>
-```
-
-Versionering op resource content
-
-Als er aan een Koppeltaal versie 1.3.5 compatibele applicatie een 409 wordt teruggegeven omdat een of meer verkeerde versies zijn meegestuurd, worden hierin de resources teruggegeven waarvan de verkeerde versie was meegestuurd.
-
-Dit gebeurt in de volgende response:
-
-```markup
-<OperationOutcome xmlns="http://hl7.org/fhir">
-    <text>
-        <status value="generated"/>
-        <div xmlns="http://www.w3.org/1999/xhtml">
-            <p xmlns=""/>
-        </div>
-    </text>
-    <issue>
-        <severity value="error"/>
-        <type>
-            <system value="http://hl7.org/fhir/issue-type"/>
-            <code value="conflict"/>
-        </type>
-        <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/OperationOutcome#IssueResource">
-            <valueResource>
-                <reference value="http://demo.koppeltaal.nl/fhir/Patient/1" />
-            </valueResource>
-        </extension>
-        <details value="The specified resource version is not correct."/>
-    </issue>
-    <issue>
-        <severity value="error"/>
-        <type>
-            <system value="http://hl7.org/fhir/issue-type"/>
-            <code value="conflict"/>
-        </type>
-        <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/OperationOutcome#IssueResource">
-            <valueResource>
-                <reference value="http://demo.koppeltaal.nl/fhir/Practitioner/12" />
-            </valueResource>
-        </extension>
-        <details value="The specified resource version is not correct."/>
-    </issue>
-</OperationOutcome>
-```
-
-Foutmelding response over resource content versies
-
-Als er een bericht verstuurd wordt naar de Koppeltaal Server met daarin een resource
-
-die Koppeltaal niet ondersteunt \(in dit voorbeeld ‘Condition’\), wordt de volgende
-
-respons geretourneerd:
-
-```markup
-<OperationOutcome xmlns="http://hl7.org/fhir">
-    <text>
-        <status value="generated"/>
-        <div xmlns="http://www.w3.org/1999/xhtml">
-            <p xmlns="">
-                at IExtOnFHIR FHIRExceptionAction.Run(ActionInput, Input, ActionOutputRequest, RequestedOutputs) ...
-            </p>
-        </div>
-    </text>
-    <issue>
-        <severity value="error"/>
-        <details value="The resource type 'Condition' is not supported"/>
-    </issue>
-</OperationOutcome>
-```
-
-Voorbeeld van een “Condition” respons bericht.
-
 ## Bijlage: Voorbeeld CreateOrUpdateCarePlan
 
 Elke interactie \(bundel\) begint met een MessageHeader resource entry. In de MessageHeader.event.code vindt men de interactie. De volgende entry in de bundel, is de focal resource, behorende bij de interactie. Afhankelijk van het interactie type kunnen er nog meer entries volgen met FHIR resources.
@@ -3564,5 +3446,121 @@ JSON voorbeeld van CreateOrUpdateCarePlan
 }
 ```
 
+## Bijlage: Response voorbeelden
 
+Als response op een POST van CreateOrUpdateCarePlan vanaf Koppeltaal versie 1.3.5 worden alle uitgekeerde resource versies teruggegeven.
+
+Voor elke resource wordt een data-element teruggegeven in de MessageHeader. In Koppeltaal versie 1.3.3 was dit alleen het geval voor de focal resource.
+
+Hieronder een voorbeeld response in Koppeltaal versie 1.3.5.
+
+```markup
+<feed
+    xmlns="http://www.w3.org/2005/Atom">
+    <id>urn:uuid:5931e3dc-243b-4f29-9200-78c238df9771</id>
+    <category term="http://ggz.koppeltaal.nl/fhir/Koppeltaal/Domain#Dev" label="Dev" scheme="http://hl7.org/fhir/tag/security"/>
+    <category term="http://hl7.org/fhir/tag/message" scheme="http://hl7.org/fhir/tag"/>
+    <entry>
+        <id>urn:uuid:cab1c156-125c-49d2-9765-cab3e9fddff2</id>
+        <content type="text/xml">
+            <MessageHeader
+                xmlns="http://hl7.org/fhir">
+                <identifier value="urn:uuid:3f03e865-e87c-4337-922c-5be69dbcd243"/>
+                <timestamp value="2020-08-15T09:33:55+02:00"/>
+                <event>
+                    <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageEvents"/>
+                    <code value="CreateOrUpdateCarePlan"/>
+                    <display value="CreateOrUpdateCarePlan"/>
+                </event>
+                <response>
+                    <identifier value="03e2edd0-ef69-49ed-97e9-b075a45a118a"/>
+                    <code value="ok"/>
+                </response>
+                <source>
+                    <name value=""/>
+                    <software value=""/>
+                    <version value=""/>
+                    <endpoint value="https://demo.koppeltaal.nl/FHIR/Koppeltaal/Mailbox"/>
+                </source>
+                <data>
+                    <reference value="http://demo.koppeltaal.nl/CarePlan/751512212/_history/2020-08-15T07:33:55:708.2583"/>
+                </data>
+                <data>
+                    <reference value="http://demo.koppeltaal.nl/Patient/751512203/_history/2020-08-15T07:33:55:708.2583"/>
+                </data>
+            </MessageHeader>
+        </content>
+    </entry>
+</feed>
+```
+
+Versionering op resource content
+
+Als er aan een Koppeltaal versie 1.3.5 compatibele applicatie een 409 wordt teruggegeven omdat een of meer verkeerde versies zijn meegestuurd, worden hierin de resources teruggegeven waarvan de verkeerde versie was meegestuurd.
+
+Dit gebeurt in de volgende response:
+
+```markup
+<OperationOutcome xmlns="http://hl7.org/fhir">
+    <text>
+        <status value="generated"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <p xmlns=""/>
+        </div>
+    </text>
+    <issue>
+        <severity value="error"/>
+        <type>
+            <system value="http://hl7.org/fhir/issue-type"/>
+            <code value="conflict"/>
+        </type>
+        <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/OperationOutcome#IssueResource">
+            <valueResource>
+                <reference value="http://demo.koppeltaal.nl/fhir/Patient/751512204" />
+            </valueResource>
+        </extension>
+        <details value="The specified resource version is not correct."/>
+    </issue>
+    <issue>
+        <severity value="error"/>
+        <type>
+            <system value="http://hl7.org/fhir/issue-type"/>
+            <code value="conflict"/>
+        </type>
+        <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/OperationOutcome#IssueResource">
+            <valueResource>
+                <reference value="http://demo.koppeltaal.nl/fhir/Practitioner/751512209" />
+            </valueResource>
+        </extension>
+        <details value="The specified resource version is not correct."/>
+    </issue>
+</OperationOutcome>
+```
+
+Foutmelding response over resource content versies
+
+Als er een bericht verstuurd wordt naar de Koppeltaal Server met daarin een resource
+
+die Koppeltaal niet ondersteunt \(in dit voorbeeld ‘Condition’\), wordt de volgende
+
+respons geretourneerd:
+
+```markup
+<OperationOutcome xmlns="http://hl7.org/fhir">
+    <text>
+        <status value="generated"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <p xmlns="">
+                at IExtOnFHIR FHIRExceptionAction.Run(ActionInput, Input, ActionOutputRequest, RequestedOutputs) ...
+            </p>
+        </div>
+    </text>
+    <issue>
+        <severity value="error"/>
+        <details value="The resource type 'Condition' is not supported"/>
+    </issue>
+</OperationOutcome>
+```
+
+Voorbeeld van een “Condition” respons bericht.
 

@@ -190,7 +190,7 @@ Applicaties die geabonneerd zijn op de `CreateOrUpdateCarePlan` krijgen een verr
 
 ## Updaten van een CarePlan
 
-Bij het aanpassen van een CarePlan moet men de juiste versies van de resources gebruiken om een mutatue doorgevoerd te krijgen
+Bij het aanpassen van een CarePlan moet men de juiste versies van de resources gebruiken om een mutatie doorgevoerd te krijgen door de Koppeltaal server.
 
 ```markup
 <feed xmlns="http://www.w3.org/2005/Atom">
@@ -252,5 +252,65 @@ Bij het aanpassen van een CarePlan moet men de juiste versies van de resources g
 </feed>
 ```
 
+## Verkeerde resource versie
 
+Als er aan een Koppeltaal versie 1.3.5 of een hogere compatibele applicatie een 409 HTTP statuscode wordt teruggegeven, omdat één of meer verkeerde resource versies zijn meegestuurd, worden hierin de resources teruggegeven waarvan de verkeerde versie was meegestuurd. Dit gebeurt in de volgende response:
+
+```markup
+<OperationOutcome xmlns="http://hl7.org/fhir">
+    <text>
+        <status value="generated"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <p xmlns=""/>
+        </div>
+    </text>
+    <issue>
+        <severity value="error"/>
+        <type>
+            <system value="http://hl7.org/fhir/issue-type"/>
+            <code value="conflict"/>
+        </type>
+        <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/OperationOutcome#IssueResource">
+            <valueResource>
+                <reference value="http://demo.koppeltaal.nl/fhir/Patient/751512203" />
+            </valueResource>
+        </extension>
+        <details value="The specified resource version is not correct."/>
+    </issue>
+    <issue>
+        <severity value="error"/>
+        <type>
+            <system value="http://hl7.org/fhir/issue-type"/>
+            <code value="conflict"/>
+        </type>
+        <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/OperationOutcome#IssueResource">
+            <valueResource>
+                <reference value="http://demo.koppeltaal.nl/fhir/Practitioner/751512208" />
+            </valueResource>
+        </extension>
+        <details value="The specified resource version is not correct."/>
+    </issue>
+</OperationOutcome>
+```
+
+## Onbekende resource
+
+Als er een bericht verstuurd wordt naar de Koppeltaal Server met daarin een resource die Koppeltaal niet ondersteunt \(in dit voorbeeld ‘Condition’\), wordt de volgende respons geretourneerd:
+
+```markup
+<OperationOutcome xmlns="http://hl7.org/fhir">
+    <text>
+        <status value="generated"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <p xmlns="">
+                at IExtOnFHIR FHIRExceptionAction.Run(ActionInput, Input, ActionOutputRequest, RequestedOutputs) ...
+            </p>
+        </div>
+    </text>
+    <issue>
+        <severity value="error"/>
+        <details value="The resource type 'Condition' is not supported"/>
+    </issue>
+</OperationOutcome>
+```
 

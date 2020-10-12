@@ -5,7 +5,7 @@ description: >-
   IT-deelnemers. Hiervoor hebben we voorbeelden toegevoegd.
 ---
 
-# Voorbeelden berichtenverkeer
+# Voorbeelden Koppeltaal berichten
 
 ## Aanmaken van een CarePlan
 

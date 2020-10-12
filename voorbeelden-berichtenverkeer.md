@@ -770,7 +770,7 @@ Update van een Patiënt.
 
 ### CreateOrUpdateActivityDefinition
 
-Een wijziging in de activity definities. Een activity defintion is een extension van de Other resource.
+Een wijziging in de activiteiten definities. 
 
 ```markup
 <?xml version="1.0" encoding="UTF-8"?>

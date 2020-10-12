@@ -420,3 +420,420 @@ Als er een bericht verstuurd wordt naar de Koppeltaal Server met daarin een reso
 </OperationOutcome>
 ```
 
+## Interacties
+
+### CreateOrUpdateCarePlan
+
+Deze interactie is opgebouwd uit een update van het CarePlan, Organization, Patient, Practitioner en CareTeam.
+
+```markup
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+   <id>urn:uuid:e9b3a989-9765-4340-9591-515e7697feb6</id>
+   <category term="http://ggz.koppeltaal.nl/fhir/Koppeltaal/Domain#VZVZTest" label="VZVZTest" scheme="http://hl7.org/fhir/tag/security" />
+   <category term="http://hl7.org/fhir/tag/message" scheme="http://hl7.org/fhir/tag" />
+   <entry>
+      <id>https://testprovidemb.vitalhealthsoftware.com/Koppeltaal/MessageHeader/90e4b6d1-66f1-4281-9c36-11cd635a387f</id>
+      <content type="text/xml">
+         <MessageHeader xmlns="http://hl7.org/fhir" id="90e4b6d1-66f1-4281-9c36-11cd635a387f">
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#Patient">
+               <valueResource>
+                  <reference value="https://testprovidemb.vitalhealthsoftware.com/Koppeltaal/Patient/d4849156-d961-45bb-a16c-e929209c2dc5" />
+               </valueResource>
+            </extension>
+            <identifier value="90e4b6d1-66f1-4281-9c36-11cd635a387f" />
+            <timestamp value="2020-10-12T11:34:52+02:00" />
+            <event>
+               <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageEvents" />
+               <code value="CreateOrUpdateCarePlan" />
+               <display value="CreateOrUpdateCarePlan" />
+            </event>
+            <source>
+               <name value="VZVZ_FunctTest" />
+               <software value="VZVZ_FunctTest" />
+               <version value="1.x" />
+               <endpoint value="https://testprovidemb.vitalhealthsoftware.com/" />
+            </source>
+            <data>
+               <reference value="https://testprovidemb.vitalhealthsoftware.com/Koppeltaal/CarePlan/7d676a2f-edec-4dc4-8f9b-910474663bbb" />
+            </data>
+         </MessageHeader>
+      </content>
+   </entry>
+   <entry>
+      <id>https://testprovidemb.vitalhealthsoftware.com/Koppeltaal/CarePlan/7d676a2f-edec-4dc4-8f9b-910474663bbb</id>
+      <link rel="self" href="https://testprovidemb.vitalhealthsoftware.com/Koppeltaal/CarePlan/7d676a2f-edec-4dc4-8f9b-910474663bbb" />
+      <content type="text/xml">
+         <CarePlan xmlns="http://hl7.org/fhir">
+            <patient>
+               <reference value="https://testprovidemb.vitalhealthsoftware.com/Koppeltaal/Patient/d4849156-d961-45bb-a16c-e929209c2dc5" />
+            </patient>
+            <status value="active" />
+            <participant>
+               <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ParticipantCareTeam">
+                  <valueResource>
+                     <reference value="https://testprovidemb.vitalhealthsoftware.com/Koppeltaal/CareTeam/e9ff45d9-d3f5-4d24-ac45-ef7755829ed3" />
+                  </valueResource>
+               </extension>
+               <role>
+                  <coding>
+                     <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanParticipantRole" />
+                     <code value="Caregiver" />
+                     <display value="Caregiver" />
+                  </coding>
+               </role>
+               <member>
+                  <reference value="https://testprovidemb.vitalhealthsoftware.com/Koppeltaal/Practitioner/1cd70739-175b-4672-8f22-1542d00ee847" />
+               </member>
+            </participant>
+            <activity id="743e986d-1519-4be5-871f-bd434009d7ee">
+               <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ActivityIdentifier">
+                  <valueString value="743e986d-1519-4be5-871f-bd434009d7ee" />
+               </extension>
+               <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ActivityDefinition">
+                  <valueString value="MHC-SF" />
+               </extension>
+               <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ActivityStatus">
+                  <valueCoding>
+                     <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus" />
+                     <code value="Available" />
+                     <display value="Available" />
+                  </valueCoding>
+               </extension>
+               <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ActivityKind">
+                  <valueCoding>
+                     <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityKind" />
+                     <code value="Questionnaire" />
+                     <display value="Questionnaire" />
+                  </valueCoding>
+               </extension>
+               <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#StartDate">
+                  <valueDateTime value="2020-10-12T00:00:00+02:00" />
+               </extension>
+               <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#SubActivity">
+                  <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#SubActivityIdentifier">
+                     <valueString value="f83e4e57-fcdf-440e-b568-f8a9dad690ca" />
+                  </extension>
+                  <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#SubActivityStatus">
+                     <valueCoding>
+                        <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus" />
+                        <code value="Available" />
+                        <display value="Available" />
+                     </valueCoding>
+                  </extension>
+               </extension>
+               <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#Participant">
+                  <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ParticipantMember">
+                     <valueResource>
+                        <reference value="https://testprovidemb.vitalhealthsoftware.com/Koppeltaal/Practitioner/1cd70739-175b-4672-8f22-1542d00ee847" />
+                     </valueResource>
+                  </extension>
+                  <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ParticipantRole">
+                     <valueCodeableConcept>
+                        <coding>
+                           <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanParticipantRole" />
+                           <code value="Requester" />
+                           <display value="Requester" />
+                        </coding>
+                     </valueCodeableConcept>
+                  </extension>
+                  <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan#ParticipantCareTeam">
+                     <valueResource>
+                        <reference value="https://testprovidemb.vitalhealthsoftware.com/Koppeltaal/CareTeam/e9ff45d9-d3f5-4d24-ac45-ef7755829ed3" />
+                     </valueResource>
+                  </extension>
+               </extension>
+               <prohibited value="false" />
+               <simple>
+                  <category value="procedure" />
+                  <performer>
+                     <reference value="https://testprovidemb.vitalhealthsoftware.com/Koppeltaal/Patient/d4849156-d961-45bb-a16c-e929209c2dc5" />
+                  </performer>
+               </simple>
+            </activity>
+         </CarePlan>
+      </content>
+   </entry>
+   <entry>
+      <id>https://testprovidemb.vitalhealthsoftware.com/Koppeltaal/Organization/24f8aa66-35ae-45af-bbb0-44b411b4114e</id>
+      <link rel="self" href="https://testprovidemb.vitalhealthsoftware.com/Koppeltaal/Organization/24f8aa66-35ae-45af-bbb0-44b411b4114e/_history/2020-04-10T07:55:31:023.6237" />
+      <content type="text/xml">
+         <Organization xmlns="http://hl7.org/fhir">
+            <identifier>
+               <system value="http://fhir.nl/fhir/NamingSystem/EMHPCustomerClinicCode" />
+               <value value="73732403_933" />
+            </identifier>
+            <name value="Mentaal Beter Test" />
+         </Organization>
+      </content>
+   </entry>
+   <entry>
+      <id>https://testprovidemb.vitalhealthsoftware.com/Koppeltaal/Patient/d4849156-d961-45bb-a16c-e929209c2dc5</id>
+      <link rel="self" href="https://testprovidemb.vitalhealthsoftware.com/Koppeltaal/Patient/d4849156-d961-45bb-a16c-e929209c2dc5/_history/2020-10-09T12:00:18:024.9293" />
+      <content type="text/xml">
+         <Patient xmlns="http://hl7.org/fhir">
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/Patient#Age">
+               <valueInteger value="22" />
+            </extension>
+            <identifier>
+               <use value="official" />
+               <system value="http://fhir.nl/fhir/NamingSystem/bsn" />
+               <value value="247196101" />
+               <period>
+                  <start value="2020-10-06T09:04:16+02:00" />
+               </period>
+            </identifier>
+            <name>
+               <use value="official" />
+               <family value="N. Testrelease" />
+               <given value="N." />
+               <period>
+                  <start value="2020-10-09T08:57:07+02:00" />
+               </period>
+            </name>
+            <telecom>
+               <system value="email" />
+               <value value="testreleasenina@mailinator.com" />
+               <use value="home" />
+               <period>
+                  <start value="2020-10-09T08:57:07+02:00" />
+               </period>
+            </telecom>
+            <telecom>
+               <system value="phone" />
+               <value value="0624288089" />
+               <use value="mobile" />
+               <period>
+                  <start value="2020-10-09T08:57:12+02:00" />
+               </period>
+            </telecom>
+            <gender>
+               <coding>
+                  <system value="http://hl7.org/fhir/v3/AdministrativeGender" />
+                  <code value="UN" />
+               </coding>
+               <text value="Undetermined" />
+            </gender>
+            <birthDate value="1997-10-20T00:00:00+02:00" />
+            <address>
+               <use value="home" />
+               <period>
+                  <start value="2020-10-09T08:57:07+02:00" />
+               </period>
+            </address>
+            <managingOrganization>
+               <reference value="https://testprovidemb.vitalhealthsoftware.com/Koppeltaal/Organization/24f8aa66-35ae-45af-bbb0-44b411b4114e" />
+               <display value="Mentaal Beter Test" />
+            </managingOrganization>
+            <active value="true" />
+         </Patient>
+      </content>
+   </entry>
+   <entry>
+      <id>https://testprovidemb.vitalhealthsoftware.com/Koppeltaal/Practitioner/1cd70739-175b-4672-8f22-1542d00ee847</id>
+      <link rel="self" href="https://testprovidemb.vitalhealthsoftware.com/Koppeltaal/Practitioner/1cd70739-175b-4672-8f22-1542d00ee847" />
+      <content type="text/xml">
+         <Practitioner xmlns="http://hl7.org/fhir">
+            <identifier>
+               <use value="secondary" />
+               <label value="Medicore external caregiver number" />
+               <system value="http://fhir.nl/fhir/NamingSystem/ExternCaregiverNumber" />
+               <value value="06010002_releasetest" />
+            </identifier>
+            <name>
+               <family value="Releasetest" />
+               <given value="Nina" />
+            </name>
+            <telecom>
+               <system value="email" />
+               <value value="ninareleasetest@mailinator.com" />
+               <use value="work" />
+            </telecom>
+            <gender>
+               <coding>
+                  <system value="http://hl7.org/fhir/v3/AdministrativeGender" />
+                  <code value="F" />
+               </coding>
+               <text value="Female" />
+            </gender>
+         </Practitioner>
+      </content>
+   </entry>
+   <entry>
+      <id>https://testprovidemb.vitalhealthsoftware.com/Koppeltaal/CareTeam/e9ff45d9-d3f5-4d24-ac45-ef7755829ed3</id>
+      <link rel="self" href="https://testprovidemb.vitalhealthsoftware.com/Koppeltaal/CareTeam/e9ff45d9-d3f5-4d24-ac45-ef7755829ed3/_history/2020-10-06T12:19:20:645.9909" />
+      <content type="text/xml">
+         <Other xmlns="http://hl7.org/fhir">
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeam#Subject">
+               <valueResource>
+                  <reference value="https://testprovidemb.vitalhealthsoftware.com/Koppeltaal/Patient/d4849156-d961-45bb-a16c-e929209c2dc5" />
+               </valueResource>
+            </extension>
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeam#Name">
+               <valueString value="Engage" />
+            </extension>
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeam#Status">
+               <valueCoding>
+                  <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeamStatus" />
+                  <code value="active" />
+                  <display value="Active" />
+               </valueCoding>
+            </extension>
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CareTeam#Period">
+               <valuePeriod>
+                  <start value="2020-10-06T12:19:12+02:00" />
+               </valuePeriod>
+            </extension>
+            <code>
+               <coding>
+                  <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/OtherResourceUsage" />
+                  <code value="CareTeam" />
+                  <display value="CareTeam" />
+               </coding>
+            </code>
+         </Other>
+      </content>
+   </entry>
+</feed>
+```
+
+### CreateOrUpdatePatient
+
+Update van een Patiënt.
+
+```markup
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+   <id>5edf704a-175e-4ba6-ae35-e044aebdb653</id>
+   <category term="http://ggz.koppeltaal.nl/fhir/Koppeltaal/Domain#TestConnector" label="TestConnector" scheme="http://hl7.org/fhir/tag/security" />
+   <category term="http://hl7.org/fhir/tag/message" scheme="http://hl7.org/fhir/tag" />
+   <entry>
+      <id>5ce95052-e8df-45bb-840d-672ecec205b3</id>
+      <content type="text/xml">
+         <MessageHeader xmlns="http://hl7.org/fhir">
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#Patient">
+               <valueResource>
+                  <reference value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/Patient/3db7ce43-cb49-4c18-bcd9-8adc37ffd657" />
+                  <display value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/Patient/3db7ce43-cb49-4c18-bcd9-8adc37ffd657" />
+               </valueResource>
+            </extension>
+            <identifier value="5ce95052-e8df-45bb-840d-672ecec205b3" />
+            <timestamp value="2020-10-08T09:24:50+02:00" />
+            <event>
+               <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageEvents" />
+               <code value="CreateOrUpdatePatient" />
+               <display value="CreateOrUpdatePatient" />
+            </event>
+            <source>
+               <endpoint value="" />
+            </source>
+            <data>
+               <reference value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/Patient/3db7ce43-cb49-4c18-bcd9-8adc37ffd657/_history/2020-10-08T07:24:51:765.1551" />
+            </data>
+         </MessageHeader>
+      </content>
+   </entry>
+   <entry>
+      <id>http://ggz.koppeltaal.nl/fhir/Koppeltaal/Patient/3db7ce43-cb49-4c18-bcd9-8adc37ffd657</id>
+      <link rel="self" href="http://ggz.koppeltaal.nl/fhir/Koppeltaal/Patient/3db7ce43-cb49-4c18-bcd9-8adc37ffd657/_history/2020-10-08T07:24:51:765.1551" />
+      <content type="text/xml">
+         <Patient xmlns="http://hl7.org/fhir">
+            <name>
+               <use value="official" />
+               <text value="Jan Blaas van der Groen" />
+               <family value="Groen" />
+               <given value="Jan" />
+               <given value="Blaas" />
+               <prefix value="van" />
+               <prefix value="der" />
+               <period>
+                  <start value="1980-12-11T00:00:00+01:00" />
+                  <end value="2020-10-08T09:24:50.580+02:00" />
+               </period>
+            </name>
+            <name>
+               <use value="nickname" />
+               <text value="Jantje Groen MD" />
+               <family value="Groen" />
+               <given value="Jantje" />
+               <suffix value="MD" />
+               <period>
+                  <start value="1980-12-11T00:00:00+01:00" />
+                  <end value="2020-10-08T09:24:50.580+02:00" />
+               </period>
+            </name>
+         </Patient>
+      </content>
+   </entry>
+</feed>
+```
+
+#### UpdateCarePlanActivityStatus
+
+a
+
+```markup
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+   <id>urn:uuid:eaecb96b-03da-48c7-b455-8ca1dff57dc9</id>
+   <category term="http://ggz.koppeltaal.nl/fhir/Koppeltaal/Domain#EngageTest" label="EngageTest" scheme="http://hl7.org/fhir/tag/security" />
+   <category term="http://hl7.org/fhir/tag/message" scheme="http://hl7.org/fhir/tag" />
+   <entry>
+      <id>https://testqm1koppeltaal/MessageHeader/2fdfd952-3204-4c66-b98b-dcdc76586531</id>
+      <content type="text/xml">
+         <MessageHeader xmlns="http://hl7.org/fhir" id="2fdfd952-3204-4c66-b98b-dcdc76586531">
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#Patient">
+               <valueResource>
+                  <reference value="https://testprovidemb.vitalhealthsoftware.com/Koppeltaal/Patient/d4849156-d961-45bb-a16c-e929209c2dc5" />
+               </valueResource>
+            </extension>
+            <identifier value="2fdfd952-3204-4c66-b98b-dcdc76586531" />
+            <timestamp value="2020-10-12T11:36:21+02:00" />
+            <event>
+               <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageEvents" />
+               <code value="UpdateCarePlanActivityStatus" />
+               <display value="UpdateCarePlanActivityStatus" />
+            </event>
+            <source>
+               <name value="TestTool" />
+               <software value="TestTool" />
+               <version value="1.3.x" />
+               <endpoint value="https://testkoppeltaal.vitalhealthsoftware.com/" />
+            </source>
+            <data>
+               <reference value="https://testqm1koppeltaal/CarePlanActivityStatus/718/_history/2020-10-12T09:35:58:902.5449" />
+            </data>
+         </MessageHeader>
+      </content>
+   </entry>
+   <entry>
+      <id>https://testqm1koppeltaal/CarePlanActivityStatus/718</id>
+      <link rel="self" href="https://testqm1koppeltaal/CarePlanActivityStatus/718/_history/2020-10-12T09:35:58:902.5449" />
+      <content type="text/xml">
+         <Other xmlns="http://hl7.org/fhir">
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus#Activity">
+               <valueString value="743e986d-1519-4be5-871f-bd434009d7ee" />
+            </extension>
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus#ActivityStatus">
+               <valueCoding>
+                  <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus" />
+                  <code value="Completed" />
+                  <display value="Completed" />
+               </valueCoding>
+            </extension>
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlanActivityStatus#PercentageCompleted">
+               <valueInteger value="0" />
+            </extension>
+            <code>
+               <coding>
+                  <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/OtherResourceUsage" />
+                  <code value="CarePlanActivityStatus" />
+                  <display value="CarePlanActivityStatus" />
+               </coding>
+            </code>
+         </Other>
+      </content>
+   </entry>
+</feed>
+```
+

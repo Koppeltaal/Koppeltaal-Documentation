@@ -11,6 +11,8 @@ description: >-
 
 Een behandelaar maakt via een portaal, een nieuw behandelplan aan. Hiervoor wordt een FHIR bericht verstuurd naar de Koppeltaal server. Dit bericht kan als XML of JSON content aangeboden worden. Elke nieuwe interactie begint met een MessageHeader met daarin een `extension.valueResource.reference` naar een Patient en een `data.reference` naar de focal resource. De aangeboden focal resource heeft op dat moment geen versie, die moet door de Koppeltaal server uitgegeven worden.
 
+Volgende voorbeeld is de MessageHeader in XML formaat.
+
 ```markup
 <feed xmlns="http://www.w3.org/2005/Atom">
    <id>urn:uuid:97b7a1e2-ca51-415e-b06c-fc8564a979fa</id>
@@ -47,7 +49,64 @@ Een behandelaar maakt via een portaal, een nieuw behandelplan aan. Hiervoor word
    ...
 ```
 
-Alle resources die met dit bericht meekomen, hebben een selflink, zonder versie in de `entry.link@href`
+Dezelfde MessageHeader in JSON formaat.
+
+```javascript
+{
+  "resourceType": "Bundle",
+  "id": "urn:uuid:97b7a1e2-ca51-415e-b06c-fc8564a979fa<",
+  "category": [
+    {
+      "term": "http://ggz.koppeltaal.nl/fhir/Koppeltaal/Domain#PythonAdapterTesting",
+      "label": "PythonAdapterTesting",
+      "scheme": "http://hl7.org/fhir/tag/security"
+    },
+    {
+      "term": "http://hl7.org/fhir/tag/message",
+      "scheme": "http://hl7.org/fhir/tag"
+    }
+  ],
+  "entry": [
+    {
+      "content": {
+        "id": "ref002",
+        "extension": [
+          {
+            "url": "http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageHeader#Patient",
+            "valueResource": {
+              "reference": "http://127.0.0.1:37527/app/fhir/Koppeltaal/Patient/751512203"
+            }
+          }
+        ],
+        "identifier": "3f03e865-e87c-4337-922c-5be69dbcd243",
+        "timestamp": "2020-08-13T02:30:41+00:00",
+        "data": [
+          {
+            "reference": "http://127.0.0.1:37527/app/fhir/Koppeltaal/CarePlan/751512212"
+          }
+        ],
+        "event": {
+          "code": "CreateOrUpdateCarePlan",
+          "system": "http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageEvents",
+          "display": "CreateOrUpdateCarePlan"
+        },
+        "source": {
+          "id": "ref001",
+          "name": "New integration for 'app.None'",
+          "software": "Koppeltaal Adapter",
+          "version": "1.3.x",
+          "endpoint": "http://127.0.0.1:37527/app/fhir/Koppeltaal"
+        },
+        "resourceType": "MessageHeader"
+      },
+      "id": "http://127.0.0.1:37527/app/fhir/Koppeltaal/MessageHeader/139882808154208"
+    },
+    ...
+```
+
+Alle resources die met dit bericht meekomen, hebben een selflink, zonder versie in de `link href`
+
+Voorbeeld van resources in XML formaat.
 
 ```markup
   <entry>
@@ -75,6 +134,53 @@ Alle resources die met dit bericht meekomen, hebben een selflink, zonder versie 
       </content>
    </entry>
 </feed>
+```
+
+Voorbeeld van resources in JSON formaat.
+
+```javascript
+{
+      "content": {
+        "id": "ref006",
+        ...
+        "resourceType": "CarePlan"
+      },
+      "id": "http://127.0.0.1:37527/app/fhir/Koppeltaal/CarePlan/751512212",
+      "link": [
+        {
+          "rel": "self",
+          "href": "http://127.0.0.1:37527/app/fhir/Koppeltaal/CarePlan/751512212"
+        }
+      ]
+    },
+      "content": {
+        "id": "ref009",
+        ...
+        "resourceType": "Patient"
+      },
+      "id": "http://127.0.0.1:37527/app/fhir/Koppeltaal/Patient/751512203",
+      "link": [
+        {
+          "rel": "self",
+          "href": "http://127.0.0.1:37527/app/fhir/Koppeltaal/Patient/751512203"
+        }
+      ]
+    },
+      "content": {
+        "id": "ref012",
+        ...
+        "resourceType": "Practitioner"
+      },
+      "id": "http://127.0.0.1:37527/app/fhir/Koppeltaal/Practitioner/751512208",
+      "link": [
+        {
+          "rel": "self",
+          "href": "http://127.0.0.1:37527/app/fhir/Koppeltaal/Practitioner/751512208"
+        }
+      ]
+    }
+  ]
+}
 ```
 
 Koppeltaal server beantwoordt het binnenkomend bericht, en verstuurd een antwoord naar de verzender waarin staat wat de versies zijn van de verschillende resources.

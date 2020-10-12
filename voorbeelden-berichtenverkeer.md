@@ -768,9 +768,131 @@ Update van een Patiënt.
 </feed>
 ```
 
+### CreateOrUpdateActivityDefinition
+
+Een wijziging in de activity definities. Een activity defintion is een extension van de Other resource.
+
+```markup
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+   <id>urn:uuid:054cc87d-a437-44f6-b884-b06806405593</id>
+   <category term="http://ggz.koppeltaal.nl/fhir/Koppeltaal/Domain#TestConnector" label="TestConnector" scheme="http://hl7.org/fhir/tag/security" />
+   <category term="http://hl7.org/fhir/tag/message" scheme="http://hl7.org/fhir/tag" />
+   <entry>
+      <content type="text/xml">
+         <MessageHeader xmlns="http://hl7.org/fhir" id="6340c63d-1b10-4a39-a7d9-c629b8e86cd8">
+            <identifier value="6340c63d-1b10-4a39-a7d9-c629b8e86cd8" />
+            <timestamp value="2020-10-09T16:49:55+02:00" />
+            <event>
+               <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/MessageEvents" />
+               <code value="CreateOrUpdateActivityDefinition" />
+               <display value="CreateOrUpdateActivityDefinition" />
+            </event>
+            <source>
+               <software value="Koppeltaal" />
+               <version value="v1.3.x" />
+               <endpoint value="not used" />
+            </source>
+            <data>
+               <reference value="https://edgekoppeltaal.vhscloud.nl/FHIR/Koppeltaal/Other/ActivityDefinition:8722/_history/2020-10-09T14:49:54:803.8390" />
+            </data>
+         </MessageHeader>
+      </content>
+   </entry>
+   <entry>
+      <link rel="self" href="https://edgekoppeltaal.vhscloud.nl/FHIR/Koppeltaal/Other/ActivityDefinition:8722/_history/2020-10-09T14:49:54:803.8390" />
+      <content type="text/xml">
+         <Other xmlns="http://hl7.org/fhir" id="8722">
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#Application">
+               <valueResource>
+                  <reference value="https://edgekoppeltaal.vhscloud.nl/FHIR/Koppeltaal/Device/8" />
+                  <display value="javaadapter" />
+               </valueResource>
+            </extension>
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#ActivityName">
+               <valueString value="name from unit test" />
+            </extension>
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#ActivityDefinitionIdentifier">
+               <valueString value="8b3861e8-4ebd-48fc-965c-9cb0590a7648" />
+            </extension>
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#ActivityDescription">
+               <valueString value="description from unit test" />
+            </extension>
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#ActivityKind">
+               <valueCoding>
+                  <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityKind" />
+                  <code value="ELearning" />
+                  <display value="ELearning" />
+               </valueCoding>
+            </extension>
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#DefaultPerformer">
+               <valueCoding>
+                  <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityPerformer" />
+                  <code value="Patient" />
+                  <display value="Patient" />
+               </valueCoding>
+            </extension>
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#IsActive">
+               <valueBoolean value="true" />
+            </extension>
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#IsDomainSpecific">
+               <valueBoolean value="true" />
+            </extension>
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#LaunchType">
+               <valueCode value="Web" />
+            </extension>
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#SubActivity">
+               <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#SubActivityName">
+                  <valueString value="sad name from test 1" />
+               </extension>
+               <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#SubActivityIdentifier">
+                  <valueString value="sad identifier from test 1" />
+               </extension>
+               <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#SubActivityDescription">
+                  <valueString value="sad description from test 1" />
+               </extension>
+               <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#SubActivityIsActive">
+                  <valueBoolean value="true" />
+               </extension>
+            </extension>
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#SubActivity">
+               <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#SubActivityName">
+                  <valueString value="sad name from test 2" />
+               </extension>
+               <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#SubActivityIdentifier">
+                  <valueString value="sad identifier from test 2" />
+               </extension>
+               <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#SubActivityDescription">
+                  <valueString value="sad description from test 2" />
+               </extension>
+               <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#SubActivityIsActive">
+                  <valueBoolean value="true" />
+               </extension>
+            </extension>
+            <extension url="http://ggz.koppeltaal.nl/fhir/Koppeltaal/ActivityDefinition#IsArchived">
+               <valueBoolean value="false" />
+            </extension>
+            <identifier>
+               <use value="official" />
+               <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/Profile/ActivityDefinition#ActivityDefinitionIdentifier" />
+               <value value="8b3861e8-4ebd-48fc-965c-9cb0590a7648" />
+            </identifier>
+            <code>
+               <coding>
+                  <system value="http://ggz.koppeltaal.nl/fhir/Koppeltaal/OtherResourceUsage" />
+                  <code value="ActivityDefinition" />
+                  <display value="ActivityDefinition" />
+               </coding>
+            </code>
+         </Other>
+      </content>
+   </entry>
+</feed>
+```
+
 ### UpdateCarePlanActivityStatus
 
-a
+Status update doorgeven.
 
 ```markup
 <?xml version="1.0" encoding="UTF-8"?>

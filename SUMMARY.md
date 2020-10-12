@@ -6,6 +6,6 @@
 * [Technologie architectuur](technologie-architectuur.md)
 * [Kaders en uitgangspunten](kaders-en-uitgangspunten.md)
 * [Afkortingen en begrippenlijst](woordenlijst.md)
-* [Voorbeelden Koppeltaal berichtenverkeer](voorbeelden-koppeltaal-berichtenverkeer.md)
+* [Voorbeelden berichtenverkeer](voorbeelden-berichtenverkeer.md)
 * [Quick technical basics](quick-technical-basics.md)
 

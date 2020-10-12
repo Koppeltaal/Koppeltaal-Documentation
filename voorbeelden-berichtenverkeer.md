@@ -7,7 +7,9 @@ description: >-
 
 # Voorbeelden Koppeltaal berichten
 
-## Aanmaken van een CarePlan
+## Starten met een behandelplan 
+
+### Aanmaken van een CarePlan
 
 Een behandelaar maakt via een portaal, een nieuw behandelplan aan. Hiervoor wordt een FHIR bericht verstuurd naar de Koppeltaal server. Dit bericht kan als XML of JSON content aangeboden worden. Elke nieuwe interactie begint met een MessageHeader met daarin een `extension.valueResource.reference` naar een Patient en een `data.reference` naar de focal resource. De aangeboden focal resource heeft op dat moment geen versie, die moet door de Koppeltaal server uitgegeven worden.
 
@@ -294,7 +296,7 @@ Applicaties die geabonneerd zijn op de `CreateOrUpdateCarePlan` krijgen een verr
 </feed>
 ```
 
-## Updaten van een CarePlan
+### Updaten van een CarePlan
 
 Bij het aanpassen van een CarePlan moet men de juiste versies van de resources gebruiken om een mutatie doorgevoerd te krijgen door de Koppeltaal server.
 
@@ -358,7 +360,9 @@ Bij het aanpassen van een CarePlan moet men de juiste versies van de resources g
 </feed>
 ```
 
-## Verkeerde resource versie
+## Fout situaties
+
+### Verkeerde resource versie
 
 Als er aan een Koppeltaal versie 1.3.5 of een hogere compatibele applicatie een 409 HTTP statuscode wordt teruggegeven, omdat één of meer verkeerde resource versies zijn meegestuurd, worden hierin de resources teruggegeven waarvan de verkeerde versie was meegestuurd. Dit gebeurt in de volgende response:
 
@@ -399,7 +403,7 @@ Als er aan een Koppeltaal versie 1.3.5 of een hogere compatibele applicatie een 
 </OperationOutcome>
 ```
 
-## Onbekende resource
+### Onbekende resource
 
 Als er een bericht verstuurd wordt naar de Koppeltaal Server met daarin een resource die Koppeltaal niet ondersteunt \(in dit voorbeeld ‘Condition’\), wordt de volgende respons geretourneerd:
 

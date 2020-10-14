@@ -5,7 +5,7 @@ description: >-
   door verschillende leveranciers aangeboden.
 ---
 
-# Release planning
+# Release
 
 ## Releases
 

@@ -9,7 +9,17 @@ description: >-
 
 ## Releases
 
-**Koppeltaal** huidige release : 1.3.5. Geplande release 1.4/2.0
+**Koppeltaal \(server\)** huidige release : 1.3.7. Geplande release 1.3.8
+
+Release 1.3.7 is een herstelversie van 1.3.5.
+
+Volgende  punten zijn hierin opgenomen:
+
+| Ticket | Type | Omschrijving |
+| :--- | :--- | :--- |
+| ICE-610 | Change Request | Uitschakelen van resource versie check per domein. |
+| ICE-601 | Bug | Display waarden voor ActivityKind in KT aangepast. |
+| ICE-464 | FeatureRequest | Koppeltaal online autorisaties inzichtelijk gemaakt dmv autorisatie tabel. |
 
 **Supported Koppeltaal release:** 1.3.5
 

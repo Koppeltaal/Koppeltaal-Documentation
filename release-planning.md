@@ -9,7 +9,9 @@ description: >-
 
 ## Releases
 
-**Koppeltaal \(server\)** huidige release : 1.3.7. Geplande release 1.3.8 in November
+**Koppeltaal \(server\)** huidige release : 1.3.7. 
+
+Geplande release 1.3.8 in November 2020.
 
 Release 1.3.6  is een herstelversie van 1.3.5.
 

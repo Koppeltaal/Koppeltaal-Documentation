@@ -9,7 +9,7 @@ description: >-
 
 ## Releases
 
-**Koppeltaal \(server\)** huidige release : 1.3.7. Geplande release 1.3.8
+**Koppeltaal \(server\)** huidige release : 1.3.7. Geplande release 1.3.8 in November
 
 Release 1.3.6  is een herstelversie van 1.3.5.
 
@@ -38,6 +38,21 @@ Volgende  punten zijn hierin opgenomen:
 | ICE-610 | Change Request | Uitschakelen van resource versie check per domein. |
 | ICE-601 | Bug | Display waarden voor ActivityKind in KT aangepast. |
 | ICE-464 | FeatureRequest | Koppeltaal online autorisaties inzichtelijk gemaakt dmv autorisatie tabel. |
+
+Herstelversie 1.3.8 wordt verwacht in November.
+
+Hierin zijn de volgende punten in opgenomen:
+
+| Ticket | Type | Omschrijving |
+| :--- | :--- | :--- |
+| ICE-763 | Epic | Het authenticatie proces volgens de specificatie aan het werk krijgen \(Zie FO Authenticatie Koppeltaal beheerschermen v1.1\). |
+| ICE-654 | Bug | Dubbele punt in wachtwoord. |
+| ICE-647 | Change Request | Het '&' teken in ActivityDefinition zorgt voor foutmelding. |
+| ICE-630 | Bug | Syntax fout in wachtwoord . |
+| ICE-599 | Bug | Wachtwoord herstel problemen. |
+| ICE-598 | BUG | Functionaliteit van verificatiecode werkt niet correct. |
+| ICE-323 | Feature Request | Indicatoren in kaart brengen voor ketenregisseur. |
+| ICE-183 | Feature Request | Bericht identifier toevoegen in WebHook POST. |
 
 **Supported Koppeltaal release:** 1.3.5
 

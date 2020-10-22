@@ -47,13 +47,11 @@ Hierin zijn de volgende punten in opgenomen:
 
 | Ticket | Type | Omschrijving |
 | :--- | :--- | :--- |
-| ICE-763 | Epic | Het authenticatie proces volgens de specificatie aan het werk krijgen \(Zie FO Authenticatie Koppeltaal beheerschermen v1.1\). |
-| ICE-654 | Bug | Dubbele punt in wachtwoord. |
+| ICE-654 | Bug | Dubbele punt in wachtwoord waardoor authenticatie faalt. |
 | ICE-647 | Change Request | Het '&' teken in ActivityDefinition zorgt voor foutmelding. |
-| ICE-630 | Bug | Syntax fout in wachtwoord . |
+| ICE-630 | Bug | Syntax fout in wachtwoord. Beleidsregels aanzetten voor wachtwoord. |
 | ICE-599 | Bug | Wachtwoord herstel problemen. |
 | ICE-598 | BUG | Functionaliteit van verificatiecode werkt niet correct. |
-| ICE-323 | Feature Request | Indicatoren in kaart brengen voor ketenregisseur. |
 | ICE-183 | Feature Request | Bericht identifier toevoegen in WebHook POST. |
 
 **Supported Koppeltaal release:** 1.3.5
@@ -62,7 +60,7 @@ Hierin zijn de volgende punten in opgenomen:
 
 Release 1.3.5 is by design ontworpen vanuit de behoefte van beheerorganisaties om de migratie van hun applicaties onafhankelijk van elkaar te kunnen doorvoeren. Applicaties die nog op 1.3.3 uitwisselen, kunnen by design uitwisselen met applicaties die al op 1.3.5 communiceren. Alle partijen worden opgeroepen om zo spoedig mogelijk de migratie af te ronden door hun applicatie in productie te voorzien van release 1.3.5 of hoger van Koppeltaal.
 
-Release 1.3.8 is een herstelversie van 1.3.5 en wordt in November in productie gebracht.
+Release 1.3.8 is een herstelversie van 1.3.5 en wordt eind November in productie gebracht.
 
 ## API specificaties
 

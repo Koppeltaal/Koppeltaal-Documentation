@@ -11,7 +11,7 @@ description: >-
 
 **Koppeltaal \(server\)** huidige release : 1.3.7. 
 
-Geplande release 1.3.8 in November 2020.
+Geplande release 1.3.8 eind November 2020.
 
 Release 1.3.6  is een herstelversie van 1.3.5.
 
@@ -41,7 +41,7 @@ Volgende  punten zijn hierin opgenomen:
 | ICE-601 | Bug | Display waarden voor ActivityKind in KT aangepast. |
 | ICE-464 | FeatureRequest | Koppeltaal online autorisaties inzichtelijk gemaakt dmv autorisatie tabel. |
 
-Herstelversie 1.3.8 wordt verwacht in November.
+Herstelversie 1.3.8 wordt eind November verwacht.
 
 Hierin zijn de volgende punten in opgenomen:
 

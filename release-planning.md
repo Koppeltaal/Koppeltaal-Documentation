@@ -13,23 +13,7 @@ description: >-
 
 Geplande release 1.3.8 eind November 2020.
 
-Release 1.3.6  is een herstelversie van 1.3.5.
 
-| Ticket | Type | Omschrijving |
-| :--- | :--- | :--- |
-| ICE-575 | Bevinding | Anoniemen portalen werkte niet meer na laatste platform update op Edge. |
-| ICE-571 | Bevinding | SSO gaf error: the redirect\_uri does not match the uthorized redirect\_uri. |
-| ICE-551 | Bug | CreateOrUpdateActivityDefinition aanmaken faalde door version check. |
-| ICE-548 | Bug | Bij password recovery, terwijl ingelogd, werd de volledige naam gevuld i.p.v. de gebruikersnaam. |
-| ICE-547 | Bug | Revisie infomatie niet beschikbaar. |
-| ICE-410 | Bug | Foutmelding in ValidateCreateOrUpdateCarePlan. Komt voor als een CarePlan zonder Activities. |
-| ICE\_406 | Bug | Foutmelding bij openen OAuth &gt; Registered Clients \(Als Applicatie admin\). |
-| ICE-315 | Bug | Verwijderde applicaties kunnen nog bewerkt geworden \(met errors als gevolg\). |
-| ICE-279 | Change Request | Koppeltaal overzicht klopt niet. De berichtinhoud van de "Messages per application" was incorrect. |
-| ICE-248 | Change Request | Applicatie geeft timeout op webhook op koppeltaal stable. |
-| ICE-247 | Bug | Veld 'Status gewijzigd op' in Application Messages loopt 2 of 1 uur voor, afhankelijk van zomertijd/wintertijd. |
-| ICE-211 | Change Request | Dienst 2-way authentication via SMS volledig afdekken. |
-|  |  |  |
 
 Release 1.3.7 is een herstelversie van 1.3.5.
 
@@ -41,7 +25,9 @@ Volgende  punten zijn hierin opgenomen:
 | ICE-601 | Bug | Display waarden voor ActivityKind in KT aangepast. |
 | ICE-464 | FeatureRequest | Koppeltaal online autorisaties inzichtelijk gemaakt dmv autorisatie tabel. |
 
-Herstelversie 1.3.8 wordt eind November verwacht.
+
+
+Herstelversie 1.3.8.
 
 Hierin zijn de volgende punten in opgenomen:
 

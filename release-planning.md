@@ -1,19 +1,14 @@
 ---
 description: >-
   Koppeltaal 1.3.x maakt gebruik van adapters voor zorgcommunicatie in FHIR
-  tussen applicaties via de Koppeltaal server (v1.3.x). Deze adapters worden
-  door verschillende leveranciers aangeboden.
+  tussen applicaties via de Koppeltaal server (v1.3.x).
 ---
 
-# Release
+# Releases
 
-## Releases
+## Koppeltaal server
 
-**Koppeltaal \(server\)** huidige release : 1.3.7. 
-
-Geplande release 1.3.8 eind November 2020.
-
-
+Huidige release : **1.3.7.**  Geplande release **1.3.8** eind November 2020.
 
 Release 1.3.7 is een herstelversie van 1.3.5.
 
@@ -27,7 +22,7 @@ Volgende  punten zijn hierin opgenomen:
 
 
 
-Herstelversie 1.3.8.
+Release 1.3.8 is ook een herstelversie van 1.3.5.
 
 Hierin zijn de volgende punten in opgenomen:
 

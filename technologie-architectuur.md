@@ -476,7 +476,9 @@ Koppeltaal biedt een functie aan om notificaties te versturen als er een nieuw b
 
 Alle applicaties maken gebruik van de standaard HTTP operatie GET om berichten \(FHIR Message DSTU1\) op te halen. De berichten kunnen van een vaste endpoint \(URL\) bij Koppeltaal opgehaald worden, zie 'interactie ophalen' \(technische service\) waarvan de basis URL bijvoorbeeld https://koppeltaal.nl/FHIR/Koppeltaal/MessageHeader is.
 
-Aan de hand van de basis URL en MessgageHeader.id kan men één geïdentificeerd bericht ophalen. Met behulp van de basis URL, `_search` operatie en `_query` parameters kan men een bundel MessageHeaders opvragen en hiermee vervolgens de bundel doorzoeken naar de juiste MessageHeader.id met onderliggende content.
+Indien een applicatie niet gebruik maakt van notificaties en de REST WebHooks niet geïmplementeerd heeft, kan de applicatie de Koppeltaal server, met een vaste interval, bevragen \(polling\). De frequentie waarmee deze opvragen plaatsvindt, heet de poll frequentie.
+
+Aan de hand van de basis URL en MessageHeader.id kan men één geïdentificeerd bericht ophalen. Met behulp van de basis URL, `_search` operatie en `_query` parameters kan men een bundel MessageHeaders opvragen en hiermee vervolgens de bundel doorzoeken naar de juiste MessageHeader.id met onderliggende content.
 
 De volgende `_search` operatie en `_query` parameters worden door Koppeltaal 1.3 ondersteund.
 

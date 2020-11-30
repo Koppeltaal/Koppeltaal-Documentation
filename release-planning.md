@@ -8,7 +8,7 @@ description: >-
 
 ## Koppeltaal server
 
-Huidige release : **1.3.8.**  Geplande release **1.3.9** 
+Huidige release : **1.3.8.**  Geplande release **1.3.9** in 2021.
 
 Release 1.3.8 is een herstelversie van 1.3.5.
 
@@ -25,7 +25,7 @@ Hierin zijn de volgende punten opgenomen:
 
 Release 1.3.9 is \(ook\) een herstelversie van 1.3.5.
 
-Hierin zijn de volgende punten opgenomen:
+Hierin zijn, voorlopig,  de volgende punten opgenomen:
 
 | Ticket | Type | Omschrijving |
 | :--- | :--- | :--- |
@@ -140,7 +140,7 @@ Applicatieontwikkelaars mogen deze adapters inbouwen, testen en uiteindelijk hun
 
 Voor community ****leden die nog niet actief zijn in de productiefase van Koppeltaal is het raadzaam om de koppeling met Koppeltaal te ontwikkelen op basis van Koppeltaal 1.3.5. De impact daarvan is relatief beperkt, en je voorkomt extra inspanningen om na ingebruikname alsnog binnen enkele maanden na release op productie alsnog verplicht te moeten upgraden naar Koppeltaal 1.3.5. 
 
-_Let op: adapterversies  voor gebruik met KT 1.3.3 en ouder zullen na na  keten brede ingebruikname van KT  1.3.5 5  in productie niet meer geaccepteerd worden voor gebruik in test-, ontwikkel- en productie-omgevingen van Koppeltaal._
+_Let op: adapterversies  voor gebruik met KT 1.3.3 en ouder zullen na na  keten brede ingebruikname van KT  1.3.5 in productie niet meer geaccepteerd worden voor gebruik in test-, ontwikkel- en productie-omgevingen van Koppeltaal._
 
 <table>
   <thead>

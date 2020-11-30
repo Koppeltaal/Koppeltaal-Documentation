@@ -1,7 +1,7 @@
 # Quick technical basics
 
-Versie: 1.00  
-Datum: 18 februari 2020  
+Versie: 1.01  
+Datum: 16 november 2020  
 Auteurs: Joos Brokamp & Joris Scharp, [Headease b.v.](https://headease.nl)
 
 {% hint style="warning" %}
@@ -35,7 +35,7 @@ Lees meer over de credentials in het [Koppeltaal Architectuur document, Authenti
 ![](.gitbook/assets/koppeltaal-domains.png)
 
   
-_Figuur 1: Applicaties worden geautoriseerd om handelingen binnen een domein uit te voeren door middel van de gebruikte credentials. Applicatie X en Applicatie Y kunnen elkaars berichten uitlezen omdat ze beiden toegang hebben tot Domein A. Applicatie Z is agnostisch t.o.v Domein A._
+_Figuur 1: Applicaties worden geautoriseerd om handelingen binnen een domein uit te voeren door middel van de gebruikte credentials. Applicatie X en Applicatie Y kunnen elkaars berichten uitlezen omdat ze beiden toegang hebben tot Domein A. Applicatie Z is agnostisch t.o.v. Domein A._
 
 ### Data binnen het domein
 
@@ -43,11 +43,11 @@ Elke applicatie met toegang tot het domein is trusted. Dat wil zeggen, alle info
 
 ## Koppeltaal resources
 
-Een van de kern use-cases die Koppeltaal faciliteert is het domeinbreed beschikbaar stellen van e-health content. Gegevensuitwisseling vindt plaats in de vorm van Koppeltaal resources. Een resource is een structuur met een aantal vastgelegde velden dat informatie bevat over de resource dit het beschrijft.
+Een van de kern use-cases die Koppeltaal faciliteert is het domeinbreed beschikbaar stellen van eHealth content. Gegevensuitwisseling vindt plaats in de vorm van Koppeltaal resources. Een resource is een structuur met een aantal vastgelegde velden dat informatie bevat over de resource dit het beschrijft.
 
 ### ActivityDefinition
 
-Een applicatie kan binnen het domein kenbaar maken dat deze een zekere e-health activiteit wil aanbieden aan patiënten. Hiervoor bestaat een daarvoor bestemde resource: ActivityDefinition. Deze abstractie beschrijft de activiteit in een aantal velden en wordt bij publicatie in het domein gedeeld met de andere applicaties. Een applicatie kan op basis van de ActivityDefinition een taak toevoegen aan het behandelplan van een patiënt.
+Een applicatie kan binnen het domein kenbaar maken dat deze een zekere eHealth activiteit wil aanbieden aan patiënten. Hiervoor bestaat een daarvoor bestemde resource: ActivityDefinition. Deze abstractie beschrijft de activiteit in een aantal velden en wordt bij publicatie in het domein gedeeld met de andere applicaties. Een applicatie kan op basis van de ActivityDefinition een taak toevoegen aan het behandelplan van een patiënt.
 
 ### CarePlan
 
@@ -68,7 +68,7 @@ Resources worden gecommuniceerd door middel van het FHIR-messaging model. Er zij
 
 | event | doel | gerelateerde resource |
 | :--- | :--- | :--- |
-| CreateOrUpdateActivityDefinition | e-health activiteit aanbieden | ActivityDefinition |
+| CreateOrUpdateActivityDefinition | eHealth activiteit aanbieden | ActivityDefinition |
 | CreateOrUpdateCarePlan | Behandelplan aanmaken of wijzigen | CarePlan |
 | UpdateCarePlanActivityStatus | Verzoek tot wijziging van taakstatus | CarePlan |
 
@@ -87,6 +87,28 @@ Ook wel bekend als de Koppelbox. Ontvangen berichten worden slechts minimaal doo
 {% hint style="info" %}
 Lees meer over de Koppelbox in het [Koppeltaal Architectuur document, Het applicatie model](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/technologie-architectuur#het-applicatie-model)
 {% endhint %}
+
+### Adapters
+
+Om berichten te kunnen versturen en/of te ontvangen worden adapters \(ook bekend als connectors\) aangeboden door Koppeltaal. Elke programmeertaal heeft een eigen adapter nodig.
+
+Een adapter kent de volgende verantwoordelijkheden: 
+
+1. Eenvoudig een connectie opzetten met de Koppeltaal server en het domein.
+2. Functionaliteit om een SSO login te ondersteunen.
+3. Middels een simpele API Koppeltaal berichten samenstellen. Deze API is een façade van de HL7 FHIR en Koppeltaal complexiteit. De adapter-gebruikers hoeven zich geen zorgen te maken over de Koppeltaal syntax \(bij correct gebruik adapter\).
+4. Berichten ophalen uit de `KoppeltaalMailbox` middels de [GetNextNewAndClaim](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/technologie-architectuur#bericht-ophalen) functionaliteit.
+
+{% hint style="warning" %}
+Let op: Het is niet de verantwoordelijkheid van de adapters om Koppeltaal berichten uit de `KoppeltaalMailbox` in de applicatie-database op te slaan. De applicaties moeten dus zelf code schrijven om de Koppeltaal data op te slaan en up-to-date te houden. Dit is geen gedeelde functionaliteit omdat er een groot aantal mogelijke combinaties van programmeertalen \(en dus adapters\) en databases is.
+{% endhint %}
+
+Er zijn adapters beschikbaar voor de volgende programmeertalen \(onderstaande links zijn alleen toegankelijk voor leveranciers die toegevoegd zijn in GitHub\):
+
+1. [C\# Adapter](https://github.com/Koppeltaal/Koppeltaal-C-Sharp-Connector)
+2. [Java Adapter](https://github.com/Koppeltaal/Koppeltaal-Java-Connector) 
+3. [PHP Adapter](https://github.com/Koppeltaal/Koppeltaal-PHP-Connector)
+4. [Python Adapter](https://github.com/Koppeltaal/Koppeltaal-Python-Connector) 
 
 ## Hoe doe ik x? \(Voorbeelden\)
 
@@ -121,4 +143,10 @@ Versimpelde actiesequentie:
 {% hint style="info" %}
 Lees meer over Koppeltaal launches in het [Koppeltaal Architectuur document, De Single-Sign-On \(SSO\) flow](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/technologie-architectuur#de-single-sign-on-sso-flow)
 {% endhint %}
+
+## Changelog
+
+### Versie 1.0.1
+
+* Informatie toegevoegd over de verantwoordelijkheden van de adapter.
 

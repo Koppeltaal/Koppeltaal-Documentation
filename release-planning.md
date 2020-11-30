@@ -8,23 +8,11 @@ description: >-
 
 ## Koppeltaal server
 
-Huidige release : **1.3.7.**  Geplande release **1.3.8** eind November 2020.
+Huidige release : **1.3.8.**  Geplande release **1.3.9** in 2021.
 
-Release 1.3.7 is een herstelversie van 1.3.5.
+Release 1.3.8 is een herstelversie van 1.3.5.
 
-Volgende  punten zijn hierin opgenomen:
-
-| Ticket | Type | Omschrijving |
-| :--- | :--- | :--- |
-| ICE-610 | Change Request | Uitschakelen van resource versie check per domein. |
-| ICE-601 | Bug | Display waarden voor ActivityKind in KT aangepast. |
-| ICE-464 | FeatureRequest | Koppeltaal online autorisaties inzichtelijk gemaakt dmv autorisatie tabel. |
-
-
-
-Release 1.3.8 is ook een herstelversie van 1.3.5.
-
-Hierin zijn de volgende punten in opgenomen:
+Hierin zijn de volgende punten opgenomen:
 
 | Ticket | Type | Omschrijving |
 | :--- | :--- | :--- |
@@ -35,13 +23,24 @@ Hierin zijn de volgende punten in opgenomen:
 | ICE-598 | BUG | Functionaliteit van verificatiecode werkt niet correct. |
 | ICE-183 | Feature Request | Bericht identifier toevoegen in WebHook POST. |
 
+Release 1.3.9 is \(ook\) een herstelversie van 1.3.5.
+
+Hierin zijn, voorlopig,  de volgende punten opgenomen:
+
+| Ticket | Type | Omschrijving |
+| :--- | :--- | :--- |
+| ICE-716 | Feature Request | Performance issue Integrator queries |
+| ICE-715 | Feature Request | Performance issue Koppeltaal queries |
+| ICE-697 | Bug | Error on GetNextNextAndClaim |
+| ICE-645 | Bug | 2FA - Mobiel nummer kan foutief aangepast worden met verificatie |
+
 **Supported Koppeltaal release:** 1.3.5
 
 ## Planning
 
 Release 1.3.5 is by design ontworpen vanuit de behoefte van beheerorganisaties om de migratie van hun applicaties onafhankelijk van elkaar te kunnen doorvoeren. Applicaties die nog op 1.3.3 uitwisselen, kunnen by design uitwisselen met applicaties die al op 1.3.5 communiceren. Alle partijen worden opgeroepen om zo spoedig mogelijk de migratie af te ronden door hun applicatie in productie te voorzien van release 1.3.5 of hoger van Koppeltaal.
 
-Release 1.3.8 is een herstelversie van 1.3.5 en wordt eind November in productie gebracht.
+Release 1.3.9 is een herstelversie van 1.3.5 en wordt begin 2021 in productie gebracht.
 
 ## API specificaties
 
@@ -78,7 +77,7 @@ Voor community leden die nog niet actief zijn in de productiefase van Koppeltaal
         />
       </td>
       <td style="text-align:left">1.3.8</td>
-      <td style="text-align:left">Testomgeving van de community, met de nieuwste (deel)release of bugfix.
+      <td style="text-align:left">Testomgeving van de community, met de nieuwste (deel)release of bug fix.
         Als er een complete release staat, dan wordt door VZVZ Koppeltaal Testteam
         de release geaccepteerd alvorens het naar Acc te laten gaan.</td>
     </tr>
@@ -86,14 +85,14 @@ Voor community leden die nog niet actief zijn in de productiefase van Koppeltaal
       <td style="text-align:left">Acceptatie</td>
       <td style="text-align:left"><a href="http://acckoppeltaal.vhscloud.nl/">Acckoppeltaal.vhscloud.nl</a>
       </td>
-      <td style="text-align:left">1.3.7</td>
+      <td style="text-align:left">1.3.8</td>
       <td style="text-align:left">Ketentestomgeving voor GGZ (toekomstige Koppeltaal Kern release)</td>
     </tr>
     <tr>
       <td style="text-align:left">Productie</td>
       <td style="text-align:left"><a href="https://prd.koppeltaal.nl/">prd.koppeltaal.nl</a>
       </td>
-      <td style="text-align:left">1.3.7</td>
+      <td style="text-align:left">1.3.8</td>
       <td style="text-align:left">Live omgeving voor zorgcommunicatie door cli&#xEB;nten en behandelaren
         van GGZ-instellingen via applicaties van IT-deelnemers die met elkaar verbonden
         zijn via Koppeltaal</td>
@@ -102,11 +101,11 @@ Voor community leden die nog niet actief zijn in de productiefase van Koppeltaal
       <td style="text-align:left">Schaduw productie</td>
       <td style="text-align:left"> <a href="https://prodshadow.vhscloud.nl/">prodshadow.vhscloud.nl</a>
       </td>
-      <td style="text-align:left">1.3.7</td>
+      <td style="text-align:left">1.3.8</td>
       <td style="text-align:left">
         <p>Schaduwomgeving van huidig productie voor KT Support. Bevat de KT-server
           met dezelfde versie als prd. KT Support kan tijdelijk toegang verlenen
-          voor naspelen van productieincidenten en voor proefmigraties. Partijen
+          voor naspelen van productie incidenten en voor proefmigraties. Partijen
           kunnen dan tijdelijk een domein inrichten.</p>
         <p>Alleen met toestemming van VZVZ Koppeltaalketenregie kunnen IT-deelnemers
           hiervoor een domein laten aanmaken.</p>
@@ -116,14 +115,14 @@ Voor community leden die nog niet actief zijn in de productiefase van Koppeltaal
       <td style="text-align:left">Stable</td>
       <td style="text-align:left"><a href="http://stablekoppeltaal.vhscloud.nl/">Stablekoppeltaal.vhscloud.nl</a>
       </td>
-      <td style="text-align:left">1.3.7</td>
+      <td style="text-align:left">1.3.8</td>
       <td style="text-align:left">Ketentestomgeving voor GGZ (huidige Koppeltaal Kern release).</td>
     </tr>
     <tr>
       <td style="text-align:left">Demo</td>
       <td style="text-align:left"><a href="http://demokoppeltaal.vhscloud.nl/">Demokoppeltaal.vhscloud.nl</a>
       </td>
-      <td style="text-align:left">1.3.7</td>
+      <td style="text-align:left">1.3.8</td>
       <td style="text-align:left">Kan door hele community gebruikt worden voor demo&apos;s</td>
     </tr>
   </tbody>
@@ -141,7 +140,7 @@ Applicatieontwikkelaars mogen deze adapters inbouwen, testen en uiteindelijk hun
 
 Voor community ****leden die nog niet actief zijn in de productiefase van Koppeltaal is het raadzaam om de koppeling met Koppeltaal te ontwikkelen op basis van Koppeltaal 1.3.5. De impact daarvan is relatief beperkt, en je voorkomt extra inspanningen om na ingebruikname alsnog binnen enkele maanden na release op productie alsnog verplicht te moeten upgraden naar Koppeltaal 1.3.5. 
 
-_Let op: adapterversies  voor gebruik met KT 1.3.3 en ouder zullen na na  keten brede ingebruikname van KT  1.3.5 5  in productie niet meer geaccepteerd worden voor gebruik in test-, ontwikkel- en productie-omgevingen van Koppeltaal._
+_Let op: adapterversies  voor gebruik met KT 1.3.3 en ouder zullen na na  keten brede ingebruikname van KT  1.3.5 in productie niet meer geaccepteerd worden voor gebruik in test-, ontwikkel- en productie-omgevingen van Koppeltaal._
 
 <table>
   <thead>

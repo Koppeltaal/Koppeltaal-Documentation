@@ -8,7 +8,7 @@ description: >-
 
 
 
-![](.gitbook/assets/koppeltaal%20%281%29.jpg)
+![](.gitbook/assets/koppeltaal.jpg)
 
 
 

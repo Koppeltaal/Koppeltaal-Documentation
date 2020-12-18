@@ -137,7 +137,7 @@ Na het registratie proces kan begonnen worden met de uitwisseling van informatie
 
 In de interactie laag wordt er niet meet over een cliënt gesproken maar hanteren we de term patiënt.
 
-![Interacties gegroepeerd](.gitbook/assets/interacties%20%281%29.jpg)
+![Interacties gegroepeerd](.gitbook/assets/interacties.jpg)
 
 ### Use-case versus interacties
 
@@ -251,7 +251,7 @@ Koppeltaal bevat een applicatie register dat de definities registreert van activ
 
 De activiteiten definities kunnen worden opgevraagd met een specifieke GET \(opvragen\) API aanroep. Deze aanroep biedt de Activity Definities aan die beschikbaar worden gesteld door de interventie. Deze Activity Definities kunnen gebruikt worden door een CarePlan \(via CarePlan.activity\).
 
-![Registratie en lezen van activiteiten](.gitbook/assets/activiteiten-definities.jpg)
+![Registratie en lezen van activiteiten](.gitbook/assets/8.jpeg)
 
 ### Aanmaken CarePlan
 
@@ -265,7 +265,7 @@ Binnen Koppeltaal 1.3.5.is het CareTeam geïntroduceerd. Het is de verwachting d
 
 Als een CarePlan aan een patiënt is toegewezen zijn alle geselecteerde activiteiten direct toegankelijk voor de patiënt. De relatie tussen de patiënt en behandelaar is gemaakt via het CarePlan \(en impliciet via de activiteiten daarin\).
 
-![CarePlan aanmaken en toewijzen](.gitbook/assets/careplan.jpg)
+![CarePlan aanmaken en toewijzen](.gitbook/assets/9.jpeg)
 
 ### Participanten opvoeren en uitwisselen
 
@@ -281,7 +281,7 @@ Als voorbeeld, een nieuwe patiënt wordt ingeschreven in het EPD \(bronsysteem\)
 * het ophalen van de Patient \(resource\) gegevens bij Koppeltaal
 * de verdere \(lokale\) afhandeling binnen de applicaties \(Portaal, Interventie, etc.\) om een account voor deze gebruiker te kunnen regelen en de gebruiker ID te koppelen
 
-![Participanten synchronisatie](.gitbook/assets/participant.jpg)
+![Participanten synchronisatie](.gitbook/assets/10.jpeg)
 
 ### Activiteit monitoren en evalueren
 
@@ -295,7 +295,7 @@ Wanneer de patiënt of gerelateerde persoon bijvoorbeeld begint met het uitvoere
 
 Vervolgens wordt de interactie UpdateCarePlanActivityStatus verzonden met de CarePlanActivity waarvan de status is gewijzigd. Dit is bedoeld om de applicatie die eigenaar is van het CarePlan op de hoogte te stellen van de verandering in status. De verantwoordelijke toepassing kan vervolgens beurtelings een interactie CreateOrUpdateCarePlan verzenden om alle toepassingen die geïnteresseerd zijn in het CarePlan als geheel \(in plaats van specifieke activiteiten in het CarePlan\) op de hoogte te stellen van de wijziging.
 
-![Activiteiten monitoren](.gitbook/assets/activiteitenstatus.jpg)
+![Activiteiten monitoren](.gitbook/assets/11.jpeg)
 
 ### Informatie uitwisselen
 
@@ -316,5 +316,5 @@ Als voorbeeld, een patiënt heeft een specifieke vraag over een behandeling aan 
 
 Het lanceren van een interventie gaat volgens de OAuth 2.0 standaard en SMART-on-FHIR voorschriften. Na het aanmaken van een CarePlan met één of meer activiteiten door een behandelaar voor een patiënt, kan de patiënt deze activiteiten in zijn portaal \(eigen omgeving binnen de context van een zorginstelling\) starten door een interventie te lanceren. Hiervoor gebruikt de patiënt een unieke interventie adres \(URL\) die in het portaal wordt klaargezet. Zodra de patiënt deze URL opent wordt de patiënt via Koppeltaal naar de interventie geleidt binnen de context van een behandeling \(zie PostLaunchRequest\). De interventie ontvangt de context van de LaunchRequest en een Autorisatie endpoint waarmee hij om toegang tot de gegevens vraagt bij Koppeltaal. Koppeltaal geeft de interventie vervolgens een access token waarmee de interventie vervolgens Koppeltaal kan updaten over de voortgang van bepaalde activiteiten die door een participant wordt uitgevoerd. Als de acces token verlopen is kan de interventie om een refresh token vragen.
 
-![Interventie lanceren](.gitbook/assets/interventie-lanceren.jpg)
+![Interventie lanceren](.gitbook/assets/13.jpeg)
 

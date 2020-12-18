@@ -8,7 +8,7 @@ description: >-
 
 ## Koppeltaal server
 
-Huidige release : **1.3.8.**  Geplande release **1.3.9** in 2021.
+Huidige release : **1.3.8.** Geplande release **1.3.9** in 2021.
 
 Release 1.3.8 is een herstelversie van 1.3.5.
 
@@ -25,7 +25,7 @@ Hierin zijn de volgende punten opgenomen:
 
 Release 1.3.9 is \(ook\) een herstelversie van 1.3.5.
 
-Hierin zijn, voorlopig,  de volgende punten opgenomen:
+Hierin zijn, voorlopig, de volgende punten opgenomen:
 
 | Ticket | Type | Omschrijving |
 | :--- | :--- | :--- |
@@ -44,7 +44,7 @@ Release 1.3.9 is een herstelversie van 1.3.5 en wordt begin 2021 in productie ge
 
 ## API specificaties
 
-Informatie in deze sectie is onder regie van: architect Koppeltaal 
+Informatie in deze sectie is onder regie van: architect Koppeltaal
 
 Feedback via e-mail: [koppeltaal-architectuur@vzvz.nl](mailto:koppeltaal-architectuur@vzvz.nl)
 
@@ -54,7 +54,7 @@ Feedback via e-mail: [koppeltaal-architectuur@vzvz.nl](mailto:koppeltaal-archite
 
 Informatie in deze sectie is onder regie van: Koppeltaal testteam
 
-Feedback via e-mail: [koppeltaal-testteam@vzvz.nl](mailto:koppeltaal-testteam@vzvz.nl)  
+Feedback via e-mail: [koppeltaal-testteam@vzvz.nl](mailto:koppeltaal-testteam@vzvz.nl)
 
 Voor community leden die nog niet actief zijn in de productiefase van Koppeltaal is het raadzaam om de koppeling met Koppeltaal te ontwikkelen op basis van Koppeltaal 1.3.5. De impact daarvan is relatief beperkt, en je voorkomt extra inspanningen om na ingebruikname alsnog binnen enkele maanden na release op productie alsnog verplicht te moeten upgraden naar Koppeltaal 1.3.5.
 
@@ -132,15 +132,15 @@ Voor community leden die nog niet actief zijn in de productiefase van Koppeltaal
 
 Informatie in deze sectie is onder regie van: Koppeltaal Testteam
 
-Feedback via e-mail: [koppeltaal-testteam@vzvz.nl](mailto:koppeltaal-testteam@vzvz.nl)  
+Feedback via e-mail: [koppeltaal-testteam@vzvz.nl](mailto:koppeltaal-testteam@vzvz.nl)
 
-Onderstaande sectie bevat de informatie naar de meest recente versie.  Nieuwere versies van adapters voor gebruik met KT v1.3.5 zullen worden toegevoegd zodra deze zijn geaccepteerd. Deze nieuwe versies staan altijd in onderstaande folders op Github.
+Onderstaande sectie bevat de informatie naar de meest recente versie. Nieuwere versies van adapters voor gebruik met KT v1.3.5 zullen worden toegevoegd zodra deze zijn geaccepteerd. Deze nieuwe versies staan altijd in onderstaande folders op Github.
 
 Applicatieontwikkelaars mogen deze adapters inbouwen, testen en uiteindelijk hun applicatie met nieuwe adapter bij het acceptatieteam van Koppeltaal aanbieden voor acceptatie voor gebruik in Koppeltaal v1.3.5.
 
-Voor community ****leden die nog niet actief zijn in de productiefase van Koppeltaal is het raadzaam om de koppeling met Koppeltaal te ontwikkelen op basis van Koppeltaal 1.3.5. De impact daarvan is relatief beperkt, en je voorkomt extra inspanningen om na ingebruikname alsnog binnen enkele maanden na release op productie alsnog verplicht te moeten upgraden naar Koppeltaal 1.3.5. 
+Voor community _\*\*_leden die nog niet actief zijn in de productiefase van Koppeltaal is het raadzaam om de koppeling met Koppeltaal te ontwikkelen op basis van Koppeltaal 1.3.5. De impact daarvan is relatief beperkt, en je voorkomt extra inspanningen om na ingebruikname alsnog binnen enkele maanden na release op productie alsnog verplicht te moeten upgraden naar Koppeltaal 1.3.5.
 
-_Let op: adapterversies  voor gebruik met KT 1.3.3 en ouder zullen na na  keten brede ingebruikname van KT  1.3.5 in productie niet meer geaccepteerd worden voor gebruik in test-, ontwikkel- en productie-omgevingen van Koppeltaal._
+_Let op: adapterversies voor gebruik met KT 1.3.3 en ouder zullen na na keten brede ingebruikname van KT 1.3.5 in productie niet meer geaccepteerd worden voor gebruik in test-, ontwikkel- en productie-omgevingen van Koppeltaal._
 
 <table>
   <thead>
@@ -230,9 +230,9 @@ _Let op: adapterversies  voor gebruik met KT 1.3.3 en ouder zullen na na  keten 
 
 Informatie in deze sectie is onder regie van: Koppeltaal Testteam
 
-Feedback via e-mail: [koppeltaal-testteam@vzvz.nl](mailto:koppeltaal-testteam@vzvz.nl)  
+Feedback via e-mail: [koppeltaal-testteam@vzvz.nl](mailto:koppeltaal-testteam@vzvz.nl)
 
-Onderstaande testtooling is buiten scope van de transitie naar Koppeltaal 1.3.5. 
+Onderstaande testtooling is buiten scope van de transitie naar Koppeltaal 1.3.5.
 
 Meer weten? Neem aub contact op met het testteam, [koppeltaal-testteam@vzvz.nl](mailto:koppeltaal-testteam@vzvz.nl)
 
@@ -240,7 +240,7 @@ Meer weten? Neem aub contact op met het testteam, [koppeltaal-testteam@vzvz.nl](
 | :--- | :--- |
 | **Test Portal** | Portal tool to be used when testing interventions |
 | **Test Client** | Client test simulating the intervention |
-| **Regression Test**  | Regression testing for REST API Calls |
+| **Regression Test** | Regression testing for REST API Calls |
 | **Test Storage Service** | Storage API test |
-| **Load and Performance Test Scripts** | Load and Performance Scripts simulating the Patient, Related person and Caregiver load in a complex environment  |
+| **Load and Performance Test Scripts** | Load and Performance Scripts simulating the Patient, Related person and Caregiver load in a complex environment |
 

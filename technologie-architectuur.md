@@ -558,8 +558,12 @@ Wanneer de gebruiker de applicatie URL opent, moeten de volgende gegevens aan Ko
 
 Naast de bovengenoemde velden, kunnen er ook _optionele velden_ gebruikt worden die doorgegeven worden:
 
-1. CarePlanActivity identifier – gebruikt om te achterhalen welke activiteiten een bepaalde applicatie \(Game\) herkent.
+1. CarePlanActivity identifier – gebruikt om te achterhalen welke activiteiten een bepaalde applicatie \(Game\) herkent. 
 2. Aanvullende applicatie informatie - bijvoorbeeld dat er een specifieke pagina door de applicatie moet worden geopend.
+
+{% hint style="warning" %}
+In de huidige Koppeltaal 1.3.x is het _niet verplich_t om een activity id mee te sturen, maar is het _wel wenselijk_. We gedogen dit alleen om de mogelijkheid te scheppen om de SSO tussen twee systemen op te kunnen zetten, waarvoor geen activity id nodig is.
+{% endhint %}
 
 ### SMART Autorisatie voor webapplicaties
 

@@ -8,7 +8,7 @@ description: >-
 
 ## Koppeltaal server
 
-Huidige release : **1.3.8.** Geplande release **1.3.9** in 2021.
+Huidige release : **1.3.8.** Geplande release **1.3.9** in maart 2021.
 
 Release 1.3.8 is een herstelversie van 1.3.5.
 
@@ -29,10 +29,18 @@ Hierin zijn, voorlopig, de volgende punten opgenomen:
 
 | Ticket | Type | Omschrijving |
 | :--- | :--- | :--- |
-| ICE-716 | Feature Request | Performance issue Integrator queries |
 | ICE-715 | Feature Request | Performance issue Koppeltaal queries |
 | ICE-697 | Bug | Error on GetNextNextAndClaim |
 | ICE-645 | Bug | 2FA - Mobiel nummer kan foutief aangepast worden met verificatie |
+| ICE-754 | Change Request | Verbetering monitoring op Webhooks |
+| ICE-763 | Bug | Verwerking gefaald maar DB transactie succesvol |
+| ICE-759 | Bug | UI staat speciale tekens niet toe bij ActivityDefintions |
+| ICE-718 | Feature Request | Tijdelijk bepaalde deelnemers dan wel producten ontkoppelen. |
+| ICE-694 | Change Request | Verzoek wijzigen configuratie testomgevingen Koppeltaal |
+| ICE-674 | Change Request | Huidig veld 'inactive applicatie' en 'inactive domein' meenemen naar de BI omgeving |
+| ICE-671 | Bug | URL in uitnodiging domeinbeheerder voor Stable omgeving verwijst naar Edge |
+| ICE-612 | Bug | Activeren gewijzigde email niet nodig om aan te loggen |
+| ICE-504 | Feature Request | Doorlooptijd opbouw domeinen verkorten door domeinconfiguraties te kopieren naar andere omgevingen |
 
 **Supported Koppeltaal release:** 1.3.5
 

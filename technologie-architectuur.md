@@ -2883,19 +2883,19 @@ Notitie: De System Uri’s vindt men bij \[http://fhir.nl/fhir/NamingSystems/\[S
 
 ## Beveiliging
 
-De communicatie en gegevensuitwisseling tussen de Koppeltaal Server en de applicaties uit een domein volgen de ICT-beveiligingsrichtlijnen voor Transport Layer Security \(TLS\) v2.0 van het Nationaal Cyber Security Centrum \(NCSC\). De versie is gepubliceerd op 23 april 2019. 
+De communicatie en gegevensuitwisseling tussen de Koppeltaal Server en de applicaties uit een domein volgen de ICT-beveiligingsrichtlijnen voor Transport Layer Security \(TLS\) v2.0 van het Nationaal Cyber Security Centrum \(NCSC\). Versie 2.0 is op 23 april 2019 gepubliceerd. 
+
+Zie: [https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls)
 
 VZVZ _vereist_ dat de veiligheidsniveau \(zoals beschreven in de ICT-beveiligingsrichtlijnen\) voor het Transport Layer Security-protocol \(TLS\) minimaal moeten voldoen aan: "_Voldoende of hoger_". TLS is het gebruikte protocol voor het opzetten en gebruiken van een cryptografisch beveiligde verbinding tussen twee computersystemen, een cliënt en een server.
 
 Organisaties die gebruik maken van een ‘uit te faseren’ TLS-configuratie moeten deze configuratie op termijn vervangen. Anders lopen organisaties het risico dat zij niet voldoen aan de beveiligingseisen die volgen uit de AVG.
 
-Zie: [https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls)
-
-Naast de ICT-beveiligingsrichtlijnen voor Transport Layer Security volgt VZVZ de ICT-beveiligingsrichtlijnen voor Webapplicaties,  om een bepaalde mate van veiligheid te bereiken. Deze richtlijnen hebben niet alleen betrekking op de webapplicatie, maar ook op de beheeromgeving en de omringende hard- en softwareomgeving die noodzakelijk is om de webapplicatie te laten functioneren.
+Verder volgt VZVZ de ICT-beveiligingsrichtlijnen voor Webapplicaties,  om een bepaalde mate van veiligheid voor Koppeltaal te bereiken. Deze richtlijnen hebben niet alleen betrekking op webapplicaties, maar ook op de beheeromgeving en de omringende hard- en softwareomgeving die noodzakelijk is om webapplicaties te laten functioneren.
 
 Zie: [https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-webapplicaties](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-webapplicaties)
 
-Het NCSC is verantwoordelijk voor het opstellen en onderhouden van deze richtlijnen en zal ze periodiek actualiseren. Indien noodzakelijk zal het NCSC tussentijds door middel van een addendum of erratum de richtlijnen aanpassen. Daarnaast wordt in beveiligingsrichtlijnen verwezen naar andere relevante normen of standaarden zoals de Open Web Application Security Project \(OWASP\) Top 10 Web Applicaties beveiligingsrisico's.
+Het NCSC is verantwoordelijk voor het opstellen en onderhouden van bovenstaande richtlijnen en zal ze periodiek actualiseren. Indien noodzakelijk zal het NCSC tussentijds door middel van een addendum of erratum de richtlijnen aanpassen. Daarnaast wordt in beveiligingsrichtlijnen verwezen naar andere relevante normen of standaarden zoals de Open Web Application Security Project \(OWASP\) Top 10 Web Applicaties beveiligingsrisico's.
 
 ## Autorisatie beheer
 

@@ -2883,43 +2883,19 @@ Notitie: De System Uri’s vindt men bij \[http://fhir.nl/fhir/NamingSystems/\[S
 
 ## Beveiliging
 
-De communicatie en gegevensuitwisseling tussen de Koppeltaal Server en de applicaties uit een domein \(GGZ instelling\) is vertrouwelijk \(vertrouwensniveau:**midden**\) en mag alleen toegankelijk zijn voor personen die hier vanuit hun functie toegang toe moeten hebben \(need-to-know basis\).
+De communicatie en gegevensuitwisseling tussen de Koppeltaal Server en de applicaties uit een domein volgen de vernieuwde versie van de ICT-beveiligingsrichtlijnen over Transport Layer Security \(TLS\) van het Nationaal Cyber Security Centrum \(NCSC\). De nieuwe versie is gepubliceerd op 23 april 2019. 
 
-Voor het realiseren van vertrouwensniveau midden is het toepassen van SSL/TLS protocol vodoende. Wanneer een \(GGZ\) applicatie een verbinding opzet met de Koppeltaal Server, past de \(GGZ\) applicatie een SSL/TLS-sessie toe met:
+Zie: [https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls)
 
-· authenticatie van de Koppeltaal Server op basis van een \(PKI-O\) certificaat,
+Deze richtlijnen zijn bedoeld als advies bij het opstellen en beoordelen van configuraties voor het Transport Layer Security-protocol \(TLS\). TLS is het meest gebruikte protocol voor het opzetten en gebruiken van een cryptografisch beveiligde verbinding tussen twee computersystemen, een client en een server.
 
-· meesturen van certificaten,
+Belangrijke wijzigingen in versie 2.0:
 
-· toepassen van SSL v3.0 of TLS 2.0
+* Toegevoegd: TLS 1.3
+* Nieuw beveiligingsniveau: 'uit te faseren' - Leg voorwaarden voor uitfasering vast, waarmee beëindiging van het gebruik van deze instellingen wordt gepland. Bijvoorbeeld voor uitfaseren van TLS 1.0, TLS 1.1, 3DES en statische sleuteluitwisseling \(TLS\_RSA\_...\)
+* Gebruik liever ECDHE dan DHE. Wordt DHE gebruikt? Dan gelden eisen voor de gebruikte parameters.
 
-· RSA\_WITH\_RC4\_128\_MD5 of RSA\_WITH\_RC4\_128\_SHA,
-
-· maximum sessieduur van x minuten,
-
-· maximum ongebruikte sessie van x minuten,
-
-· {toekomst} nader te bepalen maximum aantal verbindingen.
-
-Ondersteuning van minimaal de volgende tls en cipher suites:
-
-· TLS\_AES\_256\_GCM\_SHA384 \(0x1302\) ECDH secp256r1 \(eq. 3072 bits RSA\) FS
-
-· TLS\_AES\_128\_GCM\_SHA256 \(0x1301\) ECDH secp256r1 \(eq. 3072 bits RSA\) FS
-
-Technische items uit RFC5289:
-
-· Protocol: TLS staat voor Transport Layered Security
-
-· Encryptie: AES staat voor Advance Encryption Standard with xxx bit key in Galois/Counter Mode
-
-· Hash: Secure Hash Algoritme xxx
-
-· Sleutel uitwisseling: ECDH refereert naar de encryptie protocol \(Elliptic curve Diffie–Hellman\)
-
-· Secp256r1 refereert naar de elliptic curve dat door de cipher gebruikt wordt
-
-· FS betekent dat de cipher Forarwd Secrecy ondersteunt
+Organisaties die gebruik maken van een ‘uit te faseren’ TLS-configuratie moeten deze configuratie op termijn vervangen. Anders lopen organisaties het risico dat zij niet voldoen aan de beveiligingseisen die volgen uit de AVG.
 
 ## Autorisatie beheer
 

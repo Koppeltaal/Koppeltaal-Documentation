@@ -2883,19 +2883,19 @@ Notitie: De System Uri’s vindt men bij \[http://fhir.nl/fhir/NamingSystems/\[S
 
 ## Beveiliging
 
-De communicatie en gegevensuitwisseling tussen de Koppeltaal Server en de applicaties uit een domein volgen de vernieuwde versie van de ICT-beveiligingsrichtlijnen over Transport Layer Security \(TLS\) van het Nationaal Cyber Security Centrum \(NCSC\). De nieuwe versie is gepubliceerd op 23 april 2019. 
+De communicatie en gegevensuitwisseling tussen de Koppeltaal Server en de applicaties uit een domein volgen de ICT-beveiligingsrichtlijnen voor Transport Layer Security \(TLS\) v2.0 van het Nationaal Cyber Security Centrum \(NCSC\). De versie is gepubliceerd op 23 april 2019. 
+
+VZVZ _vereist_ dat de veiligheidsniveau \(zoals beschreven in de ICT-beveiligingsrichtlijnen\) voor het Transport Layer Security-protocol \(TLS\) minimaal moeten voldoen aan: "_Voldoende of hoger_". TLS is het gebruikte protocol voor het opzetten en gebruiken van een cryptografisch beveiligde verbinding tussen twee computersystemen, een client en een server.
+
+Organisaties die gebruik maken van een ‘uit te faseren’ TLS-configuratie moeten deze configuratie op termijn vervangen. Anders lopen organisaties het risico dat zij niet voldoen aan de beveiligingseisen die volgen uit de AVG.
 
 Zie: [https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls)
 
-Deze richtlijnen zijn bedoeld als advies bij het opstellen en beoordelen van configuraties voor het Transport Layer Security-protocol \(TLS\). TLS is het meest gebruikte protocol voor het opzetten en gebruiken van een cryptografisch beveiligde verbinding tussen twee computersystemen, een client en een server.
+Naast de ICT-beveiligingsrichtlijnen voor Transport Layer Security volgt VZVZ de ICT-beveiligingsrichtlijnen voor Webapplicaties,  om een bepaalde mate van veiligheid te bereiken. Deze richtlijnen hebben niet alleen betrekking op de webapplicatie, maar ook op de beheeromgeving en de omringende hard- en softwareomgeving die noodzakelijk is om de webapplicatie te laten functioneren.
 
-Belangrijke wijzigingen in versie 2.0:
+Zie: [https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-webapplicaties](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-webapplicaties)
 
-* Toegevoegd: TLS 1.3
-* Nieuw beveiligingsniveau: 'uit te faseren' - Leg voorwaarden voor uitfasering vast, waarmee beëindiging van het gebruik van deze instellingen wordt gepland. Bijvoorbeeld voor uitfaseren van TLS 1.0, TLS 1.1, 3DES en statische sleuteluitwisseling \(TLS\_RSA\_...\)
-* Gebruik liever ECDHE dan DHE. Wordt DHE gebruikt? Dan gelden eisen voor de gebruikte parameters.
-
-Organisaties die gebruik maken van een ‘uit te faseren’ TLS-configuratie moeten deze configuratie op termijn vervangen. Anders lopen organisaties het risico dat zij niet voldoen aan de beveiligingseisen die volgen uit de AVG.
+Het NCSC is verantwoordelijk voor het opstellen en onderhouden van deze richtlijnen en zal ze periodiek actualiseren. Indien noodzakelijk zal het NCSC tussentijds door middel van een addendum of erratum de richtlijnen aanpassen. Daarnaast wordt in beveiligingsrichtlijnen verwezen naar anderer relevante normen of standaarden zoals de Open Web Application Security Project \(OWASP\) Top 10 Web Applicaties beveiligingsrisico's.
 
 ## Autorisatie beheer
 

@@ -1914,7 +1914,9 @@ CareTeam \(Other\)
 
 CarePlanActivityStatus \(Other\)
 
-### CarePlanActivityResult \(Other\)
+### Deprecated CarePlanActivityResult \(Other\)
+
+**De FHIR resource "CarePlanActivityResult" is niet in Koppeltaal 1.3.x geïmplementeerd door Koppeltaal leveranciers, en wordt door de Koppeltaal architectuur afgeraden om deze in te zetten om de resultaten van een activiteit op te vragen.**
 
 <table>
   <thead>

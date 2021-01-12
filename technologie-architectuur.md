@@ -2555,7 +2555,7 @@ Practitioner
 | Type | CodeableConcept |
 | **RelatedPerson.address** |  |
 | Definition | Addresses for the individual. |
-| Control | 0..\* |
+| Control | 0..1 |
 | Type | Address |
 | Extension | Related Person may have multiple addresses with different uses or applicable periods. Only applicable when a related person is not anonymous. |
 | **RelatedPerson.photo** |  |

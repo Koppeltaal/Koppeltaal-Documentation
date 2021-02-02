@@ -1704,19 +1704,19 @@ ActivityDefinition \(Other\)
 | Type | string |
 | Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ActivityDefinition |
 | Comments | The ActivityDefinition identified by this field may be located either directly in the bundle or in the set of ActivityDefinitions available at the Koppeltaal Server. |
-| **CarePlan.activity.type** |  |
+| **CarePlan.activity.type** | **Obsolete** |
 | Definition | The type of activity. |
 | Control | 1..1 |
 | Type | Coding |
 | Binding | [ActivityKind](technologie-architectuur.md#activitykind) |
 | Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ActivityKind |
-| Comments | Needed for activities that are not defined by an ActvityDefinition; copied from ActivityDefinition otherwise. |
-| **CarePlan.activity.description** |  |
+| Comments | **Obsolete! Use the description of Activity Definition refered to by CarePlan.Activity.Definition instead.** Needed for activities that are not defined by an ActvityDefinition; copied from ActivityDefinition otherwise. |
+| **CarePlan.activity.description** | **Obsolete** |
 | Definition | Description of the activity. |
 | Control | 0..1 |
 | Type | string |
 | Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ActivityDescription |
-| Comments | Needed for activities that are not defined by an ActvityDefinition; copied from ActivityDefinition.description otherwise. |
+| Comments | **Obsolete! Use the description of Activity Definition refered to by CarePlan.Activity.Definition instead.** Needed for activities that are not defined by an ActvityDefinition; copied from ActivityDefinition.description otherwise. |
 | **CarePlan.activity.subactivity** |  |
 | Definition | A list of subactivities that should be performed. |
 | Control | 0..\* |

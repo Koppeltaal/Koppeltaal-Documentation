@@ -1710,7 +1710,7 @@ ActivityDefinition \(Other\)
 | Type | Coding |
 | Binding | [ActivityKind](technologie-architectuur.md#activitykind) |
 | Extension | http://ggz.koppeltaal.nl/fhir/Koppeltaal/CarePlan\#ActivityKind |
-| Comments | **Obsolete! Use the description of Activity Definition refered to by CarePlan.Activity.Definition instead.** Needed for activities that are not defined by an ActvityDefinition; copied from ActivityDefinition otherwise. |
+| Comments | **Obsolete! Use the description of Activity Definition refered to by CarePlan.Activity.Type instead.** Needed for activities that are not defined by an ActvityDefinition; copied from ActivityDefinition otherwise. |
 | **CarePlan.activity.description** | **Obsolete** |
 | Definition | Description of the activity. |
 | Control | 0..1 |

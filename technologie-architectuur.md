@@ -1109,7 +1109,7 @@ Tabel 2. FHIR Bundle \(Atom feed\) De verschillende onderdelen van de FHIR feed 
       <td style="text-align:left">string</td>
     </tr>
     <tr>
-      <td style="text-align:left"><b>feed.entry.opdated</b>
+      <td style="text-align:left"><b>feed.entry.updated</b>
       </td>
       <td style="text-align:left"></td>
     </tr>

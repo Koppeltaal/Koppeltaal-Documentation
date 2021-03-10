@@ -1136,7 +1136,8 @@ Tabel 2. FHIR Bundle \(Atom feed\) De verschillende onderdelen van de FHIR feed 
       <td style="text-align:left">Definition</td>
       <td style="text-align:left">Contains or links to the content of the entry. The content is FHIR Resource
         specific and uses FHIR namespace (&#x201C;http://hl7.org/fhir) to define
-        the FHR Resource</td>
+        the FHR Resource. The content is optional, but SHALL always be present
+        except in the special case of a transaction response.</td>
     </tr>
     <tr>
       <td style="text-align:left">Control</td>

@@ -1298,8 +1298,7 @@ FHIR Bundle \(Atom feed\)
     </tr>
     <tr>
       <td style="text-align:left">Definition</td>
-      <td style="text-align:left">Name of the software of the source application. May include configuration
-        or other information useful in debugging.</td>
+      <td style="text-align:left">Name of adapter and application software seperated by semicolons.</td>
     </tr>
     <tr>
       <td style="text-align:left">Control</td>
@@ -1310,18 +1309,13 @@ FHIR Bundle \(Atom feed\)
       <td style="text-align:left">string</td>
     </tr>
     <tr>
-      <td style="text-align:left">Comments</td>
-      <td style="text-align:left">Not specifically used in Koppeltaal, but must be present because FHIR
-        mandates it.</td>
-    </tr>
-    <tr>
       <td style="text-align:left"><b>MessageHeader.source.version</b>
       </td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
       <td style="text-align:left">Definition</td>
-      <td style="text-align:left">Version of the software of the source application.</td>
+      <td style="text-align:left">Version of adapter and application software seperated by semicolons.</td>
     </tr>
     <tr>
       <td style="text-align:left">Control</td>
@@ -1332,17 +1326,13 @@ FHIR Bundle \(Atom feed\)
       <td style="text-align:left">string</td>
     </tr>
     <tr>
-      <td style="text-align:left">Requirements</td>
-      <td style="text-align:left">Supports audit and possibly interface engine behavior.</td>
-    </tr>
-    <tr>
       <td style="text-align:left"><b>MessageHeader.source.endpoint</b>
       </td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
       <td style="text-align:left">Definition</td>
-      <td style="text-align:left">Identifies the endpoint of the source application</td>
+      <td style="text-align:left">Actual message source address or id.</td>
     </tr>
     <tr>
       <td style="text-align:left">Control</td>
@@ -1351,12 +1341,6 @@ FHIR Bundle \(Atom feed\)
     <tr>
       <td style="text-align:left">Type</td>
       <td style="text-align:left">uri</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Comments</td>
-      <td style="text-align:left">Not used in Koppeltaal, but must be present because FHIR mandates it.
-        Recommended value is the FHIR Base URL of the source system also used in
-        resource identifiers.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>MessageHeader.data</b>

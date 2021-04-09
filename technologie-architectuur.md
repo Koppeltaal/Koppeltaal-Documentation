@@ -1271,10 +1271,6 @@ FHIR Bundle \(Atom feed\)
       <td style="text-align:left">1..1</td>
     </tr>
     <tr>
-      <td style="text-align:left">Requirements</td>
-      <td style="text-align:left">Allows replies, supports audit.</td>
-    </tr>
-    <tr>
       <td style="text-align:left"><b>MessageHeader.source.name</b>
       </td>
       <td style="text-align:left"></td>

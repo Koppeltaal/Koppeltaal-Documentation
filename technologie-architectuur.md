@@ -469,8 +469,14 @@ Het routeren van binnenkomende berichten gebeurt binnen een domein en de bericht
 Koppeltaal biedt een functie aan om notificaties te versturen als er een nieuw bericht beschikbaar is voor een applicatie. Deze notificatie is geïmplementeerd middels REST WebHooks. Om een notificatie te kunnen ontvangen zijn de volgende configuratie acties nodig:
 
 * Een WebHook URL definiëren, tijdens de registratie en configuratie van een applicatie in het domein, die Koppeltaal kan aanroepen.
-* De lokale implementatie achter de WebHook URL is nodig om notificaties te kunnen interpreteren. Koppeltaal zal een event genereren, ter informatie dat er ‘nieuwe’ berichten beschikbaar zijn. De betreffende applicatie wordt maximaal 5 keer gesignaleerd. De applicatie kan daarna het bericht lezen zoals al beschreven in paragraaf [Bericht ophalen](informatiesystemen-architectuur.md#bericht-ophalen). 
-* In de notificatie wordt een correlatie id \(MessageHeader.identifier\) meegestuurd van het bericht dat beschikbaar is voor de applicatie. 
+* De lokale implementatie achter de WebHook URL is nodig om notificaties te kunnen interpreteren. Koppeltaal zal een event genereren, ter informatie dat er ‘nieuwe’ berichten beschikbaar zijn. Het event, een notificatie bericht, bevat _geen payload_.
+* De betreffende applicatie wordt maximaal 5 keer gesignaleerd. De applicatie kan daarna het bericht lezen zoals al beschreven in paragraaf [Bericht ophalen](informatiesystemen-architectuur.md#bericht-ophalen). 
+* Een notificatie bericht in Koppeltaal maakt gebruik van de volgende HTTP headers:
+  * `Category`. Bevat de domein headers. Bijvoorbeeld: `Category:` [`http://ggz.koppeltaal.nl/fhir/Koppeltaal/Domain#[Domain`](http://ggz.koppeltaal.nl/fhir/Koppeltaal/Domain#[Domain)`]; scheme=""; label="`[`http://hl7.org/fhir/tag/security[Domain`](http://hl7.org/fhir/tag/security[Domain)`]"`. Dit header veld is vanaf Koppeltaal 1.3.8 ingevoerd
+  * `KoppeltaalMessageIdentifier`. Hiermee wordt een correlatie id \(MessageHeader.identifier\) meegestuurd van het bericht dat beschikbaar is voor de applicatie. Vanaf Koppeltaal 1.3.8 ingevoerd.
+  * `Content-Type` en `Accept`. Worden altijd gevuld met "application/json". Gebaseerd op RFC-7231. Vanaf Koppeltaal 1.3.8 ingevoerd.
+  * `X-Koppeltaal-Secret`. Is een voorbeeld van een _custom header_, die kunnen worden geconfigureerd per 'application instance'. Bijvoorbeeld met een secret value dat gedeeld wordt tussen applicaties \(KT domain en platform\).
+  * `Content-Length`. Geeft de grootte van de payload aan. Deze parameter wordt run-time bepaald en is voor notificatie berichten altijd 0. 
 
 ### Bericht ophalen
 

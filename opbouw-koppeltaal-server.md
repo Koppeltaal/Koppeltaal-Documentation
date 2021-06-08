@@ -28,15 +28,11 @@ De opbouw van de Koppeltaal Server bestaat uit de volgende lagen:
 
 #### Koppeltaal omgeving URL's
 
-| Server | URL | KT Versie |
-| :--- | :--- | :--- |
-| **Edge** | [https://edgekoppeltaal.vhscloud.nl](https://edgekoppeltaal.vhscloud.nl) | 1.3.9 |
-| **Stable** | [https://stablekoppeltaal.vhscloud.nl](https://stablekoppeltaal.vhscloud.nl) | 1.3.9 |
-| **Demo** | [https://demokoppeltaal.vhscloud.nl](https://demokoppeltaal.vhscloud.nl) | 1.3.8 |
-| **Acceptatie** | [https://acckoppeltaal.vhscloud.nl](https://acckoppeltaal.vhscloud.nl) | 1.3.9 |
-| **Productie** | Opvraagbaar bij VZVZ | 1.3.8 |
-
-#### 
-
-#### 
+| Server | URL | Omschrijving | KT Versie |
+| :--- | :--- | :--- | :--- |
+| **Edge** | [https://edgekoppeltaal.vhscloud.nl](https://edgekoppeltaal.vhscloud.nl) | Testomgeving van de community, met de nieuwste \(deel\)release of bugfix. Als er een complete release staat, dan wordt door VZVZ Koppeltaal Testteam de release geaccepteerd alvorens het naar **Acceptatie** te laten gaan. | 1.3.9 |
+| **Stable** | [https://stablekoppeltaal.vhscloud.nl](https://stablekoppeltaal.vhscloud.nl) | Ketentestomgeving voor GGZ \(_huidige_ Koppeltaal Kern release\). | 1.3.9 |
+| **Demo** | [https://demokoppeltaal.vhscloud.nl](https://demokoppeltaal.vhscloud.nl) | Kan door hele community gebruikt worden voor demo's. | 1.3.8 |
+| **Acceptatie** | [https://acckoppeltaal.vhscloud.nl](https://acckoppeltaal.vhscloud.nl) | Ketentestomgeving voor GGZ \(_toekomstige_ Koppeltaal Kern release\). | 1.3.9 |
+| **Productie** | Opvraagbaar bij VZVZ | Live omgeving voor zorgcommunicatie door cliënten en behandelaren van GGZ-instellingen via applicaties van IT-deelnemers die met elkaar verbonden zijn via Koppeltaal. | 1.3.8 |
 

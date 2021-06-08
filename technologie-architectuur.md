@@ -452,7 +452,7 @@ Koppeltaal ondersteunt de volgende processen voor de uitwisseling van berichten:
 
 ### Bericht versturen
 
-Alle applicaties maken gebruik van de standaard HTTP operatie POST om berichten \(FHIR Message DSTU1\) te versturen. De berichten worden naar een vaste endpoint \(URL\) van Koppeltaal gestuurd, zie 'interactie ontvangen' \(technische service\) waarvan de basis URL bijvoorbeeld https://koppeltaal.nl/FHIR/Koppeltaal/Mailbox is. Elk binnenkomend bericht wordt \(tijdelijk\) gepersisteerd in een datastore. De structuur van het bericht is, in hoofdstuk  "[Informatie-uitwisseling op basis van FHIR Messaging](technologie-architectuur.md#fhir-messaging)", beschreven.
+Alle applicaties maken gebruik van de standaard HTTP operatie POST om berichten \(FHIR Message DSTU1\) te versturen. De berichten worden naar een vaste endpoint \(URL\) van Koppeltaal gestuurd, zie 'interactie ontvangen' \(technische service\) waarvan de basis URL bijvoorbeeld [&lt;KoppeltaalOmgevingURL&gt;](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/opbouw-koppeltaal-server#koppeltaal-omgeving-urls)/FHIR/Koppeltaal/Mailbox is. Elk binnenkomend bericht wordt \(tijdelijk\) gepersisteerd in een datastore. De structuur van het bericht is, in hoofdstuk  "[Informatie-uitwisseling op basis van FHIR Messaging](technologie-architectuur.md#fhir-messaging)", beschreven.
 
 De opslag van de Message Header \(metadata van het bericht\) en de content van het bericht \(Message Body\) zullen apart gepersisteerd worden in verschillende tabellen.
 
@@ -480,7 +480,7 @@ Koppeltaal biedt een functie aan om notificaties te versturen als er een nieuw b
 
 ### Bericht ophalen
 
-Alle applicaties maken gebruik van de standaard HTTP operatie GET om berichten \(FHIR Message DSTU1\) op te halen. De berichten kunnen van een vaste endpoint \(URL\) bij Koppeltaal opgehaald worden, zie 'interactie ophalen' \(technische service\) waarvan de basis URL bijvoorbeeld https://koppeltaal.nl/FHIR/Koppeltaal/MessageHeader is.
+Alle applicaties maken gebruik van de standaard HTTP operatie GET om berichten \(FHIR Message DSTU1\) op te halen. De berichten kunnen van een vaste endpoint \(URL\) bij Koppeltaal opgehaald worden, zie 'interactie ophalen' \(technische service\) waarvan de basis URL bijvoorbeeld [&lt;KoppeltaalOmgevingURL&gt;](https://vzvz.gitbook.io/koppeltaal-1-3-architectuur/opbouw-koppeltaal-server#koppeltaal-omgeving-urls)/FHIR/Koppeltaal/MessageHeader is.
 
 Indien een applicatie niet gebruik maakt van notificaties en de REST WebHooks niet geïmplementeerd heeft, kan de applicatie de Koppeltaal server met een vaste interval bevragen \(actief polling\). De frequentie waarmee deze opvragen plaatsvindt, heet de poll frequentie.
 

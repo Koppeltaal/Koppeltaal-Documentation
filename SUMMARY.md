@@ -8,5 +8,6 @@
 * [Afkortingen en begrippenlijst](woordenlijst.md)
 * [Voorbeelden Koppeltaal berichten](voorbeelden-berichtenverkeer.md)
 * [Quick technical basics](quick-technical-basics.md)
+* [Opbouw Koppeltaal Server](opbouw-koppeltaal-server.md)
 * [Releases](release-planning.md)
 

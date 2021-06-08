@@ -10,8 +10,6 @@ Koppeltaal stelt GGZ-instellingen in staat behandelaren en hun clienten vanuit b
 
 Koppeltaal GGZ is niet alleen een "communicatie-server", voor het uitwisselen van gegevens tussen systemen. Koppeltaal is een technische oplossing, maar haar toegevoegde waarde gaat verder: Koppeltaal is een infrastructuur voor data, zodat data uit verschillende bronsystemen met elkaar verbonden kunnen worden.
 
-Voor verdere informatie over de architectuur kan contact worden opgenomen met de architecten van Koppeltaal/VZVZ.
-
 De opbouw van de Koppeltaal Server bestaat uit de volgende lagen:
 
 * Software-laag, bestaande uit:
@@ -23,8 +21,22 @@ De opbouw van de Koppeltaal Server bestaat uit de volgende lagen:
     * separaat netwerksegment
     * applicatieserver
     * databasecluster, bestaande uit databaseservers op twee fysiek gescheiden locaties \(Landgraaf en Maastricht\); hierbij vindt real-time datasynchronisatie plaats
-  * Test-/acceptatieomgevingen \(_Edge_, _Stable_, _Test_, _Acceptatie_ en _Prodshadow_\), met als kenmerken:
+  * Test-/acceptatieomgevingen \(_Edge_, _Stable, Demo_ en _Acceptatie_ \), met als kenmerken:
     * shared netwerksegment
     * applicatieserver
     * databaseserver
+
+#### Koppeltaal omgeving URL's
+
+| Server | URL | KT Versie |
+| :--- | :--- | :--- |
+| **Edge** | [https://edgekoppeltaal.vhscloud.nl](https://edgekoppeltaal.vhscloud.nl) | 1.3.9 |
+| **Stable** | [https://stablekoppeltaal.vhscloud.nl](https://stablekoppeltaal.vhscloud.nl) | 1.3.9 |
+| **Demo** | [https://demokoppeltaal.vhscloud.nl](https://demokoppeltaal.vhscloud.nl) | 1.3.8 |
+| **Acceptatie** | [https://acckoppeltaal.vhscloud.nl](https://acckoppeltaal.vhscloud.nl) | 1.3.9 |
+| **Productie** | Opvraagbaar bij VZVZ | 1.3.8 |
+
+#### 
+
+#### 
 

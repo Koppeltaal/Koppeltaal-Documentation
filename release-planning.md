@@ -146,7 +146,7 @@ Onderstaande sectie bevat de informatie naar de meest recente versie. Nieuwere v
 
 Applicatieontwikkelaars mogen deze adapters inbouwen, testen en uiteindelijk hun applicatie met nieuwe adapter bij het acceptatieteam van Koppeltaal aanbieden voor acceptatie voor gebruik in Koppeltaal v1.3.5.
 
-Voor community _\*\*_leden die nog niet actief zijn in de productiefase van Koppeltaal is het raadzaam om de koppeling met Koppeltaal te ontwikkelen op basis van Koppeltaal 1.3.5. De impact daarvan is relatief beperkt, en je voorkomt extra inspanningen om na ingebruikname alsnog binnen enkele maanden na release op productie alsnog verplicht te moeten upgraden naar Koppeltaal 1.3.5.
+Voor community leden die nog niet actief zijn in de productiefase van Koppeltaal is het raadzaam om de koppeling met Koppeltaal te ontwikkelen op basis van Koppeltaal 1.3.5. De impact daarvan is relatief beperkt, en je voorkomt extra inspanningen om na ingebruikname alsnog binnen enkele maanden na release op productie alsnog verplicht te moeten upgraden naar Koppeltaal 1.3.5.
 
 _Let op: adapterversies voor gebruik met KT 1.3.3 en ouder zullen na na keten brede ingebruikname van KT 1.3.5 in productie niet meer geaccepteerd worden voor gebruik in test-, ontwikkel- en productie-omgevingen van Koppeltaal._
 
